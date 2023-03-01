@@ -1,6 +1,6 @@
 class Select {
     constructor(element) {
-        this.id = element.getAttribute('id');
+        this.name = element.getAttribute('name');
         this.select = element;
         this.valueWrapper = this.select.querySelector('.select__value');
 
@@ -13,7 +13,7 @@ class Select {
 
     initEvents() {
         document.body.addEventListener('click', ({ target }) => {
-            if (!target.closest(`#${this.id}`)) {
+            if (!target.closest(`[name="${this.name}"]`)) {
                 this.hide();
             }
         });
@@ -57,6 +57,7 @@ class Select {
 window.selects = [];
 
 document.querySelectorAll('.select').forEach(el => {
-    const id = el.getAttribute('id');
-    window.selects[id] = new Select(el);
+    const formId = el.closest('form')?.getAttribute('id');
+    const name = el.getAttribute('name');
+    window.selects[formId? `${formId}_${name}` : name] = new Select(el);
 });

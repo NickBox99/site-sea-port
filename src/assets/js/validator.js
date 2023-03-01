@@ -14,7 +14,7 @@
 
 window.initFormValidate = function (formId, options, callback) {
     const form = document.querySelector(`#${formId}`);
-    const findFieldForm = (key) => form.querySelector(`#${key}`);
+    const findFieldForm = (key) => form.querySelector(`[name="${key}"]`);
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -60,7 +60,7 @@ window.initFormValidate = function (formId, options, callback) {
                                 (validateSettings.includes('abs') && value && !/^([a-zA-ZА-яЕЁ ]+)$/gi.test(value)) ||
                                 (validateSettings.includes('phone') && !/^[\d\+][\d\(\)\ -]{4,14}\d$/.test(value)) ||
                                 (validateSettings.includes('email') && !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value)) ||
-                                (validateSettings.includes('inn') && !(12 >= value.length && value.length >= 10))
+                                (validateSettings.includes('inn') && (!/^([0-9]+)$/gi.test(value) || !(12 >= value.length && value.length >= 10)))
                             )
                         },
                         () => el.value, el, ['keyup']);
@@ -68,7 +68,7 @@ window.initFormValidate = function (formId, options, callback) {
                     break;
                 }
                 case 'date': {
-                    const dateObj = dates[key];
+                    const dateObj = dates[`${formId}_${key}`];
                     const el = dateObj.input;
 
                     checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),
@@ -77,7 +77,7 @@ window.initFormValidate = function (formId, options, callback) {
                     break;
                 }
                 case 'select': {
-                    const select = selects[key];
+                    const select = selects[`${formId}_${key}`];
                     const el = select.select;
                     
                     checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),

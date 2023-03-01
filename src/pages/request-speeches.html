@@ -9,8 +9,8 @@
     <form id="applicationForInspection" autocomplete="off">
         <div class="filters-subtitle">Контейнер</div>
         <div class="filters-row">
-            <input id="container_number_ktk" class="input input_secondary" placeholder="Номер КТК*" type="text">
-            <div id="container_type_of_packaging" class="select select_secondary">
+            <input name="container_number_ktk" class="input input_secondary" placeholder="Номер КТК*" type="text">
+            <div name="container_type_of_packaging" class="select select_secondary">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary active" data-value="0">Тип упаковки*</div>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="select__daw">@@include('../components/svg/daw.html')</div>
             </div>
-            <div id="container_type_of_inspection" class="select select_secondary">
+            <div name="container_type_of_inspection" class="select select_secondary">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary active" data-value="0">Вид досмотра*</div>
@@ -41,41 +41,41 @@
                 <div class="select__daw">@@include('../components/svg/daw.html')</div>
             </div>
 
-            <input id="container_date_ktk" class="datetime input input_secondary" placeholder=" Дата подачи КТК*" data-placeholder-focus>
-            <textarea id="container_comment" class="textarea textarea_secondary filters-col-2 request-speeches__comment" placeholder="Комментарий" type="text"></textarea>
+            <input name="container_date_ktk" class="datetime input input_secondary" placeholder=" Дата подачи КТК*" data-placeholder-focus>
+            <textarea name="container_comment" class="textarea textarea_secondary filters-col-2 request-speeches__comment" placeholder="Комментарий" type="text"></textarea>
         </div>
 
         <div class="filters-subtitle">Представитель на досмотровой площадке</div>
         <div class="filters-row">
-            <input id="member_surname" class="input input_secondary" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
-            <input id="member_name" class="input input_secondary" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-            <input id="member_patronymic" class="input input_secondary" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+            <input name="member_surname" class="input input_secondary" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
+            <input name="member_name" class="input input_secondary" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+            <input name="member_patronymic" class="input input_secondary" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
         </div>
 
         <div class="filters-subtitle">Контактные данные</div>
         <div class="filters-row">
-            <input id="contact_phone" class="input input_secondary" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
-            <input id="contact_email" class="input input_secondary" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-            <input id="contact_proxy_number" class="input input_secondary" placeholder="№ доверенности*" type="text">
-            <input id="contact_proxy_date" class="datetime input input_secondary" placeholder=" Дата выдачи*" data-placeholder-focus>
+            <input name="contact_phone" class="input input_secondary" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+            <input name="contact_email" class="input input_secondary" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+            <input name="contact_proxy_number" class="input input_secondary" placeholder="№ доверенности*" type="text">
+            <input name="contact_proxy_date" class="datetime input input_secondary" placeholder=" Дата выдачи*" data-placeholder-focus>
         </div>
 
         <div class="filters-row">
             <div class="input-group">
                 <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
                 <label class="input input_secondary input_file">
-                    <input type="file" id="document"/>
+                    <input type="file" name="document"/>
                     Прикрепить документ
                 </label>
             </div>
 
             <div>
                 <label class="checkbox checkbox_third">
-                    <input id="isAgreeProcessing" class="checkbox__input" type="checkbox" data-agreement>
+                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" data-agreement>
                     <span class="checkbox__text">Согласен на обработку персональных данных</span>
                 </label>
                 <label class="checkbox checkbox_third">
-                    <input id="isAgreeRules" class="checkbox__input" type="checkbox" data-agreement>
+                    <input name="isAgreeRules" class="checkbox__input" type="checkbox" data-agreement>
                     <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                 </label>
             </div>

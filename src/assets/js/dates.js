@@ -15,7 +15,8 @@ document.querySelectorAll('.datetime').forEach(el => {
         });
     }
 
-    const id = el.getAttribute('id');
+    const formId = el.closest('form')?.getAttribute('id');
+    const name = el.getAttribute('name');
     
     const flatpickrOptions = {
         locale: 'ru',
@@ -38,5 +39,5 @@ document.querySelectorAll('.datetime').forEach(el => {
         delete flatpickrOptions['onChange'];
     }
 
-    window.dates[id] = flatpickr(el, flatpickrOptions);
+    window.dates[formId? `${formId}_${name}` : name] = flatpickr(el, flatpickrOptions);
 });

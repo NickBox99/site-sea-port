@@ -3,8 +3,8 @@
     <h1 class="request-pass__title">Заявка на получение разового автомобильного пропуска</h1>
 
     <div class="tabs request-pass__tabs">
-        <div data-tabs-open="pedestrian-pass" class="tab active">Пешеходный пропуск</div>
-        <div data-tabs-open="car-pass" class="tab">Автомобильный пропуск</div>
+        <div data-tabs-open="application-pass" class="tab active">Пешеходный пропуск</div>
+        <div data-tabs-open="application-auto-pass" class="tab">Автомобильный пропуск</div>
     </div>
     
     <div class="request-pass__documents request-pass-documents">
@@ -42,18 +42,18 @@
         </a>
     </div>
 
-    <form data-tabs="pedestrian-pass" id="applicationPass">
+    <form data-tabs="application-pass" id="applicationPass">
         <div class="filters-subtitle">Компания</div>
         <div class="filters-row request-pass__company">
-            <input id="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text">
-            <input id="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text">
-            <input id="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text">
-            <input id="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text">
+            <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text">
+            <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text">
+            <input name="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text">
+            <input name="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text">
         </div>
 
         <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
         <div class="filters-row request-pass__visit">
-            <textarea id="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст"></textarea>
+            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст"></textarea>
         </div>
 
         <div class="filters-subtitle request-pass__zones-title">Параметры пропуска</div>
@@ -64,19 +64,77 @@
             </label>
 
             <label class="checkbox checkbox_secondary request-pass__zone">
-                <input id="pass_zone_2"  class="checkbox__input" type="checkbox">
+                <input name="pass_zone_2"  class="checkbox__input" type="checkbox">
                 <span class="checkbox__text">Зона 2 (причалы) </span>
             </label>
 
             <label class="checkbox checkbox_secondary request-pass__zone">
-                <input id="pass_zone_3" class="checkbox__input" type="checkbox">
+                <input name="pass_zone_3" class="checkbox__input" type="checkbox">
                 <span class="checkbox__text">Зона 3 (заграничные суда) </span>
             </label>
         </div>
 
         <div class="filters-row request-pass__zones-fields">
-            <input id="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple>
-            <div id="pass_order" class="select select_secondary">
+            <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple>
+            <div name="pass_order" class="select select_secondary">
+                <div class="select__value"></div>
+                <div class="select__wrapper">
+                    <div class="select__item btn btn_secondary active" data-value="0">Пункт распоряжения правительства*</div>
+                    <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
+                    <div class="select__item btn btn_secondary" data-value="2">ООО НАУТИЛУС</div>
+                    <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
+                    <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
+                    <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
+                    <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                    <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
+                    <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
+                </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
+            </div>
+
+            <a href="#" class="file-block request-pass__pos">
+                <div class="file-block__content">
+                    <div class="file-block__title">Распоряжение Правительства РФ от 24 июня 2008 г. N 907-р (выписка)</div>
+
+                    <div class="file-block__size">
+                        36,12 kB
+                        <div class="file-block__download">@@include('../components/svg/download.html')</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </form>
+
+    <form data-tabs="application-auto-pass" id="applicationAutoPass" style="display: none;">
+        <div class="filters-subtitle">Компания</div>
+        <div class="filters-row request-pass__company">
+            <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text">
+            <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text">
+            <input name="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text">
+            <input name="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text">
+        </div>
+
+        <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
+        <div class="filters-row request-pass__visit">
+            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст"></textarea>
+        </div>
+
+        <div class="filters-subtitle request-pass__zones-title">Параметры пропуска</div>
+        <div class="request-pass__zones">
+            <label class="checkbox checkbox_secondary request-pass__zone">
+                <input class="checkbox__input checked" type="checkbox">
+                <span class="checkbox__text">Зона 1 (дорога, офисы в порту) </span>
+            </label>
+
+            <label class="checkbox checkbox_secondary request-pass__zone">
+                <input name="pass_zone_2"  class="checkbox__input" type="checkbox">
+                <span class="checkbox__text">Зона 2 (причалы) </span>
+            </label>
+        </div>
+
+        <div class="filters-row request-pass__zones-fields">
+            <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple>
+            <div name="pass_order" class="select select_secondary">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary active" data-value="0">Пункт распоряжения правительства*</div>
@@ -265,6 +323,7 @@
             </label>
             
             <button class="btn btn_primary request-pass-signature__btn" form="applicationPass" type="submit">Отправить без ЭЦП</button>
+            <button class="btn btn_primary request-pass-signature__btn" form="applicationAutoPass" type="submit">Отправить без ЭЦП</button>
         </div>
     </div>
 </div>
@@ -295,6 +354,41 @@
                 type: 'checkbox'
             },
             pass_zone_3: {
+                type: 'checkbox'
+            },
+            pass_dates: {
+                type: 'date',
+                validate: 'required'
+            },
+            pass_order: {
+                type: 'select',
+                validate: 'required'
+            },
+        }, (body) => {
+            console.log(body)
+        });
+
+        initFormValidate('applicationAutoPass', {
+            company_name: {
+                type: 'input',
+                validate: 'required'
+            },
+            company_fio_head: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            company_phone_head: {
+                type: 'input',
+                validate: 'phone'
+            },
+            company_inn: {
+                type: 'input',
+                validate: 'inn'
+            },
+            visit_purpose: {
+                type: 'input'
+            },
+            pass_zone_2: {
                 type: 'checkbox'
             },
             pass_dates: {
