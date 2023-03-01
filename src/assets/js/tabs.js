@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     
     function setVisibleTab(tab, display) {
-        const node = document.querySelector(`[data-tabs="${tab.getAttribute('data-tabs-open')}"]`);
+        const nodes = document.querySelectorAll(`[data-tabs="${tab.getAttribute('data-tabs-open')}"]`);
 
-        if (node) {
-            node.style.display = display;
+        if (nodes && nodes.length) {
+            nodes.forEach(node => node.style.display = display);
         }
     }
     
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         tabs.addEventListener('click', ({target}) => {
             
-            if (!target.classList.contains('active')) {
+            if (!target.classList.contains('active') && target.classList.contains('tab')) {
                 tabsItems.forEach(tab => {
                     tab.classList.remove('active');
 
