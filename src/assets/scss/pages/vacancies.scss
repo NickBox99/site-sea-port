@@ -1,0 +1,29 @@
+﻿.vacancies {
+  &__title {
+    margin-bottom: 30px;
+  }
+  
+  &__description {
+    margin-bottom: 80px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__description {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__title {
+      margin-bottom: 22px;
+    }
+
+    &__description {
+      margin-bottom: 40px;
+    }
+  }
+}

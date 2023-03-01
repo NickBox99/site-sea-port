@@ -1,0 +1,17 @@
+﻿.social {
+  width: 27px;
+  height: 27px;
+  color: var(--color-social);
+
+  &:hover {
+    color: var(--color-social-hover);
+  }
+
+  &:not(&:last-child) {
+    margin-right: 20px;
+  }
+
+  &s {
+    display: flex;
+  }
+}

@@ -1,0 +1,147 @@
+@import "./mapsvg";
+@import "./wrappers";
+@import "./filters";
+@import "./pagination";
+@import "./tabs";
+@import "./popup";
+@import "./accordion";
+@import "./socials";
+@import "./preview-block";
+@import "./offer-list";
+@import "./fullscreen-block";
+@import "./swiper";
+@import "./img-block";
+@import "./news-card";
+@import "./route-map";
+@import "./template-page";
+@import "./header";
+@import "./footer";
+
+.dviga {
+  display: block;
+  width: 119px;
+  color: var(--color-dviga);
+  transition: var(--transition-default);
+
+  &:hover {
+    color: var(--color-dviga-hover);
+  }
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 85px;
+  line-height: 68px;
+  letter-spacing: -0.02em;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: unset;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 34px;
+  }
+}
+
+.subtitle {
+  margin-bottom: 10px;
+  color: var(--color-blue-5);
+  animation-delay: .5s;
+
+  &_margin-middle {
+    margin-bottom: 14px;
+  }
+}
+
+.description {
+  max-width: 600px;
+  
+  &_middle {
+    max-width: 420px;
+  }
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  color: var(--color-circle);
+  background: var(--background-circle);
+  border: var(--border-circle);
+  backdrop-filter: blur(1px);
+  border-radius: 50%;
+
+  &:hover, &.active {
+    color: var(--color-white);
+    background: var(--background-circle-hover);
+    border: var(--border-circle-hover);
+  }
+}
+
+.data-label {
+  padding: 8px 18px;
+  width: max-content;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--color-data-label);
+  background: var(--background-data-label);
+  border: var(--border-data-label);
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+}
+
+.file-block {
+  display: flex;
+  color: var(--color-file-block);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  
+  &__file {
+    position: relative;
+    margin-right: 20px;
+    min-width: 34px;
+    width: 34px;
+    height: 41px;
+    color: var(--background-file-block);
+  }
+  
+  &__type {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7.7px;
+    color: var(--color-file-block);
+  }
+  
+  &__title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    transition: var(--transition-default);
+  }
+  
+  &__size {
+    display: flex;
+    font-size: 14px;
+    color: var(--color-file-block-size);
+    white-space: nowrap;
+  }
+  
+  &__download {
+    margin-left: 7px;
+    width: 10px;
+  }
+  
+  &:hover &__title {
+    color: var(--color-file-block-hover);
+  }
+}

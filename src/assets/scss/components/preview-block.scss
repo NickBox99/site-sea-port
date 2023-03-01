@@ -1,0 +1,31 @@
+﻿.preview-block {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+
+  &__title {
+    font-family: var(--font-inter);
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 120px;
+  }
+
+  &__sub {
+    font-size: 60px;
+    line-height: 72px;
+  }
+
+  @media screen and (max-width: 380px) {
+    &__title {
+      font-size: 46px;
+      line-height: 55.2px;
+    }
+  }
+}

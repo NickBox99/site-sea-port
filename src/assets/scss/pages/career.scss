@@ -1,0 +1,159 @@
+﻿.career {
+  &__title {
+    margin-bottom: 70px;
+  }
+  
+  &__preview-block {
+    margin-bottom: 156px;
+
+    &-content {
+      bottom: 57px;
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &__fullscreen-block {
+    height: 576px;
+  }
+  
+  &__offer-list {
+    grid-template-columns: repeat(3, 246px);
+    grid-gap: 60px 164px;
+    margin-bottom: 152px;
+    
+    &-description {
+      max-width: 225px;
+      width: 100%;
+    }
+  }
+  
+  &-more {
+    display: block;
+    padding: 64px 70px 70px;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    
+    &, &__title {
+      transition: var(--transition-default);
+    }
+  
+    &__title {
+      margin-bottom: 10px;
+    }
+    
+    &__description {
+      margin-bottom: 20px;
+      max-width: 393px;
+      line-height: 24px;
+    }
+
+    &:hover {
+      border: 1px solid var(--color-blue-1);
+      
+      .career-more__title {
+        color: var(--color-blue-1);
+      }
+    }
+  }
+  
+  &__career-more {
+    margin-bottom: 40px;
+  }
+  
+  &__swiper-cards {
+    margin-bottom: 90px;
+  }
+
+  @media screen and (max-width: 1120px) {
+    &__offer-list {
+      grid-column-gap: unset;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__preview-block, &__offer-list, &__swiper-cards {
+      margin-bottom: 100px;
+    }
+
+    &__fullscreen-block {
+      height: 468px;
+    }
+    
+    &-more {
+      padding: 54px 70px 60px;
+      
+      &__title {
+        margin-bottom: 7px;
+      }
+      
+      &__description {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    &__offer-list {
+      grid-template-columns: repeat(2, 246px);
+      grid-column-gap: 68px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__preview-block, &__offer-list, &__swiper-cards {
+      margin-bottom: 90px;
+    }
+
+    &-more {
+      padding: 34px 40px 40px;
+
+      &__title {
+        margin-bottom: 9px;
+        font-size: 24px;
+        line-height: 28.9px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    &__offer-list {
+      grid-template-columns: 1fr;
+      grid-row-gap: 40px;
+      
+      &-description {
+        max-width: unset;
+      }
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    &__fullscreen-block {
+      height: 216px;
+    }
+
+    &__preview-block {
+      &-content {
+        bottom: 30px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__preview-block, &__offer-list, &__swiper-cards {
+      margin-bottom: 70px;
+    }
+    
+    &__career-more {
+      margin-bottom: 30px;
+      padding: 14px 20px 20px;
+    }
+    
+    &-more__btn {
+      width: 100%;
+    }
+  }
+}

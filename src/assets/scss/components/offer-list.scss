@@ -1,0 +1,47 @@
+﻿.offer-list {
+  display: grid;
+  
+  @media screen and (max-width: 1120px) {
+    justify-content: space-between;
+  }
+
+  &-header {
+    margin-bottom: 40px;
+  }
+
+  &__icon {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__train {
+      margin-bottom: 18px;
+    }
+    
+    &__title {
+      margin-bottom: 12px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__train {
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__title {
+      margin-bottom: 12px;
+    }
+  }
+}

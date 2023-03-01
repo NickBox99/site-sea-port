@@ -1,0 +1,114 @@
+.flatpickr-calendar {
+  padding: 28px 30px;
+  width: unset;
+  color: var(--color-white);
+  background: var(--color-blue-6);
+  border: 1px solid var(--color-blue-5);
+  border-radius: 30px;
+  transform: translateY(17px);
+  box-shadow: none;
+
+  &.animate.open {
+    animation: none;
+  }
+
+
+  &:after, &:before {
+    display: none;
+  }
+}
+
+.flatpickr-input {
+  color: var(--color-white);
+}
+
+.flatpickr-current-month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: unset;
+}
+
+.flatpickr-current-month span.cur-month {
+  margin: 0;
+}
+
+.flatpickr-current-month input.cur-year, .flatpickr-current-month span.cur-month {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-white);
+}
+
+.flatpickr-months {
+  position: relative;
+}
+
+.flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month {
+  top: -9px;
+}
+
+.flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month, .flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-months .flatpickr-next-month:hover svg {
+  fill: var(--color-white);
+}
+
+.numInputWrapper span {
+  display: none;
+}
+
+.flatpickr-months .flatpickr-month {
+  margin-bottom: 13px;
+  height: 33px;
+  border-bottom: 1px solid var(--color-blue-5);
+}
+
+span.flatpickr-weekday {
+  color: var(--color-blue-5);
+}
+
+.flatpickr-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 26px;
+  height: 26px;
+  font-size: 16px;
+  color: var(--color-white);
+  border: none;
+  border-radius: 100px;
+  
+  &:hover, &.selected {
+    color: var(--color-white) !important;
+    background: var(--color-blue-2-opac40) !important;
+    backdrop-filter: blur(15px);
+  }
+}
+
+.flatpickr-days, .dayContainer {
+  width: 209px;
+  min-width: 209px;
+  max-width: 209px;
+}
+
+.dayContainer {
+  justify-content: unset;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+}
+
+.flatpickr-weekdays {
+  margin-bottom: 11px;
+  height: 18px;
+}
+
+.flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay {
+  color: var(--color-white-opac20);
+}
+
+.flatpickr-current-month .numInputWrapper {
+  width: 48px;
+  
+  &:hover {
+    background: transparent;
+  }
+}

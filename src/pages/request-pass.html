@@ -1,0 +1,312 @@
+﻿<div class="request-pass">
+    <div class="subtitle subtitle_margin-middle">ЗАЯВКА НА ПРОПУСК</div>
+    <h1 class="request-pass__title">Заявка на получение разового автомобильного пропуска</h1>
+
+    <div class="tabs request-pass__tabs">
+        <div data-tabs-open="pedestrian-pass" class="tab active">Пешеходный пропуск</div>
+        <div data-tabs-open="car-pass" class="tab">Автомобильный пропуск</div>
+    </div>
+    
+    <div class="request-pass__documents request-pass-documents">
+        
+        <a href="#" class="file-block" target="_blank">
+            <div class="file-block__file">
+                @@include('../components/svg/file.html')
+                <div class="file-block__type">xlsx</div>
+            </div>
+            
+            <div class="file-block__content">
+                <div class="file-block__title">Порядок оформления заявок</div>
+
+                <div class="file-block__size">
+                    36,12 kB
+                    <div class="file-block__download">@@include('../components/svg/download.html')</div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="file-block" target="_blank">
+            <div class="file-block__file">
+                @@include('../components/svg/file.html')
+                <div class="file-block__type">xlsx</div>
+            </div>
+
+            <div class="file-block__content">
+                <div class="file-block__title">Шаблон заявки на пешеходный пропуск</div>
+
+                <div class="file-block__size">
+                    36,12 kB
+                    <div class="file-block__download">@@include('../components/svg/download.html')</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <form data-tabs="pedestrian-pass" id="applicationPass">
+        <div class="filters-subtitle">Компания</div>
+        <div class="filters-row request-pass__company">
+            <input id="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text">
+            <input id="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text">
+            <input id="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text">
+            <input id="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text">
+        </div>
+
+        <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
+        <div class="filters-row request-pass__visit">
+            <textarea id="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст"></textarea>
+        </div>
+
+        <div class="filters-subtitle request-pass__zones-title">Параметры пропуска</div>
+        <div class="request-pass__zones">
+            <label class="checkbox checkbox_secondary request-pass__zone">
+                <input class="checkbox__input checked" type="checkbox">
+                <span class="checkbox__text">Зона 1 (дорога, офисы в порту) </span>
+            </label>
+
+            <label class="checkbox checkbox_secondary request-pass__zone">
+                <input id="pass_zone_2"  class="checkbox__input" type="checkbox">
+                <span class="checkbox__text">Зона 2 (причалы) </span>
+            </label>
+
+            <label class="checkbox checkbox_secondary request-pass__zone">
+                <input id="pass_zone_3" class="checkbox__input" type="checkbox">
+                <span class="checkbox__text">Зона 3 (заграничные суда) </span>
+            </label>
+        </div>
+
+        <div class="filters-row request-pass__zones-fields">
+            <input id="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple>
+            <div id="pass_order" class="select select_secondary">
+                <div class="select__value"></div>
+                <div class="select__wrapper">
+                    <div class="select__item btn btn_secondary active" data-value="0">Пункт распоряжения правительства*</div>
+                    <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
+                    <div class="select__item btn btn_secondary" data-value="2">ООО НАУТИЛУС</div>
+                    <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
+                    <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
+                    <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
+                    <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                    <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
+                    <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
+                </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
+            </div>
+
+            <a href="#" class="file-block request-pass__pos">
+                <div class="file-block__content">
+                    <div class="file-block__title">Распоряжение Правительства РФ от 24 июня 2008 г. N 907-р (выписка)</div>
+
+                    <div class="file-block__size">
+                        36,12 kB
+                        <div class="file-block__download">@@include('../components/svg/download.html')</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </form>
+
+<!--    <div data-tabs="pedestrian-pass" class="passes request-pass__passes">-->
+<!--        <div class="request-pass-block">-->
+<!--            <h3 class="request-pass-block__title">Пропуск # ПП_И000766</h3>-->
+<!--            -->
+<!--            <div class="filters-subtitle">Личные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input" placeholder="Фамилия*" type="text">-->
+<!--                <input class="input" placeholder="Имя*" type="text">-->
+<!--                <input class="input" placeholder="Отчество*" type="text">-->
+<!--                <input class="datetime input" placeholder="Дата рождения*" data-placeholder-focus>-->
+<!--                -->
+<!--                <input class="input" placeholder="Место рождения*" type="text">-->
+<!--                <input class="input" placeholder="Должность получателя*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="filters-subtitle">Паспортные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input" placeholder="Номер*" type="text">-->
+<!--                <input class="input" placeholder="Серия*" type="text">-->
+<!--                <input class="datetime input" placeholder="Дата выдачи*" data-placeholder-focus>-->
+<!--                <input class="input filters-col-3" placeholder="Кем выдан*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="filters-subtitle">Контактные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input filters-col-3" placeholder="Адрес регистрации*" type="text">-->
+<!--                <input class="input filters-col-3" placeholder="Фактический адрес*" type="text">-->
+<!--                <input class="input" placeholder="Контактный телефон*" type="text">-->
+<!--                <input class="input" placeholder="Электронная почта*" type="text">-->
+<!--            </div>-->
+<!--            -->
+<!--            <div class="request-pass-block__footer">-->
+<!--                <button class="btn btn_primary request-pass-block__btn">Добавить пропуск</button>-->
+<!--                <button class="btn btn_third request-pass-block__btn">Удалить пропуск</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        -->
+<!--        <div class="request-pass-block">-->
+<!--            <h3 class="request-pass-block__title">Пропуск # ПП_И000766</h3>-->
+<!--            -->
+<!--            <div class="filters-subtitle">Личные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input" placeholder="Фамилия*" type="text">-->
+<!--                <input class="input" placeholder="Имя*" type="text">-->
+<!--                <input class="input" placeholder="Отчество*" type="text">-->
+<!--                <input class="datetime input" placeholder="Дата рождения*" data-placeholder-focus>-->
+<!--                -->
+<!--                <input class="input" placeholder="Место рождения*" type="text">-->
+<!--                <input class="input" placeholder="Должность получателя*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="filters-subtitle">Паспортные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input" placeholder="Номер*" type="text">-->
+<!--                <input class="input" placeholder="Серия*" type="text">-->
+<!--                <input class="datetime input" placeholder="Дата выдачи*" data-placeholder-focus>-->
+<!--                <input class="input filters-col-3" placeholder="Кем выдан*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="filters-subtitle">Контактные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input filters-col-3" placeholder="Адрес регистрации*" type="text">-->
+<!--                <input class="input filters-col-3" placeholder="Фактический адрес*" type="text">-->
+<!--                <input class="input" placeholder="Контактный телефон*" type="text">-->
+<!--                <input class="input" placeholder="Электронная почта*" type="text">-->
+<!--            </div>-->
+<!--            -->
+<!--            <div class="request-pass-block__footer">-->
+<!--                <button class="btn btn_primary request-pass-block__btn">Добавить пропуск</button>-->
+<!--                <button class="btn btn_third request-pass-block__btn">Удалить пропуск</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div data-tabs="car-pass" style="display: none;" class="passes request-pass__passes">-->
+<!--        <div class="request-pass-block">-->
+<!--            <h3 class="request-pass-block__title">Пропуск # ПП_И000766</h3>-->
+
+<!--            <div class="filters-subtitle">Личные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input" placeholder="Фамилия*" type="text">-->
+<!--                <input class="input" placeholder="Имя*" type="text">-->
+<!--                <input class="input" placeholder="Отчество*" type="text">-->
+<!--                <input class="datetime input" placeholder="Дата рождения*" data-placeholder-focus>-->
+
+<!--                <input class="input" placeholder="Место рождения*" type="text">-->
+<!--                <input class="input" placeholder="Должность получателя*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="filters-subtitle">Паспортные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input" placeholder="Номер*" type="text">-->
+<!--                <input class="input" placeholder="Серия*" type="text">-->
+<!--                <input class="datetime input" placeholder="Дата выдачи*" data-placeholder-focus>-->
+<!--                <input class="input filters-col-3" placeholder="Кем выдан*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="filters-subtitle">Контактные данные</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <input class="input filters-col-3" placeholder="Адрес регистрации*" type="text">-->
+<!--                <input class="input filters-col-3" placeholder="Фактический адрес*" type="text">-->
+<!--                <input class="input" placeholder="Контактный телефон*" type="text">-->
+<!--                <input class="input" placeholder="Электронная почта*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="filters-subtitle">Данные автомобиля</div>-->
+<!--            <div class="filters-row request-pass-block__filters-row">-->
+<!--                <div class="select">-->
+<!--                    <div class="select__value"></div>-->
+<!--                    <div class="select__wrapper">-->
+<!--                        <div class="select__item btn btn_secondary active" data-value="0">Легковой</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="2">ООО НАУТИЛУС</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>-->
+<!--                        <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <input class="input" placeholder="Марка*" type="text">-->
+<!--                <input class="input" placeholder="Модель*" type="text">-->
+<!--                <input class="input" placeholder="Гос. номер*" type="text">-->
+<!--                <input class="input" placeholder="Цвет*" type="text">-->
+<!--            </div>-->
+
+<!--            <div class="request-pass-block__footer">-->
+<!--                <button class="btn btn_primary request-pass-block__btn">Добавить пропуск</button>-->
+<!--                <button class="btn btn_third request-pass-block__btn">Удалить пропуск</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    
+    <div class="request-pass-signature">
+        <h3 class="request-pass-signature__title">Электронно-цифровая подпись</h3>
+        
+        <div>
+            <div class="request-pass-signature__description">
+                Если ФИО в электронной подписи не совпадает с ФИО руководителя 
+                предприятия, необходимо предоставить доверенность на право подписи от 
+                имени руководителя предприятия <a href="#" target="_blank">(скачать образец)</a>
+                <br>
+                <br>
+                Внимание! Для использования ЭЦП необходимо загрузить и установить:<br>
+                - плагин КриптоПро ЭЦП Browser plug-in<br>
+                - криптопровайдер СКЗИ КриптоПро CSP
+            </div>
+
+            <label class="checkbox checkbox_third">
+                <input class="checkbox__input" type="checkbox" name="color-1" value="indigo">
+                <span class="checkbox__text">Согласен на обработку персональных данных</span>
+            </label>
+
+            <label class="checkbox checkbox_third">
+                <input class="checkbox__input" type="checkbox" name="color-1" value="indigo">
+                <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+            </label>
+            
+            <button class="btn btn_primary request-pass-signature__btn" form="applicationPass" type="submit">Отправить без ЭЦП</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        initFormValidate('applicationPass', {
+            company_name: {
+                type: 'input',
+                validate: 'required'
+            },
+            company_fio_head: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            company_phone_head: {
+                type: 'input',
+                validate: 'phone'
+            },
+            company_inn: {
+                type: 'input',
+                validate: 'inn'
+            },
+            visit_purpose: {
+                type: 'input'
+            },
+            pass_zone_2: {
+                type: 'checkbox'
+            },
+            pass_zone_3: {
+                type: 'checkbox'
+            },
+            pass_dates: {
+                type: 'date',
+                validate: 'required'
+            },
+            pass_order: {
+                type: 'select',
+                validate: 'required'
+            },
+        }, (body) => {
+            console.log(body)
+        })
+    })
+</script>

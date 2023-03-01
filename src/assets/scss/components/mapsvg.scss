@@ -1,0 +1,1887 @@
+.mapsvg {
+  /* set map height to 100px for a preloader message - */
+  /* real height will be set later by MapSVG */
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+#mapsvg {
+  height: 634px !important;
+  @media (max-width: 640.98px) {
+    height: 365px !important;
+  }
+}
+
+.mapsvg-wrap *,
+.mapsvg * {
+  outline: none !important;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.mapsvg.mapsvg-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.mapsvg.mapsvg-cursor-pointer .mapsvg-region {
+  cursor: pointer;
+}
+
+.mapsvg.mapsvg-disabled-regions .mapsvg-region {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+.mapsvg-disabled {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+.mapsvg text,
+.mapsvg tspan {
+  pointer-events: none;
+}
+
+.mapsvg svg {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /*overflow: visible !important;*/
+  max-width: none !important;
+  max-height: none !important;
+  width: 100%;
+  height: auto;
+  // height: 100vh;
+  position: relative;
+  -webkit-transition: transform .40s;
+  -webkit-transition: -webkit-transform .40s;
+  transition: -webkit-transform .40s;
+  transition: transform .40s;
+  transition: transform .40s, -webkit-transform .40s;
+  transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+}
+
+/* SMOOTH TRANSITIONS */
+
+.mapsvg.no-transitions * {
+  -webkit-transition: none !important;
+  transition: none !important;
+  transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+}
+
+.mapsvg-popover {
+  -webkit-transition: transform .40s;
+  -webkit-transition: -webkit-transform .40s;
+  transition: -webkit-transform .40s;
+  transition: transform .40s;
+  transition: transform .40s, -webkit-transform .40s;
+}
+
+.mapsvg-marker {
+  -webkit-transition: transform .40s;
+  -webkit-transition: -webkit-transform .40s;
+  transition: -webkit-transform .40s;
+  transition: transform .40s;
+  transition: transform .40s, -webkit-transform .40s;
+}
+
+.mapsvg-scrollpane {
+  -webkit-transition: transform .40s;
+  -webkit-transition: -webkit-transform .40s;
+  transition: -webkit-transform .40s;
+  transition: transform .40s;
+  transition: transform .40s, -webkit-transform .40s;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mapsvg-with-google-map.mapsvg-google-map-loading svg,
+.mapsvg-with-google-map.mapsvg-google-map-loading .mapsvg-scrollpane {
+  opacity: 0;
+}
+
+.mapsvg-google-map-loading.mapsvg-fade-in svg,
+.mapsvg-google-map-loading.mapsvg-fade-in .mapsvg-scrollpane {
+  opacity: 1;
+  -webkit-transition: opacity .30s ease-out !important;
+  transition: opacity .30s ease-out !important;
+}
+
+.mapsvg-with-google-map .mapsvg-scrollpane,
+.mapsvg-with-google-map svg,
+.mapsvg-with-google-map .mapsvg-popover,
+.mapsvg-with-google-map .mapsvg-marker {
+  -webkit-transition: transform .10s ease-out;
+  -webkit-transition: -webkit-transform .10s ease-out;
+  transition: -webkit-transform .10s ease-out;
+  transition: transform .10s ease-out;
+  transition: transform .10s ease-out, -webkit-transform .10s ease-out;
+}
+
+.mapsvg-with-google-map.scrolling * {
+  -webkit-transition-property: none !important;
+  transition-property: none !important;
+  /*!* These doesn't affect anything, but, just in case. *!*/
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.mapsvg.scrolling .mapsvg-scrollpane {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.mapsvg.mapsvg-scrollable {
+  cursor: move;
+  /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+
+.mapsvg.scrolling {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* PRELOADER */
+
+.mapsvg-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 12px !important;
+  z-index: 1;
+  padding: 7px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #f5f5f2;
+  color: #999;
+}
+
+/* ZOOM BUTTONS */
+
+.mapsvg-buttons {
+  position: absolute;
+  margin: 10px;
+  bottom: 0;
+  left: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mapsvg-btn-zoom {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 5px;
+  padding: 0;
+  display: inline-block;
+  border: 1px solid #fff;
+  cursor: pointer;
+  background-color: #009CD4 !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mapsvg-btn-zoom:before {
+  display: none;
+}
+
+.mapsvg-btn-zoom:hover {
+  border-color: #FFA13B;
+  background-color: #FFA13B !important;
+}
+
+.mapsvg-btn-zoom.in {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'%3E%3Cstyle%3E.a%7Bfill:none;stroke-linejoin:round;stroke:%23FFF;%7D%3C/style%3E%3Cline x1='9.5' y1='18.5' x2='9.5' y2='0.5' class='a'/%3E%3Cline x1='18.5' y1='9.5' x2='0.5' y2='9.5' class='a'/%3E%3C/svg%3E");
+}
+
+.mapsvg-btn-zoom.out {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='1' viewBox='0 0 19 1'%3E%3Cline x1='18.5' y1='0.5' x2='0.5' y2='0.5' style='fill:none;stroke-linejoin:round;stroke:%23FFF'/%3E%3C/svg%3E");
+}
+
+/* TOOLTIPS */
+
+.mapsvg-tooltip {
+  font-weight: normal;
+  font-size: 12px;
+  font-family: Helvetica, Arial;
+  color: #000000;
+  position: absolute;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  z-index: 999999;
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 4px 7px;
+  max-width: 600px;
+  opacity: 0;
+  -webkit-transition: opacity .16s ease-out;
+  transition: opacity .16s ease-out;
+  pointer-events: none;
+  text-align: left;
+}
+
+.mapsvg-tooltip.mapsvg-tooltip-visible {
+  opacity: 1;
+}
+
+.mapsvg-tooltip.mapsvg-tt-top {
+  -webkit-transform: translate(-50%, -100%) translateY(-10px);
+  transform: translate(-50%, -100%) translateY(-10px);
+}
+
+.mapsvg-tooltip.mapsvg-tt-left {
+  -webkit-transform: translate(-100%, -50%) translateX(-10px);
+  transform: translate(-100%, -50%) translateX(-10px);
+}
+
+.mapsvg-tooltip.mapsvg-tt-bottom {
+  -webkit-transform: translate(-50%, 25px);
+  transform: translate(-50%, 25px);
+}
+
+.mapsvg-tooltip.mapsvg-tt-right {
+  -webkit-transform: translate(15px, -50%);
+  transform: translate(15px, -50%);
+}
+
+.mapsvg-tooltip.mapsvg-tt-top-left {
+  -webkit-transform: translate(-100%, -100%) translate(10px, -10px);
+  transform: translate(-100%, -100%) translate(10px, -10px);
+}
+
+.mapsvg-tooltip.mapsvg-tt-top-right {
+  -webkit-transform: translateY(-100%) translateY(-10px);
+  transform: translateY(-100%) translateY(-10px);
+}
+
+.mapsvg-tooltip.mapsvg-tt-bottom-left {
+  -webkit-transform: translate(-100%, 25px) translateX(10px);
+  transform: translate(-100%, 25px) translateX(10px);
+}
+
+.mapsvg-tooltip.mapsvg-tt-bottom-right {
+  -webkit-transform: translateY(25px);
+  transform: translateY(25px);
+}
+
+/* POPOVERS */
+
+.mapsvg-popover .mapsvg-popover-close {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+.mapsvg-popover img {
+  max-width: 100%;
+}
+
+.mapsvg-popover-close {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  transform-origin: 100% 0;
+  -webkit-transform-origin: 100% 0;
+  transform: scale(0.25);
+  -webkit-transform: scale(0.25);
+}
+
+.mapsvg-auto-height {
+  position: relative;
+}
+
+.mapsvg-popover-close:hover::before,
+.mapsvg-popover-close:hover::after {
+  background: #666;
+}
+
+.mapsvg-popover-close::before,
+.mapsvg-popover-close::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: #000;
+}
+
+@-moz-document url-prefix()  {
+  .mapsvg-popover-close::before,
+  .mapsvg-popover-close::after {
+    height: 3px;
+  }
+}
+
+.mapsvg-popover-close::before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.mapsvg-popover-close::after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.mapsvg-popover-close.big {
+  -webkit-transform: scale(3);
+  transform: scale(3);
+}
+
+.mapsvg-popover-close.hairline::before,
+.mapsvg-popover-close.hairline::after {
+  height: 2px;
+}
+
+.mapsvg-popover-close.thick::before,
+.mapsvg-popover-close.thick::after {
+  height: 4px;
+  margin-top: -2px;
+}
+
+.mapsvg-popover-close.black::before,
+.mapsvg-popover-close.black::after {
+  height: 8px;
+  margin-top: -4px;
+}
+
+.mapsvg-popover-close.heavy::before,
+.mapsvg-popover-close.heavy::after {
+  height: 12px;
+  margin-top: -6px;
+}
+
+.mapsvg-popover-close.pointy::Before,
+.mapsvg-popover-close.pointy::after {
+  width: 200%;
+  left: -50%;
+}
+
+.mapsvg-popover-close.rounded::before,
+.mapsvg-popover-close.rounded::after {
+  border-radius: 5px;
+}
+
+.mapsvg-popover-close.blades::before,
+.mapsvg-popover-close.blades::after {
+  border-radius: 5px 0;
+}
+
+.mapsvg-popover-close.warp::before,
+.mapsvg-popover-close.warp::after {
+  border-radius: 120% 0;
+}
+
+.mapsvg-popover-close.fat::before,
+.mapsvg-popover-close.fat::after {
+  border-radius: 100%;
+}
+
+.mapsvg-popover .mapsvg-popover-content {
+  overflow-y: auto;
+}
+
+.mapsvg-popover {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 15px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px 1px rgba(0, 0, 0, 0.5);
+  color: #000;
+  display: none;
+  font-size: 12px;
+  font-family: 'Helvetica',sans-serif;
+  /*padding: 15px 10px 7px 10px;*/
+  position: absolute;
+  width: 250px;
+  min-width: 100px;
+  max-width: 100%;
+  max-height: 300px;
+  min-height: 55px;
+  bottom: 100%;
+  margin-bottom: 6px;
+  transform: translate(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  z-index: 2;
+}
+
+.mapsvg-auto-height {
+  position: relative;
+}
+
+.mapsvg-popover .mapsvg-controller-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mapsvg-popover .mapsvg-controller-view-toolbar + .mapsvg-controller-view-wrap .mapsvg-controller-view-content {
+  padding-top: 0;
+}
+
+.mapsvg-popover .mapsvg-controller-view-toolbar {
+  height: 20px;
+}
+
+.mapsvg-popover .mapsvg-popover-content {
+  overflow-y: auto;
+}
+
+.mapsvg-popover:before {
+  border-top: 7px solid white;
+  border-top-color: inherit;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  bottom: -7px;
+  content: '';
+  display: block;
+  left: 50%;
+  margin-left: -7px;
+  position: absolute;
+}
+
+.mapsvg-popover.mapsvg-popover-visible {
+  display: block;
+}
+
+.mapsvg-popover.mapsvg-popover-animate {
+  -webkit-animation: fade-in .2s linear 1;
+  /* , move-up .2s ease-out */
+  -moz-animation: fade-in .2s linear 1;
+  /* , move-up .2s ease-out */
+  -ms-animation: fade-in .2s linear 1;
+  /* , move-up .2s ease-out */
+}
+
+/* CHOROPLETH MAPS */
+
+.mapsvg-gauge {
+  background-color: #ffffff;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  max-width: 50%;
+  min-width: 10%;
+  font-size: 11px !important;
+  line-height: 15px !important;
+  color: #666666;
+  padding: 0px 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+.mapsvg-gauge table {
+  width: auto;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.mapsvg-gauge .mapsvg-gauge-gradient {
+  min-width: 100px;
+}
+
+.mapsvg-gauge table tr {
+  border: 0 !important;
+}
+
+.mapsvg-gauge table td {
+  padding: 2px 7px;
+  border: 0 !important;
+}
+
+/* DIRECTORY */
+
+.mapsvg-wrap {
+  position: relative;
+}
+
+.mapsvg-wrap .mapsvg-directory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  max-height: 100%;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.mapsvg-wrap .mapsvg-directory.mapsvg-directory-right {
+  left: auto;
+  right: 0;
+}
+
+.mapsvg-controller-view {
+  position: relative;
+  height: 100%;
+  pointer-events: auto;
+  /*border-right: 1px solid #eee;*/
+}
+
+.mapsvg-controller-view-wrap.nano {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.mapsvg-controller-view-content {
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mapsvg-mobile-buttons {
+  height: 50px;
+  background-color: #eee;
+  position: relative;
+  display: none;
+}
+
+.mapsvg-button-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  line-height: 50px;
+  cursor: pointer;
+  color: #222;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.mapsvg-button-map {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 50%;
+  bottom: 0;
+  line-height: 50px;
+  cursor: pointer;
+  color: #444;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-right: 0;
+}
+
+.mapsvg-button-menu:hover,
+.mapsvg-button-map:hover {
+  background-color: #e2e2e2;
+}
+
+.mapsvg-button-menu.active,
+.mapsvg-button-map.active {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #fff;
+}
+
+.mapsvg-directory-search-wrap-margin {
+  position: relative;
+  height: 34px;
+}
+
+.mapsvg-directory-search {
+  height: 34px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 3px 15px 3px 15px;
+  font-weight: normal;
+  width: 100%;
+}
+
+.mapsvg-directory-search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mapsvg-filter-btn-ok {
+  display: none;
+}
+
+.mapsvg-directory-list-wrap:after,
+.mapsvg-details-view:after {
+  content: " ";
+  height: 100%;
+  position: absolute;
+  right: -15px;
+  width: 15px;
+  top: 0;
+}
+
+.mapsvg-directory-search:active,
+.mapsvg-directory-search:focus {
+  border: 1px solid #eee !important;
+}
+
+.mapsvg-directory-search:focus,
+.mapsvg-directory-search:active {
+  outline: 0 !important;
+  -webkit-appearance: none !important;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.mapsvg-directory-list-wrap {
+  border-right: 1px solid #e5e5e5;
+  max-height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  z-index: 1;
+  background: #fafafa;
+  position: relative;
+  height: 48px;
+}
+
+.mapsvg-directory-list {
+  overflow-y: scroll;
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.mapsvg-directory-item {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.mapsvg-directory-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.mapsvg-directory-item.hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.mapsvg-directory-item.selected {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+.mapsvg-directory-item:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.mapsvg-wrap .mapsvg {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  min-width: 0;
+  /* firefox flex fix */
+}
+
+.mapsvg-directory {
+  min-width: 0;
+  /* firefox flex fix */
+  position: relative;
+  z-index: 2;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mapsvg-directory.mapsvg-directory-overlapping .mapsvg-details-view {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.mapsvg-directory ul {
+  margin: 0;
+}
+
+.mapsvg-directory li {
+  list-style: none;
+}
+
+.mapsvg-directory-filter-wrap {
+  padding-top: 7px;
+}
+
+.mapsvg-directory-filter-wrap:first-child {
+  padding-top: 0;
+}
+
+.mapsvg-directory-filter-wrap:empty {
+  display: none;
+}
+
+.mapsvg-filter-tag {
+  background: #ddd;
+  color: #666;
+  display: inline-block;
+  padding: 0 8px;
+  line-height: 27px;
+  border-radius: 5px;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mapsvg-filter-delete {
+  display: inline-block;
+  color: #444;
+  font-size: 16px;
+  padding-left: 3px;
+}
+
+.mapsvg-filter-delete:hover {
+  color: #999;
+  cursor: pointer;
+}
+
+.mapsvg-directory-search-wrap {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* DETAILS VIEW */
+
+.mapsvg-details-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.mapsvg-details-container > div {
+  background-color: #fafafa;
+}
+
+.mapsvg-details-container .mapsvg-controller-view-content {
+  padding-top: 0;
+}
+
+.mapsvg-details-container.near {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.mapsvg-details-container.top {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.mapsvg-details-container:empty {
+  display: none;
+}
+
+.mapsvg-details-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fafafa;
+  padding: 10px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fafafa;
+  -webkit-transition: transform .2s;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.over .mapsvg-details-view {
+  opacity: 0;
+}
+
+.mapsvg-details-view-toolbar {
+  position: relative;
+  height: 25px;
+}
+
+.mapsvg-details-view.mapsvg-over {
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.mapsvg-details-view.mapsvg-over:after {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.mapsvg-details-view.mapsvg-near {
+  width: 100%;
+  z-index: -1;
+}
+
+.mapsvg-details-view-content.nano {
+  position: absolute;
+  top: 35px;
+  bottom: 0px;
+  left: 10px;
+  right: 0px;
+}
+
+.mapsvg-details-view-content.nano .nano-content {
+  right: 15px;
+}
+
+.mapsvg-controller-view-toolbar {
+  padding: 7px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mapsvg-controller-view-toolbar:empty {
+  display: none;
+}
+
+.mapsvg-controller-view-toolbar:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.mapsvg-details-close {
+  cursor: pointer;
+  background: url("../img/close.svg");
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: relative;
+  float: right;
+}
+
+.mapsvg-details-close:hover {
+  opacity: .6;
+}
+
+/* MARKERS */
+
+.mapsvg-marker {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  max-width: none !important;
+}
+
+.mapsvg-marker-hidden {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.mapsvg-marker-visible {
+  display: block !important;
+}
+
+/* LAYERS */
+
+.mapsvg-layers-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.mapsvg-layer-gm {
+  pointer-events: none;
+}
+
+/* PAGINATION  (bootstrap styles) */
+
+.mapsvg-pagination .pager {
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: center;
+  list-style: none;
+}
+
+.mapsvg-pagination .pager li {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.mapsvg-pagination .pager li > a,
+.mapsvg-pagination .pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  line-height: 1.5;
+  font-family: Helvetica;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
+  font-size: 13px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.mapsvg-pagination .pager li > a:hover,
+.mapsvg-pagination .pager li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+
+.mapsvg-pagination .pager .next > a,
+.mapsvg-pagination .pager .next > span {
+  float: right;
+}
+
+.mapsvg-pagination .pager .previous > a,
+.mapsvg-pagination .pager .previous > span {
+  float: left;
+}
+
+.mapsvg-pagination .pager .disabled > a,
+.mapsvg-pagination .pager .disabled > a:hover,
+.mapsvg-pagination .pager .disabled > a:focus,
+.mapsvg-pagination .pager .disabled > span {
+  color: #ccc;
+  cursor: not-allowed;
+  background-color: #fff;
+}
+
+.mapsvg-pagination li.disabled {
+  pointer-events: none;
+}
+
+/* pagination when directory is switched off */
+
+.mapsvg > .mapsvg-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 7px;
+}
+
+.mapsvg > .mapsvg-pagination ul {
+  margin: 0;
+}
+
+.mapsvg-filter-label:empty {
+  display: none;
+}
+
+#mapsvg-admin .mapsvg-filter-label:empty {
+  display: block !important;
+}
+
+/* GROUPS CONTROL */
+
+.mapsvg-layers-control {
+  max-width: 200px;
+  position: absolute;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mapsvg-layers-control.mapsvg-top-left {
+  top: 0px;
+  left: 0px;
+}
+
+.mapsvg-layers-control.mapsvg-top-right {
+  top: 0px;
+  right: 0px;
+}
+
+.mapsvg-layers-control.mapsvg-bottom-right {
+  bottom: 0px;
+  right: 0px;
+}
+
+.mapsvg-layers-control.mapsvg-bottom-left {
+  bottom: 0px;
+  left: 0px;
+}
+
+.mapsvg-layers-control .mapsvg-layers-label {
+  height: 23px;
+  line-height: 23px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0 7px;
+  cursor: pointer;
+}
+
+.mapsvg-layers-label {
+  pointer-events: all;
+}
+
+.mapsvg-layers-label:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid\9;
+  border-top: 0;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.mapsvg-layers-control.closed .mapsvg-layers-list-wrap {
+  display: none;
+}
+
+.mapsvg-layers-control.closed .mapsvg-layers-label:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 0;
+}
+
+.mapsvg-layers-list-wrap {
+  position: absolute;
+  top: 33px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  pointer-events: none;
+}
+
+.mapsvg-layers-list-wrap .nano {
+  height: 100% !important;
+}
+
+.mapsvg-layers-item {
+  padding: 3px 7px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.mapsvg-layers-item label {
+  cursor: pointer;
+}
+
+/* FLOORS */
+
+.mapsvg-floors-control {
+  max-width: 200px;
+  position: absolute;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mapsvg-floors-control.mapsvg-top-left {
+  top: 0px;
+  left: 0px;
+}
+
+.mapsvg-floors-control.mapsvg-top-right {
+  top: 0px;
+  right: 0px;
+}
+
+.mapsvg-floors-control.mapsvg-bottom-right {
+  bottom: 0px;
+  right: 0px;
+}
+
+.mapsvg-floors-control.mapsvg-bottom-left {
+  bottom: 0px;
+  left: 0px;
+}
+
+.mapsvg-floors-control .mapsvg-floors-label {
+  height: 23px;
+  line-height: 23px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0 7px;
+  cursor: pointer;
+}
+
+.mapsvg-floors-label {
+  pointer-events: all;
+}
+
+.mapsvg-floors-label:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid\9;
+  border-top: 0;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.mapsvg-floors-control.closed .mapsvg-floors-list-wrap {
+  display: none;
+}
+
+.mapsvg-floors-control.closed .mapsvg-floors-label:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 0;
+}
+
+.mapsvg-floors-list-wrap {
+  position: absolute;
+  top: 33px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+.mapsvg-floors-list-wrap .nano {
+  height: 100% !important;
+}
+
+.mapsvg-floors-item {
+  padding: 3px 7px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.mapsvg-floors-item label {
+  cursor: pointer;
+}
+
+.mapsvg-no-results {
+  padding: 10px;
+  color: #666;
+}
+
+.mapsvg-layers-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* MOBILE DEVICES */
+
+/* ANIMATIONS */
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*! jQuery UI - v1.12.1 - 2018-07-18
+* http://jqueryui.com
+* Includes: core.css, datepicker.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?scope=&folderName=base&cornerRadiusShadow=8px&offsetLeftShadow=0px&offsetTopShadow=0px&thicknessShadow=5px&opacityShadow=30&bgImgOpacityShadow=0&bgTextureShadow=flat&bgColorShadow=666666&opacityOverlay=30&bgImgOpacityOverlay=0&bgTextureOverlay=flat&bgColorOverlay=aaaaaa&iconColorError=cc0000&fcError=5f3f3f&borderColorError=f1a899&bgTextureError=flat&bgColorError=fddfdf&iconColorHighlight=777620&fcHighlight=777620&borderColorHighlight=dad55e&bgTextureHighlight=flat&bgColorHighlight=fffa90&iconColorActive=ffffff&fcActive=ffffff&borderColorActive=003eff&bgTextureActive=flat&bgColorActive=007fff&iconColorHover=555555&fcHover=2b2b2b&borderColorHover=cccccc&bgTextureHover=flat&bgColorHover=ededed&iconColorDefault=777777&fcDefault=454545&borderColorDefault=c5c5c5&bgTextureDefault=flat&bgColorDefault=f6f6f6&iconColorContent=444444&fcContent=333333&borderColorContent=dddddd&bgTextureContent=flat&bgColorContent=ffffff&iconColorHeader=444444&fcHeader=333333&borderColorHeader=dddddd&bgTextureHeader=flat&bgColorHeader=e9e9e9&cornerRadius=3px&fwDefault=normal&fsDefault=1em&ffDefault=Arial%2CHelvetica%2Csans-serif
+* Copyright jQuery Foundation and other contributors; Licensed MIT */
+
+/* Layout helpers
+----------------------------------*/
+
+.ui-helper-hidden {
+  display: none;
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+}
+
+.ui-helper-clearfix:after {
+  clear: both;
+}
+
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: Alpha(Opacity=0);
+  /* support: IE8 */
+}
+
+.ui-front {
+  z-index: 100;
+}
+
+/* Interaction Cues
+----------------------------------*/
+
+.ui-state-disabled {
+  cursor: default !important;
+  pointer-events: none;
+}
+
+/* Icons
+----------------------------------*/
+
+.ui-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -.25em;
+  position: relative;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.ui-widget-icon-block {
+  left: 50%;
+  margin-left: -8px;
+  display: block;
+}
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ui-datepicker {
+  width: 300px;
+  padding: 20px 15px 10px;
+  display: none;
+  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: #fff;
+  z-index: 9 !important;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: .2em 0;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 2px;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .3;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='21' viewBox='0 0 10 21' fill='none'%3E%3Cpath d='M9.5 2L7.6 0.6 0.3 10.7 7.6 20.8 9.5 19.4 3.1 10.7 9.5 2Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='21' viewBox='0 0 10 21' fill='none'%3E%3Cpath d='M9.5 2L7.6 0.6 0.3 10.7 7.6 20.8 9.5 19.4 3.1 10.7 9.5 2Z' fill='black'/%3E%3C/svg%3E%0A");
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 1px;
+}
+
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 1px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+  margin: 1px 7px;
+  width: 40%;
+  text-align: right;
+  font-size: 20px;
+  padding: 2px;
+  border: 0;
+}
+
+.ui-datepicker .ui-datepicker-title .ui-datepicker-month {
+  color: #4A4A4A;
+}
+
+.ui-datepicker .ui-datepicker-title .ui-datepicker-year {
+  color: #009CD4;
+}
+
+.ui-datepicker table {
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+  margin: 15px 0 5px;
+}
+
+.ui-datepicker th {
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0;
+  opacity: .5;
+  color: #000;
+}
+
+.ui-datepicker td {
+  border: 0;
+  text-align: center;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: block;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #4A4A4A;
+  border-radius: 100%;
+}
+
+.ui-datepicker td span:hover,
+.ui-datepicker td a:hover {
+  background: #f4f4f4;
+}
+
+.ui-priority-secondary {
+  opacity: .4;
+}
+
+.ui-state-highlight a {
+  background: #55BFEC !important;
+  color: #fff !important;
+}
+
+.ui-state-active {
+  color: #fff !important;
+  background: #FFA13B !important;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em .6em;
+  width: auto;
+  overflow: visible;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+
+/* with multiple calendars */
+
+.ui-datepicker.ui-datepicker-multi {
+  width: auto;
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left;
+}
+
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em;
+}
+
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%;
+}
+
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%;
+}
+
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%;
+}
+
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0;
+}
+
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left;
+}
+
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0;
+}
+
+.mapsvg-wrap *,
+.mapsvg * {
+  font-family: Helvetica, sans-serif !important;
+}
+
+.page {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  right: 0;
+  width: calc(100% - 16.6%);
+  height: calc(100% - 210px);
+  z-index: 2;
+}
+
+.page__gomain {
+  width: 60px;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 6.667L33.333 0L20 13.333L6.667 0L0 6.667L13.333 20L0 33.333L6.667 40L20 26.667L33.333 40L40 33.333L26.667 20L40 6.667Z' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;
+  position: absolute;
+  top: -80px;
+  right: 50px;
+  display: block;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.page__gomain:hover {
+  opacity: .8;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.page-heading {
+  font-size: 64px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: -90px;
+  left: 0;
+  color: #fff;
+}
+
+.page__close {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M40 6.7L33.3 0 20 13.3 6.7 0 0 6.7 13.3 20 0 33.3 6.7 40 20 26.7 33.3 40 40 33.3 26.7 20 40 6.7Z' fill='white'/%3E%3C/svg%3E");
+}
+
+.page-wrapper {
+  height: 100%;
+  padding-top: 55px;
+  background: #fff;
+}
+
+.page-leftcol {
+  width: 100%;
+}
+
+@-webkit-keyframes wheel {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wheel {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes wheelp {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes wheelp {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes wheela {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wheela {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+
+.maps {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.maps .plan-item {
+  background: #009CD4;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.maps .plan-item .mapsvg-wrap {
+  height: 100% !important;
+  background: #009CD4 !important;
+}
+
+.maps .plan-item .mapsvg-wrap .mapsvg {
+  height: 100% !important;
+  background: #009CD4 !important;
+  padding: 0 !important;
+}
+
+.mapsvg {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+@media (max-width: 812px) {
+  /* 812px = iPhone X, all others phones are smaller */
+
+  body .mapsvg-details-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+  }
+
+  body.mapsvg-fullscreen-popovers .mapsvg-popover {
+    -webkit-transform: none !important;
+    transform: none !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: fixed;
+    height: 100%;
+    min-height: 100%;
+    z-index: 999999999;
+  }
+
+  body.mapsvg-fullscreen-popovers .mapsvg-popover.mapsvg-popover-animate {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+
+  body.mapsvg-fullscreen-popovers .mapsvg-popover:before {
+    display: none !important;
+  }
+
+  /* zoom buttons for mobile devices */
+
+  .mapsvg-btn-zoom.in:before,
+  .mapsvg-btn-zoom.out:before {
+    top: 15px;
+    left: 6px;
+    height: 1px;
+    width: 20px;
+  }
+
+  .mapsvg-btn-zoom.in:after {
+    top: 6px;
+    left: 15px;
+    height: 21px;
+    width: 1px;
+  }
+
+  .mapsvg-popover {
+    padding-top: 20px;
+  }
+
+  .mapsvg-popover-close {
+    top: 3px !important;
+    right: 3px !important;
+    z-index: 999;
+    -webkit-transform: scale(0.35);
+    transform: scale(0.35);
+  }
+
+  .mapsvg-mobile-buttons {
+    display: block;
+  }
+
+  .mapsvg-button-map,
+  .mapsvg-button-menu {
+    display: block;
+  }
+
+  .mapsvg-wrap {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .mapsvg-wrap .mapsvg-directory {
+    width: 100% !important;
+  }
+
+  /* switch "near" to "over" on mobiles */
+
+  .mapsvg-details-view {
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .mapsvg-details-container.near {
+    z-index: 3 !important;
+    left: 0 !important;
+  }
+
+  .mapsvg-controller-view {
+    width: 100% !important;
+  }
+
+  .mapsvg-directory.closed {
+    /*left: -100%;*/
+    display: none;
+  }
+
+  .mapsvg-directory {
+    overflow: visible !important;
+  }
+
+  /*
+    .mapsvg-directory-filter-wrap {
+        padding: 20px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        background-color: white;
+        overflow: scroll;
+        z-index: 9999000;
+    }
+    .mapsvg-filter-btn-ok {
+        display: block;
+        margin-top: 15px;
+    }
+    */
+}
+
+@media screen and (max-width: 767.98px) {
+  .maps .plan-item .mapsvg-wrap .mapsvg {
+    height: auto !important;
+    padding-bottom: 51.1111% !important;
+  }
+}

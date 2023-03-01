@@ -1,0 +1,40 @@
+﻿.fleet-processing {
+  
+  &__route-map {
+    margin-top: 40px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__title {
+      margin-top: -20px;
+    }
+
+    &__route-map {
+      margin-top: 76px;
+    }
+  }
+
+  @media screen and (max-width: 840px) {
+    &__route-map {
+      margin-top: 50px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__title {
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    &__tabs {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__title, &__route-map {
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+﻿.port-services {
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    
+    &__service {
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      border-radius: 8px;
+      background: var(--color-blue-4);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      transition: var(--transition-default);
+
+      &:not(&:hover) {
+        background-image: unset !important;
+      }
+
+      &:hover {
+        .port-services-cards__title {
+          color: var(--color-blue-1);
+        }
+      }
+    }
+    
+    &__icon {
+      margin-right: 30px;
+    }
+    
+    &__title {
+      margin: 0;
+    }
+  }
+  
+  @media screen and (max-width: 1060px) {
+    &-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    &-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &-cards {
+      &__title {
+        font-size: 18px;
+        line-height: 21.6px;
+      }
+
+      &__service {
+        padding: 20px;
+      }
+
+      &__icon {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 330px) {
+    &-cards__service {
+      padding: 18px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__title {
+      margin-bottom: 40px;
+    }
+  }
+}

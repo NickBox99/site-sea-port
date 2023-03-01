@@ -1,0 +1,90 @@
+﻿//animate-text-top
+.animate-text-top {
+  display: inline-block;
+  color: transparent !important;
+}
+.animate-text-vertical {
+  position: relative;
+  overflow: hidden;
+  transform: rotate(180deg);
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    animation: animate-text-vertical-on .5s linear forwards;
+    animation-delay: inherit;
+  }
+
+  &__content {
+    display: block;
+    transform: rotate(180deg);
+  }
+
+  &__container {
+    color: transparent !important;
+  }
+}
+
+@keyframes animate-text-vertical-on {
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes animate-text-vertical-off {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: .7s fade-in-on ease forwards;
+}
+
+// fade-in 
+@keyframes fade-in-on {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-off {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show-left {
+
+  from {left:-100%;}
+
+  to {left:0;}
+
+}
+
+@keyframes show-right {
+
+  from {right:-100%;}
+
+  to {right:0;}
+
+}
+
+.animation-off {
+  .animate-text-vertical__wrapper {
+    animation: none;
+  }
+}

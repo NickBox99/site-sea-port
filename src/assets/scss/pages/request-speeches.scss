@@ -1,0 +1,48 @@
+.request-speeches {
+  &__description {
+    margin-bottom: 70px;
+  }
+  
+  &__comment {
+    height: 64px;
+    overflow: hidden;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__title {
+      margin-bottom: 20px;
+    }
+    
+    &__comment {
+      height: 160px;
+    }
+    
+    &__btn {
+      grid-area: 1/2;
+    }
+  }
+
+  @media screen and (max-width: 730px) {
+    &__comment {
+      grid-column-end: unset;
+      height: 144px;
+    }    
+    
+    &__btn {
+      grid-area: unset;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__description {
+      margin-bottom: 50px;
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__btn {
+      padding: 12px 0;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+<div class="request-speeches">
+    <div class="subtitle subtitle_margin-middle">ЗАЯВКА НА ДОСМОТР</div>
+    <h1 class="request-speeches__title">Заявка на выставление контейнера</h1>
+    <div class="request-speeches__description description description_middle">
+        Начальнику контейнерного терминала.<br>
+        Прошу Вас на основании требования таможни
+        выставить для досмотра следующие контейнеры:</div>
+    
+    <form id="applicationForInspection" autocomplete="off">
+        <div class="filters-subtitle">Контейнер</div>
+        <div class="filters-row">
+            <input id="container_number_ktk" class="input input_secondary" placeholder="Номер КТК*" type="text">
+            <div id="container_type_of_packaging" class="select select_secondary">
+                <div class="select__value"></div>
+                <div class="select__wrapper">
+                    <div class="select__item btn btn_secondary active" data-value="0">Тип упаковки*</div>
+                    <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
+                    <div class="select__item btn btn_secondary" data-value="2">ООО НАУТИЛУС</div>
+                    <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
+                    <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
+                    <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
+                    <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                    <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
+                    <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
+                </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
+            </div>
+            <div id="container_type_of_inspection" class="select select_secondary">
+                <div class="select__value"></div>
+                <div class="select__wrapper">
+                    <div class="select__item btn btn_secondary active" data-value="0">Вид досмотра*</div>
+                    <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
+                    <div class="select__item btn btn_secondary" data-value="2">ООО НАУТИЛУС</div>
+                    <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
+                    <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
+                    <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
+                    <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                    <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
+                    <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
+                </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
+            </div>
+
+            <input id="container_date_ktk" class="datetime input input_secondary" placeholder=" Дата подачи КТК*" data-placeholder-focus>
+            <textarea id="container_comment" class="textarea textarea_secondary filters-col-2 request-speeches__comment" placeholder="Комментарий" type="text"></textarea>
+        </div>
+
+        <div class="filters-subtitle">Представитель на досмотровой площадке</div>
+        <div class="filters-row">
+            <input id="member_surname" class="input input_secondary" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
+            <input id="member_name" class="input input_secondary" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+            <input id="member_patronymic" class="input input_secondary" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+        </div>
+
+        <div class="filters-subtitle">Контактные данные</div>
+        <div class="filters-row">
+            <input id="contact_phone" class="input input_secondary" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+            <input id="contact_email" class="input input_secondary" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+            <input id="contact_proxy_number" class="input input_secondary" placeholder="№ доверенности*" type="text">
+            <input id="contact_proxy_date" class="datetime input input_secondary" placeholder=" Дата выдачи*" data-placeholder-focus>
+        </div>
+
+        <div class="filters-row">
+            <div class="input-group">
+                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                <label class="input input_secondary input_file">
+                    <input type="file" id="document"/>
+                    Прикрепить документ
+                </label>
+            </div>
+
+            <div>
+                <label class="checkbox checkbox_third">
+                    <input id="isAgreeProcessing" class="checkbox__input" type="checkbox" data-agreement>
+                    <span class="checkbox__text">Согласен на обработку персональных данных</span>
+                </label>
+                <label class="checkbox checkbox_third">
+                    <input id="isAgreeRules" class="checkbox__input" type="checkbox" data-agreement>
+                    <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+                </label>
+            </div>
+
+            <button class="btn btn_primary btn_w-100 btn_large request-speeches__btn" type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+
+<div id="request-speeches-sent" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__header">
+            <div class="popup__title">Ваша заявка отправлена</div>
+            <div class="popup__cross">@@include('../components/svg/cross.html')</div>
+        </div>
+
+        <div class="popup__content">
+            Если у Вас нет постоянного автомобильного пропуска, для нахождения на территории порта Вам необходимо отправить заявку на предоставление РАЗОВОГО
+            <a href="#" class="popup__link" target="_blank">автомобильного&nbsp;пропуска</a>
+        </div>
+
+        <button class="popup__btn btn btn_primary">Вернуться на сайт</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const applicationSentPopup = new Popup('#request-speeches-sent');
+
+        initFormValidate('applicationForInspection', {
+            container_number_ktk: {
+                type: 'input',
+                validate: 'required'
+            },
+            container_comment: {
+                type: 'input'
+            },
+            container_date_ktk: {
+                type: 'date',
+                validate: 'required'
+            },
+            container_type_of_packaging: {
+                type: 'select',
+                validate: 'required'
+            },
+            container_type_of_inspection: {
+                type: 'select',
+                validate: 'required'
+            },
+            member_surname: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            member_name: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            member_patronymic: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            contact_phone: {
+                type: 'input',
+                validate: 'phone'
+            },
+            contact_email: {
+                type: 'input',
+                validate: 'email'
+            },
+            contact_proxy_number: {
+                type: 'input',
+                validate: 'required'
+            },
+            contact_proxy_date: {
+                type: 'date',
+                validate: 'required'
+            },
+            document: {
+                type: 'file'
+            },
+            isAgreeProcessing: {
+                type: 'checkbox',
+                validate: 'required'
+            },
+            isAgreeRules: {
+                type: 'checkbox',
+                validate: 'required'
+            }
+        }, 
+
+        (body) => {
+            fetch(`${window.config.host}/ajax/form.php`, {
+                method: 'POST',
+                body
+            }).then(() => applicationSentPopup.show());
+        });
+    });
+</script>

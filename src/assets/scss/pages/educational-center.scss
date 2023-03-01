@@ -1,0 +1,157 @@
+﻿.educational-center {
+  &__title {
+    margin-bottom: 30px;
+  }
+  
+  &__description {
+    margin-bottom: 70px;
+  }
+  
+  &__preview-block, &__offer-list {
+    margin-bottom: 156px;
+  }
+  
+  &__offer-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 70px 30px;
+  }
+  
+  &__accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 36px;
+  }
+  
+  &__breadcrumb {
+    color: var(--color-blue-20);
+    
+    &s {
+      font-size: 18px;
+      line-height: 21.6px;
+    }
+  }
+  
+  &__fullscreen-block {
+    height: 576px;
+  }
+
+  @media screen and (max-width: 1090px) {
+    &__preview-block-content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px 103px;
+    }
+
+    &__fullscreen-block {
+      height: 468px;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__description {
+      max-width: 100%;
+    }
+    
+    &__preview-block, &__offer-list {
+      margin-bottom: 100px;
+    }
+
+    &__offer-list {
+      grid-gap: 60px 100px;
+    }
+    
+    &__accordion-header {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and (max-width: 885px) {
+    &__offer-list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 68px;
+    }
+
+    &__accordion-header {
+      flex-direction: column;
+    }
+
+    &__breadcrumbs {
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: 835px) {
+    &__preview-block-content {
+      grid-template-columns: 1fr;
+      grid-gap: 33px;
+    }
+
+    &__fullscreen-block {
+      height: 688px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__description {
+      margin-bottom: 48px;
+    }
+
+    &__preview-block {
+      margin-bottom: 90px;
+    }
+
+    &__offer-list {
+      margin-bottom: 85px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &__offer-list {
+      grid-template-columns: 1fr;
+      grid-row-gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    &__slash {
+      display: none;
+    }
+    
+    &__breadcrumb {
+      display: block;
+      margin-top: 16px;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    &__preview-block-content {
+      .preview-block__sub {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+
+    &__fullscreen-block {
+      height: 483px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__description {
+      margin-bottom: 40px;
+    }
+
+    &__preview-block-content {
+      grid-gap: 30px;
+      bottom: 22px;
+    }
+
+    &__preview-block, &__offer-list {
+      margin-bottom: 70px;
+    }
+  }
+}

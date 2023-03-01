@@ -1,0 +1,25 @@
+.wrapper, .container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1720px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper, .container {
+    max-width: 940px;
+  }
+}
+
+//@media screen and (max-width: 639px) {
+//  .wrapper, .container {
+//    max-width: 280px;
+//    overflow: hidden;
+//  }
+//}

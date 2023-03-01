@@ -1,0 +1,127 @@
+<div class="header wrapper">
+    <a href="/" class="header__logo" target="_blank"><img src="@@logo" alt="Владивостокский морской торговый порт" width="92" height="34"></a>
+
+    <div class="header__nav">
+        <a class="btn btn_secondary" href="/port-services.html" target="_blank">Сервисы порта</a>
+        <a class="btn btn_secondary" href="/fleet-processing.html" target="_blank">Обработка флота</a>
+        <a class="btn btn_secondary" href="/404.html" target="_blank">Контейнерные поезда</a>
+        <a class="btn btn_secondary" href="/port-client.html" target="_blank">Клиенту порта</a>
+        <a class="btn btn_secondary" href="/404.html" target="_blank">Зелёный порт</a>
+    </div>
+
+    <div class="header__btns">
+        <a class="header__inspection btn btn_primary btn_middle" href="#" target="_blank">Заявка на досмотр</a>
+        <a class="header__pass btn btn_primary btn_middle" href="#" target="_blank">Заявка на пропуск</a>
+    </div>
+
+    <a href="tel:89627550877" class="header__phone">+7 (800) 23-444-99</a>
+
+    <div class="header__icon-btns">
+        
+        <button class="header__icon-btn btn" onclick="toggleVisibleSearch()">@@include('../components/svg/search.html')</button>
+
+        <a href="#" class="header__icon-btn" target="_blank">
+            @@include('../components/svg/profile.html')
+        </a>
+
+        <div class="header-lang">
+            <button onclick="toggleVisibleLang()" class="btn header-lang__btn header__icon-btn">En</button>
+            
+            <div class="header-lang__wrapper">
+                <a href="#" class="header-lang__link animate-text-top">Ru</a>
+                <a href="#" class="header-lang__link header-lang__link_cn animate-text-top">Cn</a>
+            </div>
+        </div>
+    </div>
+    <button class="header__menu btn circle" onclick="toggleVisibleMenu()">
+        <span class="header__icon header__icon_waves show">
+            @@include('../components/svg/waves.html')
+        </span>
+        <span class="header__icon header__icon_cross">
+            @@include('../components/svg/cross.html')
+        </span>
+    </button>
+
+    <div class="header-search">
+        <div class="wrapper header-search__wrapper">
+            <div class="input-group header-search__search fade-in">
+                <div class="input-group-icon input-group-icon_search">@@include('../components/svg/search.html')</div>
+                <input class="input header-search__input" placeholder="Поиск" type="text">
+            </div>
+            <button class="header__menu btn circle header-search__btn fade-in" onclick="toggleVisibleSearch()">
+            <span class="header__icon header__icon_cross show">
+                @@include('../components/svg/cross.html')
+            </span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="header-menu">
+    <div class="header-menu__content">
+        <div class="header-menu__contacts">
+            <a href="#" class="header-menu__phone animate-text-top" target="_blank">+7 (800) 23-444-99</a>
+            <a href="#" class="header-menu__mail animate-text-top" target="_blank">vmtp-info@fesco.com</a>
+            <div class="header-menu__address animate-text-top" >690065 Россия, г. Владивосток <br>ул. Стрельникова, д. 9,Приморский край</div>
+            <div class="header-menu__socials socials fade-in">
+                <a class="social" href="#" target="_blank">@@include('../components/svg/telegram.html')</a>
+                <a class="social" href="#" target="_blank">@@include('../components/svg/vk.html')</a>
+                <a class="social " href="#" target="_blank">@@include('../components/svg/youtube.html')</a>
+            </div>
+
+            <a class="header-menu__dviga fade-in" href="#" target="_blank">
+                <span class="header-menu__dviga-link dviga">
+                    @@include('../components/svg/dviga.html')
+                </span>
+            </a>
+        </div>
+        <div class="header-menu__items header-menu__items_nav">
+            <div class="header-menu__item">
+                <a href="/port-services.html" class="header-menu__link animate-text-top" target="_blank">Сервисы порта</a>
+            </div>
+            <div class="header-menu__item">
+                <a href="/fleet-processing.html" class="header-menu__link animate-text-top" target="_blank">Обработка флота</a>
+            </div>
+            <div class="header-menu__item">
+                <a href="/404.html" class="header-menu__link animate-text-top" target="_blank">Контейнерные поезда</a>
+            </div>
+            <div class="header-menu__item">
+                <a href="/port-client.html" class="header-menu__link animate-text-top" target="_blank">Клиенту порта</a>
+            </div>
+            <div class="header-menu__item">
+                <a href="/404.html" class="header-menu__link animate-text-top" target="_blank">Зелёный порт</a>
+            </div>
+        </div>
+        <div class="header-menu__items">
+            <div class="header-menu__item">
+                <a href="/404.html" class="header-menu__link animate-text-top" target="_blank">О компании</a>
+            </div>
+            
+            <div class="header-menu__item">
+                <a href="/career.html" class="header-menu__link animate-text-top" target="_blank">Карьера</a>
+                
+                <div class="header-menu__link-wrapper">
+                    <a href="/vacancies.html" class="header-menu__link-sub fade-in" target="_blank">Вакансии</a>
+                    <a href="/educational-center.html" class="header-menu__link-sub fade-in" target="_blank">Учебный центр</a>
+                    <a href="/students.html" class="header-menu__link-sub fade-in" target="_blank">Студентам</a>
+                </div>
+                
+                <button class="header-menu__dropdown-button btn" onclick="dropdownMenuToggle()">
+                    @@include('../components/svg/daw.html')
+                </button>
+            </div>
+            <div class="header-menu__item">
+                <a href="/purchases.html" class="header-menu__link animate-text-top" target="_blank">Закупки</a>
+            </div>
+            <div class="header-menu__item">
+                <a href="/edo.html" class="header-menu__link animate-text-top" target="_blank">ЭДО</a>
+            </div>
+            <div class="header-menu__item">
+                <a href="/press-service.html" class="header-menu__link animate-text-top" target="_blank">Пресс-служба</a>
+            </div>
+            <div class="header-menu__item">
+                <a href="/contacts.html" class="header-menu__link animate-text-top" target="_blank">Контакты</a>
+            </div>
+        </div>
+    </div>
+</div>

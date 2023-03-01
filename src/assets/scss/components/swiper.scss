@@ -1,0 +1,143 @@
+﻿.swiper {
+  
+  &-cards {
+    padding: 0 30px;
+  }
+  
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 67px;
+    
+    .prev {
+      margin: 0 10px 0 0;
+    }
+    
+    &__buttons {
+      display: flex;
+    }
+    
+    &__count {
+      font-size: 18px;
+      color: var(--color-blue-5);
+      line-height: 1;
+    }
+    
+    &__current {
+      font-size: 26px;
+    }
+  }
+  
+  &-card {
+    display: flex;
+    flex-direction: column;
+    height: unset;
+    background: rgba(72, 179, 220, 0.08);
+    border: 1px solid rgba(12, 153, 207, 0.37);
+    overflow: hidden;
+    
+    &s {
+      overflow: hidden;
+      
+      &__swiper {
+        overflow: unset;
+      }
+    }
+
+    &, &__img {
+      border-radius: 8px;
+    }
+
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+
+    &__content {
+      padding: 22px 30px 30px;
+    }
+  }
+  
+  &-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+
+    &.prev {
+      transform: rotate(180deg);
+    }
+    
+    svg {
+      width: 16px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) and (min-width: 741px) {
+    &-slide {
+      width: 36.4%;
+      max-width: 336px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &-card {
+      &__content {
+        padding: 19.2px 30px 27px;
+      }
+
+      &, &__img {
+        border-radius: 7.06457px;
+      }
+      
+      &s{
+        padding: 0 42px;
+      }
+    }
+    
+    &-header {
+      margin-bottom: 37px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &-card {
+      &__content {
+        padding: 15px 20px 20px;
+      }
+
+      &, &__img {
+        border-radius: 6.06667px;
+      }
+      
+      &s {
+        padding: 0 20px;
+      }
+    }
+    
+    &-header {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    &-header {
+      flex-direction: column;
+      align-items: unset;
+
+      &__title {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+    &:not(&-header) &-btn {
+      width: 34px;
+      height: 34px;
+      font-size: 14px;
+      letter-spacing: unset;
+    }
+  }
+}

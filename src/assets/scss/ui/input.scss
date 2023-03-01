@@ -1,0 +1,153 @@
+.input {
+  width: 100%;
+  color: var(--color-field);
+  outline: none;
+
+  &, &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.04em;
+  }
+
+  &::placeholder {
+    font-style: italic;
+    color: var(--color-field-placeholder);
+  }
+
+  &:focus, &:hover {
+    border: 1px solid var(--color-blue-5);
+  }
+
+  &, &:-webkit-autofill {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    height: 60px;
+    background: var(--color-blue-6);
+    border: 1px solid var(--color-blue-7);
+    border-radius: 45px;
+  }
+
+  &_secondary {
+    background: var(--color-blue-4);
+  }
+
+  //&_third {
+  //  color: var(--color-blue-19);
+  //  background: var(--color-white);
+  //
+  //  &::placeholder {
+  //    color: var(--color-blue-4-opac50);
+  //  }
+  //}
+
+  &.error {
+    background: var(--color-red-opac20);
+    border: 1px solid var(--color-red);
+  }
+  
+  &_file {
+    cursor: pointer;
+    
+    input {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &, &::placeholder {
+      font-size: 14px;
+    }
+
+    &, &:-webkit-autofill {
+      padding: 17px 30px;
+      height: 48px;
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    &, &:-webkit-autofill {
+      padding: 17px 20px;
+    }
+  }
+
+  &-group {
+    position: relative;
+
+  //  &:after {
+  //    content: '';
+  //    position: absolute;
+  //    top: 50%;
+  //    right: 30px;
+  //    transform: translateY(-60%);
+  //    pointer-events: none;
+  //
+  //    @media screen and (max-width: 410px) {
+  //      right: 20px;
+  //    }
+  //  }
+  //
+  //  &_calendar:after {
+  //    width: 17px;
+  //    height: 16px;
+  //    background: url("../img/calendar.svg") center center;
+  //  }
+  //
+  //  &_clip:after { ++++++++++++
+  //    width: 14px;
+  //    height: 14px;
+  //    background: url("../img/clip.svg") center center;
+  //  }
+  //
+  //  &_third {
+  //    &.input-group_clip {
+  //      &:after {
+  //        background: url("../img/clip-dark.svg") center center;
+  //      }
+  //    }
+  //
+  //    .input-group-icon_search {
+  //      width: 47px;
+  //    }
+  //  }
+  
+    &-icon {
+      position: absolute;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      &_search {
+        width: 31px;
+        cursor: pointer;
+
+        svg {
+          width: 11px;
+        }
+      }
+      
+      &_clip {
+        right: 30px;
+        width: 14px;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.datetime {
+  &, &-multiple {
+    cursor: pointer;
+  }
+}
+
+input {
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset!important;
+    -webkit-text-fill-color: white!important;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s
+  }
+}

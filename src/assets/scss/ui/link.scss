@@ -1,0 +1,12 @@
+.link {
+  color: var(--color-link);
+  transition: var(--transition-default);
+
+  &_text-decoration {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}

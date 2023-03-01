@@ -1,0 +1,63 @@
+﻿.textarea {
+  padding: 21px 30px;
+  height: 60px;
+  width: 100%;
+  color: var(--color-field);
+  outline: none;
+  background: var(--color-blue-6);
+  border: 1px solid var(--color-blue-7);
+  border-radius: 45px;
+  resize: none;
+
+  &, &::placeholder {
+    font-family: var(--font-default);
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.04em;
+  }
+
+  &:focus, &:hover {
+    border: 1px solid var(--color-blue-5);
+  }
+
+  &::placeholder {
+    font-style: italic;
+    color: var(--color-field-placeholder);
+  }
+
+  &_secondary {
+    background: var(--color-blue-4);
+  }
+
+  //&_third {
+  //  color: var(--color-blue-19);
+  //  background: var(--color-white) !important;
+  //
+  //  &::placeholder {
+  //    color: var(--color-blue-4-opac50);
+  //  }
+  //}
+
+  &.error {
+    background: var(--color-red-opac20);
+    border: 1px solid var(--color-red);
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 17px 30px;
+    height: 48px;
+
+    &, &::placeholder {
+      font-size: 14px;
+
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    padding: 17px 20px;
+  }
+
+ 
+
+  
+}

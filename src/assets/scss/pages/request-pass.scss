@@ -1,0 +1,307 @@
+﻿.request-pass {
+  &__title {
+    margin-bottom: 68px;
+  }
+  
+  &__tabs, &__documents, &__passes {
+    margin-bottom: 70px;
+  }
+
+  &__documents {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 126px;
+  }
+  
+  &__purpose {
+    min-height: 160px;
+    width: 100%;
+  }
+  
+  &__pos {
+    max-width: 285px;
+  }
+  
+  &__zone {
+    
+    &:not(:last-child) {
+      padding-left: 29px;
+    }
+    
+    &s {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+      margin-bottom: 40px;
+      
+      &-title {
+        margin-bottom: 38px;
+      }
+      
+      &-fields {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  &-signature {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__description {
+      margin-bottom: 40px;
+      color: var(--color-blue-8);
+    }
+
+    &__btn {
+      margin-top: 30px;
+      padding: 24px 0;
+      max-width: 420px;
+      width: 100%;
+      font-size: 18px;
+    }
+  }
+  
+  &-block {
+    padding: 24px 30px 40px;
+    background: var(--color-blue-4);
+    border-radius: 7px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      margin-bottom: 38px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid var(--color-blue-3);
+    }
+
+    &__filters-row {
+      grid-gap: 21px;
+      
+      &:not(:last-child) {
+        margin-bottom: 38px;
+      }
+    }
+
+    &__footer {
+      display: flex;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--color-blue-3);
+    }
+
+    &__btn {
+      margin-right: 22px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__title {
+      margin-bottom: 40px;
+    }
+    
+    &__zones, &__documents {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    &__documents {
+      gap: 31px;
+    }
+
+    &__visit, &__company {
+      margin-bottom: 30px;
+    }
+    
+    &__zone {
+      padding-left: 29px;
+      
+      &s-fields {
+        grid-row-gap: 40px;
+      }
+    }
+
+    &__pos {
+      grid-area: 2/2/2/2;
+      padding-left: 29px;
+      max-width: 425px;
+    }
+    
+    &-block {
+      &__title {
+        padding-bottom: 40px;
+      }
+
+      .filters-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    &-signature {
+      grid-template-columns: 1fr;
+      
+      &__title {
+        margin-bottom: 9px;
+      }
+      
+      &__btn {
+        max-width: 454px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 730px) {
+    &-block {
+
+      .filters {
+        &-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        &-col-3 {
+          grid-column-end: span 2;
+        }
+      }
+    }
+
+    &__pos {
+      grid-area: unset;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__tabs {
+      margin-bottom: 50px;
+    }
+    
+    &__company, &__zones-fields {
+      grid-gap: 20px;
+    }
+    
+    &__visit {
+      &, &-title {
+        display: none;
+      }
+    }
+    
+    &__zones {
+      grid-gap: 35px 15px;
+    }
+    
+    &__pos {
+      margin-top: 20px;
+    }
+
+    &-signature {
+      &__description {
+        margin-bottom: 16px;
+      }
+
+      &__btn {
+        padding: 12px 0;
+        max-width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 530px) {
+    &__documents {
+      grid-template-columns: 1fr;
+    }
+    
+    &-block {
+      .filters {
+        &-row {
+          grid-template-columns: 1fr;
+        }
+        
+        &-col-3 {
+          grid-column-end: unset;
+        }
+      }
+      
+      &__footer {
+        flex-direction: column;
+      }
+      
+      &__btn {
+        margin: 0;
+        width: 100%;
+        
+        &:first-child {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    &__zones {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__title {
+      margin-bottom: 37px;
+    }
+    
+    &__documents {
+      margin-bottom: 50px;
+    }
+    
+    &__zone {
+      &, &:not(:last-child) {
+        padding-left: 20px;
+      }
+      
+      &s-fields {
+        margin-bottom: 40px;
+      }
+    }
+    
+    &__pos {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    
+    &-block {
+      padding: 14px 20px 20px;
+      
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      
+      &__title {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        font-size: 24px;
+        line-height: 28.8px;
+      }
+      
+      &__filters-row {
+        grid-gap: 20px;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+      
+      &__footer {
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+    }
+
+    &-signature {
+      &__title {
+        margin-bottom: 18px;
+      }
+
+      &__btn {
+        font-size: 14px;
+      }
+    }
+  }
+}

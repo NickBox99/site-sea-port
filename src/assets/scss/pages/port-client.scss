@@ -1,0 +1,60 @@
+﻿.port-client {
+  
+  &__accordion {
+    &-item {
+      display: block;
+      font-size: 18px;
+      color: var(--color-blue-4);
+      line-height: 1;
+      transition: var(--transition-default);
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      
+      &:hover {
+        color: var(--color-blue-5);
+      }
+    }
+
+    &-file {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      color: var(--color-blue-5);
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    margin-top: -20px;
+    
+    &__title {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    margin-top: 0;
+    
+    &__accordion-item {
+      line-height: 25.2px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__title {
+      margin-bottom: 40px;
+    }
+    
+    &__accordion {
+      &-item:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      
+      &-file {
+        display: none;
+      }
+    }
+  }
+
+}

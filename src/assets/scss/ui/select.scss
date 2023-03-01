@@ -1,0 +1,125 @@
+﻿.select {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px 30px;
+  height: 60px;
+  width: 100%;
+  background: var(--color-blue-6);
+  border: 1px solid var(--color-blue-7);
+  border-radius: 45px;
+  cursor: pointer;
+
+  &__value, &__item {
+    font-size: 16px;
+    letter-spacing: -0.04em;
+  }
+
+  &__value {
+    line-height: 1;
+  }
+
+  &:hover {
+    border: 1px solid var(--color-blue-5);
+  }
+
+  &__daw {
+    position: relative;
+    margin-left: 10px;
+    width: 11px;
+    line-height: 0;
+    transition: var(--transition-default);
+    pointer-events: none;
+  }
+
+  &__wrapper {
+    display: none;
+    position: absolute;
+    top: -4px;
+    left: -1px;
+    z-index: 3;
+    padding: 16px 20px;
+    width: calc(100% + 2px);
+    background: var(--color-blue-6);
+    border: 1px solid var(--color-blue-5);
+    border-radius: 30px;
+    user-select: none;
+  }
+
+  &__item {
+    justify-content: start;
+    font-weight: 400;
+    width: 100%;
+    text-align: left;
+    line-height: 21.6px;
+    letter-spacing: -0.04em;
+  }
+
+  &.active {
+    border-color: transparent;
+
+    .select__daw {
+      transform: rotate(180deg);
+      z-index: 5;
+    }
+
+    .select__wrapper {
+      display: block;
+    }
+  }
+
+  &_secondary {
+    background: var(--color-blue-4);
+  }
+
+  &_third {
+    color: var(--color-blue-19);
+    background: var(--color-white);
+  }
+
+  &.error {
+    background: var(--color-red-opac20);
+    border: 1px solid var(--color-red);
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 17px 30px;
+    height: 48px;
+
+    &__value, &__item {
+      font-size: 14px;
+    }
+    
+    &__wrapper {
+      top: -9px;
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    padding: 17px 20px;
+  }
+
+  
+
+  
+
+  
+
+  //&_string {
+  //  padding-right: 0;
+  //  width: max-content;
+  //
+  //  .select__wrapper {
+  //    top: 38px;
+  //    width: max-content;
+  //
+  //    @media screen and (max-width: 430px) {
+  //      left: unset;
+  //      right: -21px;
+  //    }
+  //  }
+  //}
+
+  
+}
