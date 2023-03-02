@@ -202,29 +202,29 @@
 
     <div class="filters-subtitle">Личные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input class="input" placeholder="Фамилия*" type="text">
-        <input class="input" placeholder="Имя*" type="text">
-        <input class="input" placeholder="Отчество*" type="text">
-        <input class="datetime input" placeholder="Дата рождения*" data-placeholder-focus>
+        <input name="personal_surname" class="input" placeholder="Фамилия*" type="text">
+        <input name="personal_name" class="input" placeholder="Имя*" type="text">
+        <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text">
+        <input name="personal_birthday" class="datetime input" placeholder="Дата рождения*" data-placeholder-focus>
 
-        <input class="input" placeholder="Место рождения*" type="text">
-        <input class="input" placeholder="Должность получателя*" type="text">
+        <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text">
+        <input name="personal_position" class="input" placeholder="Должность получателя*" type="text">
     </div>
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input class="input" placeholder="Номер*" type="text">
-        <input class="input" placeholder="Серия*" type="text">
-        <input class="datetime input" placeholder="Дата выдачи*" data-placeholder-focus>
-        <input class="input filters-col-3" placeholder="Кем выдан*" type="text">
+        <input name="passport_series" class="input" placeholder="Номер*" type="text">
+        <input name="passport_number" class="input" placeholder="Серия*" type="text">
+        <input name="passport_date" class="datetime input" placeholder="Дата выдачи*" data-placeholder-focus>
+        <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text">
     </div>
 
     <div class="filters-subtitle">Контактные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input class="input filters-col-3" placeholder="Адрес регистрации*" type="text">
-        <input class="input filters-col-3" placeholder="Фактический адрес*" type="text">
-        <input class="input" placeholder="Контактный телефон*" type="text">
-        <input class="input" placeholder="Электронная почта*" type="text">
+        <input name="contact_registration_address" class="input filters-col-3" placeholder="Адрес регистрации*" type="text">
+        <input name="contact_factual_address" class="input filters-col-3" placeholder="Фактический адрес*" type="text">
+        <input name="contact_phone" class="input" placeholder="Контактный телефон*" type="text">
+        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text">
     </div>
 
     <div class="request-pass-block__footer">
@@ -312,7 +312,8 @@
         const form = document.createElement('form');
         form.classList.add('request-pass-block');
         form.innerHTML = document.querySelector(`#${templateId}`).innerHTML;
-        form.setAttribute('id', `pass-${uniqueId++}`);
+        const formId = `pass-${uniqueId++}`;
+        form.setAttribute('id', formId);
 
         if (this.closest) {
             const pass = getPassBlock(this);
@@ -321,6 +322,10 @@
             initRemoveButtons(wrapper);
         } else {
             wrapper.append(form);
+        }
+        
+        if(!applicationPass.style.display) {
+            
         }
     }
     
