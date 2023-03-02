@@ -94,6 +94,10 @@
 
     &__btn {
       margin-right: 22px;
+      
+      &_remove.hide {
+        display: none;
+      }
     }
   }
 
