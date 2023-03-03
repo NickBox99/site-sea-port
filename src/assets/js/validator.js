@@ -25,9 +25,45 @@ window.formValidate = function (formId, options) {
         const option = options[key];
         const validateSettings = option.validate;
 
-        function checkDefaultField(initFunc, getValueFunc, htmlElement, events) {
+        function checkDefaultField(getValueFunc, htmlElement, events) {
+            const checkValid = (value) => option.validate && option.validate.split('|').find((type) => {
+
+                const isIncludes = (condition) => !type.indexOf(condition)? type : condition;
+
+                switch (type) {
+                    case 'required': {
+                        return !value;
+                    }
+                    case 'phone': {
+                        return !/^[\d\+][\d\(\)\ -]{4,14}\d$/.test(value);
+                    }
+                    case 'abs': {
+                        return !/^([a-zA-ZА-яЕЁ ]+)$/gi.test(value);
+                    }
+                    case 'email': {
+                        return !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value);
+                    }
+                    case isIncludes('min-length'): {
+                        const num = type.replace(/[^0-9]/gi, '');
+                        return num.length && +num > value.length;
+                    }
+                    case isIncludes('max-length'): {
+                        const num = type.replace(/[^0-9]/gi, '');
+                        return num.length && +num < value.length;
+                    }
+                    case isIncludes('length'): {
+                        const num = type.replace(/[^0-9]/gi, '');
+                        return num.length && +num !== value.length;
+                    }
+                    default: {
+                        return false;
+                    }
+                }
+            });
+            
             const value = getValueFunc();
-            if (initFunc(value)) {
+            
+            if (checkValid(value)) {
                 htmlElement.classList.add('error');
                 isValid = false;
 
@@ -36,7 +72,7 @@ window.formValidate = function (formId, options) {
 
                     events.forEach(ev =>
                         htmlElement.addEventListener(ev, () => {
-                            initFunc(getValueFunc()) ? htmlElement.classList.add('error') : htmlElement.classList.remove('error');
+                            checkValid(getValueFunc()) ? htmlElement.classList.add('error') : htmlElement.classList.remove('error');
                         })
                     );
                 }
@@ -49,18 +85,7 @@ window.formValidate = function (formId, options) {
         switch (option.type) {
             case 'input': {
                 const el = findFieldForm(key);
-
-                checkDefaultField((value) => {
-                        return validateSettings &&
-                            (
-                                (validateSettings.includes('required') && !value) ||
-                                (validateSettings.includes('abs') && value && !/^([a-zA-ZА-яЕЁ ]+)$/gi.test(value)) ||
-                                (validateSettings.includes('phone') && !/^[\d\+][\d\(\)\ -]{4,14}\d$/.test(value)) ||
-                                (validateSettings.includes('email') && !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value)) ||
-                                (validateSettings.includes('inn') && (!/^([0-9]+)$/gi.test(value) || !(12 >= value.length && value.length >= 10)))
-                            )
-                    },
-                    () => el.value, el, ['keyup']);
+                checkDefaultField(() => el.value, el, ['keyup']);
 
                 break;
             }
@@ -68,8 +93,7 @@ window.formValidate = function (formId, options) {
                 const dateObj = dates[`${formId}_${key}`];
                 const el = dateObj.input;
 
-                checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),
-                    () => dateObj.selectedDates.map(date => dateObj.formatDate(date, 'd.m.Y')).join(', '), el, ['change']);
+                checkDefaultField(() => dateObj.selectedDates.map(date => dateObj.formatDate(date, 'd.m.Y')).join(', '), el, ['change']);
 
                 break;
             }
@@ -77,8 +101,7 @@ window.formValidate = function (formId, options) {
                 const select = selects[`${formId}_${key}`];
                 const el = select.select;
 
-                checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),
-                    () =>  +select.value, el, ['change']);
+                checkDefaultField(() =>  +select.value, el, ['change']);
 
                 break;
             }
@@ -115,7 +138,7 @@ window.formValidate = function (formId, options) {
         norm[name] = value;
     }
 
-    console.log(isValid, norm);
+    //console.log(isValid, norm);
 
     return isValid ? formData : false;
 }

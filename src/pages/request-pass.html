@@ -205,17 +205,17 @@
         <input name="personal_surname" class="input" placeholder="Фамилия*" type="text">
         <input name="personal_name" class="input" placeholder="Имя*" type="text">
         <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text">
-        <input name="personal_birthday" class="datetime input" placeholder="Дата рождения*" data-placeholder-focus>
+        <input name="personal_birthday" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
 
         <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text">
-        <input name="personal_position" class="input" placeholder="Должность получателя*" type="text">
+        <input name="personal_position" class="input" placeholder=" Должность получателя*" type="text">
     </div>
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
         <input name="passport_series" class="input" placeholder="Номер*" type="text">
         <input name="passport_number" class="input" placeholder="Серия*" type="text">
-        <input name="passport_date" class="datetime input" placeholder="Дата выдачи*" data-placeholder-focus>
+        <input name="passport_date" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
         <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text">
     </div>
 
@@ -238,34 +238,34 @@
 
     <div class="filters-subtitle">Личные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input class="input" placeholder="Фамилия*" type="text">
-        <input class="input" placeholder="Имя*" type="text">
-        <input class="input" placeholder="Отчество*" type="text">
-        <input class="datetime input" placeholder="Дата рождения*" data-placeholder-focus>
+        <input name="personal_surname" class="input" placeholder="Фамилия*" type="text">
+        <input name="personal_name" class="input" placeholder="Имя*" type="text">
+        <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text">
+        <input name="personal_birthday" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
 
-        <input class="input" placeholder="Место рождения*" type="text">
-        <input class="input" placeholder="Должность получателя*" type="text">
+        <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text">
+        <input name="personal_position" class="input" placeholder=" Должность получателя*" type="text">
     </div>
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input class="input" placeholder="Номер*" type="text">
-        <input class="input" placeholder="Серия*" type="text">
-        <input class="datetime input" placeholder="Дата выдачи*" data-placeholder-focus>
-        <input class="input filters-col-3" placeholder="Кем выдан*" type="text">
+        <input name="passport_series" class="input" placeholder="Номер*" type="text">
+        <input name="passport_number" class="input" placeholder="Серия*" type="text">
+        <input name="passport_date" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
+        <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text">
     </div>
 
     <div class="filters-subtitle">Контактные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input class="input filters-col-3" placeholder="Адрес регистрации*" type="text">
-        <input class="input filters-col-3" placeholder="Фактический адрес*" type="text">
-        <input class="input" placeholder="Контактный телефон*" type="text">
-        <input class="input" placeholder="Электронная почта*" type="text">
+        <input name="contact_registration_address" class="input filters-col-3" placeholder="Адрес регистрации*" type="text">
+        <input name="contact_factual_address" class="input filters-col-3" placeholder="Фактический адрес*" type="text">
+        <input name="contact_phone" class="input" placeholder="Контактный телефон*" type="text">
+        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text">
     </div>
 
     <div class="filters-subtitle">Данные автомобиля</div>
     <div class="filters-row request-pass-block__filters-row">
-        <div class="select">
+        <div name="car_type" class="select">
             <div class="select__value"></div>
             <div class="select__wrapper">
                 <div class="select__item btn btn_secondary active" data-value="0">Легковой</div>
@@ -278,11 +278,12 @@
                 <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
                 <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
             </div>
+            <div class="select__daw">@@include('../components/svg/daw.html')</div>
         </div>
-        <input class="input" placeholder="Марка*" type="text">
-        <input class="input" placeholder="Модель*" type="text">
-        <input class="input" placeholder="Гос. номер*" type="text">
-        <input class="input" placeholder="Цвет*" type="text">
+        <input name="car_brand" class="input" placeholder="Марка*" type="text">
+        <input name="car_model" class="input" placeholder="Модель*" type="text">
+        <input name="car_number" class="input" placeholder="Гос. номер*" type="text">
+        <input name="car_color" class="input" placeholder="Цвет*" type="text">
     </div>
 
     <div class="request-pass-block__footer">
@@ -319,6 +320,9 @@
             const pass = getPassBlock(this);
             wrapper.insertBefore(form, pass.nextSibling);
 
+            initSelects(form);
+            initDates(form);
+
             initRemoveButtons(wrapper);
         } else {
             wrapper.append(form);
@@ -349,127 +353,152 @@
         document.querySelector('#signature-form').addEventListener('submit', (event) => {
             event.preventDefault();
             
-            const inits = [
-                {
-                    formId: 'signature-form',
-                    options: {
-                        isAgreeProcessing: {
-                            type: 'checkbox',
-                            validate: 'required'
-                        },
-                        isAgreeRules: {
-                            type: 'checkbox',
-                            validate: 'required'
-                        }
-                    }
+            const isApplicationPass = !applicationPass.style.display;
+            
+            const isValidSignatureForm = Boolean(formValidate('signature-form', {
+                isAgreeProcessing: {
+                    type: 'checkbox',
+                    validate: 'required'
+                },
+                isAgreeRules: {
+                    type: 'checkbox',
+                    validate: 'required'
                 }
-            ];
-
-            inits.push(!applicationPass.style.display? {
-                formId: 'applicationPass',
-                options: {
-                    company_name: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    company_fio_head: {
-                        type: 'input',
-                        validate: 'abs|required'
-                    },
-                    company_phone_head: {
-                        type: 'input',
-                        validate: 'phone'
-                    },
-                    company_inn: {
-                        type: 'input',
-                        validate: 'inn'
-                    },
-                    visit_purpose: {
-                        type: 'input'
-                    },
-                    pass_zone_2: {
-                        type: 'checkbox'
-                    },
+            }));
+            
+            const defaultMainOptions = {
+                company_name: {
+                    type: 'input',
+                    validate: 'required'
+                },
+                company_fio_head: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                company_phone_head: {
+                    type: 'input',
+                    validate: 'phone'
+                },
+                company_inn: {
+                    type: 'input',
+                    validate: 'min-length:10|max-length:12'
+                },
+                visit_purpose: {
+                    type: 'input'
+                },
+                pass_zone_2: {
+                    type: 'checkbox'
+                },
+                pass_dates: {
+                    type: 'date',
+                    validate: 'required'
+                },
+                pass_order: {
+                    type: 'select',
+                    validate: 'required'
+                }
+            }
+            const mainForm = isApplicationPass ? 
+                formValidate('applicationPass', {
+                    ...defaultMainOptions,
                     pass_zone_3: {
                         type: 'checkbox'
-                    },
-                    pass_dates: {
-                        type: 'date',
-                        validate: 'required'
-                    },
-                    pass_order: {
+                    }
+                }) :
+                formValidate('applicationAutoPass', defaultMainOptions);
+            
+            
+            const defaultPassOptions = {
+                personal_surname: {
+                    type: 'input',
+                    validate: 'required|abs'
+                },
+                personal_name: {
+                    type: 'input',
+                    validate: 'required|abs'
+                },
+                personal_patronymic: {
+                    type: 'input',
+                    validate: 'required|abs'
+                },
+                personal_birthday: {
+                    type: 'date',
+                    validate: 'required'
+                },
+                personal_birth_place: {
+                    type: 'input',
+                    validate: 'required'
+                },
+                personal_position: {
+                    type: 'input',
+                    validate: 'required|abs'
+                },
+                passport_series: {
+                    type: 'input',
+                    validate: 'length:4'
+                },
+                passport_number: {
+                    type: 'input',
+                    validate: 'length:6'
+                },
+                passport_date: {
+                    type: 'date',
+                    validate: 'required'
+                },
+                passport_place: {
+                    type: 'input',
+                    validate: 'required'
+                },
+                contact_email: {
+                    type: 'input',
+                    validate: 'email'
+                },
+                contact_phone: {
+                    type: 'input',
+                    validate: 'phone'
+                },
+                contact_registration_address: {
+                    type: 'input',
+                    validate: 'required'
+                },
+                contact_factual_address: {
+                    type: 'input',
+                    validate: 'required'
+                }
+            }
+            const passesValidatorOptions = isApplicationPass ? defaultPassOptions : 
+                { 
+                    ...defaultPassOptions,
+                    car_type: {
                         type: 'select',
                         validate: 'required'
-                    }
-                }
-            } : {
-                formId: 'applicationAutoPass',
-                options: {
-                    company_name: {
+                    },
+                    car_brand: {
                         type: 'input',
                         validate: 'required'
                     },
-                    company_fio_head: {
+                    car_model: {
                         type: 'input',
-                        validate: 'abs|required'
-                    },
-                    company_phone_head: {
-                        type: 'input',
-                        validate: 'phone'
-                    },
-                    company_inn: {
-                        type: 'input',
-                        validate: 'inn'
-                    },
-                    visit_purpose: {
-                        type: 'input'
-                    },
-                    pass_zone_2: {
-                        type: 'checkbox'
-                    },
-                    pass_dates: {
-                        type: 'date',
                         validate: 'required'
                     },
-                    pass_order: {
-                        type: 'select',
+                    car_number: {
+                        type: 'input',
+                        validate: 'required'
+                    },
+                    car_color: {
+                        type: 'input',
                         validate: 'required'
                     }
-                }
-            })
-            
-            
-            
-            
-            let isValid = true;
-            inits.forEach(({formId, options}) => {
-                if (!formValidate(formId, options)) isValid = false;
-            })
+                };
+            const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass.getAttribute('id'), passesValidatorOptions));
 
-            
+            if (isValidSignatureForm && mainForm && !passes.filter(pass => !pass).length) {
+                mainForm.append('passes_json', JSON.stringify(passes.map(pass => {
+                    const object = {};
+                    pass.forEach((value, key) => object[key] = value);
+                    return object;
+                })));
+            }
         });
-        
-        // initFormValidate('applicationPass', {
-        
-        // }, (body) => {
-        //     console.log(body)
-        // });
-        //
-        // initFormValidate('', {
-        
-        // }, (body) => {
-        //     console.log(body)
-        // });
-        //
-        // initFormValidate('signature-form', {
-            
-        // }, () => {
-        //     if(!applicationPass.style.display) {
-        //         applicationPass.requestSubmit();
-        //     }
-        //     else {
-        //         applicationAutoPass.requestSubmit();
-        //     }
-        // })
     })
 </script>

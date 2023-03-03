@@ -56,8 +56,15 @@ class Select {
 
 window.selects = [];
 
-document.querySelectorAll('.select').forEach(el => {
-    const formId = el.closest('form')?.getAttribute('id');
-    const name = el.getAttribute('name');
-    window.selects[formId? `${formId}_${name}` : name] = new Select(el);
-});
+window.initSelects = (target) => {
+    target.querySelectorAll('.select').forEach(el =>
+        {
+            const formId = el.closest('form')?.getAttribute('id');
+            const name = el.getAttribute('name');
+            window.selects[formId? `${formId}_${name}` : name] = new Select(el);
+        }
+    );
+}
+
+initSelects(document);
+
