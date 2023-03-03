@@ -12,48 +12,45 @@
     return dd + '.' + mm + '.' + yy;
 }
 
-window.initFormValidate = function (formId, options, callback) {
+window.formValidate = function (formId, options) {
     const form = document.querySelector(`#${formId}`);
     const findFieldForm = (key) => form.querySelector(`[name="${key}"]`);
+    
+    const formData = new FormData();
+    formData.append('form_id', formId);
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+    let isValid = true;
 
-        const formData = new FormData();
-        formData.append('form_id', formId);
+    Object.keys(options).forEach(key => {
+        const option = options[key];
+        const validateSettings = option.validate;
 
-        let isValid = true;
+        function checkDefaultField(initFunc, getValueFunc, htmlElement, events) {
+            const value = getValueFunc();
+            if (initFunc(value)) {
+                htmlElement.classList.add('error');
+                isValid = false;
 
-        Object.keys(options).forEach(key => {
-            const option = options[key];
-            const validateSettings = option.validate;
+                if (!htmlElement.hasAttribute('is-dirty')) {
+                    htmlElement.setAttribute('is-dirty', '');
 
-            function checkDefaultField(initFunc, getValueFunc, htmlElement, events) {
-                const value = getValueFunc();
-                if (initFunc(value)) {
-                    htmlElement.classList.add('error');
-                    isValid = false;
-
-                    if (!htmlElement.hasAttribute('is-dirty')) {
-                        htmlElement.setAttribute('is-dirty', '');
-
-                        events.forEach(ev => 
-                            htmlElement.addEventListener(ev, () => {
-                                initFunc(getValueFunc()) ? htmlElement.classList.add('error') : htmlElement.classList.remove('error');
-                            })
-                        );
-                    }
-                }
-                else {
-                    formData.append(key, value);
+                    events.forEach(ev =>
+                        htmlElement.addEventListener(ev, () => {
+                            initFunc(getValueFunc()) ? htmlElement.classList.add('error') : htmlElement.classList.remove('error');
+                        })
+                    );
                 }
             }
+            else {
+                formData.append(key, value);
+            }
+        }
 
-            switch (option.type) {
-                case 'input': {
-                    const el = findFieldForm(key);
+        switch (option.type) {
+            case 'input': {
+                const el = findFieldForm(key);
 
-                    checkDefaultField((value) => {
+                checkDefaultField((value) => {
                         return validateSettings &&
                             (
                                 (validateSettings.includes('required') && !value) ||
@@ -62,66 +59,63 @@ window.initFormValidate = function (formId, options, callback) {
                                 (validateSettings.includes('email') && !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value)) ||
                                 (validateSettings.includes('inn') && (!/^([0-9]+)$/gi.test(value) || !(12 >= value.length && value.length >= 10)))
                             )
-                        },
-                        () => el.value, el, ['keyup']);
-                    
-                    break;
-                }
-                case 'date': {
-                    const dateObj = dates[`${formId}_${key}`];
-                    const el = dateObj.input;
+                    },
+                    () => el.value, el, ['keyup']);
 
-                    checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),
-                        () => dateObj.selectedDates.map(date => dateObj.formatDate(date, 'd.m.Y')).join(', '), el, ['change']);
-
-                    break;
-                }
-                case 'select': {
-                    const select = selects[`${formId}_${key}`];
-                    const el = select.select;
-                    
-                    checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),
-                        () =>  +select.value, el, ['change']);
-
-                    break;
-                }
-                case 'checkbox': {
-                    const el = findFieldForm(key);
-                    const isChecked = el.checked;
-
-                    if (validateSettings && validateSettings.includes('required')) {
-                        if (!isChecked) {
-                            el.parentNode.classList.add('error');
-                            isValid = false;
-                        }
-                    }
-                    else if (isChecked) {
-                        formData.append(key, 'true');
-                    }
-                    
-                    break;
-                }
-                case 'file': {
-                    const file = findFieldForm(key).files[0];
-                    
-                    if (file) {
-                        formData.append(key, findFieldForm(key).files[0]);
-                    }
-                    break;
-                }
+                break;
             }
-        });
+            case 'date': {
+                const dateObj = dates[`${formId}_${key}`];
+                const el = dateObj.input;
 
-        const norm = {}
+                checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),
+                    () => dateObj.selectedDates.map(date => dateObj.formatDate(date, 'd.m.Y')).join(', '), el, ['change']);
 
-        for(let [name, value] of formData) {
-            norm[name] = value;
+                break;
+            }
+            case 'select': {
+                const select = selects[`${formId}_${key}`];
+                const el = select.select;
+
+                checkDefaultField((value) => validateSettings && (validateSettings.includes('required') && !value),
+                    () =>  +select.value, el, ['change']);
+
+                break;
+            }
+            case 'checkbox': {
+                const el = findFieldForm(key);
+                const isChecked = el.checked;
+
+                if (validateSettings && validateSettings.includes('required')) {
+                    if (!isChecked) {
+                        el.parentNode.classList.add('error');
+                        isValid = false;
+                    }
+                }
+                else if (isChecked) {
+                    formData.append(key, 'true');
+                }
+
+                break;
+            }
+            case 'file': {
+                const file = findFieldForm(key).files[0];
+
+                if (file) {
+                    formData.append(key, findFieldForm(key).files[0]);
+                }
+                break;
+            }
         }
+    });
 
-        console.log(isValid, norm);
+    const norm = {}
 
-        if (isValid) {
-            callback(formData);
-        }
-    })
+    for(let [name, value] of formData) {
+        norm[name] = value;
+    }
+
+    console.log(isValid, norm);
+
+    return isValid ? formData : false;
 }

@@ -346,95 +346,130 @@
     
     document.addEventListener("DOMContentLoaded", () => {
         
-        initFormValidate('applicationPass', {
-            company_name: {
-                type: 'input',
-                validate: 'required'
-            },
-            company_fio_head: {
-                type: 'input',
-                validate: 'abs|required'
-            },
-            company_phone_head: {
-                type: 'input',
-                validate: 'phone'
-            },
-            company_inn: {
-                type: 'input',
-                validate: 'inn'
-            },
-            visit_purpose: {
-                type: 'input'
-            },
-            pass_zone_2: {
-                type: 'checkbox'
-            },
-            pass_zone_3: {
-                type: 'checkbox'
-            },
-            pass_dates: {
-                type: 'date',
-                validate: 'required'
-            },
-            pass_order: {
-                type: 'select',
-                validate: 'required'
-            },
-        }, (body) => {
-            console.log(body)
-        });
+        document.querySelector('#signature-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const inits = [
+                {
+                    formId: 'signature-form',
+                    options: {
+                        isAgreeProcessing: {
+                            type: 'checkbox',
+                            validate: 'required'
+                        },
+                        isAgreeRules: {
+                            type: 'checkbox',
+                            validate: 'required'
+                        }
+                    }
+                }
+            ];
 
-        initFormValidate('applicationAutoPass', {
-            company_name: {
-                type: 'input',
-                validate: 'required'
-            },
-            company_fio_head: {
-                type: 'input',
-                validate: 'abs|required'
-            },
-            company_phone_head: {
-                type: 'input',
-                validate: 'phone'
-            },
-            company_inn: {
-                type: 'input',
-                validate: 'inn'
-            },
-            visit_purpose: {
-                type: 'input'
-            },
-            pass_zone_2: {
-                type: 'checkbox'
-            },
-            pass_dates: {
-                type: 'date',
-                validate: 'required'
-            },
-            pass_order: {
-                type: 'select',
-                validate: 'required'
-            },
-        }, (body) => {
-            console.log(body)
+            inits.push(!applicationPass.style.display? {
+                formId: 'applicationPass',
+                options: {
+                    company_name: {
+                        type: 'input',
+                        validate: 'required'
+                    },
+                    company_fio_head: {
+                        type: 'input',
+                        validate: 'abs|required'
+                    },
+                    company_phone_head: {
+                        type: 'input',
+                        validate: 'phone'
+                    },
+                    company_inn: {
+                        type: 'input',
+                        validate: 'inn'
+                    },
+                    visit_purpose: {
+                        type: 'input'
+                    },
+                    pass_zone_2: {
+                        type: 'checkbox'
+                    },
+                    pass_zone_3: {
+                        type: 'checkbox'
+                    },
+                    pass_dates: {
+                        type: 'date',
+                        validate: 'required'
+                    },
+                    pass_order: {
+                        type: 'select',
+                        validate: 'required'
+                    }
+                }
+            } : {
+                formId: 'applicationAutoPass',
+                options: {
+                    company_name: {
+                        type: 'input',
+                        validate: 'required'
+                    },
+                    company_fio_head: {
+                        type: 'input',
+                        validate: 'abs|required'
+                    },
+                    company_phone_head: {
+                        type: 'input',
+                        validate: 'phone'
+                    },
+                    company_inn: {
+                        type: 'input',
+                        validate: 'inn'
+                    },
+                    visit_purpose: {
+                        type: 'input'
+                    },
+                    pass_zone_2: {
+                        type: 'checkbox'
+                    },
+                    pass_dates: {
+                        type: 'date',
+                        validate: 'required'
+                    },
+                    pass_order: {
+                        type: 'select',
+                        validate: 'required'
+                    }
+                }
+            })
+            
+            
+            
+            
+            let isValid = true;
+            inits.forEach(({formId, options}) => {
+                if (!formValidate(formId, options)) isValid = false;
+            })
+
+            
         });
         
-        initFormValidate('signature-form', {
-            isAgreeProcessing: {
-                type: 'checkbox',
-                validate: 'required'
-            },
-            isAgreeRules: {
-                type: 'checkbox',
-                validate: 'required'
-            }
-        }, () => {
-            if(!applicationPass.style.display) {
-                applicationPass.requestSubmit();
-            }
-            else {
-                applicationAutoPass.requestSubmit();
-            }
-        })
+        // initFormValidate('applicationPass', {
+        
+        // }, (body) => {
+        //     console.log(body)
+        // });
+        //
+        // initFormValidate('', {
+        
+        // }, (body) => {
+        //     console.log(body)
+        // });
+        //
+        // initFormValidate('signature-form', {
+            
+        // }, () => {
+        //     if(!applicationPass.style.display) {
+        //         applicationPass.requestSubmit();
+        //     }
+        //     else {
+        //         applicationAutoPass.requestSubmit();
+        //     }
+        // })
     })
 </script>
