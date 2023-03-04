@@ -12,7 +12,7 @@
     return dd + '.' + mm + '.' + yy;
 }
 
-window.formValidate = function (form, options) {
+window.formValidate = function (form, options, isReturnFormData = true) {
     const findFieldForm = (key) => form.querySelector(`[name="${key}"]`);
     
     const formData = {};
@@ -134,13 +134,50 @@ window.formValidate = function (form, options) {
         }
     });
 
-    return isValid ? formData : false;
+    if (isValid) {
+        if (isReturnFormData) {
+            const newFormData = new FormData();
+            Object.keys(formData).forEach(key => newFormData.append(key, formData[key]));
+            console.log(formData);
+            return newFormData;
+        }
+        
+        return formData;
+    }
+    
+    return false;
+    
 }
 
 window.clearForm = function (form) {
     const formId = form.getAttribute('id');
+    const removeErrorClass = (el) => el.classList.remove('error');
     
-    form.querySelectorAll('.input:not(.datetime), .textarea').forEach(el => el.value = '');
-    form.querySelectorAll('.select').forEach(el => selects[`${formId}_${el.getAttribute('name')}`]?.clear());
-    form.querySelectorAll('.datetime').forEach(el => dates[`${formId}_${el.getAttribute('name')}`]?.clear());
+    form.querySelectorAll('.input:not(.datetime), .textarea').forEach(el => {
+        el.value = '';
+        removeErrorClass(el);
+    });
+    
+    form.querySelectorAll('.checkbox input').forEach(el => {
+        el.checked = false;
+        removeErrorClass(el.parentNode);
+    });
+    
+    form.querySelectorAll('.select').forEach(el => {
+        const select = selects[`${formId}_${el.getAttribute('name')}`];
+        
+        if (select) {
+            select.clear();
+            removeErrorClass(select.select);
+        }
+    });
+    
+    form.querySelectorAll('.datetime').forEach(el => {
+        const date = dates[`${formId}_${el.getAttribute('name')}`];
+        
+        if (date) {
+            date.clear();
+            removeErrorClass(date.element);
+        }
+    });
 }

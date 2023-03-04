@@ -110,7 +110,7 @@
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             
-            const body = formValidate(form, {
+            const formData = formValidate(form, {
                 container_number_ktk: {
                     type: 'input',
                     validate: 'required'
@@ -171,12 +171,16 @@
                 }
             });
             
-            if (body) {
-                console.log(body);
+            if (formData) {
                 fetch(`${window.config.host}/ajax/form.php`, {
                     method: 'POST',
-                    body
-                }).then(() => applicationSentPopup.show());
+                    body: formData
+                }).then(({ status }) => {
+                    if (status === 200) {
+                        applicationSentPopup.show();
+                        clearForm(form);
+                    }
+                });
             }
         });
     });
