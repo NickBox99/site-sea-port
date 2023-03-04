@@ -124,12 +124,15 @@
       padding-top: 34px;
       border-top: 1px solid var(--color-blue-7);
     }
+
+    &__alternative, &__filters-row {
+      color: var(--color-blue-10);
+    }
     
     &__alternative {
       margin: 20px 0 30px;
       max-width: 428px;
       width: 100%;
-      color: var(--color-blue-10);
     }
     
     &__mail {

@@ -101,8 +101,10 @@ span.flatpickr-weekday {
   height: 18px;
 }
 
-.flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay {
-  color: var(--color-white-opac20);
+.flatpickr-day, .flatpickr-day {
+  &.prevMonthDay, &.nextMonthDay, &.flatpickr-disabled {
+    color: var(--color-white-opac20);
+  }
 }
 
 .flatpickr-current-month .numInputWrapper {

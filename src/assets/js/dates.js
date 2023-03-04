@@ -39,6 +39,10 @@ window.initDates = (target) => {
             flatpickrOptions['allowInput'] = false;
             delete flatpickrOptions['onChange'];
         }
+        
+        if (el.hasAttribute('data-flatpickr-today')) {
+            flatpickrOptions['minDate'] = "today";
+        }
     
         window.dates[formId? `${formId}_${name}` : name] = flatpickr(el, flatpickrOptions);
     });

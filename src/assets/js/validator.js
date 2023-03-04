@@ -12,14 +12,16 @@
     return dd + '.' + mm + '.' + yy;
 }
 
-window.formValidate = function (formId, options) {
-    const form = document.querySelector(`#${formId}`);
+window.formValidate = function (form, options) {
     const findFieldForm = (key) => form.querySelector(`[name="${key}"]`);
     
-    const formData = {
-        'form_id': formId
-    };
+    const formData = {};
 
+    const formIdInput = findFieldForm('form_id');
+    if (formIdInput && formIdInput.value) {
+        formData['form_id'] = formIdInput.value;
+    }
+    
     let isValid = true;
 
     Object.keys(options).forEach(key => {
@@ -83,6 +85,8 @@ window.formValidate = function (formId, options) {
             }
         }
 
+        const formId = form.getAttribute('id');
+        
         switch (option.type) {
             case 'input': {
                 const el = findFieldForm(key);

@@ -43,17 +43,18 @@
     </div>
 
     <form data-tabs="application-pass" id="applicationPass">
+        <input type="hidden" name="form_id" value="applicationPass">
         <div class="filters-subtitle">Компания</div>
         <div class="filters-row request-pass__company">
-            <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text">
-            <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text">
-            <input name="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text">
-            <input name="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text">
+            <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
+            <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
 
         <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
         <div class="filters-row request-pass__visit">
-            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст"></textarea>
+            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст" role="presentation" autocomplete="off"></textarea>
         </div>
 
         <div class="filters-subtitle request-pass__zones-title">Параметры пропуска</div>
@@ -75,7 +76,7 @@
         </div>
 
         <div class="filters-row request-pass__zones-fields">
-            <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple>
+            <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-today>
             <div name="pass_order" class="select select_secondary">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
@@ -106,17 +107,18 @@
     </form>
 
     <form data-tabs="application-auto-pass" id="applicationAutoPass" style="display: none;">
+        <input type="hidden" name="form_id" value="applicationAutoPass">
         <div class="filters-subtitle">Компания</div>
         <div class="filters-row request-pass__company">
-            <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text">
-            <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text">
-            <input name="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text">
-            <input name="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text">
+            <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
+            <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_phone_head" class="input input_secondary" placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
 
         <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
         <div class="filters-row request-pass__visit">
-            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст"></textarea>
+            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст" role="presentation" autocomplete="off"></textarea>
         </div>
 
         <div class="filters-subtitle request-pass__zones-title">Параметры пропуска</div>
@@ -133,7 +135,7 @@
         </div>
 
         <div class="filters-row request-pass__zones-fields">
-            <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple>
+            <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-today>
             <div name="pass_order" class="select select_secondary">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
@@ -209,7 +211,7 @@
             <a href="#" class="popup__link" target="_blank">автомобильного&nbsp;пропуска</a>
         </div>
 
-        <button class="popup__btn btn btn_primary">Вернуться на сайт</button>
+        <button class="popup__btn btn btn_primary root-white">Вернуться на сайт</button>
     </div>
 </div>
 
@@ -218,29 +220,29 @@
 
     <div class="filters-subtitle">Личные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="personal_surname" class="input" placeholder="Фамилия*" type="text">
-        <input name="personal_name" class="input" placeholder="Имя*" type="text">
-        <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text">
+        <input name="personal_surname" class="input" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_name" class="input" placeholder="Имя*" type="text"  role="presentation" autocomplete="off">
+        <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
         <input name="personal_birthday" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
 
-        <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text">
-        <input name="personal_position" class="input" placeholder=" Должность получателя*" type="text">
+        <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_position" class="input" placeholder=" Должность получателя*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="passport_series" class="input" placeholder="Номер*" type="text">
-        <input name="passport_number" class="input" placeholder="Серия*" type="text">
+        <input name="passport_series" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_number" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
         <input name="passport_date" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
-        <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text">
+        <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Контактные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="contact_registration_address" class="input filters-col-3" placeholder="Адрес регистрации*" type="text">
-        <input name="contact_factual_address" class="input filters-col-3" placeholder="Фактический адрес*" type="text">
-        <input name="contact_phone" class="input" placeholder="Контактный телефон*" type="text">
-        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text">
+        <input name="contact_registration_address" class="input filters-col-3" placeholder="Адрес регистрации*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_factual_address" class="input filters-col-3" placeholder="Фактический адрес*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_phone" class="input" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="request-pass-block__footer">
@@ -254,29 +256,29 @@
 
     <div class="filters-subtitle">Личные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="personal_surname" class="input" placeholder="Фамилия*" type="text">
-        <input name="personal_name" class="input" placeholder="Имя*" type="text">
-        <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text">
+        <input name="personal_surname" class="input" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_name" class="input" placeholder="Имя*" type="text"  role="presentation" autocomplete="off">
+        <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
         <input name="personal_birthday" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
 
-        <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text">
-        <input name="personal_position" class="input" placeholder=" Должность получателя*" type="text">
+        <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_position" class="input" placeholder=" Должность получателя*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="passport_series" class="input" placeholder="Номер*" type="text">
-        <input name="passport_number" class="input" placeholder="Серия*" type="text">
+        <input name="passport_series" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_number" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
         <input name="passport_date" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
-        <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text">
+        <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Контактные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="contact_registration_address" class="input filters-col-3" placeholder="Адрес регистрации*" type="text">
-        <input name="contact_factual_address" class="input filters-col-3" placeholder="Фактический адрес*" type="text">
-        <input name="contact_phone" class="input" placeholder="Контактный телефон*" type="text">
-        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text">
+        <input name="contact_registration_address" class="input filters-col-3" placeholder="Адрес регистрации*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_factual_address" class="input filters-col-3" placeholder="Фактический адрес*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_phone" class="input" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Данные автомобиля</div>
@@ -296,10 +298,10 @@
             </div>
             <div class="select__daw">@@include('../components/svg/daw.html')</div>
         </div>
-        <input name="car_brand" class="input" placeholder="Марка*" type="text">
-        <input name="car_model" class="input" placeholder="Модель*" type="text">
-        <input name="car_number" class="input" placeholder="Гос. номер*" type="text">
-        <input name="car_color" class="input" placeholder="Цвет*" type="text">
+        <input name="car_brand" class="input" placeholder="Марка*" type="text" role="presentation" autocomplete="off">
+        <input name="car_model" class="input" placeholder="Модель*" type="text" role="presentation" autocomplete="off">
+        <input name="car_number" class="input" placeholder="Гос. номер*" type="text" role="presentation" autocomplete="off">
+        <input name="car_color" class="input" placeholder="Цвет*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="request-pass-block__footer">
@@ -367,12 +369,13 @@
     document.addEventListener("DOMContentLoaded", () => {
         const applicationSentPopup = new Popup('#request-speeches-sent');
         
-        document.querySelector('#signature-form').addEventListener('submit', (event) => {
+        const signatureForm = document.querySelector('#signature-form');
+        signatureForm.addEventListener('submit', (event) => {
             event.preventDefault();
             
             const isApplicationPass = !applicationPass.style.display;
             
-            const isValidSignatureForm = Boolean(formValidate('signature-form', {
+            const isValidSignatureForm = Boolean(formValidate(signatureForm, {
                 isAgreeProcessing: {
                     type: 'checkbox',
                     validate: 'required'
@@ -416,14 +419,13 @@
                 }
             }
             const mainForm = isApplicationPass ? 
-                formValidate('applicationPass', {
+                formValidate(applicationPass, {
                     ...defaultMainOptions,
                     pass_zone_3: {
                         type: 'checkbox'
                     }
                 }) :
-                formValidate('applicationAutoPass', defaultMainOptions);
-            
+                formValidate(applicationAutoPass, defaultMainOptions);
             
             const defaultPassOptions = {
                 personal_surname: {
@@ -507,10 +509,11 @@
                         validate: 'required'
                     }
                 };
-            const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass.getAttribute('id'), passesValidatorOptions));
+            const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass, passesValidatorOptions));
 
             if (isValidSignatureForm && mainForm && !passes.filter(pass => !pass).length) {
                 mainForm.append('passes_json', JSON.stringify(passes));
+                console.log(mainForm);
 
                 fetch(`${window.config.host}/ajax/form.php`, {
                     method: 'POST',

@@ -158,32 +158,38 @@
                         Или заполните форму:
                     </div>
 
-                    <div class="filters-row accordion-vacancy__filters-row">
-                        <input class="input input_third" placeholder="Фамилия*" type="text">
-                        <input class="input input_third" placeholder="Имя*" type="text">
-                        <input class="input input_third" placeholder="Отчество*" type="text">
-                        <input class="datetime datetime_third datetime_w-100" placeholder="Дата рождения*" data-placeholder-focus>
-                        <input class="input input_third" placeholder="Место рождения*" type="text">
-                        <input class="input input_third" placeholder="Гражданство" type="text">
-                        <input class="input input_third" placeholder="Электронная почта*" type="text">
-                        <input class="input input_third" placeholder="Контактный телефон*" type="text">
-                        <div class="input-group input-group_third input-group_clip">
-                            <button class="input input_file input_third">Прикрепить файл</button>
+                    <form id="vacancies-form-1" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                        <input type="hidden" name="form_id" value="student">
+                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                        <input name="phone" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+
+                        <div class="input-group">
+                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                            <label class="input input_third input_file">
+                                <input type="file" name="file"/>
+                                Прикрепить файл
+                            </label>
                         </div>
 
                         <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox">
-                                <input id="isAgreeProcessing" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
                                 <span class="checkbox__text">Согласен на обработку персональных данных</span>
                             </label>
-                            <label class="checkbox">
-                                <input id="isAgreeRules" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
                                 <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                             </label>
                         </div>
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit" type="submit">Отправить</button>
-                    </div>
+                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -260,32 +266,38 @@
                         Или заполните форму:
                     </div>
 
-                    <div class="filters-row accordion-vacancy__filters-row">
-                        <input class="input input_third" placeholder="Фамилия*" type="text">
-                        <input class="input input_third" placeholder="Имя*" type="text">
-                        <input class="input input_third" placeholder="Отчество*" type="text">
-                        <input class="datetime datetime_third datetime_w-100" placeholder="Дата рождения*" data-placeholder-focus>
-                        <input class="input input_third" placeholder="Место рождения*" type="text">
-                        <input class="input input_third" placeholder="Гражданство" type="text">
-                        <input class="input input_third" placeholder="Электронная почта*" type="text">
-                        <input class="input input_third" placeholder="Контактный телефон*" type="text">
-                        <div class="input-group input-group_third input-group_clip">
-                            <button class="input input_file input_third">Прикрепить файл</button>
+                    <form id="vacancies-form-2" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                        <input type="hidden" name="form_id" value="student">
+                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                        <input name="phone" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+
+                        <div class="input-group">
+                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                            <label class="input input_third input_file">
+                                <input type="file" name="file"/>
+                                Прикрепить файл
+                            </label>
                         </div>
 
                         <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox">
-                                <input id="isAgreeProcessing5" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
                                 <span class="checkbox__text">Согласен на обработку персональных данных</span>
                             </label>
-                            <label class="checkbox">
-                                <input id="isAgreeRules5" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
                                 <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                             </label>
                         </div>
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit" type="submit">Отправить</button>
-                    </div>
+                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -362,32 +374,38 @@
                         Или заполните форму:
                     </div>
 
-                    <div class="filters-row accordion-vacancy__filters-row">
-                        <input class="input input_third" placeholder="Фамилия*" type="text">
-                        <input class="input input_third" placeholder="Имя*" type="text">
-                        <input class="input input_third" placeholder="Отчество*" type="text">
-                        <input class="datetime datetime_third datetime_w-100" placeholder="Дата рождения*" data-placeholder-focus>
-                        <input class="input input_third" placeholder="Место рождения*" type="text">
-                        <input class="input input_third" placeholder="Гражданство" type="text">
-                        <input class="input input_third" placeholder="Электронная почта*" type="text">
-                        <input class="input input_third" placeholder="Контактный телефон*" type="text">
-                        <div class="input-group input-group_third input-group_clip">
-                            <button class="input input_file input_third">Прикрепить файл</button>
+                    <form id="vacancies-form-3" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                        <input type="hidden" name="form_id" value="student">
+                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                        <input name="phone" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+
+                        <div class="input-group">
+                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                            <label class="input input_third input_file">
+                                <input type="file" name="file"/>
+                                Прикрепить файл
+                            </label>
                         </div>
 
                         <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox">
-                                <input id="isAgreeProcessing1" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
                                 <span class="checkbox__text">Согласен на обработку персональных данных</span>
                             </label>
-                            <label class="checkbox">
-                                <input id="isAgreeRules1" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
                                 <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                             </label>
                         </div>
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit" type="submit">Отправить</button>
-                    </div>
+                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -464,32 +482,38 @@
                         Или заполните форму:
                     </div>
 
-                    <div class="filters-row accordion-vacancy__filters-row">
-                        <input class="input input_third" placeholder="Фамилия*" type="text">
-                        <input class="input input_third" placeholder="Имя*" type="text">
-                        <input class="input input_third" placeholder="Отчество*" type="text">
-                        <input class="datetime datetime_third datetime_w-100" placeholder="Дата рождения*" data-placeholder-focus>
-                        <input class="input input_third" placeholder="Место рождения*" type="text">
-                        <input class="input input_third" placeholder="Гражданство" type="text">
-                        <input class="input input_third" placeholder="Электронная почта*" type="text">
-                        <input class="input input_third" placeholder="Контактный телефон*" type="text">
-                        <div class="input-group input-group_third input-group_clip">
-                            <button class="input input_file input_third">Прикрепить файл</button>
+                    <form id="vacancies-form-4" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                        <input type="hidden" name="form_id" value="student">
+                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                        <input name="phone" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+
+                        <div class="input-group">
+                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                            <label class="input input_third input_file">
+                                <input type="file" name="file"/>
+                                Прикрепить файл
+                            </label>
                         </div>
 
                         <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox">
-                                <input id="isAgreeProcessing4" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
                                 <span class="checkbox__text">Согласен на обработку персональных данных</span>
                             </label>
-                            <label class="checkbox">
-                                <input id="isAgreeRules4" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
                                 <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                             </label>
                         </div>
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit" type="submit">Отправить</button>
-                    </div>
+                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -566,32 +590,38 @@
                         Или заполните форму:
                     </div>
 
-                    <div class="filters-row accordion-vacancy__filters-row">
-                        <input class="input input_third" placeholder="Фамилия*" type="text">
-                        <input class="input input_third" placeholder="Имя*" type="text">
-                        <input class="input input_third" placeholder="Отчество*" type="text">
-                        <input class="datetime datetime_third datetime_w-100" placeholder="Дата рождения*" data-placeholder-focus>
-                        <input class="input input_third" placeholder="Место рождения*" type="text">
-                        <input class="input input_third" placeholder="Гражданство" type="text">
-                        <input class="input input_third" placeholder="Электронная почта*" type="text">
-                        <input class="input input_third" placeholder="Контактный телефон*" type="text">
-                        <div class="input-group input-group_third input-group_clip">
-                            <button class="input input_file input_third">Прикрепить файл</button>
+                    <form id="vacancies-form-5" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                        <input type="hidden" name="form_id" value="student">
+                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                        <input name="phone" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+
+                        <div class="input-group">
+                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                            <label class="input input_third input_file">
+                                <input type="file" name="file"/>
+                                Прикрепить файл
+                            </label>
                         </div>
 
                         <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox">
-                                <input id="isAgreeProcessing2" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
                                 <span class="checkbox__text">Согласен на обработку персональных данных</span>
                             </label>
-                            <label class="checkbox">
-                                <input id="isAgreeRules2" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
                                 <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                             </label>
                         </div>
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit" type="submit">Отправить</button>
-                    </div>
+                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -668,34 +698,119 @@
                         Или заполните форму:
                     </div>
 
-                    <div class="filters-row accordion-vacancy__filters-row">
-                        <input class="input input_third" placeholder="Фамилия*" type="text">
-                        <input class="input input_third" placeholder="Имя*" type="text">
-                        <input class="input input_third" placeholder="Отчество*" type="text">
-                        <input class="datetime datetime_third datetime_w-100" placeholder="Дата рождения*" data-placeholder-focus>
-                        <input class="input input_third" placeholder="Место рождения*" type="text">
-                        <input class="input input_third" placeholder="Гражданство" type="text">
-                        <input class="input input_third" placeholder="Электронная почта*" type="text">
-                        <input class="input input_third" placeholder="Контактный телефон*" type="text">
-                        <div class="input-group input-group_third input-group_clip">
-                            <button class="input input_file input_third">Прикрепить файл</button>
+                    <form id="vacancies-form-6" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                        <input type="hidden" name="form_id" value="student">
+                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                        <input name="phone" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+
+                        <div class="input-group">
+                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                            <label class="input input_third input_file">
+                                <input type="file" name="file"/>
+                                Прикрепить файл
+                            </label>
                         </div>
 
                         <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox">
-                                <input id="isAgreeProcessing3" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
                                 <span class="checkbox__text">Согласен на обработку персональных данных</span>
                             </label>
-                            <label class="checkbox">
-                                <input id="isAgreeRules3" class="checkbox__input" type="checkbox" data-agreement>
+                            <label class="checkbox checkbox_third">
+                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
                                 <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                             </label>
                         </div>
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit" type="submit">Отправить</button>
-                    </div>
+                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div id="request-speeches-sent" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__header">
+            <div class="popup__title">Ваша заявка отправлена</div>
+            <div class="popup__cross">@@include('../components/svg/cross.html')</div>
+        </div>
+
+        <div class="popup__content">
+            Если у Вас нет постоянного автомобильного пропуска, для нахождения на территории порта Вам необходимо отправить заявку на предоставление РАЗОВОГО
+            <a href="#" class="popup__link" target="_blank">автомобильного&nbsp;пропуска</a>
+        </div>
+
+        <button class="popup__btn btn btn_primary root-white">Вернуться на сайт</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const applicationSentPopup = new Popup('#request-speeches-sent');
+
+        document.querySelectorAll('.vacancies-form').forEach(form => {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const body = formValidate(form, {
+                    surname: {
+                        type: 'input',
+                        validate: 'required|abs'
+                    },
+                    name: {
+                        type: 'input',
+                        validate: 'required|abs'
+                    },
+                    patronymic: {
+                        type: 'input',
+                        validate: 'required|abs'
+                    },
+                    date_of_birth: {
+                        type: 'date',
+                        validate: 'required'
+                    },
+                    place_of_birth: {
+                        type: 'input',
+                        validate: 'required'
+                    },
+                    citizenship: {
+                        type: 'input',
+                        validate: 'required'
+                    },
+                    email: {
+                        type: 'input',
+                        validate: 'email'
+                    },
+                    phone: {
+                        type: 'input',
+                        validate: 'phone'
+                    },
+                    isAgreeProcessing: {
+                        type: 'checkbox',
+                        validate: 'required'
+                    },
+                    isAgreeRules: {
+                        type: 'checkbox',
+                        validate: 'required'
+                    }
+                });
+
+                if (body) {
+                    console.log(body);
+                    fetch(`${window.config.host}/ajax/form.php`, {
+                        method: 'POST',
+                        body
+                    }).then(() => applicationSentPopup.show());
+                }
+            });
+        })
+    });
+</script>

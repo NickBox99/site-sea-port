@@ -7,6 +7,7 @@
         выставить для досмотра следующие контейнеры:</div>
     
     <form id="applicationForInspection" autocomplete="off">
+        <input type="hidden" name="form_id" value="applicationForInspection">
         <div class="filters-subtitle">Контейнер</div>
         <div class="filters-row">
             <input name="container_number_ktk" class="input input_secondary" placeholder="Номер КТК*" type="text">
@@ -71,11 +72,11 @@
 
             <div>
                 <label class="checkbox checkbox_third">
-                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" data-agreement>
+                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox">
                     <span class="checkbox__text">Согласен на обработку персональных данных</span>
                 </label>
                 <label class="checkbox checkbox_third">
-                    <input name="isAgreeRules" class="checkbox__input" type="checkbox" data-agreement>
+                    <input name="isAgreeRules" class="checkbox__input" type="checkbox">
                     <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
                 </label>
             </div>
@@ -97,18 +98,19 @@
             <a href="#" class="popup__link" target="_blank">автомобильного&nbsp;пропуска</a>
         </div>
 
-        <button class="popup__btn btn btn_primary">Вернуться на сайт</button>
+        <button class="popup__btn btn btn_primary root-white">Вернуться на сайт</button>
     </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const applicationSentPopup = new Popup('#request-speeches-sent');
+        const form = document.querySelector('#applicationForInspection');
 
-        document.querySelector('#applicationForInspection').addEventListener('submit', (event) => {
+        form.addEventListener('submit', (event) => {
             event.preventDefault();
             
-            const body = formValidate('applicationForInspection', {
+            const body = formValidate(form, {
                 container_number_ktk: {
                     type: 'input',
                     validate: 'required'
