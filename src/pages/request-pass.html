@@ -49,7 +49,7 @@
             <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
             <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
             <input name="company_phone_head" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
-            <input name="company_inn" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
+            <input name="company_inn" data-mask="000000000000" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
 
         <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
@@ -231,8 +231,8 @@
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="passport_series" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
-        <input name="passport_number" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_series" data-mask="0000" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_number" data-mask="000000" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
         <input name="passport_date" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
         <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
     </div>
@@ -267,8 +267,8 @@
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="passport_series" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
-        <input name="passport_number" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_series" data-mask="0000" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_number" data-mask="000000" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
         <input name="passport_date" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
         <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
     </div>
@@ -340,6 +340,7 @@
 
             initSelects(form);
             initDates(form);
+            initMasks(form);
 
             initRemoveButtons(wrapper);
         } else {
@@ -509,16 +510,22 @@
                         validate: 'required'
                     }
                 };
-            const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass, passesValidatorOptions));
+            const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass, passesValidatorOptions, false));
 
             if (isValidSignatureForm && mainForm && !passes.filter(pass => !pass).length) {
                 mainForm.append('passes_json', JSON.stringify(passes));
-                console.log(mainForm);
 
                 fetch(`${window.config.host}/ajax/form.php`, {
                     method: 'POST',
                     body: mainForm
-                }).then(() => applicationSentPopup.show());
+                }).then(({ status }) => {
+                    if (status === 200) {
+                        applicationSentPopup.show();
+                        clearForm(signatureForm);
+                        clearForm(isApplicationPass ? applicationPass : applicationAutoPass);
+                        [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].forEach(pass => clearForm(pass));
+                    }
+                });
             }
         });
     })
