@@ -1,4 +1,5 @@
 ﻿import './libs'
+import './file'
 import './validator'
 import './animations'
 import './accordion'
@@ -12,7 +13,7 @@ import './imask'
 import './main'
 
 window.config = {
-    host: process.env.HOST,
+    host: process.env.HOST
 }
 
 window.match = null

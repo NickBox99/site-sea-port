@@ -180,4 +180,6 @@ window.clearForm = function (form) {
             removeErrorClass(date.element);
         }
     });
+
+    form.querySelectorAll('input[type="file"]').forEach(el => clearInputFile(el));
 }

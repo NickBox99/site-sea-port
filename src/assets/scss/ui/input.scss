@@ -53,14 +53,6 @@
       color: var(--color-red);
     }
   }
-  
-  &_file {
-    cursor: pointer;
-    
-    input {
-      display: none;
-    }
-  }
 
   @media screen and (max-width: 640px) {
     &, &::placeholder {
@@ -81,6 +73,7 @@
 
   &-group {
     position: relative;
+    min-width: 0;
 
     &-icon {
       position: absolute;
@@ -106,6 +99,7 @@
       
       &_clip {
         width: 14px;
+        z-index: 1;
       }
       
       &_calendar {
@@ -129,5 +123,43 @@ input {
     -webkit-text-fill-color: white!important;
     -webkit-transition: background-color 5000s ease-in-out 0s;
     transition: background-color 5000s ease-in-out 0s
+  }
+}
+
+.input-file {
+  position: relative;
+  cursor: pointer;
+  
+  &__input {
+    display: none;
+  }
+  
+  &__name {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: calc(100% - 49px);
+  }
+  
+  &__cross {
+    position: absolute;
+    top: 0;
+    right: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30px;
+    color: var(--color-red);
+    cursor: pointer;
+    
+    &.hide {
+      display: none;
+    }
+    
+    svg {
+      width: 10px;
+    }
   }
 }
