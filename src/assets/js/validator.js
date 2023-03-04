@@ -138,7 +138,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
         if (isReturnFormData) {
             const newFormData = new FormData();
             Object.keys(formData).forEach(key => newFormData.append(key, formData[key]));
-            console.log(formData);
+            
             return newFormData;
         }
         
