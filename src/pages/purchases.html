@@ -1,19 +1,22 @@
 <div class="purchases">
     
     <h1 class="purchases__title">Закупки</h1>
-    
-    <div class="filters-search purchases__filters-search">
-        <div class="filters-search__input input-group input-group_third">
-            <div class="input-group-icon input-group-icon_search">@@include('../components/svg/search.html')</div>
-            <input class="input input_secondary" placeholder="Поиск" type="text">
+
+    <form id="purchases-search">
+        <div class="filters-search purchases__filters-search">
+            <div class="filters-search__input input-group input-group_third">
+                <div class="input-group-icon input-group-icon_search">@@include('../components/svg/search.html')</div>
+                <input name="search" class="input input_secondary" placeholder="Поиск" type="text" role="presentation" autocomplete="off">
+            </div>
+            
+            <button class="btn btn_primary btn_large filters-search__btn">Найти</button>
         </div>
-        <button class="btn btn_primary btn_large filters-search__btn">Найти</button>
-    </div>
+    </form>
     
-    <div class="filters-row purchases__filters-row">
+    <form id="purchases-filters" class="filters-row purchases__filters-row">
         <div>
             <div class="filters-subtitle">Заказчик</div>
-            <div id="customer" class="select select_secondary">
+            <div name="customer" class="select select_secondary">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary" data-value="0">Все доступные</div>
@@ -26,11 +29,12 @@
                     <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
                     <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
                 </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
             </div>
         </div>
         <div>
             <div class="filters-subtitle">Предмет закупки</div>
-            <div id="purchase" class="select select_secondary">
+            <div name="purchase" class="select select_secondary">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary" data-value="0">Все доступные</div>
@@ -43,39 +47,43 @@
                     <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
                     <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
                 </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
             </div>
         </div>
         <div>
             <div class="filters-subtitle">Поиск по дате</div>
             
             <div class="purchases__dates">
-                <div class="input-group input-group_calendar">
-                    <input id="flatpickr" class="datetime datetime_secondary" autocomplete="disabled">
+                <div class="input-group">
+                    <div class="input-group-icon input-group-icon_calendar">@@include('../components/svg/calendar.html')</div>
+                    <input name="firstDate" class="datetime input input_secondary">
                 </div>
-                <div class="input-group input-group_calendar">
-                    <input id="flatpickr2" class="datetime datetime_secondary" autocomplete="disabled">
+                <div class="input-group">
+                    <div class="input-group-icon input-group-icon_calendar">@@include('../components/svg/calendar.html')</div>
+                    <input name="secondDate" class="datetime input input_secondary">
                 </div>
             </div>
         </div>
 
         <div class="filters-sort purchases__filters-sort filters-col-2"><span class="filters-sort__title">СОРТИРОВАТЬ ПО:</span>&nbsp;
-            <div id="sort" class="select select_string">
+            <div name="typeSort" class="select select_string">
                 <div class="select__value"></div>
                 <div class="select__wrapper">
-                    <div class="select__item btn btn_secondary">Дате обновления</div>
-                    <div class="select__item btn btn_secondary">Дате публикации</div>
-                    <div class="select__item btn btn_secondary">Дате окончания приема предложений</div>
-                    <div class="select__item btn btn_secondary">По убыванию НМЦ</div>
-                    <div class="select__item btn btn_secondary">По возрастанию НМЦ</div>
+                    <div class="select__item btn btn_secondary" data-value="0">Дате обновления</div>
+                    <div class="select__item btn btn_secondary" data-value="1">Дате публикации</div>
+                    <div class="select__item btn btn_secondary" data-value="2">Дате окончания приема предложений</div>
+                    <div class="select__item btn btn_secondary" data-value="3">По убыванию НМЦ</div>
+                    <div class="select__item btn btn_secondary" data-value="4">По возрастанию НМЦ</div>
                 </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
             </div>
         </div>
         
         <div class="filters-sort-buttons purchases__filters-sort-buttons">
-            <button class="btn btn_primary btn_large">Применить</button>
-            <button class="btn btn_third btn_large">Очистить</button>
+            <button class="btn btn_primary btn_large" type="submit">Применить</button>
+            <a class="btn btn_third btn_large">Очистить</a>
         </div>
-    </div>
+    </form>
     
     <div class="purchases__purchases-order purchases-order">
         <div class="purchases-order__content">
@@ -219,3 +227,45 @@
 
     <div id="pagination" class="pagination"></div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const purchasesSearch = document.querySelector('#purchases-search');
+        purchasesSearch.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const result = formValidate(purchasesSearch, {
+                search: {
+                    type: 'input'
+                }
+            }, false);
+
+            console.log(result);
+        });
+        
+        const purchasesFilters = document.querySelector('#purchases-filters');
+        purchasesFilters.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const result = formValidate(purchasesFilters, {
+                customer: {
+                    type: 'select'
+                },
+                purchase: {
+                    type: 'select'
+                },
+                firstDate: {
+                    type: 'date'
+                },
+                secondDate: {
+                    type: 'date'
+                },
+                typeSort: {
+                    type: 'select'
+                }
+            }, false);
+
+            console.log(result);
+        });
+    });
+</script>

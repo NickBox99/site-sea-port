@@ -98,17 +98,26 @@
           width: 11px;
         }
       }
+
+      &_clip, &_calendar {
+        right: 30px;
+        pointer-events: none;
+      }
       
       &_clip {
-        right: 30px;
         width: 14px;
-        pointer-events: none;
+      }
+      
+      &_calendar {
+        width: 17px;
       }
     }
   }
 }
 
 .datetime {
+  min-width: 159px;
+  
   &, &-multiple {
     cursor: pointer;
   }

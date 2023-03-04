@@ -100,26 +100,24 @@
     padding: 17px 20px;
   }
 
-  
+  &_string {
+    &, &:hover {
+      padding: 0;
+      height: max-content;
+      width: max-content;
+      max-width: 100%;
+      background: transparent;
+      border: none;
+    }
 
-  
+    .select__wrapper {
+      top: 38px;
+      width: max-content;
 
-  
-
-  //&_string {
-  //  padding-right: 0;
-  //  width: max-content;
-  //
-  //  .select__wrapper {
-  //    top: 38px;
-  //    width: max-content;
-  //
-  //    @media screen and (max-width: 430px) {
-  //      left: unset;
-  //      right: -21px;
-  //    }
-  //  }
-  //}
-
-  
+      @media screen and (max-width: 451px) {
+        left: unset;
+        right: -28px;
+      }
+    }
+  }
 }

@@ -732,11 +732,15 @@
                 });
 
                 if (body) {
-                    console.log(body);
                     fetch(`${window.config.host}/ajax/form.php`, {
                         method: 'POST',
                         body
-                    }).then(() => applicationSentPopup.show());
+                    }).then(({status}) => {
+                        if(status === 200) {
+                            applicationSentPopup.show();
+                            clearForm(form);
+                        }
+                    });
                 }
             });
         })
