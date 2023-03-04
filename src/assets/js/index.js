@@ -8,6 +8,7 @@ import './header-menu'
 import './pagination'
 import './select'
 import './dates'
+import './imask'
 import './main'
 
 window.config = {

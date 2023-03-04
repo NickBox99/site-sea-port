@@ -37,9 +37,6 @@ window.formValidate = function (form, options) {
                     case 'required': {
                         return !value;
                     }
-                    case 'phone': {
-                        return !/^[\d\+][\d\(\)\ -]{4,14}\d$/.test(value);
-                    }
                     case 'abs': {
                         return !/^([a-zA-ZА-яЕЁ ]+)$/gi.test(value);
                     }
@@ -138,4 +135,12 @@ window.formValidate = function (form, options) {
     });
 
     return isValid ? formData : false;
+}
+
+window.clearForm = function (form) {
+    const formId = form.getAttribute('id');
+    
+    form.querySelectorAll('.input:not(.datetime), .textarea').forEach(el => el.value = '');
+    form.querySelectorAll('.select').forEach(el => selects[`${formId}_${el.getAttribute('name')}`]?.clear());
+    form.querySelectorAll('.datetime').forEach(el => dates[`${formId}_${el.getAttribute('name')}`]?.clear());
 }

@@ -4,10 +4,10 @@ class Select {
         this.select = element;
         this.valueWrapper = this.select.querySelector('.select__value');
 
-        this.itemsElements = [...this.select.querySelectorAll('.select__item')];
-        this.items = this.itemsElements.map(el => ({ value: el.getAttribute('data-value'), text: el.textContent }));
+        const items = [...this.select.querySelectorAll('.select__item')];
+        this.items = items.map(el => ({ value: el.getAttribute('data-value'), text: el.textContent, el }));
 
-        this.set(this.itemsElements[0]);
+        this.clear();
         this.initEvents();
     }
 
@@ -23,7 +23,7 @@ class Select {
                 const item = target.closest('.select__item');
 
                 if (item) {
-                    this.set(item);
+                    this.set(item.getAttribute('data-value'));
                     this.hide();
                 }
             }
@@ -34,15 +34,19 @@ class Select {
         });
     }
 
-    set(item) {
-        if (item) {
-            this.valueWrapper.textContent = item.textContent;
-            this.value = item.getAttribute('data-value');
-            this.itemsElements.forEach(el => el.classList.remove('active'));
-            item.classList.add('active');
+    set(value) {
+        const item = this.items.find(item => item.value === value);
+        
+        this.valueWrapper.textContent = item.text;
+        this.value = item.value;
+        this.items.forEach(({el}) => el.classList.remove('active'));
+        item.el.classList.add('active');
 
-            this.select.dispatchEvent(new Event('change'));
-        }
+        this.select.dispatchEvent(new Event('change'));
+    }
+    
+    clear() {
+        this.set(this.items[0].value);
     }
 
     show() {
