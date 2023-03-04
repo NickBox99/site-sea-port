@@ -33,15 +33,21 @@ window.changeVisibleRouteMap = function (btn) {
     maps[idxSelected].classList.remove('hide');
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('table').forEach(table => {
-        table.removeAttribute('border');
-        table.removeAttribute('cellpadding');
-        table.removeAttribute('cellspacing');
-        
-        const wrapper = document.createElement('div');
-        wrapper.setAttribute('class', 'table-wrapper');
-        table.parentNode.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
-    })
+document.querySelectorAll('table').forEach(table => {
+    if (!table.closest('.container')) {
+        return;
+    }
+    
+    table.removeAttribute('border');
+    table.removeAttribute('cellpadding');
+    table.removeAttribute('cellspacing');
+
+    if (table.parentNode.classList.contains('table-wrapper')) {
+        return;
+    }
+    
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('class', 'table-wrapper');
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
 })

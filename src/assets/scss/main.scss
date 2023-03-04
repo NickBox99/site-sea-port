@@ -124,7 +124,7 @@ li {
   border-spacing: unset;
 }
 
-th {
+.table-wrapper th {
   padding: 0 30px 14px;
   font-weight: 700;
   font-size: 12px;
@@ -133,16 +133,13 @@ th {
   text-transform: uppercase;
 }
 
-td {
+.table-wrapper td {
   padding: 22px 30px;
   font-size: 16px;
 }
 
-td, th {
-  width: 0;
-  min-width: fit-content;}
 
-tr {
+.table-wrapper tr {
   &:nth-child(2n) td {
     background: var(--color-blue-16);
   }

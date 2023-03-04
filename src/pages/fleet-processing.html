@@ -9,297 +9,585 @@
     
     <div data-tabs="fleet-processing">
         <div class="tabs fleet-processing__tabs">
-            <div class="tab active">Универсальный терминал</div>
-            <div class="tab">Контейнерный терминал</div>
+            <div data-tabs-open="fleet-processing-universal" class="tab active">Универсальный терминал</div>
+            <div data-tabs-open="fleet-processing-container" class="tab">Контейнерный терминал</div>
         </div>
 
-        <table>
-            <tr>
-                <th>Причал</th>
-                <th>Судно</th>
-                <th>Линия</th>
-                <th>Вх №</th>
-                <th>Исх №</th>
-                <th>Остаток к выгрузке, ктк</th>
-                <th>Остаток к погрузке, ктк</th>
-            </tr>
+        <div class="table-wrapper" data-tabs="fleet-processing-universal">
+            <table>
+                <tr>
+                    <th>Причал</th>
+                    <th>Судно</th>
+                    <th>Линия</th>
+                    <th>Вх №</th>
+                    <th>Исх №</th>
+                    <th>Остаток к выгрузке, ктк</th>
+                    <th>Остаток к погрузке, ктк</th>
+                </tr>
 
-            <tr>
-                <td>15</td>
-                <td>Kapitan Afanasyev</td>
-                <td>FKXP-1</td>
-                <td>766</td>
-                <td>766</td>
-                <td>67</td>
-                <td>67</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>A HOUOU</td>
-                <td>FVDL</td>
-                <td>27</td>
-                <td>28</td>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>Bal Boan</td>
-                <td>FKXP-1</td>
-                <td>168</td>
-                <td>167</td>
-                <td>78</td>
-                <td>78</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>ROSE MANN</td>
-                <td>Трамповые</td>
-                <td>051022IN</td>
-                <td>051022IN</td>
-                <td>32</td>
-                <td>32</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>XIN BO</td>
-                <td>Трамповые</td>
-                <td>240922IN</td>
-                <td>240922IN</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>HISTORY ELIZABETH</td>
-                <td>FCXP-2</td>
-                <td></td>
-                <td>789</td>
-                <td>92</td>
-                <td>92</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>FS IPANEMA</td>
-                <td>FCXP-2</td>
-                <td>766</td>
-                <td>768</td>
-                <td>10</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>HISTORY ELIZABETH</td>
-                <td>FCXP-2</td>
-                <td>767</td>
-                <td>769</td>
-                <td>76</td>
-                <td>76</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>HISTORY ELIZABETH</td>
-                <td>FCXP-2</td>
-                <td>769</td>
-                <td>780</td>
-                <td>9</td>
-                <td>9</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>FS IPANEMA</td>
-                <td>FCXP-2</td>
-                <td>768</td>
-                <td>781</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>FS IPANEMA</td>
-                <td>FCXP-2</td>
-                <td>770</td>
-                <td>771</td>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>A HOUOU</td>
-                <td>FVDL</td>
-                <td>28</td>
-                <td>31</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>A HOUOU</td>
-                <td>FVDL</td>
-                <td>29</td>
-                <td>32</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Bal Boan</td>
-                <td>FVDL</td>
-                <td>169</td>
-                <td>172</td>
-                <td>54</td>
-                <td>54</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>Doris</td>
-                <td>Трамповые</td>
-                <td>171022IN</td>
-                <td>171022IN</td>
-                <td>68</td>
-                <td>68</td>
-            </tr>
-        </table>
+                <tr>
+                    <td>15</td>
+                    <td>Kapitan Afanasyev</td>
+                    <td>FKXP-1</td>
+                    <td>766</td>
+                    <td>766</td>
+                    <td>67</td>
+                    <td>67</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Bal Boan</td>
+                    <td>FKXP-1</td>
+                    <td>168</td>
+                    <td>167</td>
+                    <td>78</td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>ROSE MANN</td>
+                    <td>Трамповые</td>
+                    <td>051022IN</td>
+                    <td>051022IN</td>
+                    <td>32</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>XIN BO</td>
+                    <td>Трамповые</td>
+                    <td>240922IN</td>
+                    <td>240922IN</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td></td>
+                    <td>789</td>
+                    <td>92</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>766</td>
+                    <td>768</td>
+                    <td>10</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>767</td>
+                    <td>769</td>
+                    <td>76</td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>769</td>
+                    <td>780</td>
+                    <td>9</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>768</td>
+                    <td>781</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>770</td>
+                    <td>771</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>28</td>
+                    <td>31</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>29</td>
+                    <td>32</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Bal Boan</td>
+                    <td>FVDL</td>
+                    <td>169</td>
+                    <td>172</td>
+                    <td>54</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Doris</td>
+                    <td>Трамповые</td>
+                    <td>171022IN</td>
+                    <td>171022IN</td>
+                    <td>68</td>
+                    <td>68</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="table-wrapper" data-tabs="fleet-processing-container" style="display: none">
+            <table>
+                <tr>
+                    <th>Причал</th>
+                    <th>Судно</th>
+                    <th>Линия</th>
+                    <th>Вх №</th>
+                    <th>Исх №</th>
+                    <th>Остаток к выгрузке, ктк</th>
+                    <th>Остаток к погрузке, ктк</th>
+                </tr>
+
+                <tr>
+                    <td>15</td>
+                    <td>Kapitan Afanasyev</td>
+                    <td>FKXP-1</td>
+                    <td>766</td>
+                    <td>766</td>
+                    <td>67</td>
+                    <td>67</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Bal Boan</td>
+                    <td>FKXP-1</td>
+                    <td>168</td>
+                    <td>167</td>
+                    <td>78</td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>ROSE MANN</td>
+                    <td>Трамповые</td>
+                    <td>051022IN</td>
+                    <td>051022IN</td>
+                    <td>32</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>XIN BO</td>
+                    <td>Трамповые</td>
+                    <td>240922IN</td>
+                    <td>240922IN</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td></td>
+                    <td>789</td>
+                    <td>92</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>766</td>
+                    <td>768</td>
+                    <td>10</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>767</td>
+                    <td>769</td>
+                    <td>76</td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>769</td>
+                    <td>780</td>
+                    <td>9</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>768</td>
+                    <td>781</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>770</td>
+                    <td>771</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>28</td>
+                    <td>31</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>29</td>
+                    <td>32</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Bal Boan</td>
+                    <td>FVDL</td>
+                    <td>169</td>
+                    <td>172</td>
+                    <td>54</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Doris</td>
+                    <td>Трамповые</td>
+                    <td>171022IN</td>
+                    <td>171022IN</td>
+                    <td>68</td>
+                    <td>68</td>
+                </tr>
+            </table>
+        </div>
         
     </div>
 
     <div data-tabs="fleet-approach" style="display: none">
         <div class="tabs fleet-processing__tabs">
-            <div class="tab active">Универсальный терминал</div>
-            <div class="tab">Контейнерный терминал</div>
+            <div data-tabs-open="fleet-approach-universal" class="tab active">Универсальный терминал</div>
+            <div data-tabs-open="fleet-approach-container" class="tab">Контейнерный терминал</div>
         </div>
 
-        <table>
-            <tr>
-                <th>Причал</th>
-                <th>Судно</th>
-                <th>Линия</th>
-                <th>Вх №</th>
-                <th>Исх №</th>
-                <th>Подход</th>
-            </tr>
+        <div class="table-wrapper" data-tabs="fleet-approach-universal">
+            <table>
+                <tr>
+                    <th>Причал</th>
+                    <th>Судно</th>
+                    <th>Линия</th>
+                    <th>Вх №</th>
+                    <th>Исх №</th>
+                    <th>Подход</th>
+                </tr>
 
-            <tr>
-                <td>15</td>
-                <td>Kapitan Afanasyev</td>
-                <td>FKXP-1</td>
-                <td>766</td>
-                <td>766</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>A HOUOU</td>
-                <td>FVDL</td>
-                <td>27</td>
-                <td>28</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>Bal Boan</td>
-                <td>FKXP-1</td>
-                <td>168</td>
-                <td>167</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>ROSE MANN</td>
-                <td>Трамповые</td>
-                <td>051022IN</td>
-                <td>051022IN</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>XIN BO</td>
-                <td>Трамповые</td>
-                <td>240922IN</td>
-                <td>240922IN</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>HISTORY ELIZABETH</td>
-                <td>FCXP-2</td>
-                <td></td>
-                <td>789</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>FS IPANEMA</td>
-                <td>FCXP-2</td>
-                <td>766</td>
-                <td>768</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>HISTORY ELIZABETH</td>
-                <td>FCXP-2</td>
-                <td>767</td>
-                <td>769</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>HISTORY ELIZABETH</td>
-                <td>FCXP-2</td>
-                <td>769</td>
-                <td>780</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>FS IPANEMA</td>
-                <td>FCXP-2</td>
-                <td>768</td>
-                <td>781</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>FS IPANEMA</td>
-                <td>FCXP-2</td>
-                <td>770</td>
-                <td>771</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>A HOUOU</td>
-                <td>FVDL</td>
-                <td>28</td>
-                <td>31</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>A HOUOU</td>
-                <td>FVDL</td>
-                <td>29</td>
-                <td>32</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>Bal Boan</td>
-                <td>FVDL</td>
-                <td>169</td>
-                <td>172</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>Doris</td>
-                <td>Трамповые</td>
-                <td>171022IN</td>
-                <td>171022IN</td>
-                <td>12.11.22 (сб)</td>
-            </tr>
-        </table>
+                <tr>
+                    <td>15</td>
+                    <td>Kapitan Afanasyev</td>
+                    <td>FKXP-1</td>
+                    <td>766</td>
+                    <td>766</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Bal Boan</td>
+                    <td>FKXP-1</td>
+                    <td>168</td>
+                    <td>167</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>ROSE MANN</td>
+                    <td>Трамповые</td>
+                    <td>051022IN</td>
+                    <td>051022IN</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>XIN BO</td>
+                    <td>Трамповые</td>
+                    <td>240922IN</td>
+                    <td>240922IN</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td></td>
+                    <td>789</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>766</td>
+                    <td>768</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>767</td>
+                    <td>769</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>769</td>
+                    <td>780</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>768</td>
+                    <td>781</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>770</td>
+                    <td>771</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>28</td>
+                    <td>31</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>29</td>
+                    <td>32</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Bal Boan</td>
+                    <td>FVDL</td>
+                    <td>169</td>
+                    <td>172</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Doris</td>
+                    <td>Трамповые</td>
+                    <td>171022IN</td>
+                    <td>171022IN</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="table-wrapper" data-tabs="fleet-approach-container" style="display: none">
+            <table>
+                <tr>
+                    <th>Причал1</th>
+                    <th>Судно</th>
+                    <th>Линия</th>
+                    <th>Вх №</th>
+                    <th>Исх №</th>
+                    <th>Подход</th>
+                </tr>
+
+                <tr>
+                    <td>15</td>
+                    <td>Kapitan Afanasyev</td>
+                    <td>FKXP-1</td>
+                    <td>766</td>
+                    <td>766</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Bal Boan</td>
+                    <td>FKXP-1</td>
+                    <td>168</td>
+                    <td>167</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>ROSE MANN</td>
+                    <td>Трамповые</td>
+                    <td>051022IN</td>
+                    <td>051022IN</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>XIN BO</td>
+                    <td>Трамповые</td>
+                    <td>240922IN</td>
+                    <td>240922IN</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td></td>
+                    <td>789</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>766</td>
+                    <td>768</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>767</td>
+                    <td>769</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>HISTORY ELIZABETH</td>
+                    <td>FCXP-2</td>
+                    <td>769</td>
+                    <td>780</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>768</td>
+                    <td>781</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>FS IPANEMA</td>
+                    <td>FCXP-2</td>
+                    <td>770</td>
+                    <td>771</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>28</td>
+                    <td>31</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>A HOUOU</td>
+                    <td>FVDL</td>
+                    <td>29</td>
+                    <td>32</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Bal Boan</td>
+                    <td>FVDL</td>
+                    <td>169</td>
+                    <td>172</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Doris</td>
+                    <td>Трамповые</td>
+                    <td>171022IN</td>
+                    <td>171022IN</td>
+                    <td>12.11.22 (сб)</td>
+                </tr>
+            </table>
+        </div>
     </div>
     
     <div class="route-map fleet-processing__route-map" data-tabs="map" style="display: none">

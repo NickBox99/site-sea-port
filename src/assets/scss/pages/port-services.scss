@@ -32,6 +32,8 @@
     
     &__title {
       margin: 0;
+      max-width: 150px;
+      word-break: unset;
     }
   }
   
