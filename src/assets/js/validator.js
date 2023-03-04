@@ -16,8 +16,9 @@ window.formValidate = function (formId, options) {
     const form = document.querySelector(`#${formId}`);
     const findFieldForm = (key) => form.querySelector(`[name="${key}"]`);
     
-    const formData = new FormData();
-    formData.append('form_id', formId);
+    const formData = {
+        'form_id': formId
+    };
 
     let isValid = true;
 
@@ -78,7 +79,7 @@ window.formValidate = function (formId, options) {
                 }
             }
             else {
-                formData.append(key, value);
+                formData[key] = value;
             }
         }
 
@@ -116,7 +117,7 @@ window.formValidate = function (formId, options) {
                     }
                 }
                 else if (isChecked) {
-                    formData.append(key, 'true');
+                    formData[key] = true;
                 }
 
                 break;
@@ -125,20 +126,12 @@ window.formValidate = function (formId, options) {
                 const file = findFieldForm(key).files[0];
 
                 if (file) {
-                    formData.append(key, findFieldForm(key).files[0]);
+                    formData[key] = findFieldForm(key).files[0];
                 }
                 break;
             }
         }
     });
-
-    const norm = {}
-
-    for(let [name, value] of formData) {
-        norm[name] = value;
-    }
-
-    //console.log(isValid, norm);
 
     return isValid ? formData : false;
 }

@@ -105,72 +105,77 @@
     document.addEventListener("DOMContentLoaded", () => {
         const applicationSentPopup = new Popup('#request-speeches-sent');
 
-        initFormValidate('applicationForInspection', {
-            container_number_ktk: {
-                type: 'input',
-                validate: 'required'
-            },
-            container_comment: {
-                type: 'input'
-            },
-            container_date_ktk: {
-                type: 'date',
-                validate: 'required'
-            },
-            container_type_of_packaging: {
-                type: 'select',
-                validate: 'required'
-            },
-            container_type_of_inspection: {
-                type: 'select',
-                validate: 'required'
-            },
-            member_surname: {
-                type: 'input',
-                validate: 'abs|required'
-            },
-            member_name: {
-                type: 'input',
-                validate: 'abs|required'
-            },
-            member_patronymic: {
-                type: 'input',
-                validate: 'abs|required'
-            },
-            contact_phone: {
-                type: 'input',
-                validate: 'phone'
-            },
-            contact_email: {
-                type: 'input',
-                validate: 'email'
-            },
-            contact_proxy_number: {
-                type: 'input',
-                validate: 'required'
-            },
-            contact_proxy_date: {
-                type: 'date',
-                validate: 'required'
-            },
-            document: {
-                type: 'file'
-            },
-            isAgreeProcessing: {
-                type: 'checkbox',
-                validate: 'required'
-            },
-            isAgreeRules: {
-                type: 'checkbox',
-                validate: 'required'
+        document.querySelector('#applicationForInspection').addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const body = formValidate('applicationForInspection', {
+                container_number_ktk: {
+                    type: 'input',
+                    validate: 'required'
+                },
+                container_comment: {
+                    type: 'input'
+                },
+                container_date_ktk: {
+                    type: 'date',
+                    validate: 'required'
+                },
+                container_type_of_packaging: {
+                    type: 'select',
+                    validate: 'required'
+                },
+                container_type_of_inspection: {
+                    type: 'select',
+                    validate: 'required'
+                },
+                member_surname: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                member_name: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                member_patronymic: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                contact_phone: {
+                    type: 'input',
+                    validate: 'phone'
+                },
+                contact_email: {
+                    type: 'input',
+                    validate: 'email'
+                },
+                contact_proxy_number: {
+                    type: 'input',
+                    validate: 'required'
+                },
+                contact_proxy_date: {
+                    type: 'date',
+                    validate: 'required'
+                },
+                document: {
+                    type: 'file'
+                },
+                isAgreeProcessing: {
+                    type: 'checkbox',
+                    validate: 'required'
+                },
+                isAgreeRules: {
+                    type: 'checkbox',
+                    validate: 'required'
+                }
+            });
+            
+            if (body) {
+                console.log(body);
+                fetch(`${window.config.host}/ajax/form.php`, {
+                    method: 'POST',
+                    body
+                }).then(() => applicationSentPopup.show());
             }
-        }, 
-
-        (body) => {
-            fetch(`${window.config.host}/ajax/form.php`, {
-                method: 'POST',
-                body
-            }).then(() => applicationSentPopup.show());
         });
     });
 </script>

@@ -197,6 +197,22 @@
     </div>
 </div>
 
+<div id="request-speeches-sent" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__header">
+            <div class="popup__title">Ваша заявка отправлена</div>
+            <div class="popup__cross">@@include('../components/svg/cross.html')</div>
+        </div>
+
+        <div class="popup__content">
+            Если у Вас нет постоянного автомобильного пропуска, для нахождения на территории порта Вам необходимо отправить заявку на предоставление РАЗОВОГО
+            <a href="#" class="popup__link" target="_blank">автомобильного&nbsp;пропуска</a>
+        </div>
+
+        <button class="popup__btn btn btn_primary">Вернуться на сайт</button>
+    </div>
+</div>
+
 <script id="application-passes" type="text/template">
     <h3 class="request-pass-block__title">Пропуск # ПП_И000766</h3>
 
@@ -349,6 +365,7 @@
     addPass('application-auto-passes', applicationAutoPasses);
     
     document.addEventListener("DOMContentLoaded", () => {
+        const applicationSentPopup = new Popup('#request-speeches-sent');
         
         document.querySelector('#signature-form').addEventListener('submit', (event) => {
             event.preventDefault();
@@ -493,11 +510,12 @@
             const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass.getAttribute('id'), passesValidatorOptions));
 
             if (isValidSignatureForm && mainForm && !passes.filter(pass => !pass).length) {
-                mainForm.append('passes_json', JSON.stringify(passes.map(pass => {
-                    const object = {};
-                    pass.forEach((value, key) => object[key] = value);
-                    return object;
-                })));
+                mainForm.append('passes_json', JSON.stringify(passes));
+
+                fetch(`${window.config.host}/ajax/form.php`, {
+                    method: 'POST',
+                    body: mainForm
+                }).then(() => applicationSentPopup.show());
             }
         });
     })
