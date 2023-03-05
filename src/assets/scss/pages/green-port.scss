@@ -27,6 +27,10 @@
     line-height: 33px;
   }
   
+  &__title, &__quote, .green-port-leaves-1 {
+    animation-delay: .4s;
+  }
+  
   &__quote {
     margin-bottom: 48px;
     max-width: 552px;
@@ -43,9 +47,21 @@
     
     &__item {
       width: 333px;
+      
+      &:first-child .green-port__fade {
+        animation-delay: .9s;
+      }
+      
+      &:nth-child(2) {
+        animation-delay: 1.6s;
+      }
+      
+      &:last-child {
+        animation-delay: 2.4s;
+      }
     }
 
-    &__wrapper, &__img {
+    &__wrapper, &__preview {
       border-radius: 50%;
     }
     
@@ -57,9 +73,9 @@
       border: 2.34507px dashed var(--color-green-3);
     }
     
-    &__img {
-      width: 100%;
-      height: auto;
+    &__preview {
+      width: 294px;
+      height: 294px;
       object-fit: cover;
     }
     
@@ -79,6 +95,18 @@
   &-motivation {
     display: flex;
     justify-content: space-between;
+    transform: translateY(250%);
+    animation: green-port-motivation 1s .9s forwards;
+
+    @keyframes green-port-motivation {
+      from {
+        transform: translateY(250%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
     
     &__title, &__description {
       max-width: 552px;
@@ -400,6 +428,11 @@
     &-cards {
       &__wrapper {
         width: 260px;
+      }
+
+      &__preview {
+        width: 218px;
+        height: 218px;
       }
     }
   }
@@ -901,7 +934,7 @@
 
     &-cards {
       &__item {
-        width: calc(100% - 5px);
+        width: 278.16px;
       }
       
       &__wrapper {
@@ -912,6 +945,11 @@
       &__content {
         font-size: 14px;
         line-height: 15.4px;
+      }
+
+      &__preview {
+        width: 242.16px;
+        height: 242.16px;
       }
     }
     
@@ -1020,7 +1058,6 @@
     position: absolute;
     bottom: 6px;
     left: 50%;
-    transform: translateX(-100%) rotate(-0deg);
     transform-origin: right center;
   }
   
