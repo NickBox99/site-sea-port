@@ -37,28 +37,31 @@
         <div class="green-port-motivation__description">В нашей работе мы стремимся к высочайшим стандартам производственной безопасности, заботимся о благополучии и здоровье наших сотрудников, соблюдаем строгие требования по защите окружающей среды.</div>
         <img src="/img/leaves-1.png" class="green-port-leaves green-port-leaves-2" alt="">
     </div>
-    
-    <div class="green-port__green-port-map green-port-map">
-        <div class="green-port-map__container" id="green-port-map">
-            <div class="green-port-map__wrapper selected" style="top: 329px; left: 1070px;"></div>
-            <div class="green-port-map__wrapper" style="top: 207px; left: 1243px;"></div>
-            <div class="green-port-map__wrapper" style="top: 624px; left: 830px;"></div>
-            <div class="green-port-map__wrapper" style="top: 525px; left: 633px;"></div>
-            <img src="/img/green-port-map.jpg" class="green-port-map__map" width="1920px" height="704px" alt="">
 
-            
-            <div class="">
-                <img src="/img/green-port-map-sensor-path.svg" style="left: 697px; top: 75px;" class="green-port-map__path" alt="">
-                <div class="green-port-map__card" style="top: 35px; left: 403px;">
-                    <img src="/img/green-port-map-sensor.png" class="green-port-map__img" width="201px" height="202px" alt="">
-                    Датчик замера<br>
-                    качества воздуха
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <div id="green-port-map" class="green-port__green-port-map fullscreen-block2 green-port-map"></div>
     
-    <h3 class="green-port__caption green-port__focusing-efforts animate-text-top animation-off">ФОКУСИРУЕМ <br>И РЕСУРСЫ НА УЛУЧШЕНИИ КАЧЕСТВА ЖИЗНИ СОТРУДНИКОВ И ОБЩЕСТВА</h3>
+<!--    <div class="green-port__green-port-map green-port-map">-->
+<!--        <div class="green-port-map__container" id="green-port-map">-->
+<!--            <div class="green-port-map__wrapper selected" style="top: 329px; left: 1070px;"></div>-->
+<!--            <div class="green-port-map__wrapper" style="top: 207px; left: 1243px;"></div>-->
+<!--            <div class="green-port-map__wrapper" style="top: 624px; left: 830px;"></div>-->
+<!--            <div class="green-port-map__wrapper" style="top: 525px; left: 633px;"></div>-->
+<!--            <img src="/img/green-port-map.jpg" class="green-port-map__map" width="1920px" height="704px" alt="">-->
+
+<!--            -->
+<!--            <div class="">-->
+<!--                <img src="/img/green-port-map-sensor-path.svg" style="left: 697px; top: 75px;" class="green-port-map__path" alt="">-->
+<!--                <div class="green-port-map__card" style="top: 35px; left: 403px;">-->
+<!--                    <img src="/img/green-port-map-sensor.png" class="green-port-map__img" width="201px" height="202px" alt="">-->
+<!--                    Датчик замера<br>-->
+<!--                    качества воздуха-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    
+    <h3 class="green-port__caption green-port__focusing-efforts animate-text-top animation-off">ФОКУСИРУЕМ УСИЛИЯ <br>И РЕСУРСЫ НА УЛУЧШЕНИИ КАЧЕСТВА ЖИЗНИ СОТРУДНИКОВ И ОБЩЕСТВА</h3>
 
     <div class="green-port__speedometers">
         <div class="green-port__speedometer-wrapper">
@@ -279,7 +282,72 @@
     </div>
 </div>
 
+<script src="https://api-maps.yandex.ru/2.1/?apikey=e2cdd9b4-793c-44ff-bfb7-908e17ad7400&lang=ru_RU" type="text/javascript"></script>
 <script defer>
+    const mapPoints = [
+        {
+            coords: [43.092287, 131.862955],
+            photoSrc: 'морозова 5.jpg',
+            text: 'Построили детскую площадку на ул. Морозова, 5'
+        },
+        {
+            coords: [43.093064, 131.865569],
+            photoSrc: 'саратовская 10.jpg',
+            text: 'Построили детскую площадку на ул. Саратовская, 10'
+        },
+        {
+            coords: [43.100388, 131.865266],
+            photoSrc: 'сквер 2.jpg',
+            text: 'Высадили 55 ясеней в сквере Героев-Даманцев'
+        }
+    ]
+    
+    ymaps.ready(() => {
+        const map = new ymaps.Map("green-port-map", {
+            center: [43.097, 131.862955],
+            controls: [],
+            zoom: 15
+        });
+
+        var MyBalloonContentLayoutClass = ymaps.templateLayoutFactory.createClass(
+            '<p>Описание: {{ properties.photoSrc }}</p>' +
+            '<p>Описание: {{ properties.text }}</p>'
+        );
+        
+        mapPoints.forEach(({ coords, photoSrc, text }, idx) => {
+
+            const placemark = new ymaps.Placemark(
+                coords, 
+                {}, 
+                {
+                    iconLayout: ymaps.templateLayoutFactory.createClass(`<div id="placemark-${idx}" class="green-port-map__wrapper"></div>`),
+                    iconShape: {
+                        type: 'Rectangle',
+                        coordinates: [
+                            [0, 0], [44, 44]
+                        ]
+                    },
+                }
+            );
+            map.geoObjects.add(placemark);
+
+            const getPlacemark = () => document.querySelector(`#placemark-${idx}`);
+            
+            placemark.events.add('mouseenter', function () {
+                getPlacemark().classList.add('hover');
+            });
+
+            placemark.events.add('mouseleave', function () {
+                getPlacemark().classList.remove('hover');
+            });
+
+            placemark.events.add('click', function () {
+                document.querySelector('.green-port-map__wrapper.selected')?.classList.remove('selected');
+                getPlacemark().classList.add('selected');
+            });
+        });
+    });
+    
     class Speedometer {
         constructor(id) {
             this.element = document.querySelector(`#${id}`);
@@ -318,11 +386,10 @@
             entries.forEach(({ isIntersecting }) => {
                 if (isIntersecting) {
                     el.classList.remove('animation-off');
-                    console.log(el);
                 }
             })
         }, {
-            threshold: 1
+            threshold: 0.5
         }).observe(el.nextElementSibling);
     })
     

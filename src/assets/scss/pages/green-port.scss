@@ -96,15 +96,18 @@
     display: flex;
     justify-content: space-between;
     transform: translateY(250%);
+    opacity: 0;
     animation: green-port-motivation 1s .9s forwards;
 
     @keyframes green-port-motivation {
-      from {
+      0% {
         transform: translateY(250%);
+        opacity: 0;
       }
 
-      to {
+      100% {
         transform: translateY(0);
+        opacity: 1;
       }
     }
     
@@ -332,25 +335,26 @@
   &__leaves {
     position: relative;
   }
-  
+  //ymaps-2-1-79-svg-icon
   &-map {
-    position: relative;
     padding: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    
-    &__map {
-      display: block;
-    }
-    
-    &__container {
-      position: relative;
-      width: max-content;
-    }
+    height: 704px;
+    //position: relative;
+    //padding: 0;
+    //left: 50%;
+    //transform: translateX(-50%);
+    //width: max-content;
+    //
+    //&__map {
+    //  display: block;
+    //}
+    //
+    //&__container {
+    //  position: relative;
+    //  width: max-content;
+    //}
     
     &__wrapper {
-      position: absolute;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -359,13 +363,14 @@
       height: 66px;
       background: transparent;
       border-radius: 50%;
-      transition: var(--transition-default);
+      transition: .4s all;
       cursor: pointer;
+      transform: translate(-11px, -11px);
       
-      &:hover, &.selected {
+      &.hover, &.selected {
         background: var(--color-green-5-opac30);
       }
-      
+
       &:after {
         content: '';
         width: 100%;
@@ -376,7 +381,6 @@
     }
     
     &__card {
-      position: absolute;
       padding: 40px;
       width: max-content;
       font-family: var(--font-dela);
@@ -388,11 +392,12 @@
       border: 1px solid var(--color-green-5);
       border-radius: 12px;
       text-align: center;
+      
     }
     
-    &__path {
-      position: absolute;
-    }
+    //&__path {
+    //  position: absolute;
+    //}
     
     &__img {
       display: block;
@@ -563,10 +568,6 @@
     
     &__green-port-cards, &__green-port-map {
       margin-bottom: 115px;
-    }
-
-    &__green-port-map {
-      zoom: .8;
     }
 
     &__focusing-efforts {
@@ -745,6 +746,10 @@
         transform: rotate(84.33deg);
       }
     }
+    
+    &-map {
+      height: 540px;
+    }
   }
   
   @media screen and (max-width: 880px) {
@@ -824,7 +829,6 @@
 
     &__green-port-map {
       margin-bottom: 103.9px;
-      zoom: .5;
     }
     
     &__tasks {
@@ -930,6 +934,10 @@
 
     &__quote, &__focusing-efforts {
       margin-bottom: 40px;
+    }
+
+    &-map {
+      height: 330.37px;
     }
 
     &-cards {
