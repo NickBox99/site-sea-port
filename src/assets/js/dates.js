@@ -2,6 +2,14 @@ window.dates = [];
 
 window.initDates = (target) => {
     target.querySelectorAll('.datetime').forEach(el => {
+        const formId = el.closest('form')?.getAttribute('id');
+        const name = el.getAttribute('name');
+        const key = formId? `${formId}_${name}` : name;
+        
+        if (window.dates[key]) {
+            return;
+        }
+        
         const hasPlaceholderFocus = el.hasAttribute('data-placeholder-focus');
         const hasFlatpickrMultiple = el.hasAttribute('data-flatpickr-multiple');
         
@@ -15,9 +23,6 @@ window.initDates = (target) => {
                 mask.updateOptions({ lazy: false });
             });
         }
-    
-        const formId = el.closest('form')?.getAttribute('id');
-        const name = el.getAttribute('name');
         
         const flatpickrOptions = {
             locale: 'ru',
@@ -44,7 +49,7 @@ window.initDates = (target) => {
             flatpickrOptions['minDate'] = "today";
         }
     
-        window.dates[formId? `${formId}_${name}` : name] = flatpickr(el, flatpickrOptions);
+        window.dates[key] = flatpickr(el, flatpickrOptions);
     });
 }
 

@@ -65,7 +65,12 @@ window.initSelects = (target) => {
         {
             const formId = el.closest('form')?.getAttribute('id');
             const name = el.getAttribute('name');
-            window.selects[formId? `${formId}_${name}` : name] = new Select(el);
+            
+            const key = formId? `${formId}_${name}` : name;
+            
+            if (!window.selects[key]) {
+                window.selects[key] = new Select(el);
+            }
         }
     );
 }

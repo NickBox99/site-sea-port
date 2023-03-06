@@ -246,7 +246,7 @@
     </div>
 
     <div class="request-pass-block__footer">
-        <button class="btn btn_primary request-pass-block__btn" onclick="addPass.call(this, 'application-passes', applicationPasses)" type="button">Добавить пропуск</button>
+        <button class="btn btn_primary request-pass-block__btn" onclick="addPass('application-passes', applicationPasses)" type="button">Добавить пропуск</button>
         <button class="btn btn_third request-pass-block__btn request-pass-block__btn_remove" style="display: none;" onclick="removePass.call(this)" type="button">Удалить пропуск</button>
     </div>
 </script>
@@ -327,29 +327,25 @@
         [...children].forEach(el => el.querySelector('.request-pass-block__btn_remove').style.display = display);
     }
     
-    function addPass(templateId, wrapper) {
+    function addPass(templateId, wrapper, btn) {
         const form = document.createElement('form');
         form.classList.add('request-pass-block');
         form.innerHTML = document.querySelector(`#${templateId}`).innerHTML;
         const formId = `pass-${uniqueId++}`;
         form.setAttribute('id', formId);
 
-        if (this.closest) {
-            const pass = getPassBlock(this);
+        if (btn) {
+            const pass = getPassBlock(btn);
             wrapper.insertBefore(form, pass.nextSibling);
-
-            initSelects(form);
-            initDates(form);
-            initMasks(form);
 
             initRemoveButtons(wrapper);
         } else {
             wrapper.append(form);
         }
-        
-        if(!applicationPass.style.display) {
-            
-        }
+
+        initSelects(form);
+        initDates(form);
+        initMasks(form);
     }
     
     function removePass() {
@@ -363,11 +359,11 @@
         pass.remove();
         initRemoveButtons(parent);
     }
-
-    addPass('application-passes', applicationPasses);
-    addPass('application-auto-passes', applicationAutoPasses);
     
     document.addEventListener("DOMContentLoaded", () => {
+        addPass('application-passes', applicationPasses);
+        addPass('application-auto-passes', applicationAutoPasses);
+        
         const applicationSentPopup = new Popup('#request-speeches-sent');
         
         const signatureForm = document.querySelector('#signature-form');

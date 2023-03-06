@@ -38,28 +38,9 @@
         <img src="/img/leaves-1.png" class="green-port-leaves green-port-leaves-2" alt="">
     </div>
 
-
-    <div id="green-port-map" class="green-port__green-port-map fullscreen-block2 green-port-map"></div>
-    
-<!--    <div class="green-port__green-port-map green-port-map">-->
-<!--        <div class="green-port-map__container" id="green-port-map">-->
-<!--            <div class="green-port-map__wrapper selected" style="top: 329px; left: 1070px;"></div>-->
-<!--            <div class="green-port-map__wrapper" style="top: 207px; left: 1243px;"></div>-->
-<!--            <div class="green-port-map__wrapper" style="top: 624px; left: 830px;"></div>-->
-<!--            <div class="green-port-map__wrapper" style="top: 525px; left: 633px;"></div>-->
-<!--            <img src="/img/green-port-map.jpg" class="green-port-map__map" width="1920px" height="704px" alt="">-->
-
-<!--            -->
-<!--            <div class="">-->
-<!--                <img src="/img/green-port-map-sensor-path.svg" style="left: 697px; top: 75px;" class="green-port-map__path" alt="">-->
-<!--                <div class="green-port-map__card" style="top: 35px; left: 403px;">-->
-<!--                    <img src="/img/green-port-map-sensor.png" class="green-port-map__img" width="201px" height="202px" alt="">-->
-<!--                    Датчик замера<br>-->
-<!--                    качества воздуха-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="green-port__green-port-map fullscreen-block2 green-port-map-wrapper">
+        <div id="green-port-map" class="green-port-map"></div>
+    </div>
     
     <h3 class="green-port__caption green-port__focusing-efforts animate-text-top animation-off">ФОКУСИРУЕМ УСИЛИЯ <br>И РЕСУРСЫ НА УЛУЧШЕНИИ КАЧЕСТВА ЖИЗНИ СОТРУДНИКОВ И ОБЩЕСТВА</h3>
 
@@ -286,19 +267,28 @@
 <script defer>
     const mapPoints = [
         {
-            coords: [43.092287, 131.862955],
-            photoSrc: 'морозова 5.jpg',
-            text: 'Построили детскую площадку на ул. Морозова, 5'
+            coordsPoint: [43.092287, 131.862955],
+            content: {
+                coords: [43.107658, 131.835798],
+                photoSrc: '/img/temp/green-port-map-1.jpg',
+                text: 'Построили детскую площадку на ул. Морозова, 5'
+            }
         },
         {
-            coords: [43.093064, 131.865569],
-            photoSrc: 'саратовская 10.jpg',
-            text: 'Построили детскую площадку на ул. Саратовская, 10'
+            coordsPoint: [43.093064, 131.865569],
+            content: {
+                coords: [43.107658, 131.835798],
+                photoSrc: '/img/temp/green-port-map-2.jpg',
+                text: 'Построили детскую площадку на ул. Саратовская, 10'
+            }
         },
         {
-            coords: [43.100388, 131.865266],
-            photoSrc: 'сквер 2.jpg',
-            text: 'Высадили 55 ясеней в сквере Героев-Даманцев'
+            coordsPoint: [43.100388, 131.865266],
+            content: {
+                coords: [43.100388, 131.835798],
+                photoSrc: '/img/temp/green-port-map-3.jpg',
+                text: 'Высадили 55 ясеней в сквере Героев-Даманцев'
+            }
         }
     ]
     
@@ -308,19 +298,23 @@
             controls: [],
             zoom: 15
         });
-
-        var MyBalloonContentLayoutClass = ymaps.templateLayoutFactory.createClass(
-            '<p>Описание: {{ properties.photoSrc }}</p>' +
-            '<p>Описание: {{ properties.text }}</p>'
-        );
         
-        mapPoints.forEach(({ coords, photoSrc, text }, idx) => {
+        map.behaviors.disable('scrollZoom');
+        
+        const lines = [];
+        const placemarks = [];
+        const cards = [];
 
+        map.events.add('actiontick', () => lines.forEach(line => line.position()));
+
+        mapPoints.forEach(({ coordsPoint, content: { coords, photoSrc, text } }, idx) => {
+            const placemarkTemplate = ymaps.templateLayoutFactory.createClass(`<div id="placemark-${idx}-start" class="green-port-map__wrapper"></div>`);
+            
             const placemark = new ymaps.Placemark(
-                coords, 
+                coordsPoint, 
                 {}, 
                 {
-                    iconLayout: ymaps.templateLayoutFactory.createClass(`<div id="placemark-${idx}" class="green-port-map__wrapper"></div>`),
+                    iconLayout: placemarkTemplate,
                     iconShape: {
                         type: 'Rectangle',
                         coordinates: [
@@ -330,20 +324,79 @@
                 }
             );
             map.geoObjects.add(placemark);
-
-            const getPlacemark = () => document.querySelector(`#placemark-${idx}`);
             
+            const cardTemplate = ymaps.templateLayoutFactory.createClass(`<div id="placemark-${idx}-end" class="green-port-map__card hide"><img src="{{ properties.photoSrc }}" alt="" class="green-port-map__img"/>{{ properties.text }}</div>`);
+            const card = new ymaps.Placemark(
+                coords,
+                {
+                    photoSrc, text
+                },
+                {
+                    iconLayout: cardTemplate,
+                }
+            );
+            map.geoObjects.add(card);
+
+            let htmlPlacemark = null;
+            const getPlacemark = () => {
+                if (!htmlPlacemark) {
+                    htmlPlacemark = placemark.getOverlaySync().getLayoutSync().getElement().children[0];
+                    placemarks.push(htmlPlacemark);
+                }
+                
+                return htmlPlacemark;
+            };
+
+            let htmlCard = null;
+            const getCard = () => {
+                if (!htmlCard) {
+                    htmlCard = card.getOverlaySync().getLayoutSync().getElement().children[0];
+                    cards.push(htmlCard);
+                }
+
+                return htmlCard;
+            };
+
             placemark.events.add('mouseenter', function () {
                 getPlacemark().classList.add('hover');
             });
 
             placemark.events.add('mouseleave', function () {
-                getPlacemark().classList.remove('hover');
+               getPlacemark().classList.remove('hover');
             });
+            
+            let line = null;
+            const getLine = () => {
+                if (!line) {
+                    line = new LeaderLine(
+                        LeaderLine.pointAnchor(getPlacemark(), { x: '45%', y: '45%'}),
+                        getCard(),
+                        {
+                            color: '#3A861F',
+                            size: 3,
+                            dash: true,
+                            endPlug: 'disc',
+                            endPlugSize: 2,
+                            hide: true
+                        }
+                    );
+                    
+                    lines.push(line);
+                }
+
+                return line;
+            };
 
             placemark.events.add('click', function () {
-                document.querySelector('.green-port-map__wrapper.selected')?.classList.remove('selected');
+                placemarks.forEach(placemark => placemark.classList.remove('selected'));
                 getPlacemark().classList.add('selected');
+
+                cards.forEach(card => card.classList.add('hide'));
+                getCard().classList.remove('hide');
+
+                lines.forEach(line => line.hide());
+                getLine().position();
+                getLine().show('draw');
             });
         });
     });
