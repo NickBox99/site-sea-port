@@ -335,8 +335,10 @@
   &__leaves {
     position: relative;
   }
-  //ymaps-2-1-79-svg-icon
+  
   &-map {
+    border: none;
+    
     &-wrapper {
       padding: 0;
       height: 704px;
@@ -346,8 +348,15 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    height: 738px;
-    width: 1920px;
+    
+    &, &__map {
+      height: 738px;
+      width: 1920px;
+    }
+
+    &_mobile {
+      display: none;
+    }
     
     @media screen and (max-width: 1260px) {
       left: -330px;
@@ -418,6 +427,35 @@
       width: 100%;
       height: auto;
       margin-bottom: 14px;
+    }
+    
+    &-popup {
+      background: var(--color-green-5-opac20);
+      z-index: 100;
+      
+      &__card {
+        position: relative;
+      }
+      
+      &__cross {
+        position: absolute;
+        top: -58px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 38px;
+        height: 38px;
+        background: transparent;
+        
+        svg {
+          width: 11px;
+        }
+      }
+      
+      @media screen and (max-width: 420px) {
+        &__card {
+          padding: 30px;
+        }
+      }
     }
   }
 
@@ -731,8 +769,6 @@
 
     &-leaves {
       &-2 {
-        //top: -215px;
-        //left: -81px;
         top: -173px;
         left: -105px;
         width: 816.77px;
@@ -768,7 +804,9 @@
         height: 540px;
       }
       
-      height: 574px;
+      &, &__map {
+        height: 574px;
+      }
     }
   }
   
@@ -808,7 +846,6 @@
       font-size: 22px;
       line-height: 24.2px;
     }
-
     &__quote, &__focusing-efforts {
       margin-bottom: 50px;
     }
@@ -870,6 +907,16 @@
         width: calc(100% + 56px);
         height: auto;
         margin: 0 -28px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 639px) {
+    &-map {
+      display: none;
+
+      &_mobile {
+        display: block;
       }
     }
   }
@@ -961,7 +1008,9 @@
         height: 330.37px;
       }
 
-      height: 364.37px;
+      &, &__map {
+        height: 364.37px;
+      }
     }
 
     &-cards {
