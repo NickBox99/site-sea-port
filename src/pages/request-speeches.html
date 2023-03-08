@@ -11,8 +11,9 @@
         <div class="filters-subtitle">Контейнер</div>
         <div class="filters-row">
             <input name="container_number_ktk" class="input input_secondary" placeholder="Номер КТК*" type="text">
-            <div name="container_type_of_packaging" class="select select_secondary">
+            <div class="select select_secondary">
                 <div class="select__value"></div>
+                <input name="container_type_of_packaging" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary active" data-value="0">Тип упаковки*</div>
                     <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -26,8 +27,9 @@
                 </div>
                 <div class="select__daw">@@include('../components/svg/daw.html')</div>
             </div>
-            <div name="container_type_of_inspection" class="select select_secondary">
+            <div class="select select_secondary">
                 <div class="select__value"></div>
+                <input name="container_type_of_inspection" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary active" data-value="0">Вид досмотра*</div>
                     <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -65,7 +67,7 @@
             <div class="input-group">
                 <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
                 <label class="input input_secondary input_file input-file">
-                    <input class="input-file__input" type="file" name="file"/>
+                    <input class="input-file__input" type="file" name="document"/>
                     <span class="input-file__name">Прикрепить файл</span>
                     <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
                 </label>

@@ -125,7 +125,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
             }
             case 'file': {
                 const file = findFieldForm(key).files[0];
-
+                
                 if (file) {
                     formData[key] = findFieldForm(key).files[0];
                 }

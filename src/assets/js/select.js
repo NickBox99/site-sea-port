@@ -1,19 +1,21 @@
 class Select {
     constructor(element) {
-        this.name = element.getAttribute('name');
+        this.input = element.querySelector('.select__input');
+        this.name = this.input.getAttribute('name');
+        element.setAttribute('data-select-name', this.name);
         this.select = element;
         this.valueWrapper = this.select.querySelector('.select__value');
 
         const items = [...this.select.querySelectorAll('.select__item')];
         this.items = items.map(el => ({ value: el.getAttribute('data-value'), text: el.textContent, el }));
 
-        this.clear();
+        this.set(this.input.value);
         this.initEvents();
     }
 
     initEvents() {
         document.body.addEventListener('click', ({ target }) => {
-            if (!target.closest(`[name="${this.name}"]`)) {
+            if (!target.closest(`[data-select-name="${this.name}"]`)) {
                 this.hide();
             }
         });
@@ -37,10 +39,15 @@ class Select {
     set(value) {
         const item = this.items.find(item => item.value === value);
         
-        this.valueWrapper.textContent = item.text;
-        this.value = item.value;
-        this.items.forEach(({el}) => el.classList.remove('active'));
-        item.el.classList.add('active');
+        if (item) {
+            this.valueWrapper.textContent = item.text;
+            this.value = this.input.value = item.value;
+            this.items.forEach(({el}) => el.classList.remove('active'));
+            item.el.classList.add('active');
+        }
+        else {
+            this.clear();
+        }
 
         this.select.dispatchEvent(new Event('change'));
     }
@@ -64,7 +71,8 @@ window.initSelects = (target) => {
     target.querySelectorAll('.select').forEach(el =>
         {
             const formId = el.closest('form')?.getAttribute('id');
-            const name = el.getAttribute('name');
+            const name = el.querySelector('.select__input').getAttribute('name');
+            
             
             const key = formId? `${formId}_${name}` : name;
             

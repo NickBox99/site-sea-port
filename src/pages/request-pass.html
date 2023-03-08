@@ -77,8 +77,9 @@
 
         <div class="filters-row request-pass__zones-fields">
             <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-today>
-            <div name="pass_order" class="select select_secondary">
+            <div class="select select_secondary">
                 <div class="select__value"></div>
+                <input name="pass_order" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary active" data-value="0">Пункт распоряжения правительства*</div>
                     <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -136,8 +137,9 @@
 
         <div class="filters-row request-pass__zones-fields">
             <input name="pass_dates" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-today>
-            <div name="pass_order" class="select select_secondary">
+            <div class="select select_secondary">
                 <div class="select__value"></div>
+                <input name="pass_order" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary active" data-value="0">Пункт распоряжения правительства*</div>
                     <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -283,8 +285,9 @@
 
     <div class="filters-subtitle">Данные автомобиля</div>
     <div class="filters-row request-pass-block__filters-row">
-        <div name="car_type" class="select">
+        <div class="select">
             <div class="select__value"></div>
+            <input name="car_type" type="hidden" class="select__input">
             <div class="select__wrapper">
                 <div class="select__item btn btn_secondary active" data-value="0">Легковой</div>
                 <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>

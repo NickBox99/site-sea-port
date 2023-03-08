@@ -13,11 +13,12 @@
         </div>
     </form>
     
-    <form id="purchases-filters" class="filters-row purchases__filters-row">
+    <form class="filters-row purchases__filters-row">
         <div>
             <div class="filters-subtitle">Заказчик</div>
-            <div name="customer" class="select select_secondary">
+            <div class="select select_secondary">
                 <div class="select__value"></div>
+                <input name="customer" type="hidden" class="select__input" value="1">
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary" data-value="0">Все доступные</div>
                     <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -34,8 +35,9 @@
         </div>
         <div>
             <div class="filters-subtitle">Предмет закупки</div>
-            <div name="purchase" class="select select_secondary">
+            <div class="select select_secondary">
                 <div class="select__value"></div>
+                <input name="purchase" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary" data-value="0">Все доступные</div>
                     <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -66,8 +68,9 @@
         </div>
 
         <div class="filters-sort purchases__filters-sort filters-col-2"><span class="filters-sort__title">СОРТИРОВАТЬ ПО:</span>&nbsp;
-            <div name="typeSort" class="select select_string">
+            <div class="select select_string">
                 <div class="select__value"></div>
+                <input name="typeSort" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__item btn btn_secondary" data-value="0">Дате обновления</div>
                     <div class="select__item btn btn_secondary" data-value="1">Дате публикации</div>
@@ -237,31 +240,6 @@
             const result = formValidate(purchasesSearch, {
                 search: {
                     type: 'input'
-                }
-            }, false);
-
-            console.log(result);
-        });
-        
-        const purchasesFilters = document.querySelector('#purchases-filters');
-        purchasesFilters.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const result = formValidate(purchasesFilters, {
-                customer: {
-                    type: 'select'
-                },
-                purchase: {
-                    type: 'select'
-                },
-                firstDate: {
-                    type: 'date'
-                },
-                secondDate: {
-                    type: 'date'
-                },
-                typeSort: {
-                    type: 'select'
                 }
             }, false);
 
