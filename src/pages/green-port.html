@@ -39,16 +39,7 @@
     </div>
 
     <div class="green-port__green-port-map fullscreen-block2 green-port-map-wrapper">
-        <iframe class="green-port-map" srcdoc="<html style='overflow: hidden;'> <head><link href='/css/main.min.css' rel='stylesheet'></head><body style='padding: 0; background: transparent; overflow: hidden;'> <div id='green-port-map' class='green-port-map__map'></div><script src='/js/leader-line.js'></script><script src='https://api-maps.yandex.ru/2.1/?apikey=e2cdd9b4-793c-44ff-bfb7-908e17ad7400&lang=ru_RU' type='text/javascript'></script><script defer>const mapOptions={center:{1024:[43.097,131.862955],640:[43.097,131.862955],320:[43.097,131.862955]},controls:[],zoom:15}
-            const mapPoints=[{photoSrc:'/img/temp/green-port-map-1.jpg',text:'Построили детскую площадку на ул.Морозова,5',coords:{1024:{point:[43.092287,131.862955],card:[43.107658,131.835798]},640:{point:[43.092287,131.862955],card:[43.107658,131.835798]}}},{photoSrc:'/img/temp/green-port-map-2.jpg',text:'Построили детскую площадку на ул.Саратовская,10',coords:{1024:{point:[43.093064,131.865569],card:[43.107658,131.835798]},640:{point:[43.093064,131.865569],card:[43.107658,131.835798]}}},{photoSrc:'/img/temp/green-port-map-3.jpg',text:'Высадили 55 ясеней в сквере Героев-Даманцев',coords:{1024:{point:[43.100388,131.865266],card:[43.100388,131.835798]},640:{point:[43.100388,131.865266],card:[43.100388,131.835798]}}}]
-            ymaps.ready(()=>{const{innerWidth}=window;console.log(innerWidth);const getCoords=(obj)=>{const findKey=Object.keys(obj).reverse().find(key=>+key<=innerWidth);return obj[findKey]}
-            const map=new ymaps.Map('green-port-map',{...mapOptions,center:getCoords(mapOptions.center)});map.behaviors.disable('scrollZoom');map.behaviors.disable('dblClickZoom');const lines=[];const placemarks=[];const cards=[];map.events.add('actiontick',()=>lines.forEach(line=>line.position()));mapPoints.forEach(({coords,photoSrc,text},idx)=>{const findCoords=getCoords(coords);const placemarkTemplate=ymaps.templateLayoutFactory.createClass(`<div id='placemark-${idx}-start' class='green-port-map__wrapper'></div>`);const placemark=new ymaps.Placemark(findCoords.point,{},{iconLayout:placemarkTemplate,iconShape:{type:'Rectangle',coordinates:[[0,0],[44,44]]},});map.geoObjects.add(placemark);const cardTemplate=ymaps.templateLayoutFactory.createClass(`<div id='placemark-${idx}-end' class='green-port-map__card hide'><img src='{{ properties.photoSrc }}' alt='' class='green-port-map__img'/>{{ properties.text }}</div>`);const card=new ymaps.Placemark(findCoords.card,{photoSrc,text},{iconLayout:cardTemplate,});map.geoObjects.add(card);let htmlPlacemark=null;const getPlacemark=()=>{if(!htmlPlacemark){htmlPlacemark=placemark.getOverlaySync().getLayoutSync().getElement().children[0];placemarks.push(htmlPlacemark)}
-            return htmlPlacemark};let htmlCard=null;const getCard=()=>{if(!htmlCard){htmlCard=card.getOverlaySync().getLayoutSync().getElement().children[0];cards.push(htmlCard)}
-            return htmlCard};placemark.events.add('mouseenter',function(){getPlacemark().classList.add('hover')});placemark.events.add('mouseleave',function(){getPlacemark().classList.remove('hover')});let line=null;const getLine=()=>{if(!line){line=new LeaderLine(LeaderLine.pointAnchor(getPlacemark(),{x:'45%',y:'45%'}),getCard(),{color:'#3A861F',size:3,dash:!0,endPlug:'disc',endPlugSize:2,hide:!0});lines.push(line)}
-            return line};placemark.events.add('click',function(){placemarks.forEach(placemark=>placemark.classList.remove('selected'));getPlacemark().classList.add('selected');cards.forEach(card=>card.classList.add('hide'));getCard().classList.remove('hide');lines.forEach(line=>line.hide());getLine().position();getLine().show('draw')})})})</script></body></html>">
-        </iframe>
 
-        <div id="green-port-map" class='green-port-map green-port-map_mobile'></div>
     </div>
     
     <h3 class="green-port__caption green-port__focusing-efforts animate-text-top animation-off">ФОКУСИРУЕМ УСИЛИЯ <br>И РЕСУРСЫ НА УЛУЧШЕНИИ КАЧЕСТВА ЖИЗНИ СОТРУДНИКОВ И ОБЩЕСТВА</h3>
@@ -287,112 +278,173 @@
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=e2cdd9b4-793c-44ff-bfb7-908e17ad7400&lang=ru_RU" type="text/javascript"></script>
 <script>
-    const mapOptions = {
-        center: {
-            1024: [43.097, 131.862955],
-            640: [43.097, 131.862955],
-            320: [43.097, 131.862955]
+    const mapSettings = {
+        mapOptions: {
+            center: {
+                1024: [43.097, 131.862955],
+                640: [43.097, 131.862955],
+                0: [43.097, 131.862955]
+            },
+            controls: [],
+            zoom: 15
         },
-        controls: [],
-        zoom: 15
+
+        mapPoints: [
+            {
+                photoSrc: '/img/temp/green-port-map-1.jpg',
+                text: 'Построили детскую площадку на ул. Морозова, 5',
+                coords: {
+                    1024: {
+                        point: [43.092287, 131.862955],
+                        card: [43.107658, 131.835798]
+                    },
+                    320: {
+                        point: [43.092287, 131.862955],
+                        card: [43.107658, 131.835798]
+                    }
+                }
+            },
+            {
+                photoSrc: '/img/temp/green-port-map-2.jpg',
+                text: 'Построили детскую площадку на ул. Саратовская, 10',
+                coords: {
+                    1024: {
+                        point: [43.093064, 131.865569],
+                        card: [43.107658, 131.835798]
+                    },
+                    320: {
+                        point: [43.093064, 131.865569],
+                        card: [43.107658, 131.835798]
+                    }
+                }
+            },
+            {
+                photoSrc: '/img/temp/green-port-map-3.jpg',
+                text: 'Высадили 55 ясеней в сквере Героев-Даманцев',
+                coords: {
+                    1024: {
+                        point: [43.100388, 131.865266],
+                        card: [43.100388, 131.835798]
+                    },
+                    320: {
+                        point: [43.100388, 131.865266],
+                        card: [43.100388, 131.835798]
+                    }
+                }
+            }
+        ]
     }
     
-    const mapPoints = [
-        {
-            photoSrc: '/img/temp/green-port-map-1.jpg',
-            text: 'Построили детскую площадку на ул. Морозова, 5',
-            coords: {
-              1024: {
-                  point: [43.092287, 131.862955],
-                  card: [43.107658, 131.835798]
-              },
-              320: {
-                  point: [43.092287, 131.862955],
-                  card: [43.107658, 131.835798]
-              }
-            }
-        },
-        {
-            photoSrc: '/img/temp/green-port-map-2.jpg',
-            text: 'Построили детскую площадку на ул. Саратовская, 10',
-            coords: {
-                1024: {
-                    point: [43.093064, 131.865569],
-                    card: [43.107658, 131.835798]
-                },
-                320: {
-                    point: [43.093064, 131.865569],
-                    card: [43.107658, 131.835798]
-                }
-            }
-        },
-        {
-            photoSrc: '/img/temp/green-port-map-3.jpg',
-            text: 'Высадили 55 ясеней в сквере Героев-Даманцев',
-            coords: {
-                1024: {
-                    point: [43.100388, 131.865266],
-                    card: [43.100388, 131.835798]
-                },
-                320: {
-                    point: [43.100388, 131.865266],
-                    card: [43.100388, 131.835798]
-                }
-            }
-        }
-    ]
-
-    //--
-    const { innerWidth } = window;
     
-    
-    
-    const mapPopup = document.querySelector('#green-port-map-popup').innerHTML;
-    
-    ymaps.ready(() => {
+    function initMap() {
+        const mapContainer = document.querySelector('.green-port__green-port-map');
+        const { innerWidth } = window;
         const getCoords = (obj) => {
             const findKey = Object.keys(obj).reverse().find(key =>{
                 return  +key <= innerWidth
             });
-            
+    
             return obj[findKey];
         }
         
-        const map = new ymaps.Map("green-port-map", {
-            ...mapOptions,
-            center: getCoords(mapOptions.center)
-        });
+        const mapOptions = {
+            ...mapSettings.mapOptions,
+            center: getCoords(mapSettings.mapOptions.center)
+        }
+        
+        const mapPoints = mapSettings.mapPoints.map(el => ({...el, coords: getCoords(el.coords)}));
+        
+        if (window.innerWidth >= 640) {
+            if (document.querySelector('.green-port-map:not(.green-port-map_mobile)')) {
+                return;
+            }
+            
+            const mapElement = document.createElement('iframe');
+            mapElement.setAttribute('class', 'green-port-map');
+            
+            const scriptContent = `
+                const mapOptions=${JSON.stringify(mapOptions)};
+                const mapPoints=${JSON.stringify(mapPoints)};
+                ymaps.ready(()=>{
+                    const map=new ymaps.Map('green-port-map', mapOptions);
+                    map.behaviors.disable('scrollZoom');
+                    map.behaviors.disable('dblClickZoom');
+                    const lines=[], placemarks=[], cards=[];
+                    map.events.add('actiontick',()=>lines.forEach(line=>line.position()));
+                    mapPoints.forEach(({coords,photoSrc,text},idx)=>{
+                        const placemarkTemplate=ymaps.templateLayoutFactory.createClass(${'`'}${"<div id='placemark-${idx}-start' class='green-port-map__wrapper'></div>"}${'`'});
+                        const placemark=new ymaps.Placemark(coords.point,{},{iconLayout:placemarkTemplate,iconShape:{type:'Rectangle',coordinates:[[0,0],[44,44]]}});
+                        map.geoObjects.add(placemark);
+                        const cardTemplate=ymaps.templateLayoutFactory.createClass(${'`'}${"<div id='placemark-${idx}-end' class='green-port-map__card hide'><img src='{{ properties.photoSrc }}' alt='' class='green-port-map__img'/>{{ properties.text }}</div>"}${'`'});
+                        const card=new ymaps.Placemark(coords.card,{photoSrc,text},{iconLayout:cardTemplate});
+                        map.geoObjects.add(card);
+                        let htmlPlacemark=null; const getPlacemark=()=>{if(!htmlPlacemark){htmlPlacemark=placemark.getOverlaySync().getLayoutSync().getElement().children[0];placemarks.push(htmlPlacemark)} return htmlPlacemark};
+                        let htmlCard=null;const getCard=()=>{if(!htmlCard){htmlCard=card.getOverlaySync().getLayoutSync().getElement().children[0];cards.push(htmlCard)} return htmlCard};
+                        placemark.events.add('mouseenter',function(){getPlacemark().classList.add('hover')});placemark.events.add('mouseleave',function(){getPlacemark().classList.remove('hover')});
+                        let line=null;const getLine=()=>{if(!line){line=new LeaderLine(LeaderLine.pointAnchor(getPlacemark(),{x:'45%',y:'45%'}),getCard(),{color:'#3A861F',size:3,dash:!0,endPlug:'disc',endPlugSize:2,hide:!0}); lines.push(line)} return line};
+                        placemark.events.add('click',function(){placemarks.forEach(placemark=>placemark.classList.remove('selected'));getPlacemark().classList.add('selected');cards.forEach(card=>card.classList.add('hide'));getCard().classList.remove('hide');lines.forEach(line=>line.hide());getLine().position();getLine().show('draw');});
+                    })
+                });
+            `;
+            
+            mapElement.setAttribute('srcDoc', `
+                        <link href="/css/main.min.css" rel="stylesheet">
+                        <style> html,body { overflow: hidden; } body { padding: 0; background: transparent; } </style>
+                        <div id='green-port-map' class='green-port-map__map'></div>
+                        <script src="https://api-maps.yandex.ru/2.1/?apikey=e2cdd9b4-793c-44ff-bfb7-908e17ad7400&lang=ru_RU" type="text/javascript"></scr` + `ipt>
+                        <script src='/js/leader-line.js'></scr` + `ipt>                        
+                        <script>${ scriptContent }</scr` + `ipt>`);
+            mapContainer.append(mapElement);
+        }
+        else {
+            if (document.querySelector('.green-port-map.green-port-map_mobile')) {
+                return;
+            }
+            
+            const mapElement = document.createElement('div');
+            mapElement.setAttribute('id', 'green-port-map');
+            mapElement.setAttribute('class', 'green-port-map green-port-map_mobile');
+            mapContainer.append(mapElement);
+            
+            const mapPopup = document.querySelector('#green-port-map-popup').innerHTML;
+    
+            ymaps.ready(() => {
+                const map = new ymaps.Map("green-port-map", mapOptions);
+    
+                map.behaviors.disable('scrollZoom');
+                map.behaviors.disable('dblClickZoom');
+    
+                mapPoints.forEach(({ coords, photoSrc, text }, idx) => {
+    
+                    const placemarkTemplate = ymaps.templateLayoutFactory.createClass(`<div id="placemark-${idx}-start" class="green-port-map__wrapper"></div>`);
+                    const placemark = new ymaps.Placemark(
+                        coords.point,
+                        {},
+                        {
+                            iconLayout: placemarkTemplate,
+                            iconShape: {
+                                type: 'Rectangle',
+                                coordinates: [
+                                    [0, 0], [44, 44]
+                                ]
+                            },
+                        }
+                    );
+                    map.geoObjects.add(placemark);
+    
+                    const newPopupWrapper = document.createElement('div');
+                    newPopupWrapper.innerHTML = mapPopup.replace('{{ text }}', text).replace('{{ photoSrc }}', photoSrc).replace('{{ id }}', String(idx));
+                    document.body.append(newPopupWrapper.children[0]);
+    
+                    const popup = new Popup(`#map-popup-${idx}`);
+                    placemark.events.add('click', () => popup.show());
+                });
+            });
+        }
+    }
 
-        map.behaviors.disable('scrollZoom');
-        map.behaviors.disable('dblClickZoom');
-
-        mapPoints.forEach(({ coords, photoSrc, text }, idx) => {
-            const findCoords = getCoords(coords);
-            
-            const placemarkTemplate = ymaps.templateLayoutFactory.createClass(`<div id="placemark-${idx}-start" class="green-port-map__wrapper"></div>`);
-            const placemark = new ymaps.Placemark(
-                findCoords.point, 
-                {}, 
-                {
-                    iconLayout: placemarkTemplate,
-                    iconShape: {
-                        type: 'Rectangle',
-                        coordinates: [
-                            [0, 0], [44, 44]
-                        ]
-                    },
-                }
-            );
-            map.geoObjects.add(placemark);
-            
-            const newPopupWrapper = document.createElement('div');
-            newPopupWrapper.innerHTML = mapPopup.replace('{{ text }}', text).replace('{{ photoSrc }}', photoSrc).replace('{{ id }}', String(idx));
-            document.body.append(newPopupWrapper.children[0]);
-            
-            const popup = new Popup(`#map-popup-${idx}`);
-            placemark.events.add('click', () => popup.show());
-        });
-    });
+    window.addEventListener("resize", initMap);
+    initMap();
     
     class Speedometer {
         constructor(id) {
