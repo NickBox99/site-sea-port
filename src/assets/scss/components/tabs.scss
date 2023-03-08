@@ -8,7 +8,7 @@
   letter-spacing: -0.04em;
   line-height: 1;
   text-align: center;
-  transition: var(--transition-default);
+  transition: color .3s;
   cursor: pointer;
 
   &,
@@ -27,6 +27,7 @@
 
   &.active {
     background: var(--color-blue-1);
+    transition: color .3s, background 5s;
   }
 
   &s {
