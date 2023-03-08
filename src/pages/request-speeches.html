@@ -93,7 +93,7 @@
     <div class="popup__wrapper">
         <div class="popup__header">
             <div class="popup__title">Ваша заявка отправлена</div>
-            <div class="popup__cross">@@include('../components/svg/cross.html')</div>
+            <div class="popup__cross" data-popup-close>@@include('../components/svg/cross.html')</div>
         </div>
 
         <div class="popup__content">
@@ -101,7 +101,7 @@
             <a href="#" class="popup__link" target="_blank">автомобильного&nbsp;пропуска</a>
         </div>
 
-        <button class="popup__btn btn btn_primary root-white">Вернуться на сайт</button>
+        <button class="popup__btn btn btn_primary root-white" data-popup-close>Вернуться на сайт</button>
     </div>
 </div>
 
@@ -109,7 +109,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         const applicationSentPopup = new Popup('#request-speeches-sent');
         const form = document.querySelector('#applicationForInspection');
-
+        
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             

@@ -7,7 +7,7 @@
         const isPopup = this.popup.classList.contains('popup');
 
         this.popup.addEventListener('click', ({target}) => {
-            if (isPopup && (target.closest('.popup__cross') || !target.closest('.popup__wrapper'))) {
+            if (isPopup && (target.closest('[data-popup-close]') || !target.closest('.popup__wrapper'))) {
                 this.hide();
             }
         })
