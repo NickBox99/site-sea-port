@@ -1,4 +1,6 @@
 ﻿.tab {
+  position: relative;
+  z-index: 5;
   padding: 11px 0;
   font-weight: 700;
   font-size: 14px;
@@ -9,22 +11,24 @@
   transition: var(--transition-default);
   cursor: pointer;
 
-  &, &s {
+  &,
+  &s {
     border-radius: 100px;
   }
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     color: var(--color-white);
   }
-  
+
   &:hover {
     background: var(--color-blue-2-opac40);
   }
 
   &.active {
-    background: var(--color-blue-1);
+    //background: var(--color-blue-1);
   }
-  
+
   &s {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -32,7 +36,7 @@
     padding: 6px;
     border: 1px solid var(--color-blue-3);
     backdrop-filter: blur(5px);
-    
+
     &_margin-small {
       margin-bottom: 30px;
     }
@@ -47,5 +51,21 @@
         margin-bottom: 20px;
       }
     }
+  }
+}
+
+.tabs-animate {
+  position: relative;
+  // .tabs-animate__floatr
+  &__floatr {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    height: 36px;
+    width: 300px;
+    background: var(--color-blue-1);
+    border-radius: 100px;
+    z-index: 0;
+    transition: 0.2s ease-in-out;
   }
 }
