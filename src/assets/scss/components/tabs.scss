@@ -10,6 +10,7 @@
   text-align: center;
   transition: color .3s;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &,
   &s {
@@ -19,10 +20,6 @@
   &:hover,
   &.active {
     color: var(--color-white);
-  }
-
-  &:hover {
-    background: var(--color-blue-2-opac40);
   }
 
   &.active {

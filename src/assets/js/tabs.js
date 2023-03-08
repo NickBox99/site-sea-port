@@ -1,58 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
   function setVisibleTab(tab, display) {
-    const nodes = document.querySelectorAll(
-      `[data-tabs="${tab.getAttribute('data-tabs-open')}"]`
-    )
-
-    if (nodes && nodes.length) {
-      nodes.forEach((node) => (node.style.display = display))
-    }
+    document.querySelectorAll(`[data-tabs="${tab.dataset.tabsOpen}"]`)
+      .forEach((node) => (node.style.display = display))
   }
 
-  document.querySelectorAll('.tabs').forEach((tabs) => {
-    const tabsItems = tabs.querySelectorAll('.tab')
+  const isVertical = window.innerWidth <= 470
 
-    tabs.addEventListener('click', ({ target }) => {
-      if (
-        !target.classList.contains('active') &&
-        target.classList.contains('tab')
-      ) {
-        tabsItems.forEach((tab) => {
+  document.querySelectorAll('.tabs').forEach((tabContainer) => {
+    const tabItems = [...tabContainer.querySelectorAll('.tab')]
+    const floatr = tabContainer.querySelector('.tabs__floatr')
+
+    tabContainer.addEventListener('click', ({ target }) => {
+      if (!target.classList.contains('active') && target.classList.contains('tab')) {
+        tabItems.forEach((tab) => {
           tab.classList.remove('active')
-
           setVisibleTab(tab, 'none')
         })
 
         target.classList.add('active')
         setVisibleTab(target, '')
-      }
-    })
-  })
 
-  document.querySelectorAll('.tabs')?.forEach((tabContainer) => {
-    const floatrLabel = tabContainer.querySelector('.tabs__floatr')
-    const tabActive = tabContainer.querySelector('.active')
-    const tabContainerLeftPosition =tabContainer.getBoundingClientRect().left
-    const activeTabLeft = tabActive.getBoundingClientRect().left - tabContainerLeftPosition
-    const activeTabWidth = tabActive.getBoundingClientRect().width
+        const index = tabItems.findIndex(tab => tab.classList.contains('active'))
+        const { width, height } = target.getBoundingClientRect()
+        const transform = isVertical ? `translateY(${index * height}px)` : `translateX(${index * width}px)`
 
-    floatrLabel.style.cssText = `
-      left: ${activeTabLeft}px;
-      width: ${activeTabWidth}px;
-    `
-
-    tabContainer.querySelectorAll('.tab').forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const left = tab.getBoundingClientRect().left - (tabContainerLeftPosition + 6)
-        const width = tab.getBoundingClientRect().width
-        const sictranslate = `translate(${left}px, 0px)`
-
-        floatrLabel.style.cssText = `
+        floatr.style.cssText = `
           width: ${width}px;
-          -webkit-transform: ${sictranslate};
-          -moz-transform: ${sictranslate};
+          transform: ${transform};
+          -webkit-transform: ${transform};
+          -moz-transform: ${transform};
         `
-      })
+      }
     })
   })
 })
