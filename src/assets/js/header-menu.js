@@ -15,7 +15,6 @@ window.toggleVisibleMenu = function () {
 window.toggleVisibleSearch = function () {
     headerSearch.classList.toggle('show');
     headerSearch.classList.add('animate');
-    // header.style.position = headerSearch.classList.contains('show') ? "unset" : "";
 }
 
 window.toggleVisibleLang = function () {
@@ -30,5 +29,9 @@ window.dropdownMenuToggle = function () {
 document.body.addEventListener('click', ({ target }) => {
     if (headerLang.classList.contains('show') && !target.closest('.header-lang')) {
         headerLang.classList.remove('show');
+    }
+    
+    if (headerSearch.classList.contains('show') && !target.closest('.header-search-btn')) {
+        headerSearch.classList.remove('show');
     }
 })
