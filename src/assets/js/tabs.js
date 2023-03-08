@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 
-  document.querySelectorAll('.tabs-animate')?.forEach((tabContainer) => {
-    const floatrLabel = tabContainer.querySelector('.tabs-animate__floatr')
+  document.querySelectorAll('.tabs')?.forEach((tabContainer) => {
+    const floatrLabel = tabContainer.querySelector('.tabs__floatr')
     const tabActive = tabContainer.querySelector('.active')
     const tabContainerLeftPosition =tabContainer.getBoundingClientRect().left
     const activeTabLeft = tabActive.getBoundingClientRect().left - tabContainerLeftPosition
@@ -52,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
           -webkit-transform: ${sictranslate};
           -moz-transform: ${sictranslate};
         `
-
-        console.log(left, width);
       })
     })
   })
