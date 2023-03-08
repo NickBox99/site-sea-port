@@ -1,0 +1,144 @@
+﻿.search {
+  
+  &__filters-search {
+    margin-bottom: 24px;
+  }
+  
+  &__found {
+    font-size: 14px;
+    line-height: 1;
+  }
+  
+  &__not-found, &__wrapper {
+    margin-top: 60px;
+  }
+  
+  &__card {
+    padding: 38px 40px 40px;
+    background: var(--color-blue-4);
+    border-radius: 7px;
+    
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+  
+  &__name {
+    margin-bottom: 9px;
+  }
+  
+  &__description {
+    margin-bottom: 40px;
+  }
+  
+  &__description, &__breadcrumbs {
+    color: var(--color-blue-8);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    border-top: 1px solid var( --color-blue-3);
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__filters-search {
+      margin-bottom: 40px;
+    }
+
+    &__wrapper {
+      margin-top: 50px;
+    }
+
+    &__name {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media screen and (min-width: 641px) and (max-width: 1024px) {
+    &__title {
+      margin-top: -20px;
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    &__title {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media screen and (max-width: 730px) {
+    &__footer {
+      flex-direction: column;
+    }
+    
+    &__breadcrumbs {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    &__not-found {
+      margin-top: 50px;
+    }
+
+    &__wrapper {
+      margin-top: 60px;
+    }
+
+    &__description {
+      margin-bottom: 30px;
+    }
+    
+    &__card {
+      padding-right: 30px;
+    }
+    
+    &__name {
+      font-size: 24px;
+      line-height: 26.4px;
+    }
+    
+    &__footer {
+      padding-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    &__filters-search {
+      margin-bottom: 22px;
+    }
+
+    &__not-found {
+      margin-top: 47px;
+    }
+
+    &__wrapper {
+      margin-top: 32px;
+    }
+    
+    &__card {
+      padding: 18px 20px 20px;
+      
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__name {
+      font-size: 24px;
+      line-height: 26.4px;
+    }
+
+    &__description, &__breadcrumbs {
+      margin-bottom: 20px;
+    }
+
+    &__footer {
+      padding-top: 20px;
+    }
+  }
+}

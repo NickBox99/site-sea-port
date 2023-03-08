@@ -21,6 +21,7 @@ export const html_blue = () => {
           'src/pages/404.html',
           'src/pages/career.html',
           'src/pages/about.html',
+          'src/pages/search.html',
       ])
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({

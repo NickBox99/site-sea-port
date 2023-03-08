@@ -174,13 +174,7 @@
       }
     }
   }
-
-  @media screen and (min-width: 401px) {
-    &__filters-search .input-group-icon {
-      display: none;
-    }
-  }
-
+  
   @media screen and (max-width: 400px) {
     &__filters-sort-buttons, &__dates {
       grid-template-columns: 1fr;
