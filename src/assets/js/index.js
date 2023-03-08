@@ -114,3 +114,11 @@ if (map) {
         x: '-50%',
     })
 }
+
+class SVGAnimate {
+  static init() {
+    const svg = document.getElementById('map-1')
+  }
+}
+
+SVGAnimate.init()

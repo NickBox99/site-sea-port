@@ -34,7 +34,8 @@
       margin-bottom: 16px;
     }
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       color: var(--color-white);
     }
   }
@@ -46,13 +47,13 @@
       display: none;
     }
   }
-  
+
   &_secondary {
     .route-map {
       &__map {
         margin: 0 0 0 -388px;
       }
-      
+
       &__list {
         margin-top: 80px;
       }
@@ -73,9 +74,8 @@
       position: relative;
       flex-direction: column-reverse;
       padding-bottom: 670px;
-      
-      .route-map {
 
+      .route-map {
         &__map {
           position: absolute;
           right: 50%;
@@ -137,7 +137,7 @@
       grid-column-gap: 30px;
       margin: 0 0 40px;
     }
-    
+
     &__route {
       align-items: unset;
       justify-content: unset;
@@ -145,7 +145,7 @@
       width: unset;
       line-height: 20.8px;
       text-align: unset;
-      
+
       &:not(:last-child) {
         margin-bottom: 11px;
       }
@@ -162,12 +162,12 @@
       }
     }
   }
-  
+
   @media screen and (max-width: 600px) {
     padding-bottom: 544px;
 
     &__map {
-      zoom: .8;
+      zoom: 0.8;
     }
 
     &__list {
@@ -177,9 +177,9 @@
 
   @media screen and (max-width: 490px) {
     padding-bottom: 389px;
-    
+
     &__map {
-      zoom: .6;
+      zoom: 0.6;
     }
   }
 
@@ -187,7 +187,28 @@
     padding-bottom: 348px;
 
     &__map {
-      zoom: .51;
+      zoom: 0.51;
     }
+  }
+}
+
+.yantan-pevek-path {
+  stroke: #87A4BC;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: animate-line-path 5s ease-in-out forwards;
+}
+
+.yantan-pevek-mask {
+  stroke: #025493;
+
+}
+
+@keyframes animate-line-path {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }

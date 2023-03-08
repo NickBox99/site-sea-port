@@ -1,4 +1,6 @@
 ﻿.tab {
+  position: relative;
+  z-index: 5;
   padding: 11px 0;
   font-weight: 700;
   font-size: 14px;
@@ -6,35 +8,48 @@
   letter-spacing: -0.04em;
   line-height: 1;
   text-align: center;
-  transition: var(--transition-default);
+  transition: color .3s;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
-  &, &s {
+  &,
+  &s {
     border-radius: 100px;
   }
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     color: var(--color-white);
-  }
-  
-  &:hover {
-    background: var(--color-blue-2-opac40);
   }
 
   &.active {
     background: var(--color-blue-1);
+    transition: color .3s, background 5s;
   }
-  
+
   &s {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     margin-bottom: 70px;
     padding: 6px;
     border: 1px solid var(--color-blue-3);
     backdrop-filter: blur(5px);
-    
+
     &_margin-small {
       margin-bottom: 30px;
+    }
+
+    // .tabs__floatr
+    &__floatr {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      height: 36px;
+      background: var(--color-blue-1);
+      border-radius: 100px;
+      z-index: 0;
+      transition: 0.2s ease-in-out;
     }
   }
 
