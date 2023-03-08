@@ -1,9 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-  function setVisibleTab(tab, display) {
-    document.querySelectorAll(`[data-tabs="${tab.dataset.tabsOpen}"]`)
-      .forEach((node) => (node.style.display = display))
+function setVisibleTabContent(tab, display) {
+  document.querySelectorAll(`[data-tabs="${tab.dataset.tabsOpen}"]`)
+      .forEach((node) => (node.style.display = display));
+}
+
+window.setVisibleTab = (selector, tab) => {
+  const activeTap = selector.querySelector('.active');
+
+  if (activeTap) {
+    activeTap.classList.remove('active');
+    setVisibleTabContent(activeTap, 'none');
   }
 
+  tab.classList.add('active');
+  setVisibleTabContent(tab, '');
+}
+
+window.initTabs = (selector) => {
+  selector.addEventListener('click', ({ target }) => {
+    if (!target.classList.contains('active') && target.hasAttribute('data-tabs-open')) {
+      setVisibleTab(selector, target);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   const isVertical = window.innerWidth <= 470;
 
   document.querySelectorAll('.tabs').forEach((tabContainer) => {
@@ -12,13 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tabContainer.addEventListener('click', ({ target }) => {
       if (!target.classList.contains('active') && target.classList.contains('tab')) {
-        tabItems.forEach((tab) => {
-          tab.classList.remove('active');
-          setVisibleTab(tab, 'none');
-        })
-
-        target.classList.add('active');
-        setVisibleTab(target, '');
+        setVisibleTab(tabContainer, target);
 
         const index = tabItems.findIndex(tab => tab.classList.contains('active'));
         const { width, height } = target.getBoundingClientRect();
@@ -33,4 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   })
+  
 })
+
+//data-tabs-open="paperwork"   data-tabs="map"

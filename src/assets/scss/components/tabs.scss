@@ -12,8 +12,7 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
-  &,
-  &s {
+  &, &s {
     border-radius: 100px;
   }
 
@@ -40,7 +39,6 @@
       margin-bottom: 30px;
     }
 
-    // .tabs__floatr
     &__floatr {
       position: absolute;
       top: 6px;
