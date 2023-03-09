@@ -119,7 +119,9 @@ li {
 
 .table-wrapper table {
   padding-bottom: 40px;
-  width: 1200px;
+  min-width: max-content;
+  width: 100%;
+  max-width: 1200px;
   color: var(--color-white);
   border-spacing: unset;
 }

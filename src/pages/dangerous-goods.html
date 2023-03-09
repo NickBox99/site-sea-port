@@ -14,6 +14,74 @@
         <div class="tabs__floatr"></div>
     </div>
     
+    <div data-tabs="import-permit">
+        <h2 class="dangerous-goods__caption">Разрешение на завоз опасного груза</h2>
+
+        <form id="permission-form" class="dangerous-goods__form">
+            <input name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН">
+            <div class="select select_secondary">
+                <div class="select__value"></div>
+                <input name="group" type="hidden" class="select__input">
+                <div class="select__wrapper">
+                    <div class="select__item btn btn_secondary" data-value="0">Выберите группу упаковки</div>
+                    <div class="select__item btn btn_secondary" data-value="1">Дате публикации</div>
+                    <div class="select__item btn btn_secondary" data-value="2">Дате окончания приема предложений</div>
+                    <div class="select__item btn btn_secondary" data-value="3">По убыванию НМЦ</div>
+                    <div class="select__item btn btn_secondary" data-value="4">По возрастанию НМЦ</div>
+                </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
+            </div>
+            <button class="btn btn_primary btn_w-100 btn_large" type="submit">Добавить</button>
+        </form>
+        
+        <div class="dangerous-goods__table">
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>№</th>
+                        <th>НОМЕР ООН</th>
+                        <th>ГРУППА УПАКОВКИ</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1234</td>
+                        <td>I - вещества с высокой степенью опасности</td>
+                        <td class="dangerous-goods__cross-wrapper"><div class="dangerous-goods__cross">@@include('../components/svg/cross.html')</div></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3456</td>
+                        <td>II — просто опасный груз</td>
+                        <td class="dangerous-goods__cross-wrapper"><div class="dangerous-goods__cross">@@include('../components/svg/cross.html')</div></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>78954</td>
+                        <td>III — незначительно опасный груз.</td>
+                        <td class="dangerous-goods__cross-wrapper"><div class="dangerous-goods__cross">@@include('../components/svg/cross.html')</div></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <button class="btn btn_primary dangerous-goods__table-btn" type="submit">Запросить разрешение</button>
+        </div>
+        
+        <div class="dangerous-goods__permissions">
+            <div class="dangerous-goods-permission">
+                <div class="dangerous-goods-permission__content">
+                    <div class="dangerous-goods-permission__col">
+                        <div class="subtitle">Название</div>
+                        <h3 class="dangerous-goods-permission__title">Ксантогенаты xanthates</h3>
+                        <div class="dangerous-goods-permission__description">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
+                        <div class="subtitle">Прием в порт</div>
+                        <div class="dangerous-goods-permission__depiction">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
+                    </div>
+                    <div class="dangerous-goods-permission__col"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div data-tabs="documents" style="display: none;">
         <a href="#" class="file-block dangerous-goods__file" target="_blank">
             <div class="file-block__file dangerous-goods__file-type">

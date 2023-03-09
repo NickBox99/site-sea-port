@@ -1,6 +1,10 @@
 ﻿.dangerous-goods {
   margin-top: -37px;
   
+  &__caption {
+    margin-bottom: 40px;
+  }
+  
   &__breadcrumb {
     margin: 0 5px;
     
@@ -55,6 +59,63 @@
     }
   }
   
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+  
+  &__cross {
+    width: 11px;
+    margin-left: auto;
+    
+    &-wrapper {
+      width: 0;
+      cursor: pointer;
+    }
+  }
+  
+  &__table {
+    margin-top: 50px;
+    
+    &-btn {
+      margin-left: auto;
+    }
+  }
+  
+  &__permissions {
+    margin-top: 70px;
+  }
+  
+  &-permission {
+    padding: 40px;
+    background: var(--color-blue-4);
+    border-radius: 7px;
+    
+    &__content {
+      display: flex;
+    }
+    
+    &__col {
+      &:first-child {
+        margin-right: 60px;
+        width: 50%;
+      }
+    }
+    
+    &__title {
+      margin-bottom: 10px;
+    }
+    
+    &__description {
+      margin-bottom: 24px;
+    }
+    
+    &__depiction {
+      font-style: italic;
+    }
+  }
+  
   @media screen and (max-width: 1024px) {
     margin-top: 0;
 
@@ -65,13 +126,28 @@
     }
     
     &__tabs {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
 
     &__accordion {
       &-title {
         font-size: 18px;
         line-height: 21.6px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    &__table {
+      &-btn {
+        margin-top: 30px;
       }
     }
   }
@@ -92,6 +168,10 @@
         line-height: 19.2px;
       }
     }
+
+    &__table-btn {
+      width: 100%;
+    }
   }
 
   @media screen and (max-width: 470px) {
@@ -103,9 +183,13 @@
         margin-bottom: 14px;
       }
     }
-    
-    &__title {
+
+    &__title, &__caption {
       margin-bottom: 30px;
+    }
+
+    &__tabs {
+      margin-bottom: 40px;
     }
 
     &__accordion {
