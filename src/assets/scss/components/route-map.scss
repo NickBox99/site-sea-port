@@ -192,12 +192,16 @@
   }
 }
 
-
 .svg-animate {
   // .svg-animate__city
   &__city {
     opacity: 0;
-    transition: opacity 300ms ease-in-out;
+    transition: opacity 600ms ease-in-out;
+
+    &:not(.main) {
+      transition-delay: 200ms;
+    }
+
     &.active {
       opacity: 1;
     }
@@ -207,7 +211,7 @@
     stroke: #87A4BC;
     opacity: 0;
     animation: none;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
     &.active {
       opacity: 1;
       animation: animate-line-path 2s ease-in-out forwards;
@@ -215,7 +219,12 @@
   }
   // .svg-animate__mask
   &__mask {
+    opacity: 0;
     stroke: #025493;
+    transition: opacity 200ms ease-in-out;
+    &.active {
+      opacity: 1;
+    }
   }
 }
 
