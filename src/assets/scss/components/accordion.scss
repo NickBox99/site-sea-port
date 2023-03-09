@@ -56,6 +56,11 @@
     line-height: 35.2px;
     user-select: none;
   }
+
+  &__title + &__btn {
+    align-self: start;
+    margin-top: -7px;
+  }
   
   &__btn {
     display: flex;
@@ -339,6 +344,10 @@
       width: 22px;
       height: 22px;
       padding: 7px;
+    }
+
+    &__title + &__btn {
+      margin-top: 0;
     }
 
     &-vacancy {
