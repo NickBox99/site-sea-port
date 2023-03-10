@@ -1,6 +1,5 @@
 .service-template {
   display: flex;
-  margin-top: 137px;
 
   &__sidebar {
     padding-left: 27px;
@@ -12,6 +11,15 @@
   &__content {
     flex-grow: 1;
     max-width: 991px;
+  }
+  
+  h2 {
+    margin-bottom: 18px;
+    
+    + p {
+      margin-bottom: 40px;
+      max-width: 650px;
+    }
   }
   
   @media screen and (max-width: 1400px) {
@@ -36,8 +44,13 @@
       width: 100%;
     }
   }
+  
+  @media screen and (max-width: 470px) {
+    h2 {
+      margin-bottom: 6px;
+    }
+  }
 }
-
 
 .service-template-sidebar {
   &__title {
@@ -63,7 +76,7 @@
 
 .service-template-header {
   position: relative;
-  margin-bottom: 112px;
+  margin-bottom: 171px;
   
   &__preview {
     position: absolute;
@@ -100,9 +113,13 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 22px 30px;
+      
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
     }
   }
-
+  
   @media screen and (max-width: 1400px) {
     &__preview {
       width: 1091px;
@@ -113,7 +130,53 @@
     &__preview {
       left: 50%;
       transform: translateX(-50%);
-      width: 1024px;
+      width: 100vw;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 191px;
+  }
+
+  @media screen and (max-width: 940px) {
+    margin-bottom: 112px;
+    padding: 75px 0;
+    
+    &__preview {
+      top: 0;
+      height: 100%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    &__advantages {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__preview {
+      left: -42px;
+      transform: unset;
+      width: 1436px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    margin-bottom: 90px;
+    padding-bottom: 31px;
+  }
+
+  @media screen and (max-width: 470px) {
+    margin-bottom: 60px;
+    padding: 24px 0 40px;
+    
+    &__preview {
+      width: 2319px;
+    }
+    
+    &__advantages {
+      grid-template-columns: 1fr;
     }
   }
 }
+
+.service-template-cards {}
