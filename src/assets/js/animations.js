@@ -68,4 +68,22 @@ document.querySelectorAll('.animate-text-top').forEach((el) => {
         </span>
       </span>
     `
-})
+});
+
+window.SVGAnimate = (mapId) => {
+    const map = document.getElementById(mapId);
+    const routes = map.querySelectorAll('.svg-animate__path');
+
+    routes.forEach((path) => {
+        const pathMask = path.cloneNode();
+        const pathLength = path.getTotalLength();
+
+        path.style.cssText = `
+          stroke-dasharray: ${pathLength};
+          stroke-dashoffset: ${pathLength};
+        `
+
+        pathMask.setAttribute('class', 'svg-animate__mask');
+        map.insertBefore(pathMask, path.nextSibling);
+    })
+}

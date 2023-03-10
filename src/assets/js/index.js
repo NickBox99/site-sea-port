@@ -114,23 +114,3 @@ if (map) {
         x: '-50%',
     })
 }
-
-const SVGAnimate = (mapId) => {
-  const map = document.getElementById(mapId);
-  const routes = map.querySelectorAll('.svg-animate__path');
-
-  routes.forEach((path) => {
-    const pathMask = path.cloneNode();
-    const pathLength = path.getTotalLength();
-
-    console.log(pathLength);
-
-    path.style.cssText = `
-      stroke-dasharray: ${pathLength};
-      stroke-dashoffset: ${pathLength};
-    `
-
-    pathMask.setAttribute('class', 'svg-animate__mask');
-    map.insertBefore(pathMask, path.nextSibling);
-  })
-}
