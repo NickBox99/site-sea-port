@@ -50,3 +50,41 @@ document.querySelectorAll('table').forEach((table) => {
   table.parentNode.insertBefore(wrapper, table)
   wrapper.appendChild(table)
 })
+
+const mapContainer = document.querySelector('.route-map__map')
+let startZoomValue = 1
+
+const zoomMap = (e) => {
+  e.preventDefault()
+  console.log(e);
+
+  if (e.deltaY < 0) {
+    if (startZoomValue <= 2) {
+      startZoomValue += 0.05
+    } else {
+      startZoomValue = 2
+    }
+  } else {
+    if (startZoomValue >= 0) {
+      startZoomValue -= 0.05
+    } else {
+      startZoomValue = 0
+    }
+  }
+
+  mapContainer.querySelector('.svg-animate').style.zoom = startZoomValue
+  console.log(startZoomValue);
+}
+
+mapContainer.addEventListener('mouseenter', (e) => {
+  console.log('Зашел на карту', e)
+  
+  document.addEventListener('wheel', zoomMap, { passive: false })
+})
+
+mapContainer.addEventListener('mouseleave', () => {
+  console.log('Покинул карту')
+
+  document.removeEventListener('wheel', zoomMap)
+})
+
