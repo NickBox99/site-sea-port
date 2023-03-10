@@ -9,6 +9,8 @@
     min-height: 683px;
     max-height: 683px;
     color: var(--color-blue-18);
+    overflow: hidden;
+    border: 1px solid red;
 
     svg {
       width: 1195px;
