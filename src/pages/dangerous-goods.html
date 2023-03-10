@@ -18,12 +18,12 @@
         <h2 class="dangerous-goods__caption">Разрешение на завоз опасного груза</h2>
 
         <form id="permission-form" class="dangerous-goods__form">
-            <input data-mask="0000000" name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН">
+            <input data-mask="0000000" name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН" role="presentation" autocomplete="off">
             <div class="select select_secondary">
                 <div class="select__value"></div>
                 <input name="group" type="hidden" class="select__input">
                 <div class="select__wrapper">
-                    <div class="select__item btn btn_secondary" data-value="0">Выберите группу упаковки</div>
+                    <div class="select__item btn btn_secondary" data-value="">Выберите группу упаковки</div>
                     <div class="select__item btn btn_secondary" data-value="1">Дате публикации</div>
                     <div class="select__item btn btn_secondary" data-value="2">Дате окончания приема предложений</div>
                     <div class="select__item btn btn_secondary" data-value="3">По убыванию НМЦ</div>
@@ -34,7 +34,7 @@
             <button class="btn btn_primary btn_w-100 btn_large" type="submit">Добавить</button>
         </form>
         
-        <div class="dangerous-goods__table">
+        <div class="dangerous-goods__table" style="display: none">
             <div class="table-wrapper">
                 <table>
                     <thead>
@@ -48,10 +48,10 @@
                 </table>
             </div>
             
-            <button class="btn btn_primary dangerous-goods__table-btn" type="submit">Запросить разрешение</button>
+            <button class="btn btn_primary dangerous-goods__table-btn" type="submit" onclick="requestPermission()">Запросить разрешение</button>
         </div>
         
-        <div class="dangerous-goods__permissions">
+        <div class="dangerous-goods__permissions" style="display: none">
             <div class="dangerous-goods-permission">
                 <div class="dangerous-goods-permission__content">
                     <div class="dangerous-goods-permission__col">
@@ -90,83 +90,83 @@
                 <div class="dangerous-goods-permission__status dangerous-goods-permission__status_success">Согласован</div>
                 <div class="dangerous-goods-permission__depiction">*Для дополнительного согласования необходимо обратиться к вашему экспедитору</div>
             </div>
-            
-            <div class="dangerous-goods-permission failure">
-                <div class="dangerous-goods-permission__content">
-                    <div class="dangerous-goods-permission__col">
-                        <div class="subtitle">Название</div>
-                        <h3 class="dangerous-goods-permission__title">Ксантогенаты xanthates</h3>
-                        <div class="dangerous-goods-permission__description">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
-                        <div class="subtitle">Прием в порт</div>
-                        <div class="dangerous-goods-permission__depiction">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
-                    </div>
-                    <div class="dangerous-goods-permission__col">
-                        <div class="subtitle">Номер ООН</div>
-                        <div class="dangerous-goods-permission__value">3342</div>
-                        
-                        <div class="subtitle">Группа упаковки</div>
-                        <div class="dangerous-goods-permission__value">I - вещества с высокой степенью опасности</div>
-                        
-                        <div class="subtitle">Класс или подкласс</div>
-                        <div class="dangerous-goods-permission__value">4.2</div>
-                        
-                        <div class="dangerous-goods-permission__additional-wrapper">
-                            <div class="dangerous-goods-permission__additional">
-                                <div class="subtitle">Доп виды опасности</div>
-                                Информация отсутствует
-                            </div>
-                            <div class="dangerous-goods-permission__additional">
-                                <div class="subtitle">Запрещен прием по&nbsp;ЖД</div>
-                                Информация отсутствует
-                            </div>
-                            <div class="dangerous-goods-permission__additional">
-                                <div class="subtitle">Инструкции по&nbsp;цистернам</div>
-                                ТЗ
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dangerous-goods-permission__status dangerous-goods-permission__status_failure">Отклонен</div>
-            </div>
-            
-            <div class="dangerous-goods-permission">
-                <div class="dangerous-goods-permission__content">
-                    <div class="dangerous-goods-permission__col">
-                        <div class="subtitle">Название</div>
-                        <h3 class="dangerous-goods-permission__title">Ксантогенаты xanthates</h3>
-                        <div class="dangerous-goods-permission__description">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
-                        <div class="subtitle">Прием в порт</div>
-                        <div class="dangerous-goods-permission__depiction">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
-                    </div>
-                    <div class="dangerous-goods-permission__col">
-                        <div class="subtitle">Номер ООН</div>
-                        <div class="dangerous-goods-permission__value">3342</div>
-                        
-                        <div class="subtitle">Группа упаковки</div>
-                        <div class="dangerous-goods-permission__value">I - вещества с высокой степенью опасности</div>
-                        
-                        <div class="subtitle">Класс или подкласс</div>
-                        <div class="dangerous-goods-permission__value">4.2</div>
-                        
-                        <div class="dangerous-goods-permission__additional-wrapper">
-                            <div class="dangerous-goods-permission__additional">
-                                <div class="subtitle">Доп виды опасности</div>
-                                Информация отсутствует
-                            </div>
-                            <div class="dangerous-goods-permission__additional">
-                                <div class="subtitle">Запрещен прием по&nbsp;ЖД</div>
-                                Информация отсутствует
-                            </div>
-                            <div class="dangerous-goods-permission__additional">
-                                <div class="subtitle">Инструкции по&nbsp;цистернам</div>
-                                ТЗ
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dangerous-goods-permission__status dangerous-goods-permission__status_expectation">Требуется согласование</div>
-                <div class="dangerous-goods-permission__depiction">*Для дополнительного согласования необходимо обратиться к вашему экспедитору</div>
-            </div>
+<!--            -->
+<!--            <div class="dangerous-goods-permission failure">-->
+<!--                <div class="dangerous-goods-permission__content">-->
+<!--                    <div class="dangerous-goods-permission__col">-->
+<!--                        <div class="subtitle">Название</div>-->
+<!--                        <h3 class="dangerous-goods-permission__title">Ксантогенаты xanthates</h3>-->
+<!--                        <div class="dangerous-goods-permission__description">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>-->
+<!--                        <div class="subtitle">Прием в порт</div>-->
+<!--                        <div class="dangerous-goods-permission__depiction">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>-->
+<!--                    </div>-->
+<!--                    <div class="dangerous-goods-permission__col">-->
+<!--                        <div class="subtitle">Номер ООН</div>-->
+<!--                        <div class="dangerous-goods-permission__value">3342</div>-->
+<!--                        -->
+<!--                        <div class="subtitle">Группа упаковки</div>-->
+<!--                        <div class="dangerous-goods-permission__value">I - вещества с высокой степенью опасности</div>-->
+<!--                        -->
+<!--                        <div class="subtitle">Класс или подкласс</div>-->
+<!--                        <div class="dangerous-goods-permission__value">4.2</div>-->
+<!--                        -->
+<!--                        <div class="dangerous-goods-permission__additional-wrapper">-->
+<!--                            <div class="dangerous-goods-permission__additional">-->
+<!--                                <div class="subtitle">Доп виды опасности</div>-->
+<!--                                Информация отсутствует-->
+<!--                            </div>-->
+<!--                            <div class="dangerous-goods-permission__additional">-->
+<!--                                <div class="subtitle">Запрещен прием по&nbsp;ЖД</div>-->
+<!--                                Информация отсутствует-->
+<!--                            </div>-->
+<!--                            <div class="dangerous-goods-permission__additional">-->
+<!--                                <div class="subtitle">Инструкции по&nbsp;цистернам</div>-->
+<!--                                ТЗ-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="dangerous-goods-permission__status dangerous-goods-permission__status_failure">Отклонен</div>-->
+<!--            </div>-->
+<!--            -->
+<!--            <div class="dangerous-goods-permission">-->
+<!--                <div class="dangerous-goods-permission__content">-->
+<!--                    <div class="dangerous-goods-permission__col">-->
+<!--                        <div class="subtitle">Название</div>-->
+<!--                        <h3 class="dangerous-goods-permission__title">Ксантогенаты xanthates</h3>-->
+<!--                        <div class="dangerous-goods-permission__description">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>-->
+<!--                        <div class="subtitle">Прием в порт</div>-->
+<!--                        <div class="dangerous-goods-permission__depiction">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>-->
+<!--                    </div>-->
+<!--                    <div class="dangerous-goods-permission__col">-->
+<!--                        <div class="subtitle">Номер ООН</div>-->
+<!--                        <div class="dangerous-goods-permission__value">3342</div>-->
+<!--                        -->
+<!--                        <div class="subtitle">Группа упаковки</div>-->
+<!--                        <div class="dangerous-goods-permission__value">I - вещества с высокой степенью опасности</div>-->
+<!--                        -->
+<!--                        <div class="subtitle">Класс или подкласс</div>-->
+<!--                        <div class="dangerous-goods-permission__value">4.2</div>-->
+<!--                        -->
+<!--                        <div class="dangerous-goods-permission__additional-wrapper">-->
+<!--                            <div class="dangerous-goods-permission__additional">-->
+<!--                                <div class="subtitle">Доп виды опасности</div>-->
+<!--                                Информация отсутствует-->
+<!--                            </div>-->
+<!--                            <div class="dangerous-goods-permission__additional">-->
+<!--                                <div class="subtitle">Запрещен прием по&nbsp;ЖД</div>-->
+<!--                                Информация отсутствует-->
+<!--                            </div>-->
+<!--                            <div class="dangerous-goods-permission__additional">-->
+<!--                                <div class="subtitle">Инструкции по&nbsp;цистернам</div>-->
+<!--                                ТЗ-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="dangerous-goods-permission__status dangerous-goods-permission__status_expectation">Требуется согласование</div>-->
+<!--                <div class="dangerous-goods-permission__depiction">*Для дополнительного согласования необходимо обратиться к вашему экспедитору</div>-->
+<!--            </div>-->
         </div>
     </div>
     
@@ -297,11 +297,66 @@
     </div>
 </div>
 
+<script id="permission-template" type="text/template">
+    <div class="dangerous-goods-permission__content">
+        <div class="dangerous-goods-permission__col">
+            <div class="subtitle">Название</div>
+            <h3 class="dangerous-goods-permission__title">Ксантогенаты xanthates</h3>
+            <div class="dangerous-goods-permission__description">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
+            <div class="subtitle">Прием в порт</div>
+            <div class="dangerous-goods-permission__depiction">Желтый гигроскопический порошок с неприятным запахом. при контакте с влагой выделяет такие жирные кислоты</div>
+        </div>
+        <div class="dangerous-goods-permission__col">
+            <div class="subtitle">Номер ООН</div>
+            <div class="dangerous-goods-permission__value">3342</div>
+
+            <div class="subtitle">Группа упаковки</div>
+            <div class="dangerous-goods-permission__value">I - вещества с высокой степенью опасности</div>
+
+            <div class="subtitle">Класс или подкласс</div>
+            <div class="dangerous-goods-permission__value">4.2</div>
+
+            <div class="dangerous-goods-permission__additional-wrapper">
+                <div class="dangerous-goods-permission__additional">
+                    <div class="subtitle">Доп виды опасности</div>
+                    Информация отсутствует
+                </div>
+                <div class="dangerous-goods-permission__additional">
+                    <div class="subtitle">Запрещен прием по&nbsp;ЖД</div>
+                    Информация отсутствует
+                </div>
+                <div class="dangerous-goods-permission__additional">
+                    <div class="subtitle">Инструкции по&nbsp;цистернам</div>
+                    ТЗ
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dangerous-goods-permission__status dangerous-goods-permission__status_success">Согласован</div>
+    <div class="dangerous-goods-permission__depiction">*Для дополнительного согласования необходимо обратиться к вашему экспедитору</div>
+</script>
+
 <script defer>
     const form = document.querySelector('#permission-form');
+    const tableWrapper = document.querySelector('.dangerous-goods__table');
     const tablePermissionsHtml = document.querySelector('#table-permission-body');
+    const permissionsHtml = document.querySelector('.dangerous-goods__permissions');
+    const permissionsTemplate = document.querySelector('#permission-template').innerHTML;
     const tablePermissions = [];
     const permissions = [];
+    
+    function initTablePermissions() {
+        const idxCells = [...tablePermissionsHtml.querySelectorAll('[data-idx]')];
+        
+        if (!idxCells.length) {
+            tableWrapper.style.display = 'none';
+        }
+        else {
+            idxCells.forEach((cell, idx) => cell.innerHTML = idx + 1);
+            
+            tableWrapper.style.display = '';
+        }
+    }
 
     function addTablePermission(permission) {
         tablePermissions.push(permission);
@@ -311,12 +366,14 @@
         const row = document.createElement('tr');
         
         row.innerHTML = `
-            <td>${tablePermissions.length}</td>
+            <td data-idx></td>
             <td>${ooh}</td>
             <td>${selects['permission-form_group'].getItem(group).text}</td>
             <td class="dangerous-goods__cross-wrapper"><div class="dangerous-goods__cross">@@include('../components/svg/cross.html')</div></td>`;
         
         tablePermissionsHtml.append(row);
+
+        initTablePermissions();
     }
 
     form.addEventListener('submit', event => {
@@ -337,5 +394,37 @@
             addTablePermission(permission);
         }
     });
+
+    tablePermissionsHtml.addEventListener('click', ({ target }) => {
+        const row = target.closest('.dangerous-goods__cross-wrapper');
+        
+        if (row) {
+            const parent = row.parentNode;
+            parent.remove();
+            tablePermissions.splice(+parent.querySelector('[data-idx]').innerHTML - 1, 1);
+            
+            initTablePermissions();
+        }
+    });
     
+    function requestPermission() {
+        permissions.length = 0;
+        permissions.push(...tablePermissions);
+        
+        if (tablePermissions.length) {
+            permissionsHtml.innerHTML = permissionsHtml.style.display = '';
+
+            tablePermissions.forEach(({}) => {
+                const newPermission = document.createElement('div');
+                newPermission.innerHTML = permissionsTemplate;
+                newPermission.classList.add('dangerous-goods-permission');
+                
+                
+                permissionsHtml.append(newPermission);
+            });
+        }
+        else {
+            permissionsHtml.style.display = 'none';
+        }
+    }
 </script>
