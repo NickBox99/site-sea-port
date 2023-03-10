@@ -63,6 +63,10 @@ class Select {
     hide() {
         this.select.classList.remove('active');
     }
+    
+    getItem(val) {
+        return this.items.find(el => el.value === String(val));
+    }
 }
 
 window.selects = [];

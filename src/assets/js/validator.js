@@ -102,8 +102,9 @@ window.formValidate = function (form, options, isReturnFormData = true) {
             case 'select': {
                 const select = selects[`${formId}_${key}`];
                 const el = select.select;
+                const firstItem = select.items[0].value;
 
-                checkDefaultField(() =>  +select.value, el, ['change']);
+                checkDefaultField(() =>  select.value !== firstItem, el, ['change']);
 
                 break;
             }

@@ -116,12 +116,12 @@ if (map) {
 }
 
 const SVGAnimate = (mapId) => {
-  const map = document.getElementById(mapId)
-  const routes = map.querySelectorAll('.svg-animate__path')
+  const map = document.getElementById(mapId);
+  const routes = map.querySelectorAll('.svg-animate__path');
 
   routes.forEach((path) => {
-    const pathMask = path.cloneNode()
-    const pathLength = path.getTotalLength()
+    const pathMask = path.cloneNode();
+    const pathLength = path.getTotalLength();
 
     console.log(pathLength);
 
@@ -130,9 +130,7 @@ const SVGAnimate = (mapId) => {
       stroke-dashoffset: ${pathLength};
     `
 
-    pathMask.setAttribute('class', 'svg-animate__mask')
-    map.insertBefore(pathMask, path.nextSibling)
+    pathMask.setAttribute('class', 'svg-animate__mask');
+    map.insertBefore(pathMask, path.nextSibling);
   })
 }
-
-SVGAnimate('fleet-processing-map')
