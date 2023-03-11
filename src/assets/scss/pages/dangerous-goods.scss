@@ -5,25 +5,6 @@
     margin-bottom: 40px;
   }
   
-  
-  
-  &__accordion {
-    
-    &-title {
-      margin: 0 30px 0 0;
-      font-size: 20px;
-      line-height: 24px;
-    }
-    
-    &-header {
-      padding: 25px 30px !important;
-    }
-    
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
-  }
-  
   &__file {
     &-title {
       line-height: 23.4px;
@@ -185,13 +166,6 @@
     &__tabs {
       margin-bottom: 60px;
     }
-
-    &__accordion {
-      &-title {
-        font-size: 18px;
-        line-height: 21.6px;
-      }
-    }
   }
 
   @media screen and (max-width: 945px) {
@@ -244,13 +218,6 @@
       }
     }
 
-    &__accordion {
-      &-title {
-        font-size: 16px;
-        line-height: 19.2px;
-      }
-    }
-
     &__table-btn {
       width: 100%;
     }
@@ -280,16 +247,6 @@
 
     &__tabs {
       margin-bottom: 40px;
-    }
-
-    &__accordion {
-      &-header {
-        padding: 25px 20px !important;
-      }
-
-      &-title {
-        margin-right: 20px;
-      }
     }
 
     &__file-title {

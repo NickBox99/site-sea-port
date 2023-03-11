@@ -1,7 +1,10 @@
 .service-template {
   display: flex;
-
+  align-items: start;
+  
   &__sidebar {
+    position: sticky;
+    top: 0;
     padding-left: 27px;
     margin-right: 101px;
     width: 275px;
@@ -19,6 +22,14 @@
     + p {
       margin-bottom: 40px;
       max-width: 650px;
+    }
+  }
+  
+  .swiper-header {
+    margin-bottom: 50px;
+    
+    h2 {
+      margin-bottom: 0;
     }
   }
   
@@ -199,6 +210,11 @@
 }
 
 .service-template-cards {
+  
+  h2 + p {
+    margin-bottom: 30px;
+  }
+  
   &__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -228,3 +244,129 @@
     margin-bottom: 6px;
   }
 }
+
+.service-template-preview-info {
+  h2 {
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 470px) {
+      margin-bottom: 6px;
+    }
+    
+    + p {
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
+  }
+  
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+  }
+  
+  &__preview {
+    max-width: 650px;
+  }
+  
+  &__content {
+    width: 311px;
+  }
+  
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  @media screen and (max-width: 1225px) {
+    &__preview {
+      max-width: 616px;
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__preview {
+      max-width: 100%;
+    }
+  }
+}
+
+.service-template-tabs {
+  h2 {
+    margin-bottom: 40px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    margin-top: 20px;
+  }
+  
+  &__tabs {
+    margin-bottom: 30px;
+  }
+  
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__preview {
+    max-width: 652px;
+  }
+
+  &__content {
+    width: 309px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 1225px) {
+    &__preview {
+      max-width: 614px;
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__preview {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    .btn {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.service-template-file-slider {}
+
+.service-template-info-slider {}
+
+.service-template-description-slider {}
+
+.service-template-short-slider {}

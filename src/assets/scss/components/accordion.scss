@@ -70,6 +70,31 @@
     border-radius: 44px;
   }
   
+  &_small {
+    
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    
+    .accordion {
+      &__header {
+        padding: 25px 30px !important;
+        
+      }
+      
+      &__btn {
+        align-self: start;
+        margin-top: 5px;
+      }
+      
+      &__title {
+        margin-right: 30px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+  
   &-vacancy {
 
     &__header {
@@ -261,6 +286,15 @@
       font-size: 26px;
       line-height: 28.6px;
     }
+
+    &_small {
+      .accordion {
+        &__title {
+          font-size: 18px;
+          line-height: 21.6px;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -308,7 +342,7 @@
     }
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 470px) {
     
     &__header {
       margin-bottom: 20px;
@@ -358,6 +392,18 @@
       
       &__submit {
         height: unset;
+      }
+    }
+
+    &_small {
+      .accordion {
+        &__header {
+          padding: 25px 20px !important;
+        }
+
+        &__btn {
+          margin-top: 2px;
+        }
       }
     }
   }
