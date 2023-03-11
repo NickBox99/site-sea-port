@@ -27,10 +27,15 @@
   
   .swiper-header {
     margin-bottom: 50px;
+    user-select: none;
     
     h2 {
       margin-bottom: 0;
     }
+  }
+
+  .swiper {
+    overflow: unset;
   }
   
   &__block {
@@ -363,10 +368,109 @@
   }
 }
 
-.service-template-file-slider {}
+.service-template-file-slider {
+  &__card {
+    padding: 30.5px 30px;
+    background: var(--color-blue-4);
+    border-radius: 8px;
+  }
+  
+  &__img {
+    width: 100%;
+    height: auto;
+    
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 29px;
+      max-width: 250px;
+      width: 100%;
+      height: 353px;
+    }
+  }
+  
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 29px;
+    border-top: 1px solid var(--color-blue-3);
+  }
+  
+  &__download {
+    line-height: 1;
+    color: var(--color-blue-3);
+  }
+}
 
-.service-template-info-slider {}
+.service-template-info-slider {
+  &__card {
+    padding: 30px;
+    background: var(--color-blue-4);
+    border-radius: 8px;
+  }
 
-.service-template-description-slider {}
+  &__footer {
+    display: flex;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-blue-3);
+  }
+  
+  &__additionally {
+    margin-right: 30px;
+  }
+  
+  &__name {
+    font-size: 20px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+  }
+  
+  &__size {
+    margin: auto 0 0 auto;
+  }
+  
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  &__subtitle {
+    margin-bottom: 29px;
+  }
+  
+  &__feature {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    height: 21px;
+  }
+  
+  &__content {
+    width: 448px;
+  }
+}
+
+.service-template-description-slider {
+  
+  &__card {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background: var(--color-blue-4);
+    border-radius: 8px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &-wrapper {
+      width: 452px;
+      height: 308px;
+    }
+  }
+}
 
 .service-template-short-slider {}
