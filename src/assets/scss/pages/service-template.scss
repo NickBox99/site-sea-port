@@ -55,6 +55,18 @@
     }
   }
 
+  @media screen and (max-width: 1427px) {
+    .swiper {
+      width: calc(100vw - 441px);
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .swiper {
+      width: calc(100vw - 410px);
+    }
+  }
+
   @media screen and (max-width: 1225px) {
     flex-direction: column;
     align-items: center;
@@ -66,6 +78,10 @@
     &__content {
       flex-grow: unset;
       max-width: 940px;
+      width: 100%;
+    }
+
+    .swiper {
       width: 100%;
     }
   }
@@ -288,7 +304,7 @@
       max-width: 616px;
     }
   }
-
+  
   @media screen and (max-width: 860px) {
     &__wrapper {
       flex-direction: column;
