@@ -1,14 +1,22 @@
 .service-template {
   display: flex;
-  align-items: start;
   
   &__sidebar {
-    position: sticky;
-    top: 0;
     padding-left: 27px;
-    margin-right: 101px;
-    width: 275px;
-    min-width: 275px;
+    
+    &, &-wrapper {
+      width: 275px;
+      min-width: 275px;
+    }
+
+    &-wrapper {
+      margin-right: 101px;
+    }
+    
+    &.fixed {
+      position: fixed;
+      top: 20px;
+    }
   }
   
   &__content {
