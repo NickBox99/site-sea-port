@@ -5,20 +5,6 @@
     margin-bottom: 40px;
   }
   
-  &__file {
-    &-title {
-      line-height: 23.4px;
-    }
-    
-    &-type {
-      margin-right: 16px;
-    }
-    
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
-  }
-  
   &__form {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -249,11 +235,6 @@
       margin-bottom: 40px;
     }
 
-    &__file-title {
-      font-size: 16px;
-      line-height: 20.8px;
-    }
-    
     &__permissions {
       margin-top: 60px;
     }
