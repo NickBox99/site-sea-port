@@ -779,6 +779,15 @@
                 </div>
             </div>
         </div>
+        
+        <div class="service-template__block service-template-port">
+            <h2>Заголовок (H2)</h2>
+            <div class="maps plan service-template-port__map fullscreen-block2">
+                <div class="plan-item">
+                    <div data-image1="img/about-map-1.svg" data-image2="img/about-map-2.svg" class="about-plan__img" id="mapsvg"></div>
+                </div>
+            </div>
+        </div>
 
         <div class="service-template__block">
             <h2>Заголовок (H2)</h2>
@@ -1020,17 +1029,16 @@
         const initSwiper = (selectorClass, options) => {
             const sliders = document.querySelectorAll(`.${selectorClass}`);
             
-            sliders.forEach((selector, idx) => {
+            sliders.forEach((slider, idx) => {
                 const btnId = `${selectorClass}-${idx}`;
 
-                selector.parentNode.querySelectorAll('.swiper-btn').forEach(btn => {
-                    btn.setAttribute('data-id', btnId);
-                });
+                slider.parentNode.setAttribute('data-swiper-id', btnId);
+                const getBtnSelector = (type) => `[data-swiper-id=${btnId}] .swiper-btn.${type}`;
                 
-                new Swiper(selector, {
+                new Swiper(slider, {
                     navigation: {
-                        nextEl: `[data-id=${btnId}].next`,
-                        prevEl: `[data-id=${btnId}].prev`,
+                        nextEl: getBtnSelector('next'),
+                        prevEl: getBtnSelector('prev')
                     },
                     ...options
                 });
