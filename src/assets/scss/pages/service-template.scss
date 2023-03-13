@@ -175,6 +175,12 @@
     
     &s {
       margin-bottom: 60px;
+      overflow: auto;
+      
+      &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+      }
     }
   }
 
