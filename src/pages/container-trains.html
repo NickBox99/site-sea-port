@@ -175,10 +175,15 @@
   document.addEventListener("DOMContentLoaded", () => {
     SVGAnimate('map-container-trains', '#1A61A2');
 
-    svgPanZoom('#map-container-trains', {
+    const map = svgPanZoom('#map-container-trains', {
       zoomEnabled: true,
       fit: true,
       center: true,
+    })
+
+    map.pan({ 
+      x: innerWidth >= 1025 ? 285 : 265, 
+      y: 0 
     })
 
     new Swiper(".container-trains-swiper", {

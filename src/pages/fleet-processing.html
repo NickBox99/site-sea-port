@@ -628,11 +628,13 @@
 
   function mapZoomInit() {
     setTimeout(() => {
-      svgPanZoom('#map-fleet-processing', {
+      const map = svgPanZoom('#map-fleet-processing', {
         zoomEnabled: true,
         fit: true,
         center: true,
       })
+
+      map.pan({ x: 385, y: 0 })
     })
 
     this.removeEventListener('click', mapZoomInit)
