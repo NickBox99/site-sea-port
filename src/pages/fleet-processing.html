@@ -595,7 +595,7 @@
 
   <div class="route-map fleet-processing__route-map" data-tabs="map" style="display: none">
     <div class="route-map__map">
-      @@include('../components/svg/map-test-1.html')
+      @@include('../components/svg/map-fleet-processing.html')
     </div>
 
     <div class="route-map__list">
@@ -623,6 +623,22 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    SVGAnimate('fleet-processing-map');
+    SVGAnimate('map-fleet-processing');
   });
+
+  function mapZoomInit() {
+    setTimeout(() => {
+      const map = svgPanZoom('#map-fleet-processing', {
+        zoomEnabled: true,
+        fit: true,
+        center: true,
+      })
+
+      map.pan({ x: 385, y: 0 })
+    })
+
+    this.removeEventListener('click', mapZoomInit)
+  }
+
+  document.querySelector('[data-tabs-open="map"]').addEventListener('click', mapZoomInit)
 </script>

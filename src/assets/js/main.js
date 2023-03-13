@@ -23,7 +23,7 @@ window.changeVisibleRouteMap = function (button) {
         indexSelected = index + 1
       }
     })
-  
+
   const mapContainer = button.closest('.route-map')
   const activeRoutes = mapContainer.querySelectorAll(`[data-id].active`)
   const mapRoutes = mapContainer.querySelectorAll(`[data-id="${indexSelected}"]`)

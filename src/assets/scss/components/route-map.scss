@@ -9,6 +9,7 @@
     min-height: 683px;
     max-height: 683px;
     color: var(--color-blue-18);
+    overflow: hidden;
 
     svg {
       width: 1195px;
@@ -198,10 +199,6 @@
     opacity: 0;
     transition: opacity 600ms ease-in-out;
 
-    &:not(.main) {
-      transition-delay: 200ms;
-    }
-
     &.active {
       opacity: 1;
     }
@@ -220,7 +217,6 @@
   // .svg-animate__mask
   &__mask {
     opacity: 0;
-    stroke: #025493;
     transition: opacity 200ms ease-in-out;
     &.active {
       opacity: 1;
