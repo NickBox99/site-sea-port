@@ -74,6 +74,24 @@
     }
   }
 
+  &-size {
+    font-size: 10px;
+    color: var(--color-grey);
+    line-height: 1;
+
+    &__current {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 470px) {
+      font-size: 9px;
+
+      &__current {
+        font-size: 16.26px;
+      }
+    }
+  }
+
   @media screen and (max-width: 1024px) and (min-width: 741px) {
     &-slide {
       width: 36.4%;

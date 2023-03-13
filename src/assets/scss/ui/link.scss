@@ -6,7 +6,7 @@
     text-decoration: underline;
   }
 
-  &:hover {
+  &:hover, &.active {
     color: var(--color-link-hover);
   }
 }

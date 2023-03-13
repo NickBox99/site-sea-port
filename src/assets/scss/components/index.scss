@@ -14,6 +14,7 @@
 @import "./news-card";
 @import "./route-map";
 @import "./template-page";
+@import "./breadcrumbs";
 @import "./header";
 @import "./footer";
 
@@ -100,49 +101,72 @@
   backdrop-filter: blur(1px);
 }
 
-.file-block {
-  display: flex;
-  color: var(--color-file-block);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  
-  &__file {
-    position: relative;
-    margin-right: 20px;
-    min-width: 34px;
-    width: 34px;
-    height: 41px;
-    color: var(--background-file-block);
-  }
-  
-  &__type {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 7.7px;
-    color: var(--color-file-block);
-  }
-  
-  &__title {
-    margin-bottom: 8px;
-    font-size: 18px;
-    transition: var(--transition-default);
-  }
-  
-  &__size {
+.file {
+  &-block {
     display: flex;
-    font-size: 14px;
-    color: var(--color-file-block-size);
-    white-space: nowrap;
+    color: var(--color-file-block);
+    line-height: 1;
+    letter-spacing: -0.04em;
+
+    &__file {
+      position: relative;
+      margin-right: 20px;
+      min-width: 34px;
+      width: 34px;
+      height: 41px;
+      color: var(--background-file-block);
+    }
+
+    &__type {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 7.7px;
+      color: var(--color-file-block);
+    }
+
+    &__title {
+      margin-bottom: 8px;
+      font-size: 18px;
+      transition: var(--transition-default);
+    }
+
+    &__size {
+      display: flex;
+      font-size: 14px;
+      color: var(--color-file-block-size);
+      white-space: nowrap;
+    }
+
+    &__download {
+      margin-left: 7px;
+      width: 10px;
+    }
+
+    &:hover &__title {
+      color: var(--color-file-block-hover);
+    }
   }
   
-  &__download {
-    margin-left: 7px;
-    width: 10px;
-  }
-  
-  &:hover &__title {
-    color: var(--color-file-block-hover);
+  &-list {
+    &__title {
+      line-height: 23.4px;
+
+      @media screen and (max-width: 470px) {
+        font-size: 16px;
+        line-height: 20.8px;
+      }
+    }
+    
+    &__file {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    
+    &__type {
+      margin-right: 16px;
+    }
   }
 }

@@ -1,0 +1,22 @@
+﻿.breadcrumbs {
+  margin-bottom: 22px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 21px;
+  
+  &__item {
+    margin: 0 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_current {
+      color: var(--color-grey-4);
+    }
+  }
+}
