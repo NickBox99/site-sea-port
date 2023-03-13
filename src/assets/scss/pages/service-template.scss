@@ -12,11 +12,6 @@
     &-wrapper {
       margin-right: 101px;
     }
-    
-    &.fixed {
-      position: fixed;
-      top: 20px;
-    }
   }
   
   &__content {
@@ -62,8 +57,11 @@
   @media screen and (max-width: 1400px) {
     &__sidebar {
       padding-left: 0;
-      width: 248px;
-      min-width: 248px;
+
+      &, &-wrapper {
+        width: 248px;
+        min-width: 248px;
+      }
     }
   }
 
@@ -83,10 +81,6 @@
     flex-direction: column;
     align-items: center;
     
-    &__sidebar {
-      display: none;
-    }
-    
     &__content {
       flex-grow: unset;
       max-width: 940px;
@@ -95,6 +89,26 @@
 
     .swiper {
       width: 100%;
+    }
+
+    &__sidebar {
+      &-wrapper {
+        margin-right: 0;
+      }
+
+      &-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        background: linear-gradient(90deg, #035B9E 0%, #003E6F 100%);
+        box-shadow: 0 10px 45px rgba(0, 37, 66, 0.2);
+      }
+      
+      &, &-wrapper {
+        width: 100%;
+      }
     }
   }
   
@@ -137,6 +151,47 @@
     
     &s {
       margin-bottom: 60px;
+    }
+  }
+  
+  @media screen and (max-width: 1225px) {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0 20px;
+    
+    
+    
+    &__link {
+      font-size: 16px;
+      line-height: 19.2px;
+      
+      &:not(:last-child) {
+        margin: 0 15px 0 0;
+      }
+      
+      &s {
+        display: flex;
+        margin-bottom: 0;
+      }
+    }
+    
+    &__title {
+      margin-bottom: 8px;
+    }
+    
+    &__btn {
+      width: 238px;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+    align-items: unset;
+    
+    &__content {
+      margin-bottom: 20px;
     }
   }
 }

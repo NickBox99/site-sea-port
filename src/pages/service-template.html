@@ -1,17 +1,19 @@
 ﻿<div class="service-template">
-    <div class="service-template-sidebar service-template__sidebar-wrapper">
-        <div class="service-template__sidebar">
-            <h3 class="service-template-sidebar__title">Заголовок</h3>
-            
-            <div class="service-template-sidebar__links">
-                <div class="service-template-sidebar__link link active">Заголовок</div>
-                <div class="service-template-sidebar__link link">Заголовок</div>
-                <div class="service-template-sidebar__link link">Заголовок</div>
-                <div class="service-template-sidebar__link link">Заголовок</div>
-                <div class="service-template-sidebar__link link">Заголовок</div>
+    <div class="service-template__sidebar-wrapper">
+        <div class="service-template-sidebar service-template__sidebar">
+            <div class="service-template-sidebar__content">
+                <h3 class="service-template-sidebar__title">Заголовок</h3>
+
+                <div class="service-template-sidebar__links">
+                    <div class="service-template-sidebar__link link active">Заголовок</div>
+                    <div class="service-template-sidebar__link link">Заголовок</div>
+                    <div class="service-template-sidebar__link link">Заголовок</div>
+                    <div class="service-template-sidebar__link link">Заголовок</div>
+                    <div class="service-template-sidebar__link link">Заголовок</div>
+                </div>
             </div>
     
-            <a href="#" target="_blank" class="btn btn_primary btn_large btn_w-100">Оставить заявку</a>
+            <a href="#" target="_blank" class="btn btn_primary btn_large btn_w-100 service-template-sidebar__btn">Оставить заявку</a>
         </div>
     </div>
     <div class="service-template__content">
@@ -1013,7 +1015,7 @@
 
 <script defer>
     document.addEventListener("DOMContentLoaded", () => {
-        new Sticky('.service-template-sidebar');
+        new Sticky('.service-template__sidebar');
         
         new Swiper(".service-template-file-slider__swiper", {
 
