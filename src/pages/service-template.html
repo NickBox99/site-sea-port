@@ -209,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="swiper-slide service-template-file-slider__card">
                         <div class="service-template-file-slider__img-wrapper">
                             <img src="img/temp/charter-2.jpg" class="service-template-file-slider__img" alt="">
@@ -224,7 +224,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="swiper-slide service-template-file-slider__card">
                         <div class="service-template-file-slider__img-wrapper">
                             <img src="img/temp/charter-3.jpg" class="service-template-file-slider__img" alt="">
@@ -239,7 +239,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="swiper-slide service-template-file-slider__card">
                         <div class="service-template-file-slider__img-wrapper">
                             <img src="img/temp/charter-1.jpg" class="service-template-file-slider__img" alt="">
@@ -254,7 +254,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="swiper-slide service-template-file-slider__card">
                         <div class="service-template-file-slider__img-wrapper">
                             <img src="img/temp/charter-2.jpg" class="service-template-file-slider__img" alt="">
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="swiper-slide service-template-file-slider__card">
                         <div class="service-template-file-slider__img-wrapper">
                             <img src="img/temp/charter-3.jpg" class="service-template-file-slider__img" alt="">
@@ -1017,13 +1017,27 @@
     document.addEventListener("DOMContentLoaded", () => {
         new Sticky('.service-template__sidebar');
         
-        new Swiper(".service-template-file-slider__swiper", {
+        const initSwiper = (selectorClass, options) => {
+            const sliders = document.querySelectorAll(`.${selectorClass}`);
+            
+            sliders.forEach((selector, idx) => {
+                const btnId = `${selectorClass}-${idx}`;
 
-            navigation: {
-                nextEl: ".about-supervisor-btn.next",
-                prevEl: ".about-supervisor-btn.prev",
-            },
+                selector.parentNode.querySelectorAll('.swiper-btn').forEach(btn => {
+                    btn.setAttribute('data-id', btnId);
+                });
+                
+                new Swiper(selector, {
+                    navigation: {
+                        nextEl: `[data-id=${btnId}].next`,
+                        prevEl: `[data-id=${btnId}].prev`,
+                    },
+                    ...options
+                });
+            })
+        }
 
+        initSwiper('service-template-file-slider__swiper', {
             breakpoints: {
                 0: {
                     slidesPerView: 1,
@@ -1036,39 +1050,24 @@
                 900: {
                     slidesPerView: 3,
                     spaceBetween: 30,
-                },
+                }
             }
         });
 
-        new Swiper(".service-template-info-slider__swiper", {
+        initSwiper('service-template-info-slider__swiper', {
             slidesPerView: 1,
-            spaceBetween: 30,
-            
-            navigation: {
-                nextEl: ".about-supervisor-btn.next",
-                prevEl: ".about-supervisor-btn.prev",
-            }
+            spaceBetween: 30
         });
-        
-        new Swiper(".service-template-description-slider__swiper", {
+
+        initSwiper('service-template-description-slider__swiper', {
             slidesPerView: 1,
-            spaceBetween: 30,
-
-            navigation: {
-                nextEl: ".about-supervisor-btn.next",
-                prevEl: ".about-supervisor-btn.prev",
-            }
+            spaceBetween: 30
         });
 
-        new Swiper(".service-template-short-slider__swiper", {
+        initSwiper('service-template-short-slider__swiper', {
             slidesPerView: 'auto',
-            spaceBetween: 30,
-            
-            navigation: {
-                nextEl: ".about-supervisor-btn.next",
-                prevEl: ".about-supervisor-btn.prev",
-            }
-        });
+            spaceBetween: 30
+        })
 
         const applicationSentPopup = new Popup('#request-sent');
         const form = document.querySelector('#service-template-form');
