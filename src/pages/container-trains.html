@@ -10,18 +10,7 @@
 
   <div class="route-map route-map_secondary fleet-processing__route-map" data-tabs="map">
     <div class="route-map__map">
-      <img src="/img/container-trains/map-1.svg" style="right: 341px; bottom: 219px;" class="route-map__path" />
-      <img src="/img/container-trains/map-2.svg" style="right: 340px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-3.svg" style="right: 352px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-4.svg" style="right: 341px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-5.svg" style="right: 352px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-6.svg" style="right: 341px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-7.svg" style="right: 341px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-8.svg" style="right: 352px; bottom: 207px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-9.svg" style="right: 341px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-10.svg" style="right: 352px; bottom: 219px;" class="route-map__path hide" />
-      <img src="/img/container-trains/map-11.svg" style="right: 341px; bottom: 219px;" class="route-map__path hide" />
-      @@include('../components/svg/map-2.html')
+      @@include('../components/svg/map-container-trains.html')
     </div>
 
     <div class="route-map__list">
@@ -184,6 +173,14 @@
 
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
+    SVGAnimate('map-container-trains', '#1A61A2');
+
+    svgPanZoom('#map-container-trains', {
+      zoomEnabled: true,
+      fit: true,
+      center: true,
+    })
+
     new Swiper(".container-trains-swiper", {
       spaceBetween: 30,
       slidesPerView: "auto",
