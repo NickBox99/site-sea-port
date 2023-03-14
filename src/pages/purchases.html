@@ -13,7 +13,7 @@
         </div>
     </form>
     
-    <form class="filters-row purchases__filters-row">
+    <form id="purchases-filters" class="filters-row purchases__filters-row">
         <div>
             <div class="filters-subtitle">Заказчик</div>
             <div class="select select_secondary">
@@ -232,6 +232,24 @@
 </div>
 
 <script>
+    const purchasesFilters = document.querySelector('#purchases-filters');
+    purchasesFilters.addEventListener('submit', (event) => {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        
+        const removeMaskFormData = (key) => {
+            if (formData.get(key) === '__.__.____') {
+                formData.set(key, '');
+            }
+        }
+
+        removeMaskFormData('firstDate');
+        removeMaskFormData('secondDate');
+        
+        location.search = new URLSearchParams(formData).toString();
+    })
+    
     document.addEventListener("DOMContentLoaded", function() {
         const purchasesSearch = document.querySelector('#purchases-search');
         purchasesSearch.addEventListener('submit', (event) => {
