@@ -837,6 +837,96 @@
                 </div>
             </div>
         </div>
+
+        <div class="service-template__block service-template-paperwork">
+            <h2>Как отправить груз</h2>
+            
+            <div class="paperwork">
+                <div class="paperwork__wrapper">
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-points.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Связаться с коммерческим отделом</h5>
+                                <p>cargo@fesco.com</p>
+                                <p>8 (423) 230-21-09</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-calendar.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Получить кп</h5>
+                                <p>Обсуждение условий обработки груза</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-mail.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Отправить груз</h5>
+                                <p>Присутствие на выгрузке, знакомство с руководством порта, экскурсия по порту</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-mail.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Заключить договор перевалки</h5>
+                                <p>Предоставление документов для заключения договора и подписание договора</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-points.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Связаться с коммерческим отделом</h5>
+                                <p>cargo@fesco.com</p>
+                                <p>8 (423) 230-21-09</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-calendar.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Получить кп</h5>
+                                <p>Обсуждение условий обработки груза</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-mail.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Отправить груз</h5>
+                                <p>Присутствие на выгрузке, знакомство с руководством порта, экскурсия по порту</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paperwork__col">
+                        <div class="paperwork__item">
+                            <img src="/img/circle-mail.svg" class="paperwork__icon" alt="" width="60px" height="60px">
+                            <div>
+                                <h5>Заключить договор перевалки</h5>
+                                <p>Предоставление документов для заключения договора и подписание договора</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="service-template__block service-template-map-contacts">
             <h2>Заголовок (H2)</h2>
@@ -1075,6 +1165,18 @@
         initSwiper('service-template-short-slider__swiper', {
             slidesPerView: 'auto',
             spaceBetween: 30
+        })
+
+        document.querySelectorAll('.paperwork__wrapper').forEach((el, idx) => {
+            const id = `paperwork-${idx}`;
+            el.id = id;
+            
+            const viewer = new TouchScroll();
+            viewer.init({
+                id,
+                draggable: true,
+                wait: false
+            });
         })
 
         const applicationSentPopup = new Popup('#request-sent');
