@@ -1,5 +1,4 @@
 ﻿.search {
-  
   &__filters-search {
     margin-bottom: 24px;
   }
@@ -32,7 +31,7 @@
     margin-bottom: 40px;
   }
   
-  &__description, &__breadcrumbs {
+  &__description, &__breadcrumb, &__breadcrumbs {
     color: var(--color-blue-8);
   }
   
