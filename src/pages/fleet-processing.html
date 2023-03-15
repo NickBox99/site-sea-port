@@ -626,19 +626,17 @@
     SVGAnimate('map-fleet-processing');
   });
 
-  // function mapZoomInit() {
-  //   setTimeout(() => {
-  //     const map = svgPanZoom('#map-fleet-processing', {
-  //       zoomEnabled: true,
-  //       fit: true,
-  //       center: true,
-  //     })
+  function mapZoomInit() {
+    setTimeout(() => {
+      const map = svgPanZoom('#map-fleet-processing', {
+        zoomEnabled: true,
+        fit: true,
+        center: true,
+      })
+    })
 
-  //     map.pan({ x: 385, y: 0 })
-  //   })
-
-  //   this.removeEventListener('click', mapZoomInit)
-  // }
+    this.removeEventListener('click', mapZoomInit)
+  }
 
   document.querySelector('[data-tabs-open="map"]').addEventListener('click', mapZoomInit)
 </script>
