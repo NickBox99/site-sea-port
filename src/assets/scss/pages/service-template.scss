@@ -1100,6 +1100,7 @@
     justify-content: space-between;
     overflow: auto;
     user-select: none;
+    cursor: grab;
     
     &::-webkit-scrollbar {
       height: 0;
@@ -1228,5 +1229,22 @@
 .service-template-paperwork {
   h2 {
     margin-bottom: 40px;
+  }
+}
+
+.service-template-routes-map {
+  // .service-template-routes-map__swiper
+  &__swiper {}
+  // .service-template-routes-map__wrapper
+  &__wrapper {
+    overflow: hidden;
+  }
+  // .service-template-routes-map__map
+  &__map {
+    min-width: unset;
+  }
+  // .service-template-routes-map__list
+  &__list {
+    margin-top: 61px;
   }
 }

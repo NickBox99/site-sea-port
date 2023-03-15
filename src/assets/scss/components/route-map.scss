@@ -4,16 +4,12 @@
   &__map {
     position: relative;
     margin: 0 64px 0 -490px;
-    min-width: 1195px;
-    max-width: 1195px;
-    min-height: 683px;
-    max-height: 683px;
     color: var(--color-blue-18);
     overflow: hidden;
 
     svg {
-      width: 1195px;
-      height: 683px;
+      // width: 1195px;
+      // height: 683px;
     }
   }
 
