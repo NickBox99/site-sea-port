@@ -30,26 +30,24 @@
   </div>
 
   <div data-tabs="info" style="display:none;">
-    <div class="container-trains__swiper container-trains-swiper-wrapper">
-      <div class="container-trains-swiper-btn container-trains-swiper-btn_prev">@@include('../components/svg/daw.html')
-      </div>
-      <div class="swiper container-trains-swiper">
+    <div class="container-trains__swiper swiper-line">
+      <div class="swiper-line__btn swiper-line__btn_prev">@@include('../components/svg/daw.html')</div>
+      <div class="swiper swiper-line__swiper container-trains-swiper">
         <div class="swiper-wrapper" id="city-tabs">
-          <div class="swiper-slide container-trains-swiper__city active" data-tabs-open="city-1">Москва</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-2">Санкт-Петербург</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-3">Новосибирск</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-4">Воронеж</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-5">Красноярск</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-6">Самара</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-7">Ташкент</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-8">Минск</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-9">Казань</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-10">Иркутск</div>
-          <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-11">Екатеринбург</div>
+          <div class="swiper-slide swiper-line__item active" data-tabs-open="city-1">Москва</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-2">Санкт-Петербург</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-3">Новосибирск</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-4">Воронеж</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-5">Красноярск</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-6">Самара</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-7">Ташкент</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-8">Минск</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-9">Казань</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-10">Иркутск</div>
+          <div class="swiper-slide swiper-line__item" data-tabs-open="city-11">Екатеринбург</div>
         </div>
       </div>
-      <div class="container-trains-swiper-btn container-trains-swiper-btn_next">@@include('../components/svg/daw.html')
-      </div>
+      <div class="swiper-line__btn swiper-line__btn_next">@@include('../components/svg/daw.html')</div>
     </div>
 
     <div data-tabs="city-1">
@@ -191,8 +189,8 @@
       slidesPerView: "auto",
       grabCursor: true,
       navigation: {
-        nextEl: ".container-trains-swiper-btn_next",
-        prevEl: ".container-trains-swiper-btn_prev",
+        nextEl: ".swiper-line__btn_next",
+        prevEl: ".swiper-line__btn_prev",
       },
     });
 
