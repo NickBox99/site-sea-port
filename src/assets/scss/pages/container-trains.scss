@@ -3,42 +3,6 @@
     margin-top: -30px;
   }
   
-  &-swiper {
-    &-wrapper {
-      display: flex;
-      gap: 30px;
-      user-select: none;
-    }
-    
-    &-btn {
-      display: flex;
-      max-width: 16px;
-      cursor: pointer;
-      
-      &_prev {
-        svg {
-          transform: rotate(90deg);
-        }
-      }
-
-      &_next {
-        svg {
-          transform: rotate(-90deg);
-        }
-      }
-    }
-    
-    &__city {
-      width: max-content;
-      max-width: max-content;
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 20px;
-      letter-spacing: -0.02em;
-      cursor: pointer;
-    }
-  }
-  
   &__swiper {
     margin: 101px 0 50px;
   }
