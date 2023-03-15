@@ -207,31 +207,46 @@
         обратное.
       </p>
 
-      <div class="container-trains__swiper container-trains-swiper-wrapper">
-        <div class="container-trains-swiper-btn container-trains-swiper-btn_prev">
+      <div class="swiper-line service-template-routes-map__swiper-line">
+        <div class="swiper-line__btn swiper-line__btn_prev">
           @@include('../components/svg/daw.html')
         </div>
-        <div class="service-template-routes-map__swiper swiper container-trains-swiper">
-          <div class="swiper-wrapper" id="city-tabs">
-            <div class="swiper-slide container-trains-swiper__city active" data-tabs-open="city-1">Москва</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-2">Санкт-Петербург</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-3">Новосибирск</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-4">Воронеж</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-5">Красноярск</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-6">Самара</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-7">Ташкент</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-8">Минск</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-9">Казань</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-10">Иркутск</div>
-            <div class="swiper-slide container-trains-swiper__city" data-tabs-open="city-11">Екатеринбург</div>
+        <div class="service-template-routes-map__swiper swiper swiper-line__swiper">
+          <div class="swiper-wrapper" id="swiper-labels">
+            <div class="swiper-slide swiper-line__item active" data-tabs-open="label-1">GFL</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-2">SINOKOR</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-3">FESCO РО-РО</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-4">SINOKOR</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-5">FESCO РО-РО</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-6">SINOKOR</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-7">FESCO РО-РО</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-8">SINOKOR</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-81">SINOKOR</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-812">SINOKOR</div>
+            <div class="swiper-slide swiper-line__item" data-tabs-open="label-8142">SINOKOR</div>
           </div>
         </div>
-        <div class="container-trains-swiper-btn container-trains-swiper-btn_next">
+        <div class="swiper-line__btn swiper-line__btn_next">
           @@include('../components/svg/daw.html')
         </div>
       </div>
+      
+      <div data-tabs="label-1" class="service-template-label service-template-routes-map__label">
+        <div class="service-template-label__header">
+          <h3 class="service-template-label__title">FESCO РО-РО</h3>
+          <div class="service-template-label__subtitle">Агент ТФЛ Логистика</div>
+        </div>
 
-      <div class="service-template-routes-map__" style="height: 120px; border: 1px solid #333; border-radius: 8px; margin: 40px 0;"></div>
+        <div>
+          <div class="subtitle">Телефон</div>
+          <div class="service-template-label__contact">+7 (423) 999 99 9 (ext. 9999)</div>
+        </div>
+
+        <div>
+          <div class="subtitle">Email</div>
+          <div class="service-template-label__contact">mail@mail.com</div>
+        </div>
+      </div>
 
       <div class="service-template-routes-map__wrapper route-map" style="border: 1px solid red;">
         <div class="service-template-routes-map__map route-map__map">
@@ -1262,6 +1277,11 @@
   document.addEventListener("DOMContentLoaded", () => {
     new Sticky('.service-template__sidebar');
 
+    const swiperLabels = document.querySelector('#swiper-labels');
+    if (swiperLabels) {
+      initTabs(swiperLabels);
+    }
+    
     const map = svgPanZoom('#map-fleet-processing', {
       zoomEnabled: true,
       fit: true,
