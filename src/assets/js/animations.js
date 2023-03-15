@@ -17,9 +17,9 @@
 
 window.SVGAnimate = (mapId, color = '#025493') => {
   const map = document.getElementById(mapId);
-  const routes = map.querySelectorAll('.svg-animate__path');
+  const routes = map?.querySelectorAll('.svg-animate__path');
 
-  routes.forEach((path) => {
+  routes?.forEach((path) => {
     const pathMask = path.cloneNode();
     const pathLength = path.getTotalLength();
 
