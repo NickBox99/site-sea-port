@@ -159,3 +159,46 @@
     }
   }
 }
+
+.swiper-line {
+  display: flex;
+  gap: 30px;
+  user-select: none;
+
+  &__btn {
+    display: flex;
+    max-width: 16px;
+    cursor: pointer;
+
+    &_prev {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+
+    &_next {
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  
+  &__swiper {
+    overflow: hidden !important;
+  }
+
+  &__item {
+    width: max-content;
+    max-width: max-content;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    transition: var(--transition-default);
+    
+    &.active, &:hover {
+      opacity: .5;
+    }
+  }
+}
