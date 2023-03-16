@@ -1,40 +1,52 @@
 ﻿.fleet-processing {
-  
-  &__route-map {
-    margin-top: 40px;
-  }
-  
-  @media screen and (max-width: 1024px) {
-    &__title {
+  // .fleet-processing__title
+  &__title {
+    @media screen and (max-width: 1024px) {
       margin-top: -20px;
     }
-
-    &__route-map {
-      margin-top: 76px;
-    }
-  }
-
-  @media screen and (max-width: 840px) {
-    &__route-map {
-      margin-top: 50px;
-    }
-  }
-
-  @media screen and (max-width: 640px) {
-    &__title {
+    @media screen and (max-width: 640px) {
       margin-top: 0;
     }
+    @media screen and (max-width: 320px) {
+      margin-top: 30px;
+    }
   }
-
-  @media screen and (max-width: 470px) {
-    &__tabs {
+  // .fleet-processing__tabs
+  &__tabs {
+    @media screen and (max-width: 470px) {
       margin-bottom: 40px;
     }
   }
-
-  @media screen and (max-width: 320px) {
-    &__title, &__route-map {
+  // .fleet-processing__route-map
+  &__route-map {
+    margin-top: 70px;
+    @media screen and (max-width: 1024px) {
       margin-top: 30px;
+    }
+    @media screen and (max-width: 840px) {
+      margin-top: 50px;
+    }
+    @media screen and (max-width: 320px) {
+      margin-top: 30px;
+    }
+
+    .route-map__map {
+      margin-right: 140px;
+      @media screen and (max-width: 1150px) {
+        margin-right: auto;
+      }
+      @media screen and (max-width: 1015px) {
+        margin-left: -350px;
+      }
+      @media screen and (max-width: 800px) {
+        margin-left: -500px;
+      }
+      @media screen and (max-width: 680px) {
+        margin-left: -570px;
+      }
+      @media screen and (max-width: 540px) {
+        margin-left: -590px;
+      }
     }
   }
 }

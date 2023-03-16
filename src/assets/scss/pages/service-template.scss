@@ -1233,7 +1233,61 @@
   }
 }
 
+.service-template-path-map {
+  // .service-template-path-map__wrapper
+  &__wrapper {}
+
+  // .service-template-path-map__map
+  &__map {
+    margin-right: 30px;
+    margin-left: -25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    zoom: 1;
+    @media (max-width: 1015.98px) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    @media (max-width: 630.98px) {
+      margin-right: -30px;
+      margin-left: -30px;
+    }
+
+    svg {
+      width: 660px;
+      height: 412px;
+      @media (max-width: 1015.98px) {
+        width: 100%;
+        height: 384px;
+      }
+      @media (max-width: 630.98px) {
+        width: 614px;
+      }
+    }
+  }
+  // .service-template-path-map__navigation
+  &__navigation {
+    margin-top: 30px;
+    max-width: 224px;
+    @media (max-width: 1015.98px) {
+      max-width: 100%;
+    }
+
+    .route-map__route {
+      white-space: pre-line;
+      text-align: left;
+      width: 100%;
+      max-width: max-content;
+      justify-content: flex-start;
+    }
+  }
+}
+
 .service-template-routes-map {
+  // .service-template-routes-map__swiper-line
+  &__swiper-line {}
+  // .service-template-routes-map__swiper
   &__swiper {
     @media screen and (min-width: 1226px) {
       width: calc(100vw - 530px) !important;
@@ -1243,10 +1297,34 @@
       margin-bottom: 40px;
     }
   }
-  
+  // .service-template-routes-map__label
   &__label {
     margin-bottom: 40px;
   }
+  // .service-template-routes-map__wrapper
+  &__wrapper {
+    overflow: hidden;
+    @media (max-width: 425.98px) {
+      overflow: visible;
+    }
+  }
+  // .service-template-routes-map__map
+  &__map {
+    @media (max-width: 1415.98px) {
+      margin-left: -620px;
+    }
+    @media (max-width: 1024.98px) {
+      margin-left: -560px;
+    }
+    @media (max-width: 375.98px) {
+      margin-left: -620px;
+    }
+    @media (max-width: 320.98px) {
+      margin-left: -680px;
+    }
+  }
+  // .service-template-routes-map__list
+  &__list {}
 }
 
 .service-template-label {

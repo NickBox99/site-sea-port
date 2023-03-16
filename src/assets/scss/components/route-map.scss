@@ -1,22 +1,105 @@
 ﻿.route-map {
   display: flex;
+  @media screen and (max-width: 1015px) {
+    position: relative;
+    flex-direction: column-reverse;
+  }
+  // .route-map_secondary
+  &_secondary {
+    @media screen and (max-width: 1250px) {
+      position: relative;
+      flex-direction: column-reverse;
+    }
 
+    .route-map__map {
+      margin-right: 64px;
+      margin-left: -388px;
+      @media screen and (max-width: 1399px) {
+        margin-left: -322px;
+      }
+      @media screen and (max-width: 1250px) {
+        margin-right: 0;
+        margin-left: -170px;
+      }
+      @media screen and (max-width: 1024px) {
+        margin-left: -180px;
+        margin-right: -60px;
+      }
+      @media screen and (max-width: 768px) {
+        margin-left: -310px;
+      }
+      @media screen and (max-width: 375px) {
+        margin-left: -360px;
+      }
+    }
+
+    .route-map__list {
+      @media screen and (max-width: 1250px) {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        grid-column-gap: 131px;
+        margin: 0 0 40px;
+      }
+      @media screen and (max-width: 870px) {
+        grid-template-columns: 1fr 333px;
+        gap: unset;
+      }
+    }
+
+    .route-map__route {
+      @media screen and (max-width: 1250px) {
+        align-items: unset;
+        justify-content: unset;
+        white-space: unset;
+        width: unset;
+        line-height: 20.8px;
+        text-align: unset;
+
+        &:not(:last-child) {
+          margin-bottom: 11px;
+        }
+      }
+    }
+  }
+  // .route-map__map
   &__map {
     position: relative;
-    margin: 0 64px 0 -490px;
+    margin-right: 64px;
+    margin-left: -490px;
     color: var(--color-blue-18);
     overflow: hidden;
+    @media screen and (max-width: 1170px) {
+      margin-right: auto;
+    }
+    @media screen and (max-width: 1090px) {
+      margin-left: -538px;
+    }
+    @media screen and (max-width: 600px) {
+      zoom: 0.8;
+    }
+    @media screen and (max-width: 490px) {
+      zoom: 0.6;
+    }
 
     svg {
       // width: 1195px;
       // height: 683px;
     }
   }
-
+  // .route-map__list
   &__list {
-    margin-top: 108px;
+    margin-top: 61px;
+    @media screen and (max-width: 1015px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 30px;
+      margin: 0 0 40px;
+    }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr !important;
+    }
   }
-
+  // .route-map__route
   &__route {
     display: flex;
     font-weight: 400;
@@ -26,9 +109,20 @@
     letter-spacing: -0.04em;
     white-space: nowrap;
     cursor: pointer;
+    @media screen and (max-width: 1015px) {
+      align-items: unset;
+      justify-content: unset;
+      white-space: unset;
+      width: unset;
+      line-height: 20.8px;
+      text-align: unset;
+    }
 
     &:not(:last-child) {
       margin-bottom: 16px;
+      @media screen and (max-width: 1015px) {
+        margin-bottom: 11px;
+      }
     }
 
     &:hover,
@@ -36,155 +130,12 @@
       color: var(--color-white);
     }
   }
-
+  // .route-map__path
   &__path {
     position: absolute;
 
     &.hide {
       display: none;
-    }
-  }
-
-  &_secondary {
-    .route-map {
-      &__map {
-        margin: 0 64px 0 -388px;
-      }
-
-      &__list {
-        margin-top: 80px;
-      }
-    }
-  }
-
-  @media screen and (max-width: 1399px) {
-    &_secondary {
-      .route-map {
-        &__map {
-          margin: 0 64px 0 -322px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 1250px) {
-    &_secondary {
-      position: relative;
-      flex-direction: column-reverse;
-      padding-bottom: 670px;
-
-      .route-map {
-        &__map {
-          position: absolute;
-          right: 50%;
-          transform: translateX(50%);
-          bottom: 0;
-          margin: 0;
-        }
-
-        &__list {
-          display: grid;
-          grid-template-columns: repeat(2, max-content);
-          grid-column-gap: 131px;
-          margin: 0 0 40px;
-        }
-
-        &__route {
-          align-items: unset;
-          justify-content: unset;
-          white-space: unset;
-          width: unset;
-          line-height: 20.8px;
-          text-align: unset;
-
-          &:not(:last-child) {
-            margin-bottom: 11px;
-          }
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 1170px) {
-    &__map {
-      margin-right: auto;
-    }
-  }
-
-  @media screen and (max-width: 1090px) {
-    &__map {
-      margin-left: -538px;
-    }
-  }
-
-  @media screen and (max-width: 1015px) {
-    position: relative;
-    flex-direction: column-reverse;
-    padding-bottom: 670px;
-
-    &__map {
-      position: absolute;
-      right: -103px;
-      bottom: 0;
-      margin: 0;
-    }
-
-    &__list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 30px;
-      margin: 0 0 40px;
-    }
-
-    &__route {
-      align-items: unset;
-      justify-content: unset;
-      white-space: unset;
-      width: unset;
-      line-height: 20.8px;
-      text-align: unset;
-
-      &:not(:last-child) {
-        margin-bottom: 11px;
-      }
-    }
-  }
-
-  @media screen and (max-width: 870px) {
-    &_secondary {
-      .route-map {
-        &__list {
-          grid-template-columns: 1fr 333px;
-          gap: unset;
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    padding-bottom: 544px;
-
-    &__map {
-      zoom: 0.8;
-    }
-
-    &__list {
-      grid-template-columns: 1fr !important;
-    }
-  }
-
-  @media screen and (max-width: 490px) {
-    padding-bottom: 389px;
-
-    &__map {
-      zoom: 0.6;
-    }
-  }
-
-  @media screen and (max-width: 369px) {
-    padding-bottom: 348px;
-
-    &__map {
-      zoom: 0.51;
     }
   }
 }
@@ -201,7 +152,7 @@
   }
   // .svg-animate__path
   &__path {
-    stroke: #87A4BC;
+    stroke: #87a4bc;
     opacity: 0;
     animation: none;
     transition: opacity 400ms ease-in-out;
