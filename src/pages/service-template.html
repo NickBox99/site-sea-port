@@ -186,12 +186,22 @@
         обратное.
       </p>
 
-      <div class="service-template-path-map__wrapper">
-        <div class="service-template-path-map__svg-container">
-
+      <div class="service-template-path-map__wrapper route-map">
+        <div class="service-template-path-map__map route-map__map">
+          @@include('../components/svg/map-container-trains.html')
         </div>
-        <div class="service-template-path-map__navigation">
-
+        <div class="service-template-path-map__navigation route-map__list">
+          <button class="btn route-map__route active" onclick="changeVisibleRouteMap(this)">Владивосток – Москва</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Санкт-Петербург (финляндский)</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Новосибирск</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Екатеринбург</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Красноярск</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Ростов-на-Дону</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Минск</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Узбекистан</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Самара</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Казахстан</button>
+          <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Казань</button>
         </div>
       </div>
       <a href="#" class="btn btn_primary service-template__redirect" target="_blank">
@@ -248,10 +258,11 @@
         </div>
       </div>
 
-      <div class="service-template-routes-map__wrapper route-map" style="border: 1px solid red;">
+      <div class="service-template-routes-map__wrapper route-map">
         <div class="service-template-routes-map__map route-map__map">
           @@include('../components/svg/map-fleet-processing.html')
         </div>
+
         <div class="service-template-routes-map__list route-map__list">
           <button class="btn route-map__route active" onclick="changeVisibleRouteMap(this)">FESCO – KurilyLine (FKL)</button>
           <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Arctic Line (FAL)</button>
@@ -1288,7 +1299,7 @@
       center: true,
     })
 
-    map.pan({ x: 385, y: 0 })
+    map.pan({ x: 15, y: 0 })
 
     const initSwiper = (selectorClass, options) => {
       const sliders = document.querySelectorAll(`.${selectorClass}`);
