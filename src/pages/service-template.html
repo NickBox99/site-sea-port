@@ -1301,12 +1301,10 @@
       center: true,
     })
     
-    setTimeout(() => {
-      svgPanZoom('#map-fleet-processing', {
-        zoomEnabled: true,
-        fit: true,
-        center: true,
-      })
+    svgPanZoom('#map-fleet-processing', {
+      zoomEnabled: true,
+      fit: true,
+      center: true,
     })
 
     const initSwiper = (selectorClass, options) => {
@@ -1365,8 +1363,6 @@
       slidesPerView: "auto",
       grabCursor: true,
     })
-
-    SVGAnimate('map-fleet-processing');
     
     document.querySelector('.service-template-routes-map__swiper')?.addEventListener('click', ({target}) => {
       if (target.classList.contains('swiper-line__item')) {
@@ -1377,9 +1373,17 @@
         }
       }
     });
-    
-    
 
+    document.querySelector('.service-template-routes-map__list')?.addEventListener('click', ({target}) => {
+      if (target.classList.contains('route-map__route')) {
+        const routeId = target.getAttribute('data-map-id');
+
+        if (routeId) {
+          document.querySelector(`[data-route-id="${routeId}"]`).click();
+        }
+      }
+    });
+    
     document.querySelectorAll('.paperwork__wrapper').forEach((el, idx) => {
       const id = `paperwork-${idx}`;
       el.id = id;
