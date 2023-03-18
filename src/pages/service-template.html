@@ -1292,14 +1292,22 @@
     if (swiperLabels) {
       initTabs(swiperLabels);
     }
-    
-    const map = svgPanZoom('#map-fleet-processing', {
+
+    SVGAnimate('map-fleet-processing');
+
+    svgPanZoom('#map-container-trains', {
       zoomEnabled: true,
       fit: true,
       center: true,
     })
-
-    map.pan({ x: 15, y: 0 })
+    
+    setTimeout(() => {
+      svgPanZoom('#map-fleet-processing', {
+        zoomEnabled: true,
+        fit: true,
+        center: true,
+      })
+    })
 
     const initSwiper = (selectorClass, options) => {
       const sliders = document.querySelectorAll(`.${selectorClass}`);
