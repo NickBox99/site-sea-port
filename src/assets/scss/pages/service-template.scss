@@ -238,14 +238,23 @@
   position: relative;
   margin-bottom: 171px;
   
-  &__preview {
+  &:before, &__preview {
     position: absolute;
     top: -64px;
     left: -70px;
     width: 1525px;
     height: 650px;
-    background: url("/img/temp/service-template-bg.jpg") center center / cover;
+  }
+
+  &:before {
+    content: '';
+    background-color: var(--color-black-opac50);
     z-index: -1;
+  }
+
+  &__preview {
+    z-index: -2;
+    object-fit: cover;
   }
   
   &__title {
