@@ -46,6 +46,14 @@
     }
   }
   
+  .accordion__wrapper {
+    color: var(--color-blue-24);
+  }
+  
+  ul li {
+    color: var(--color-white);
+  }
+  
   &__block {
     margin-bottom: 112px;
   }
