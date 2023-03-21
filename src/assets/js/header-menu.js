@@ -3,13 +3,19 @@
     headerSearch = document.querySelector('.header-search'),
     headerLang = document.querySelector('.header-lang__wrapper'),
     header = document.querySelector('.header'),
-    menu = new Popup('.header-menu');
+    html = document.documentElement,
+    menu = new Popup('.header-menu'),
+    scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
+let isVisibleHeaderMenu = false;
 window.toggleVisibleMenu = function () {
     menu.toggle();
     iconMenuWaves.classList.toggle('show');
     iconMenuCross.classList.toggle('show');
     header.classList.toggle('fixed');
+
+    isVisibleHeaderMenu = !isVisibleHeaderMenu;
+    html.style.paddingRight = isVisibleHeaderMenu? `${scrollbarWidth}px` : '';
 }
 
 window.toggleVisibleSearch = function () {
