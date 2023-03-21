@@ -368,12 +368,7 @@
       }
     }
     
-    @media screen and (max-width: 1400px) {
-      padding-top: 243px;
-    }
-
     @media screen and (max-width: 1399px) {
-      padding-top: 131px;
       background: url(../img/header-menu-bg.png) no-repeat left center/47.5% 100%, var(--background-page);
       
       &__content {
@@ -442,7 +437,6 @@
     }
     
     @media screen and (max-width: 1000px) {
-      padding-top: 97px;
       background: var(--background-page);
       
       &__content {
@@ -503,8 +497,6 @@
     }
     
     @media screen and (max-width: 590px) {
-      padding-top: 111px;
-
       &__link-wrapper {
         display: none;
         margin-top: 18px;
