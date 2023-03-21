@@ -709,6 +709,12 @@
       margin-left: 30px;
     }
   }
+  
+  @media screen and (max-width: 530px) {
+    &-search__search {
+      transform: translate(-50%, 29%);
+    }
+  }
 
   @media screen and (max-width: 440px) {
     

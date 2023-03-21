@@ -1,5 +1,5 @@
 
-<div class="main__content">
+<div class="main__content" style="display: none;">
     <div class="main__description fade-in">
         Крупнейший по контейнерообороту<br>порт в России.
     </div>
@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div class="main__footer">
+<div class="main__footer" style="display: none;">
     <video class="main__preview" playsinline autoplay muted loop>
         <source src="img/preview.mp4" type="video/mp4">
     </video>
@@ -19,3 +19,9 @@
 <a class="main__dviga dviga" href="#" target="_blank">
     @@include('../components/svg/dviga.html')
 </a>
+
+<script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.main__content').style.display = document.querySelector('.main__footer').style.display = '';
+    })
+</script>
