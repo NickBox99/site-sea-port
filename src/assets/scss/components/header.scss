@@ -89,7 +89,7 @@
       &.animate {
         &:not(.show) {
           .animate-text-vertical__wrapper {
-            animation: animate-text-vertical-off .5s linear forwards;
+            animation: animate-text-vertical-off 1s ease forwards;
           }
         }
       }
@@ -151,7 +151,7 @@
         }
         
         .animate-text-vertical__wrapper {
-          animation: animate-text-vertical-off .5s linear forwards;
+          animation: animate-text-vertical-off 1s ease forwards;
         }
 
         .header-menu__item:not(:last-child) {
@@ -293,7 +293,7 @@
       transform: translateX(-50%);
       max-width: calc(100vw - 40px);
       width: 1720px;
-      animation-delay: 1.6s;
+      animation-delay: .9s;
       
       &-link {
         margin-left: auto;
@@ -312,7 +312,7 @@
       
       &, &-sub {
         font-family: var(--font-sans);
-        animation-delay: 1.6s;
+        animation-delay: .9s;
       }
       
       &-sub {
