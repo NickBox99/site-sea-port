@@ -380,7 +380,7 @@
       }
       
       &__contacts {
-        grid-area: 2/2;
+        grid-area: 2/1;
         margin: 15px 0 0;
         padding-left: 30px;
       }
@@ -399,7 +399,9 @@
             width: unset;
             
             .header-menu__item {
-              border-color: transparent;
+              @media screen and (min-width: 1001px) {
+                animation: unset !important;
+              }
             }
           }
         }
@@ -437,6 +439,7 @@
     }
     
     @media screen and (max-width: 1000px) {
+      display: block;
       background: var(--background-page);
       
       &__content {
