@@ -45,11 +45,11 @@
       transform: translateY(550%);
       
       &:first-child {
-        animation: .5s main-title ease-in-out .7s forwards;
+        animation: 1s main-title ease .9s forwards;
       }
 
       &:last-child {
-        animation: .5s main-title ease 1.4s forwards;
+        animation: 1s main-title ease 1.6s forwards;
       }
     }
   }
@@ -78,7 +78,7 @@
     font-size: 15px;
     line-height: 19.5px;
     letter-spacing: -0.02em;
-    animation-delay: 1.9s;
+    animation-delay: 2.5s;
   }
   
   &__preview {
@@ -87,7 +87,7 @@
     width: 100vw;
     height: 100%;
     object-fit: cover;
-    animation: .5s main-preview ease-in-out forwards;
+    animation: 1.3s main-preview ease forwards;
     transform: translateY(100%);
   }
 
