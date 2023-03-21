@@ -1,7 +1,12 @@
 ﻿.accordion {
   background: var(--color-white);
+  border: 1px solid transparent;
   border-radius: 7px;
   overflow: hidden;
+  
+  &:hover {
+    border-color: var(--color-blue-5);
+  }
   
   &:not(:last-child) {
     margin-bottom: 40px;
