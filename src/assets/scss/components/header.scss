@@ -390,6 +390,7 @@
           
           &:not(&_nav) {
             max-width: 365px;
+            grid-area: 1/2/3;
           }
           
           &_nav {
@@ -469,6 +470,7 @@
 
           &:not(&_nav) {
             max-width: unset;
+            grid-area: unset;
           }
 
           &_nav {
