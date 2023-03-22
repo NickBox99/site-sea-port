@@ -1,16 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.accordion-wrapper').forEach(accordion => {
-        accordion.addEventListener('click', ({ target }) => {
+document.querySelectorAll('.accordion__header').forEach(header => {
+    const parent = header.parentNode;
+    const wrapper = header.nextElementSibling;
+    const wrapperHeight = wrapper.scrollHeight;
 
-            const header = target.closest('.accordion__header');
-
-            if (header) {
-                const accordion = header.closest('.accordion');
-
-                if (accordion) {
-                    accordion.classList.toggle('open');
-                }
-            }
-        });
-    })
+    header.addEventListener('click', () => {
+        parent.classList.toggle('open');
+        
+        if (parent.classList.contains('open')) {
+            wrapper.style.maxHeight = `${wrapperHeight}px`;
+        } 
+        else {
+            wrapper.style.maxHeight = null;
+        }
+    });
 });
