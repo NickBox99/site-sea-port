@@ -1,4 +1,8 @@
 ﻿.port-services {
+  &__title {
+    line-height: 115%;
+  }
+  
   &-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -8,6 +12,7 @@
       display: flex;
       align-items: center;
       padding: 30px;
+      border: 1px solid transparent;
       border-radius: 8px;
       background: var(--color-blue-4);
       background-repeat: no-repeat;
@@ -23,6 +28,8 @@
         .port-services-cards__title {
           color: var(--color-blue-1);
         }
+
+        border-color: var(--color-blue-5);
       }
     }
     
