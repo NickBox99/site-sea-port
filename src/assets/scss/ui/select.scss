@@ -101,6 +101,8 @@
   }
 
   &_string {
+    user-select: none;
+    
     &, &:hover {
       padding: 0;
       height: max-content;
@@ -113,11 +115,6 @@
     .select__wrapper {
       top: 38px;
       width: max-content;
-
-      @media screen and (max-width: 451px) {
-        left: unset;
-        right: -28px;
-      }
     }
   }
 }
