@@ -173,6 +173,11 @@
         margin: 0 0 26px;
       }
     }
+    
+    &__select-wrapper {
+      right: -43px;
+      left: unset;
+    }
   }
   
   @media screen and (max-width: 400px) {
