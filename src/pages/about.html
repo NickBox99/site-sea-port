@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <div class="about__heading animation-off">
+  <div class="about__heading animate-text-top_scroll">
     <span class="animate-text-top">ВМТП — первый</span>
     <br>
     <span class="animate-text-top">по контейнерообороту</span>
@@ -750,7 +750,6 @@
     teuCounter.update(757000);
 
     const aboutPageAnimation = () => {
-      const aboutHeading = document.querySelector('.about__heading');
       const secondImage = document.querySelector('.containers-image');
 
       const imageSecondAnimationObserver = new IntersectionObserver(([entry]) => {
@@ -758,24 +757,9 @@
           secondImage.classList.add('animate-show-left');
         }
       })
-
-      const headingAnimationObserver = new IntersectionObserver(
-              ([entry]) => {
-                if (entry.isIntersecting) {
-                  aboutHeading.classList.remove('animation-off');
-                }
-              },
-              {
-                threshold: 0.8,
-              }
-      )
-
+      
       if (secondImage) {
         imageSecondAnimationObserver.observe(secondImage);
-      }
-
-      if (aboutHeading) {
-        headingAnimationObserver.observe(aboutHeading);
       }
     }
 
