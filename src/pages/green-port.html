@@ -42,7 +42,7 @@
 
     </div>
     
-    <h3 class="green-port__caption green-port__focusing-efforts animate-text-top animation-off">ФОКУСИРУЕМ УСИЛИЯ <br>И РЕСУРСЫ НА УЛУЧШЕНИИ КАЧЕСТВА ЖИЗНИ СОТРУДНИКОВ И ОБЩЕСТВА</h3>
+    <h3 class="green-port__caption green-port__focusing-efforts animate-text-top animate-text-top_scroll">ФОКУСИРУЕМ УСИЛИЯ <br>И РЕСУРСЫ НА УЛУЧШЕНИИ КАЧЕСТВА ЖИЗНИ СОТРУДНИКОВ И ОБЩЕСТВА</h3>
 
     <div class="green-port__speedometers">
         <div class="green-port__speedometer-wrapper">
@@ -139,7 +139,7 @@
     
     <div class="green-port__news-project">
         <h2 class="green-port__subtitle green-port__news-title">
-            <span class="animate-text-top animation-off">
+            <span class="animate-text-top animate-text-top_scroll">
                 Новости проекта
             </span>
             <a href="#" class="green-port__news-all" target="_blank">Все новости</a></h2>
@@ -174,7 +174,7 @@
     <div class="fullscreen-block2 green-port-possibilities green-port__green-port-possibilities">
         <div class="container green-port-possibilities__container">
             <div class="green-port-possibilities__col">
-                <h2 class="green-port__subtitle green-port-possibilities__title animate-text-top animation-off">Море возможностей</h2>
+                <h2 class="green-port__subtitle green-port-possibilities__title animate-text-top animate-text-top_scroll">Море возможностей</h2>
                 <div class="green-port-possibilities__description">Ежегодно транспортная группа FESCO и ВМТП совместно <br>с АНО «Развитие» проводят грантовый конкурс «Море возможностей», помогая в решении наиболее острых социальных проблем Приморья.</div>
             
                 <div class="green-port-possibilities__statistics-request">
@@ -206,7 +206,7 @@
         </div>
     </div>
     
-    <h3 class="green-port__tasks green-port__caption animate-text-top animation-off">Задачи конкурса</h3>
+    <h3 class="green-port__tasks green-port__caption animate-text-top animate-text-top_scroll">Задачи конкурса</h3>
     <div class="green-port-tasks green-port__green-port-tasks">
         <div class="green-port-tasks__item">
             <img src="/img/circle-growth-1.svg" class="green-port-tasks__icon" width="88px" height="88px" alt="">
@@ -228,7 +228,7 @@
     
     <div class="green-port__green-port-gallery green-port-gallery">
         <div class="green-port-gallery__header">
-            <div class="animate-text-top animation-off"><h2 class="green-port-gallery__title green-port__subtitle">Фотогалерея</h2></div>
+            <div class="animate-text-top animate-text-top_scroll"><h2 class="green-port-gallery__title green-port__subtitle">Фотогалерея</h2></div>
             
             
             <div class="green-port-gallery__buttons">
@@ -255,7 +255,7 @@
 
     <div class="fullscreen-block2 green-port-work green-port__green-port-work">
         <div class="container green-port-work__container">
-            <h2 class="green-port__subtitle green-port-work__title animate-text-top animation-off">СОЗДАЕМ РАБОЧИЕ МЕСТА И РАЗВИВАЕМ РЕГИОНЫ</h2>
+            <h2 class="green-port__subtitle green-port-work__title animate-text-top animate-text-top_scroll">СОЗДАЕМ РАБОЧИЕ МЕСТА И РАЗВИВАЕМ РЕГИОНЫ</h2>
             <div class="green-port-work__description">Подать заявку на участие в конкурсе</div>
             <a href="#" class="btn btn_third green-port-work__btn" target="_blank">Заполнить онлайн-анкету</a>
         </div>
@@ -476,19 +476,6 @@
     }, {
         threshold: 1
     }).observe(document.querySelector('.green-port__speedometers'));
-
-
-    document.querySelectorAll('.animation-off').forEach(el => {
-        new IntersectionObserver((entries) => {
-            entries.forEach(({ isIntersecting }) => {
-                if (isIntersecting) {
-                    el.classList.remove('animation-off');
-                }
-            })
-        }, {
-            threshold: 0.5
-        }).observe(el.nextElementSibling);
-    })
     
     document.addEventListener("DOMContentLoaded", () => {
         new Swiper(".green-port-gallery__swiper", {
