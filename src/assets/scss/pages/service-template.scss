@@ -265,6 +265,15 @@
     object-fit: cover;
   }
   
+  &__breadcrumb {
+    border-bottom: 1px solid transparent;
+    transition: var(--transition-default);
+    
+    &:hover {
+      border-color: var(--color-white);
+    }
+  }
+  
   &__title {
     margin-bottom: 10px;
   }
