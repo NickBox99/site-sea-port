@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow: hidden">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,8 @@
 </head>
 <body class="main">
     @@include('../components/header.html', {
-        "logo": "img/logo-white.svg"
+        "logo": "img/logo-white.svg",
+        "additionallyClass": ""
     })
 
     <%= contents %>
