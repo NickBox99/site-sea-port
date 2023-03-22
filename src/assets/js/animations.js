@@ -13,6 +13,18 @@
         </span>
       </span>
     `;
+});
+
+document.querySelectorAll('.animate-text-top_scroll').forEach(el => {
+  new IntersectionObserver((entries) => {
+    entries.forEach(({ isIntersecting }) => {
+      if (isIntersecting) {
+        el.classList.remove('animate-text-top_scroll');
+      }
+    })
+  }, {
+    threshold: 0.5
+  }).observe(el.nextElementSibling);
 })
 
 window.SVGAnimate = (mapId, color = '#025493') => {
