@@ -298,13 +298,13 @@
   }
   
   @media screen and (max-width: 1400px) {
-    &__preview {
+    &__preview, &:before {
       width: 1091px;
     }
   }
   
   @media screen and (max-width: 1225px) {
-    &__preview {
+    &__preview, &:before {
       left: 50%;
       transform: translateX(-50%);
       width: 100vw;
@@ -319,7 +319,7 @@
     margin-bottom: 112px;
     padding: 75px 0;
     
-    &__preview {
+    &__preview, &:before {
       top: 0;
       height: 100%;
     }
@@ -346,7 +346,7 @@
     margin-bottom: 60px;
     padding: 24px 0 40px;
     
-    &__preview {
+    &__preview, &:before {
       width: 2319px;
     }
     
