@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 34px 30px 40px;
+    padding: 34px 30px;
     cursor: pointer;
     
     &:after {
@@ -38,7 +38,7 @@
   }
   
   &__wrapper {
-    padding: 38px 30px 34px;
+    padding: 34px 30px;
   }
   
   &__container {
@@ -345,7 +345,6 @@
   @media screen and (max-width: 470px) {
     
     &__header {
-      margin-bottom: 20px;
       padding: 14px 20px;
       
       &:after {
@@ -354,7 +353,7 @@
     }
     
     &__wrapper {
-      padding: 0 20px 14px;
+      padding: 20px;
     }
 
     &__title {
