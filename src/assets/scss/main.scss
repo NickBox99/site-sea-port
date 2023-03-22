@@ -84,6 +84,7 @@ li {
 }
 
 .table-wrapper {
+  user-select: none;
   overflow-x: auto;
   
   &::-webkit-scrollbar {
