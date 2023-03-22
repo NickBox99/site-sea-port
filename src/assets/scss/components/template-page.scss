@@ -77,6 +77,10 @@
     margin-top: 20px;
   }
 
+  .swiper-header {
+    flex-direction: row;
+  }
+
   @media screen and (max-width: 1024px) {
     &__content {
       max-width: 100%;
