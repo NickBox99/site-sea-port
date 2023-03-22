@@ -1,5 +1,9 @@
 ﻿.port-client {
   
+  &__title {
+    line-height: 115%;
+  }
+  
   &__accordion {
     &-item {
       display: block;
