@@ -31,7 +31,12 @@ class Select {
             }
             else
             {
-                this.show();
+                if (this.select.classList.contains('select_string')) {
+                    this.toggle();
+                }
+                else {
+                    this.show();
+                }
             }
         });
     }
@@ -62,6 +67,15 @@ class Select {
 
     hide() {
         this.select.classList.remove('active');
+    }
+    
+    toggle() {
+        if (this.select.classList.contains('active')) {
+            this.hide();
+        }
+        else {
+            this.show();
+        }
     }
     
     getItem(val) {
