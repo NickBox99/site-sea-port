@@ -1463,14 +1463,14 @@
             })
         }
 
-        const initSwiper = (selectorClass, options) => {
+        const initSwiper = (selectorClass, options, isSwiperLine = false) => {
             const sliders = document.querySelectorAll(`.${selectorClass}`);
 
             sliders.forEach((slider, idx) => {
                 const btnId = `${selectorClass}-${idx}`;
 
                 slider.parentNode.setAttribute('data-swiper-id', btnId);
-                const getBtnSelector = (type) => `[data-swiper-id=${btnId}] .swiper-btn.${type}`;
+                const getBtnSelector = (type) => `[data-swiper-id=${btnId}] ${ isSwiperLine? `.swiper-line__btn_` : `.swiper-btn.` }${type}`;
 
                 new Swiper(slider, {
                     navigation: {
@@ -1518,7 +1518,7 @@
             spaceBetween: 30,
             slidesPerView: "auto",
             grabCursor: true,
-        })
+        }, true)
 
         document.querySelector('.service-template-routes-map__swiper')?.addEventListener('click', ({target}) => {
             if (target.classList.contains('swiper-line__item')) {
