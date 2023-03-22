@@ -83,16 +83,16 @@
         <h2>Образовательные услуги</h2>
         <div class="educational-center__breadcrumbs">Обучение <span class="educational-center__slash">/</span> <span class="educational-center__breadcrumb">Повышение квалификации</span></div>
     </div>
-    
+
     <div class="accordion-wrapper">
 
         <div class="accordion accordion-vacancy">
             <div class="accordion__header">
                 <div class="accordion-vacancy__header">
-                    <div class="accordion__title">Дежурный Водитель-инспектор</div>
+                    <div class="accordion__title accordion-vacancy__caption">Дежурный Водитель-инспектор</div>
                     <div class="accordion-vacancy__value">Департамент безопасности</div>
                 </div>
-                
+
                 <div class="accordion-vacancy__requirements">
                     <div class="accordion-vacancy__requirement">
                         <h4 class="accordion-vacancy__title">Опыт работы</h4>
@@ -108,89 +108,91 @@
                         <div class="accordion-vacancy__value">Полная занятость</div>
                     </div>
                 </div>
-                
+
                 <div class="accordion__btn">
                     @@include('../components/svg/daw-bold.html')
                 </div>
             </div>
 
-            <div class="accordion__wrapper">
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Функционал:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
-                        <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Проведение структурного анализа отклонений факта от плана</li>
-                        <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
-                        <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
-                        <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
-                        <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
-                        <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
-                    </ul>
-                </div>
-                
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Требования:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
-                        <li>Аналитический склад ума</li>
-                        <li>Уверенный пользователь Excel</li>
-                        <li>Коммуникабельность и настойчивость</li>
-                        <li>Внимательность в работе с большим объемом данных</li>
-                        <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
-                    </ul>
-                </div>
-                
-                <div class="accordion-vacancy__row">
-                    <div class="accordion-vacancy__content">
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
-                    </div>
-                </div>
-                
-                <div class="accordion-vacancy__response">
-                    <div class="accordion__title">Откликнуться на вакансию</div>
-                    <div class="accordion-vacancy__alternative">
-                        Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
-                        <br>
-                        <br>
-                        Или заполните форму:
+            <div class="accordion__container">
+                <div class="accordion__wrapper">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Функционал:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
+                            <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Проведение структурного анализа отклонений факта от плана</li>
+                            <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
+                            <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
+                            <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
+                            <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
+                            <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
+                        </ul>
                     </div>
 
-                    <form id="vacancies-form-1" class="vacancies-form filters-row accordion-vacancy__filters-row">
-                        <input type="hidden" name="form_id" value="education">
-                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
-                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
-                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
-                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-                        <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Требования:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
+                            <li>Аналитический склад ума</li>
+                            <li>Уверенный пользователь Excel</li>
+                            <li>Коммуникабельность и настойчивость</li>
+                            <li>Внимательность в работе с большим объемом данных</li>
+                            <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
+                        </ul>
+                    </div>
 
-                        <div class="input-group">
-                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
-                            <label class="input input_third input_file input-file">
-                                <input class="input-file__input" type="file" name="file"/>
-                                <span class="input-file__name">Прикрепить файл</span>
-                                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
-                            </label>
+                    <div class="accordion-vacancy__row accordion-vacancy__row_icons">
+                        <div class="accordion-vacancy__content">
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-vacancy__response">
+                        <div class="accordion__title">Откликнуться на вакансию</div>
+                        <div class="accordion-vacancy__alternative">
+                            Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
+                            <br>
+                            <br>
+                            Или заполните форму:
                         </div>
 
-                        <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
-                                <span class="checkbox__text">Согласен на обработку персональных данных</span>
-                            </label>
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
-                                <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
-                            </label>
-                        </div>
+                        <form id="vacancies-form-1" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                            <input type="hidden" name="form_id" value="vacancies">
+                            <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                            <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                            <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                            <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                            <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                            <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                            <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                            <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
-                    </form>
+                            <div class="input-group">
+                                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                                <label class="input input_third input_file input-file">
+                                    <input class="input-file__input" type="file" name="file"/>
+                                    <span class="input-file__name">Прикрепить файл</span>
+                                    <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                                </label>
+                            </div>
+
+                            <div class="filters-col-2 accordion-vacancy__checkboxs">
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
+                                    <span class="checkbox__text">Согласен на обработку персональных данных</span>
+                                </label>
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeRules" class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+                                </label>
+                            </div>
+
+                            <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,7 +200,7 @@
         <div class="accordion accordion-vacancy">
             <div class="accordion__header">
                 <div class="accordion-vacancy__header">
-                    <div class="accordion__title">Помощник оперативного дежурного</div>
+                    <div class="accordion__title accordion-vacancy__caption">Помощник оперативного дежурного</div>
                     <div class="accordion-vacancy__value">Департамент транспортной безопасности</div>
                 </div>
 
@@ -223,83 +225,85 @@
                 </div>
             </div>
 
-            <div class="accordion__wrapper">
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Функционал:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
-                        <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Проведение структурного анализа отклонений факта от плана</li>
-                        <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
-                        <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
-                        <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
-                        <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
-                        <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Требования:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
-                        <li>Аналитический склад ума</li>
-                        <li>Уверенный пользователь Excel</li>
-                        <li>Коммуникабельность и настойчивость</li>
-                        <li>Внимательность в работе с большим объемом данных</li>
-                        <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <div class="accordion-vacancy__content">
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
-                    </div>
-                </div>
-
-                <div class="accordion-vacancy__response">
-                    <div class="accordion__title">Откликнуться на вакансию</div>
-                    <div class="accordion-vacancy__alternative">
-                        Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
-                        <br>
-                        <br>
-                        Или заполните форму:
+            <div class="accordion__container">
+                <div class="accordion__wrapper">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Функционал:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
+                            <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Проведение структурного анализа отклонений факта от плана</li>
+                            <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
+                            <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
+                            <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
+                            <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
+                            <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
+                        </ul>
                     </div>
 
-                    <form id="vacancies-form-2" class="vacancies-form filters-row accordion-vacancy__filters-row">
-                        <input type="hidden" name="form_id" value="education">
-                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
-                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
-                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
-                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-                        <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Требования:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
+                            <li>Аналитический склад ума</li>
+                            <li>Уверенный пользователь Excel</li>
+                            <li>Коммуникабельность и настойчивость</li>
+                            <li>Внимательность в работе с большим объемом данных</li>
+                            <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
+                        </ul>
+                    </div>
 
-                        <div class="input-group">
-                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
-                            <label class="input input_third input_file input-file">
-                                <input class="input-file__input" type="file" name="file"/>
-                                <span class="input-file__name">Прикрепить файл</span>
-                                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
-                            </label>
+                    <div class="accordion-vacancy__row accordion-vacancy__row_icons">
+                        <div class="accordion-vacancy__content">
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-vacancy__response">
+                        <div class="accordion__title">Откликнуться на вакансию</div>
+                        <div class="accordion-vacancy__alternative">
+                            Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
+                            <br>
+                            <br>
+                            Или заполните форму:
                         </div>
 
-                        <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
-                                <span class="checkbox__text">Согласен на обработку персональных данных</span>
-                            </label>
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
-                                <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
-                            </label>
-                        </div>
+                        <form id="vacancies-form-2" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                            <input type="hidden" name="form_id" value="vacancies">
+                            <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                            <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                            <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                            <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                            <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                            <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                            <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                            <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
-                    </form>
+                            <div class="input-group">
+                                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                                <label class="input input_third input_file input-file">
+                                    <input class="input-file__input" type="file" name="file"/>
+                                    <span class="input-file__name">Прикрепить файл</span>
+                                    <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                                </label>
+                            </div>
+
+                            <div class="filters-col-2 accordion-vacancy__checkboxs">
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
+                                    <span class="checkbox__text">Согласен на обработку персональных данных</span>
+                                </label>
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeRules" class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+                                </label>
+                            </div>
+
+                            <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -307,7 +311,7 @@
         <div class="accordion accordion-vacancy">
             <div class="accordion__header">
                 <div class="accordion-vacancy__header">
-                    <div class="accordion__title">Ведущий экономист</div>
+                    <div class="accordion__title accordion-vacancy__caption">Ведущий экономист</div>
                     <div class="accordion-vacancy__value">Департамент безопасности</div>
                 </div>
 
@@ -332,83 +336,85 @@
                 </div>
             </div>
 
-            <div class="accordion__wrapper">
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Функционал:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
-                        <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Проведение структурного анализа отклонений факта от плана</li>
-                        <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
-                        <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
-                        <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
-                        <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
-                        <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Требования:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
-                        <li>Аналитический склад ума</li>
-                        <li>Уверенный пользователь Excel</li>
-                        <li>Коммуникабельность и настойчивость</li>
-                        <li>Внимательность в работе с большим объемом данных</li>
-                        <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <div class="accordion-vacancy__content">
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
-                    </div>
-                </div>
-
-                <div class="accordion-vacancy__response">
-                    <div class="accordion__title">Откликнуться на вакансию</div>
-                    <div class="accordion-vacancy__alternative">
-                        Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
-                        <br>
-                        <br>
-                        Или заполните форму:
+            <div class="accordion__container">
+                <div class="accordion__wrapper">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Функционал:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
+                            <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Проведение структурного анализа отклонений факта от плана</li>
+                            <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
+                            <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
+                            <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
+                            <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
+                            <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
+                        </ul>
                     </div>
 
-                    <form id="vacancies-form-3" class="vacancies-form filters-row accordion-vacancy__filters-row">
-                        <input type="hidden" name="form_id" value="education">
-                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
-                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
-                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
-                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-                        <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Требования:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
+                            <li>Аналитический склад ума</li>
+                            <li>Уверенный пользователь Excel</li>
+                            <li>Коммуникабельность и настойчивость</li>
+                            <li>Внимательность в работе с большим объемом данных</li>
+                            <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
+                        </ul>
+                    </div>
 
-                        <div class="input-group">
-                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
-                            <label class="input input_third input_file input-file">
-                                <input class="input-file__input" type="file" name="file"/>
-                                <span class="input-file__name">Прикрепить файл</span>
-                                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
-                            </label>
+                    <div class="accordion-vacancy__row accordion-vacancy__row_icons">
+                        <div class="accordion-vacancy__content">
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-vacancy__response">
+                        <div class="accordion__title">Откликнуться на вакансию</div>
+                        <div class="accordion-vacancy__alternative">
+                            Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
+                            <br>
+                            <br>
+                            Или заполните форму:
                         </div>
 
-                        <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
-                                <span class="checkbox__text">Согласен на обработку персональных данных</span>
-                            </label>
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
-                                <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
-                            </label>
-                        </div>
+                        <form id="vacancies-form-3" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                            <input type="hidden" name="form_id" value="vacancies">
+                            <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                            <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                            <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                            <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                            <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                            <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                            <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                            <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
-                    </form>
+                            <div class="input-group">
+                                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                                <label class="input input_third input_file input-file">
+                                    <input class="input-file__input" type="file" name="file"/>
+                                    <span class="input-file__name">Прикрепить файл</span>
+                                    <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                                </label>
+                            </div>
+
+                            <div class="filters-col-2 accordion-vacancy__checkboxs">
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
+                                    <span class="checkbox__text">Согласен на обработку персональных данных</span>
+                                </label>
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeRules" class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+                                </label>
+                            </div>
+
+                            <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -416,7 +422,7 @@
         <div class="accordion accordion-vacancy">
             <div class="accordion__header">
                 <div class="accordion-vacancy__header">
-                    <div class="accordion__title">Портовый рабочий</div>
+                    <div class="accordion__title accordion-vacancy__caption">Портовый рабочий</div>
                     <div class="accordion-vacancy__value">Дочернее зависимое общество</div>
                 </div>
 
@@ -441,83 +447,85 @@
                 </div>
             </div>
 
-            <div class="accordion__wrapper">
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Функционал:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
-                        <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Проведение структурного анализа отклонений факта от плана</li>
-                        <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
-                        <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
-                        <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
-                        <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
-                        <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Требования:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
-                        <li>Аналитический склад ума</li>
-                        <li>Уверенный пользователь Excel</li>
-                        <li>Коммуникабельность и настойчивость</li>
-                        <li>Внимательность в работе с большим объемом данных</li>
-                        <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <div class="accordion-vacancy__content">
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
-                    </div>
-                </div>
-
-                <div class="accordion-vacancy__response">
-                    <div class="accordion__title">Откликнуться на вакансию</div>
-                    <div class="accordion-vacancy__alternative">
-                        Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
-                        <br>
-                        <br>
-                        Или заполните форму:
+            <div class="accordion__container">
+                <div class="accordion__wrapper">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Функционал:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
+                            <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Проведение структурного анализа отклонений факта от плана</li>
+                            <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
+                            <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
+                            <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
+                            <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
+                            <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
+                        </ul>
                     </div>
 
-                    <form id="vacancies-form-4" class="vacancies-form filters-row accordion-vacancy__filters-row">
-                        <input type="hidden" name="form_id" value="education">
-                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
-                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
-                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
-                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-                        <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Требования:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
+                            <li>Аналитический склад ума</li>
+                            <li>Уверенный пользователь Excel</li>
+                            <li>Коммуникабельность и настойчивость</li>
+                            <li>Внимательность в работе с большим объемом данных</li>
+                            <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
+                        </ul>
+                    </div>
 
-                        <div class="input-group">
-                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
-                            <label class="input input_third input_file input-file">
-                                <input class="input-file__input" type="file" name="file"/>
-                                <span class="input-file__name">Прикрепить файл</span>
-                                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
-                            </label>
+                    <div class="accordion-vacancy__row accordion-vacancy__row_icons">
+                        <div class="accordion-vacancy__content">
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-vacancy__response">
+                        <div class="accordion__title">Откликнуться на вакансию</div>
+                        <div class="accordion-vacancy__alternative">
+                            Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
+                            <br>
+                            <br>
+                            Или заполните форму:
                         </div>
 
-                        <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
-                                <span class="checkbox__text">Согласен на обработку персональных данных</span>
-                            </label>
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
-                                <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
-                            </label>
-                        </div>
+                        <form id="vacancies-form-4" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                            <input type="hidden" name="form_id" value="vacancies">
+                            <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                            <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                            <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                            <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                            <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                            <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                            <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                            <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
-                    </form>
+                            <div class="input-group">
+                                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                                <label class="input input_third input_file input-file">
+                                    <input class="input-file__input" type="file" name="file"/>
+                                    <span class="input-file__name">Прикрепить файл</span>
+                                    <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                                </label>
+                            </div>
+
+                            <div class="filters-col-2 accordion-vacancy__checkboxs">
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
+                                    <span class="checkbox__text">Согласен на обработку персональных данных</span>
+                                </label>
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeRules" class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+                                </label>
+                            </div>
+
+                            <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -525,7 +533,7 @@
         <div class="accordion accordion-vacancy">
             <div class="accordion__header">
                 <div class="accordion-vacancy__header">
-                    <div class="accordion__title">Лавный специалист информационно-аналитического центра</div>
+                    <div class="accordion__title accordion-vacancy__caption">Лавный специалист информационно-аналитического центра</div>
                     <div class="accordion-vacancy__value">Коммерческий департамент</div>
                 </div>
 
@@ -550,83 +558,85 @@
                 </div>
             </div>
 
-            <div class="accordion__wrapper">
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Функционал:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
-                        <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Проведение структурного анализа отклонений факта от плана</li>
-                        <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
-                        <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
-                        <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
-                        <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
-                        <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Требования:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
-                        <li>Аналитический склад ума</li>
-                        <li>Уверенный пользователь Excel</li>
-                        <li>Коммуникабельность и настойчивость</li>
-                        <li>Внимательность в работе с большим объемом данных</li>
-                        <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <div class="accordion-vacancy__content">
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
-                    </div>
-                </div>
-
-                <div class="accordion-vacancy__response">
-                    <div class="accordion__title">Откликнуться на вакансию</div>
-                    <div class="accordion-vacancy__alternative">
-                        Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
-                        <br>
-                        <br>
-                        Или заполните форму:
+            <div class="accordion__container">
+                <div class="accordion__wrapper">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Функционал:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
+                            <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Проведение структурного анализа отклонений факта от плана</li>
+                            <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
+                            <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
+                            <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
+                            <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
+                            <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
+                        </ul>
                     </div>
 
-                    <form id="vacancies-form-5" class="vacancies-form filters-row accordion-vacancy__filters-row">
-                        <input type="hidden" name="form_id" value="education">
-                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
-                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
-                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
-                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-                        <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Требования:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
+                            <li>Аналитический склад ума</li>
+                            <li>Уверенный пользователь Excel</li>
+                            <li>Коммуникабельность и настойчивость</li>
+                            <li>Внимательность в работе с большим объемом данных</li>
+                            <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
+                        </ul>
+                    </div>
 
-                        <div class="input-group">
-                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
-                            <label class="input input_third input_file input-file">
-                                <input class="input-file__input" type="file" name="file"/>
-                                <span class="input-file__name">Прикрепить файл</span>
-                                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
-                            </label>
+                    <div class="accordion-vacancy__row accordion-vacancy__row_icons">
+                        <div class="accordion-vacancy__content">
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-vacancy__response">
+                        <div class="accordion__title">Откликнуться на вакансию</div>
+                        <div class="accordion-vacancy__alternative">
+                            Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
+                            <br>
+                            <br>
+                            Или заполните форму:
                         </div>
 
-                        <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
-                                <span class="checkbox__text">Согласен на обработку персональных данных</span>
-                            </label>
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
-                                <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
-                            </label>
-                        </div>
+                        <form id="vacancies-form-5" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                            <input type="hidden" name="form_id" value="vacancies">
+                            <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                            <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                            <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                            <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                            <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                            <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                            <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                            <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
-                    </form>
+                            <div class="input-group">
+                                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                                <label class="input input_third input_file input-file">
+                                    <input class="input-file__input" type="file" name="file"/>
+                                    <span class="input-file__name">Прикрепить файл</span>
+                                    <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                                </label>
+                            </div>
+
+                            <div class="filters-col-2 accordion-vacancy__checkboxs">
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
+                                    <span class="checkbox__text">Согласен на обработку персональных данных</span>
+                                </label>
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeRules" class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+                                </label>
+                            </div>
+
+                            <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -634,7 +644,7 @@
         <div class="accordion accordion-vacancy">
             <div class="accordion__header">
                 <div class="accordion-vacancy__header">
-                    <div class="accordion__title">Помощник директора</div>
+                    <div class="accordion__title accordion-vacancy__caption">Помощник директора</div>
                     <div class="accordion-vacancy__value">Коммерческий департамент</div>
                 </div>
 
@@ -659,83 +669,85 @@
                 </div>
             </div>
 
-            <div class="accordion__wrapper">
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Функционал:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
-                        <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Проведение структурного анализа отклонений факта от плана</li>
-                        <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
-                        <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
-                        <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
-                        <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
-                        <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <h4 class="accordion-vacancy__title">Требования:</h4>
-                    <ul class="accordion-vacancy__content">
-                        <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
-                        <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
-                        <li>Аналитический склад ума</li>
-                        <li>Уверенный пользователь Excel</li>
-                        <li>Коммуникабельность и настойчивость</li>
-                        <li>Внимательность в работе с большим объемом данных</li>
-                        <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
-                    </ul>
-                </div>
-
-                <div class="accordion-vacancy__row">
-                    <div class="accordion-vacancy__content">
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
-                        <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
-                    </div>
-                </div>
-
-                <div class="accordion-vacancy__response">
-                    <div class="accordion__title">Откликнуться на вакансию</div>
-                    <div class="accordion-vacancy__alternative">
-                        Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
-                        <br>
-                        <br>
-                        Или заполните форму:
+            <div class="accordion__container">
+                <div class="accordion__wrapper">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Функционал:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Расчет плановой и фактической себестоимости услуг, разработка и проведение мероприятий по снижению себестоимости, повышению производительности и эффективности производства</li>
+                            <li>Разработка и внедрение мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Проведение структурного анализа отклонений факта от плана</li>
+                            <li>Составление информационно-аналитических презентаций по текущим и итоговым показателям деятельности компании</li>
+                            <li>Анализ себестоимости ПРР и связанных с ними услуг</li>
+                            <li>Контроль выполнения периодических (еженедельных, ежемесячных) отчетов экономистами</li>
+                            <li>Участие в обосновании целесообразности внебюджетных закупок материалов производственного назначения, согласование плановых закупок</li>
+                            <li>Взаимодействие с подразделениями порта для запроса/уточнения необходимых данных</li>
+                        </ul>
                     </div>
 
-                    <form id="vacancies-form-6" class="vacancies-form filters-row accordion-vacancy__filters-row">
-                        <input type="hidden" name="form_id" value="education">
-                        <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
-                        <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                        <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                        <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
-                        <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-                        <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
-                        <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-                        <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+                    <div class="accordion-vacancy__row">
+                        <h4 class="accordion-vacancy__title">Требования:</h4>
+                        <ul class="accordion-vacancy__content">
+                            <li>Опыт разработки и внедрения мероприятий по повышению экономической эффективности использования материальных ресурсов</li>
+                            <li>Умение проводить структурный анализ отклонений факта от плана, выявлять резервы снижения себестоимости</li>
+                            <li>Аналитический склад ума</li>
+                            <li>Уверенный пользователь Excel</li>
+                            <li>Коммуникабельность и настойчивость</li>
+                            <li>Внимательность в работе с большим объемом данных</li>
+                            <li>Опыт работы в крупных, производственных компаниях будет преимуществом при рассмотрении кандидатов</li>
+                        </ul>
+                    </div>
 
-                        <div class="input-group">
-                            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
-                            <label class="input input_third input_file input-file">
-                                <input class="input-file__input" type="file" name="file"/>
-                                <span class="input-file__name">Прикрепить файл</span>
-                                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
-                            </label>
+                    <div class="accordion-vacancy__row accordion-vacancy__row_icons">
+                        <div class="accordion-vacancy__content">
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/f.jpg" alt="" width="47" height="47"></a>
+                            <a href="#" class="accordion-vacancy__social" target="_blank"><img src="img/hh.jpg" alt="" width="47" height="47"></a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-vacancy__response">
+                        <div class="accordion__title">Откликнуться на вакансию</div>
+                        <div class="accordion-vacancy__alternative">
+                            Резюме можно направить менеджеру, которая ведет данную вакансию: Ольга, <a href="#" class="accordion-vacancy__mail">ogordienko@fesco.com</a>
+                            <br>
+                            <br>
+                            Или заполните форму:
                         </div>
 
-                        <div class="filters-col-2 accordion-vacancy__checkboxs">
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
-                                <span class="checkbox__text">Согласен на обработку персональных данных</span>
-                            </label>
-                            <label class="checkbox checkbox_third">
-                                <input name="isAgreeRules" class="checkbox__input" type="checkbox">
-                                <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
-                            </label>
-                        </div>
+                        <form id="vacancies-form-6" class="vacancies-form filters-row accordion-vacancy__filters-row">
+                            <input type="hidden" name="form_id" value="vacancies">
+                            <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                            <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                            <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                            <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                            <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                            <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                            <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+                            <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
 
-                        <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
-                    </form>
+                            <div class="input-group">
+                                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                                <label class="input input_third input_file input-file">
+                                    <input class="input-file__input" type="file" name="file"/>
+                                    <span class="input-file__name">Прикрепить файл</span>
+                                    <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                                </label>
+                            </div>
+
+                            <div class="filters-col-2 accordion-vacancy__checkboxs">
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeProcessing" class="checkbox__input" type="checkbox" >
+                                    <span class="checkbox__text">Согласен на обработку персональных данных</span>
+                                </label>
+                                <label class="checkbox checkbox_third">
+                                    <input name="isAgreeRules" class="checkbox__input" type="checkbox">
+                                    <span class="checkbox__text">С правилами нахождения на режимной территории ознакомлен</span>
+                                </label>
+                            </div>
+
+                            <button class="btn btn_primary btn_w-100 accordion-vacancy__submit root-white" type="submit">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
