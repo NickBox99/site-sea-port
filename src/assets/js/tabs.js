@@ -49,7 +49,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   })
-  
 })
-
-//data-tabs-open="paperwork"   data-tabs="map"
