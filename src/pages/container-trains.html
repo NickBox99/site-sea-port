@@ -14,17 +14,17 @@
     </div>
 
     <div class="route-map__list">
-      <button class="btn route-map__route active" onclick="changeVisibleRouteMap(this)">Владивосток – Москва</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Санкт-Петербург (финляндский)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Новосибирск</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Екатеринбург</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Красноярск</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Ростов-на-Дону</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Минск</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Узбекистан</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Самара</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Казахстан</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Владивосток – Казань</button>
+      <div class="route-map__route active" data-route-id="1">Владивосток – Москва</div>
+      <div class="route-map__route" data-route-id="2">Владивосток – Санкт-Петербург (финляндский)</div>
+      <div class="route-map__route" data-route-id="3">Владивосток – Новосибирск</div>
+      <div class="route-map__route" data-route-id="4">Владивосток – Екатеринбург</div>
+      <div class="route-map__route" data-route-id="5">Владивосток – Красноярск</div>
+      <div class="route-map__route" data-route-id="6">Владивосток – Ростов-на-Дону</div>
+      <div class="route-map__route" data-route-id="7">Владивосток – Минск</div>
+      <div class="route-map__route" data-route-id="8">Владивосток – Узбекистан</div>
+      <div class="route-map__route" data-route-id="9">Владивосток – Самара</div>
+      <div class="route-map__route" data-route-id="10">Владивосток – Казахстан</div>
+      <div class="route-map__route" data-route-id="11">Владивосток – Казань</div>
     </div>
   </div>
 
@@ -171,6 +171,7 @@
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
     initMapAnimate('map-container-trains', '#1A61A2');
+    initMapAnimateButtons('#map-container-trains', '.route-map__list');
     
     new Swiper(".container-trains-swiper", {
       spaceBetween: 30,
