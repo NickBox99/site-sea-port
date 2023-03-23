@@ -15,17 +15,27 @@
     `;
 });
 
-document.querySelectorAll('.animate-text-top_scroll').forEach(el => {
-    new IntersectionObserver((entries) => {
-        entries.forEach(({isIntersecting}) => {
-            if (isIntersecting) {
-                el.classList.remove('animate-text-top_scroll');
-            }
-        })
-    }, {
-        threshold: 0.5
-    }).observe(el.nextElementSibling);
-})
+const animateTextOnScroll = (el) => {
+    const observerCallback = ([{ isIntersecting }]) => {
+        if (isIntersecting) {
+            el.classList.remove('animate-text-on-scroll');
+            observer.unobserve(el.nextElementSibling);
+        }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+        threshold: 0.5,
+        rootMargin: '0px'
+    });
+
+    const nextEl = el.nextElementSibling;
+
+    if (nextEl) {
+        observer.observe(nextEl);
+    }
+};
+
+document.querySelector('.animate-text-on-scroll').forEach(animateTextOnScroll);
 
 window.mapAnimate = (mapId, pathMaskColor = '#025493') => {
     const map = document.getElementById(mapId);
