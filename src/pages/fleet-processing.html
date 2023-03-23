@@ -599,24 +599,24 @@
     </div>
 
     <div class="route-map__list">
-      <button class="btn route-map__route active" onclick="changeVisibleRouteMap(this)">FESCO – KurilyLine (FKL)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Arctic Line (FAL)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – China Express (FCXP-1)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – China Express (FCXP-2)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Korea Express (FKXP-1)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Korsakov Direct Line (FKDL)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Anadyr Direct Line (FADL)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Magadan Line (FML)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Petropavlovsk-KamchatskiyLine (FPKL)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO – Vietnam Direct Line (FVDL)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">HEUNG – A LINE</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Japan Trans – Siberian Line (JTSL)</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">Reel Shipping</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">SINOKOR</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">SITC</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">ZhongguShipping Group</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">FESCO РО-РО</button>
-      <button class="btn route-map__route" onclick="changeVisibleRouteMap(this)">GFL</button>
+      <div class="route-map__route active" data-route-id="1">FESCO – KurilyLine (FKL)</div>
+      <div class="route-map__route" data-route-id="2">FESCO – Arctic Line (FAL)</div>
+      <div class="route-map__route" data-route-id="3">FESCO – China Express (FCXP-1)</div>
+      <div class="route-map__route" data-route-id="4">FESCO – China Express (FCXP-2)</div>
+      <div class="route-map__route" data-route-id="5">FESCO – Korea Express (FKXP-1)</div>
+      <div class="route-map__route" data-route-id="6">FESCO – Korsakov Direct Line (FKDL)</div>
+      <div class="route-map__route" data-route-id="7">FESCO – Anadyr Direct Line (FADL)</div>
+      <div class="route-map__route" data-route-id="8">FESCO – Magadan Line (FML)</div>
+      <div class="route-map__route" data-route-id="9">FESCO – Petropavlovsk-KamchatskiyLine (FPKL)</div>
+      <div class="route-map__route" data-route-id="10">FESCO – Vietnam Direct Line (FVDL)</div>
+      <div class="route-map__route" data-route-id="11">HEUNG – A LINE</div>
+      <div class="route-map__route" data-route-id="12">Japan Trans – Siberian Line (JTSL)</div>
+      <div class="route-map__route" data-route-id="13">Reel Shipping</div>
+      <div class="route-map__route" data-route-id="14">SINOKOR</div>
+      <div class="route-map__route" data-route-id="15">SITC</div>
+      <div class="route-map__route" data-route-id="16">ZhongguShipping Group</div>
+      <div class="route-map__route" data-route-id="17">FESCO РО-РО</div>
+      <div class="route-map__route" data-route-id="18">GFL</div>
     </div>
   </div>
 </div>
@@ -625,6 +625,7 @@
   function mapInit() {
     setTimeout(() => {
       initMapAnimate('map-fleet-processing');
+      initMapAnimateButtons('#map-fleet-processing', '.route-map__list');
     })
 
     this.removeEventListener('click', mapInit);
