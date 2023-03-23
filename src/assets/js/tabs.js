@@ -26,7 +26,7 @@ window.initInlineTabs = (selector) => {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const isVertical = window.innerWidth <= 470;
+    let isVertical = window.innerWidth <= 470;
 
     document.querySelectorAll('.tabs').forEach((tabContainer) => {
         const tabItems = [...tabContainer.querySelectorAll('.tab')];
@@ -52,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
 
-        window.addEventListener('resize', setPositionFloatr);
+        window.addEventListener('resize', () => {
+            floatr.classList.add('tabs__floatr_transition-disable');
+            isVertical = window.innerWidth <= 470;
+            setPositionFloatr();
+            floatr.classList.remove('tabs__floatr_transition-disable');
+        });
     })
 })
