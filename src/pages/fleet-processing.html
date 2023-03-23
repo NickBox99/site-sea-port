@@ -622,21 +622,13 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    initMapAnimate('map-fleet-processing');
-  });
-
-  function mapZoomInit() {
+  function mapInit() {
     setTimeout(() => {
-      svgPanZoom('#map-fleet-processing', {
-        zoomEnabled: true,
-        fit: true,
-        center: true,
-      })
+      initMapAnimate('map-fleet-processing');
     })
 
-    this.removeEventListener('click', mapZoomInit)
+    this.removeEventListener('click', mapInit);
   }
 
-  document.querySelector('[data-tabs-open="map"]').addEventListener('click', mapZoomInit)
+  document.querySelector('[data-tabs-open="map"]').addEventListener('click', mapInit);
 </script>
