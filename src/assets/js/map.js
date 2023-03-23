@@ -1,4 +1,4 @@
-﻿window.mapAnimate = (mapId, pathMaskColor = '#025493') => {
+﻿window.initMapAnimate = (mapId, pathMaskColor = '#025493') => {
     const map = document.getElementById(mapId);
 
     if (!map) return;
