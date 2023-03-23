@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const pagination = document.querySelector('#pagination');
     
     if (pagination) {
-        window.pagination = new tui.Pagination(pagination, options);
+        new tui.Pagination(pagination, options);
     }
 });
