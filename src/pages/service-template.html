@@ -1440,7 +1440,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         new Sticky('.service-template__sidebar');
 
-        initTabs(document.querySelector('#swiper-labels'));
+        initInlineTabs(document.querySelector('#swiper-labels'));
 
         if (document.querySelector('#map-container-trains')) {
             svgPanZoom('#map-container-trains', {
