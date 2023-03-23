@@ -16,11 +16,13 @@ window.setVisibleTab = (selector, tab) => {
 }
 
 window.initTabs = (selector) => {
-  selector.addEventListener('click', ({ target }) => {
-    if (!target.classList.contains('active') && target.hasAttribute('data-tabs-open')) {
-      setVisibleTab(selector, target);
-    }
-  });
+  if (selector) {
+    selector.addEventListener('click', ({ target }) => {
+      if (!target.classList.contains('active') && target.hasAttribute('data-tabs-open')) {
+        setVisibleTab(selector, target);
+      }
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
