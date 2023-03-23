@@ -18,16 +18,4 @@
     wrapper.appendChild(table);
 })
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.table-wrapper').forEach((wrapper, idx) => {
-        const id = `table-wrapper-${idx}`;
-        wrapper.id = id;
-
-        const touchScroll = new TouchScroll();
-        touchScroll.init({
-            id,
-            draggable: true,
-            wait: false
-        });
-    })
-})
+document.addEventListener('DOMContentLoaded', () => touchScrollInit('.table-wrapper', 'table-wrapper'));
