@@ -21,29 +21,24 @@
     })
 }
 
-window.changeVisibleRouteMap = function (button) {
-    let indexSelected = 1;
-
-    if (button.classList.contains('active')) {
+window.initMapAnimateButtons = (map, wrapperButtons) => {
+    if (!map || !wrapperButtons) {
         return;
     }
+    
+    wrapperButtons.addEventListener('click', ({ target }) => {
+        const routeId = target.getAttribute('data-route-id');
+        
+        if (!routeId || target.classList.contains('active')) {
+            return;
+        }
+        
+        const setActiveRoute = () => {
+            wrapperButtons.querySelector('.active')?.classList.remove('active');
+            target.classList.add('active');
+        }
 
-    button
-        .closest('.route-map__list')
-        .querySelectorAll('.route-map__route')
-        .forEach((route, index) => {
-            if (route !== button) {
-                route.classList.remove('active');
-            } else {
-                button.classList.add('active');
-                indexSelected = index + 1;
-            }
-        })
-
-    const mapContainer = button.closest('.route-map');
-    const activeRoutes = mapContainer.querySelectorAll(`[data-id].active`);
-    const mapRoutes = mapContainer.querySelectorAll(`[data-id="${indexSelected}"]`);
-
-    activeRoutes.forEach((route) => route.classList.remove('active'));
-    mapRoutes.forEach((route) => route.classList.add('active'));
+        setActiveRoute(wrapperButtons, target);
+        setActiveRoute(map, map.querySelector(`[data-id="${routeId}"]`));
+    })
 }
