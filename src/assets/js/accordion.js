@@ -1,15 +1,12 @@
 document.querySelectorAll('.accordion__header').forEach(header => {
-    const parent = header.parentNode;
+    const accordion = header.parentNode;
     const wrapper = header.nextElementSibling;
+    let isOpened = false;
 
     header.addEventListener('click', () => {
-        parent.classList.toggle('open');
-        
-        if (parent.classList.contains('open')) {
-            wrapper.style.maxHeight = `${wrapper.scrollHeight}px`;
-        } 
-        else {
-            wrapper.style.maxHeight = null;
-        }
+        accordion.classList.toggle('open');
+        isOpened = !isOpened;
+
+        wrapper.style.maxHeight = isOpened ? `${wrapper.scrollHeight}px` : null;
     });
 });
