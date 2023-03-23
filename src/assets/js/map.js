@@ -27,7 +27,10 @@
     })
 }
 
-window.initMapAnimateButtons = (map, wrapperButtons) => {
+window.initMapAnimateButtons = (mapSelector, wrapperButtonsSelector) => {
+    const map = document.querySelector(mapSelector);
+    const wrapperButtons = document.querySelector(wrapperButtonsSelector);
+    
     if (!map || !wrapperButtons) {
         return;
     }
@@ -39,12 +42,12 @@ window.initMapAnimateButtons = (map, wrapperButtons) => {
             return;
         }
         
-        const setActiveRoute = () => {
-            wrapperButtons.querySelector('.active')?.classList.remove('active');
-            target.classList.add('active');
+        const setActiveRoute = (wrapper, targets) => {
+            wrapper.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
+            targets.forEach(el => el.classList.add('active'));
         }
 
-        setActiveRoute(wrapperButtons, target);
-        setActiveRoute(map, map.querySelector(`[data-id="${routeId}"]`));
+        setActiveRoute(wrapperButtons, [target]);
+        setActiveRoute(map, map.querySelectorAll(`[data-id="${routeId}"]`));
     })
 }
