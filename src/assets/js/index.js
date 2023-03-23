@@ -1,5 +1,4 @@
-﻿import './libs'
-import './file'
+﻿import './file'
 import './validator'
 import './animations'
 import './accordion'
@@ -10,6 +9,8 @@ import './pagination'
 import './select'
 import './dates'
 import './imask'
+import './map'
+import './table'
 import './main'
 
 window.config = {
