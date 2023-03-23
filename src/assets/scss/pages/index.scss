@@ -26,6 +26,7 @@
   padding-bottom: 0;
   min-height: unset;
   height: var(--app-height);
+  max-height: 100vh;
   overflow: hidden;
 
   &__content {
