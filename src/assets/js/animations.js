@@ -36,26 +36,3 @@ const animateTextOnScroll = (el) => {
 };
 
 document.querySelectorAll('.animate-text-on-scroll').forEach(animateTextOnScroll);
-
-window.mapAnimate = (mapId, pathMaskColor = '#025493') => {
-    const map = document.getElementById(mapId);
-    
-    if (!map) return;
-    
-    const routes = map.querySelectorAll('.svg-animate__path');
-
-    routes.forEach((path) => {
-        const pathMask = path.cloneNode();
-        const pathLength = path.getTotalLength();
-
-        path.style.cssText = `
-          stroke-dasharray: ${pathLength};
-          stroke-dashoffset: ${pathLength};
-        `;
-
-        pathMask.style.cssText = `stroke: ${pathMaskColor};`;
-
-        pathMask.setAttribute('class', 'svg-animate__mask');
-        map.insertBefore(pathMask, path.nextSibling);
-    })
-}
