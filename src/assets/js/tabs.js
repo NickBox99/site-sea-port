@@ -15,7 +15,7 @@ window.setVisibleTab = (selector, tab) => {
   setVisibleTabContent(tab, '');
 }
 
-window.initTabs = (selector) => {
+window.initInlineTabs = (selector) => {
   if (selector) {
     selector.addEventListener('click', ({ target }) => {
       if (!target.classList.contains('active') && target.hasAttribute('data-tabs-open')) {
