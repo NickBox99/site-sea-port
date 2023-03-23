@@ -48,6 +48,10 @@
       border-radius: 100px;
       z-index: 0;
       transition: 0.2s ease-in-out;
+      
+      &_transition-disable {
+        transition: unset;
+      }
     }
   }
 
