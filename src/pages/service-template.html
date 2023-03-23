@@ -1442,23 +1442,8 @@
 
         initInlineTabs(document.querySelector('#swiper-labels'));
 
-        if (document.querySelector('#map-container-trains')) {
-            svgPanZoom('#map-container-trains', {
-                zoomEnabled: true,
-                fit: true,
-                center: true,
-            })
-        }
-
-        if (document.querySelector('#map-fleet-processing')) {
-            initMapAnimate('map-fleet-processing');
-
-            svgPanZoom('#map-fleet-processing', {
-                zoomEnabled: true,
-                fit: true,
-                center: true,
-            })
-        }
+        initMapAnimate('map-container-trains');
+        initMapAnimate('map-fleet-processing');
 
         const initSwiper = (selectorClass, options, isSwiperLine = false) => {
             const sliders = document.querySelectorAll(`.${selectorClass}`);
@@ -1517,48 +1502,17 @@
             grabCursor: true,
         }, true)
 
-        document.querySelector('.service-template-routes-map__swiper')?.addEventListener('click', ({target}) => {
-            if (target.classList.contains('swiper-line__item')) {
-                const routeId = target.getAttribute('data-route-id');
+        touchScrollInit('.paperwork__wrapper', 'paperwork');
 
-                if (routeId) {
-                    document.querySelector(`[data-map-id="${routeId}"]`).click();
-                }
-            }
-        });
-
-        document.querySelector('.service-template-routes-map__list')?.addEventListener('click', ({target}) => {
-            if (target.classList.contains('route-map__route')) {
-                const routeId = target.getAttribute('data-map-id');
-
-                if (routeId) {
-                    document.querySelector(`[data-route-id="${routeId}"]`).click();
-                }
-            }
-        });
-
-        document.querySelectorAll('.paperwork__wrapper').forEach((el, idx) => {
-            const id = `paperwork-${idx}`;
-            el.id = id;
-
-            const viewer = new TouchScroll();
-            viewer.init({
-                id,
-                draggable: true,
-                wait: false
-            });
-        })
-
-
-        if (document.querySelector('#request-sent') && document.querySelector('#service-template-form')) {
+        const templateForm = document.querySelector('#service-template-form');
+        if (templateForm && document.querySelector('#request-sent')) {
 
             const applicationSentPopup = new Popup('#request-sent');
-            const form = document.querySelector('#service-template-form');
 
-            form.addEventListener('submit', (event) => {
+            templateForm.addEventListener('submit', (event) => {
                 event.preventDefault();
 
-                const formData = formValidate(form, {
+                const formData = formValidate(templateForm, {
                     service: {
                         type: 'select',
                         validate: 'required'
@@ -1600,7 +1554,7 @@
                     }).then(({status}) => {
                         if (status === 200) {
                             applicationSentPopup.show();
-                            clearForm(form);
+                            clearForm(templateForm);
                         }
                     });
                 }
