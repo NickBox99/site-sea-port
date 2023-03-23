@@ -29,7 +29,7 @@
     toggle() {
         if (this.isVisible) {
             this.hide();
-        }
+        } 
         else {
             this.show();
         }
