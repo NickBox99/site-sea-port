@@ -19,7 +19,6 @@ document.querySelectorAll('input[type="file"]').forEach(el => {
     const fileName = el.nextElementSibling;
     const cross = fileName.nextElementSibling;
     const defaultText = fileName.innerText;
-
     
     el.addEventListener('change', function () {
         if (this.files.length) {
