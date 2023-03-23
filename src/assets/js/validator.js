@@ -1,5 +1,4 @@
 ﻿function formatDate(date) {
-
     let dd = date.getDate();
     if (dd < 10) dd = '0' + dd;
 
@@ -14,14 +13,14 @@
 
 window.formValidate = function (form, options, isReturnFormData = true) {
     const findFieldForm = (key) => form.querySelector(`[name="${key}"]`);
-    
+
     const formData = {};
 
     const formIdInput = findFieldForm('form_id');
     if (formIdInput && formIdInput.value) {
         formData['form_id'] = formIdInput.value;
     }
-    
+
     let isValid = true;
 
     Object.keys(options).forEach(key => {
@@ -31,7 +30,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
         function checkDefaultField(getValueFunc, htmlElement, events) {
             const checkValid = (value) => option.validate && option.validate.split('|').find((type) => {
 
-                const isIncludes = (condition) => !type.indexOf(condition)? type : condition;
+                const isIncludes = (condition) => !type.indexOf(condition) ? type : condition;
 
                 switch (type) {
                     case 'required': {
@@ -60,9 +59,9 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                     }
                 }
             });
-            
+
             const value = getValueFunc();
-            
+
             if (checkValid(value)) {
                 htmlElement.classList.add('error');
                 isValid = false;
@@ -76,14 +75,13 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                         })
                     );
                 }
-            }
-            else {
+            } else {
                 formData[key] = value;
             }
         }
 
         const formId = form.getAttribute('id');
-        
+
         switch (option.type) {
             case 'input': {
                 const el = findFieldForm(key);
@@ -103,7 +101,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                 const select = selects[`${formId}_${key}`];
                 const el = select.select;
 
-                checkDefaultField(() =>  select.value, el, ['change']);
+                checkDefaultField(() => select.value, el, ['change']);
 
                 break;
             }
@@ -116,8 +114,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                         el.parentNode.classList.add('error');
                         isValid = false;
                     }
-                }
-                else if (isChecked) {
+                } else if (isChecked) {
                     formData[key] = true;
                 }
 
@@ -125,7 +122,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
             }
             case 'file': {
                 const file = findFieldForm(key).files[0];
-                
+
                 if (file) {
                     formData[key] = findFieldForm(key).files[0];
                 }
@@ -138,43 +135,43 @@ window.formValidate = function (form, options, isReturnFormData = true) {
         if (isReturnFormData) {
             const newFormData = new FormData();
             Object.keys(formData).forEach(key => newFormData.append(key, formData[key]));
-            
+
             return newFormData;
         }
-        
+
         return formData;
     }
-    
+
     return false;
-    
+
 }
 
 window.clearForm = function (form) {
     const formId = form.getAttribute('id');
     const removeErrorClass = (el) => el.classList.remove('error');
-    
+
     form.querySelectorAll('.input:not(.datetime), .textarea').forEach(el => {
         el.value = '';
         removeErrorClass(el);
     });
-    
+
     form.querySelectorAll('.checkbox input').forEach(el => {
         el.checked = false;
         removeErrorClass(el.parentNode);
     });
-    
+
     form.querySelectorAll('.select').forEach(el => {
         const select = selects[`${formId}_${el.getAttribute('name')}`];
-        
+
         if (select) {
             select.clear();
             removeErrorClass(select.select);
         }
     });
-    
+
     form.querySelectorAll('.datetime').forEach(el => {
         const date = dates[`${formId}_${el.getAttribute('name')}`];
-        
+
         if (date) {
             date.clear();
             removeErrorClass(date.element);
