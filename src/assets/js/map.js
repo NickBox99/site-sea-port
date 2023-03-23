@@ -19,6 +19,12 @@
         pathMask.setAttribute('class', 'svg-animate__mask');
         map.insertBefore(pathMask, path.nextSibling);
     })
+
+    svgPanZoom(`#${mapId}`, {
+        zoomEnabled: true,
+        fit: true,
+        center: true
+    })
 }
 
 window.initMapAnimateButtons = (map, wrapperButtons) => {
