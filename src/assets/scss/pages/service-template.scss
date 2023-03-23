@@ -47,7 +47,7 @@
   }
   
   .accordion__wrapper {
-    color: var(--color-blue-24);
+    color: var(--color-blue-4);
   }
   
   ul li {
@@ -908,7 +908,7 @@
     transition: var(--transition-default);
     
     &:hover {
-      color: var(--color-grey);
+      color: var(--color-grey-1);
     }
   }
   

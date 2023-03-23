@@ -37,20 +37,20 @@
     background: var(--color-white);
 
     &::placeholder {
-      color: var(--color-blue-23);
+      color: var(--color-blue-22);
     }
   }
 
   &.error {
-    background: var(--color-red-opac20);
-    border: 1px solid var(--color-red);
+    background: var(--color-red-1-opac20);
+    border: 1px solid var(--color-red-1);
 
     &::placeholder {
       color: var(--color-blue-13);
     }
 
     &.input_third::placeholder {
-      color: var(--color-red);
+      color: var(--color-red-1);
     }
   }
 
@@ -151,7 +151,7 @@ input {
     align-items: center;
     height: 100%;
     width: 30px;
-    color: var(--color-red);
+    color: var(--color-red-1);
     cursor: pointer;
     
     &.hide {

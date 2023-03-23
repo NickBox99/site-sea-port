@@ -178,7 +178,7 @@
   
   &-possibilities {
     color: var(--color-white);
-    background: var(--color-blue-22);
+    background: var(--color-blue-21);
     
     &__col {
       display: flex;
@@ -234,7 +234,7 @@
   
   &__tasks {
     margin-bottom: 39px;
-    color: var(--color-blue-22);
+    color: var(--color-blue-21);
   }
   
   &-tasks {
@@ -289,9 +289,9 @@
       gap: 10px;
 
       --background-circle: var(--color-blue-9-opac08);
-      --background-circle-hover: var(--color-blue-22);
-      --border-circle: 1px solid var(--color-blue-22);
-      --border-circle-hover: 1px solid var(--color-blue-22);
+      --background-circle-hover: var(--color-blue-21);
+      --border-circle: 1px solid var(--color-blue-21);
+      --border-circle-hover: 1px solid var(--color-blue-21);
     }
   }
   
@@ -302,7 +302,7 @@
   
   &-work {
     position: relative;
-    background: var(--color-green-9);
+    background: var(--color-green-8);
     
     &__preview {
       position: absolute;

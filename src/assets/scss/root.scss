@@ -8,6 +8,7 @@
   --color-white-opac10: rgba(255, 255, 255, .1);
   --color-white-opac20: rgba(255, 255, 255, .2);
   --color-white-opac50: rgba(255, 255, 255, .5);
+  --color-black: #000;
   --color-black-opac50: rgba(0, 0, 0, .5);
   --color-yellow: #E2DA13;
   --color-blue-1: #0C99CF;
@@ -41,18 +42,16 @@
   --color-blue-16: #002E52;
   --color-blue-17: #114064;
   --color-blue-18: #0E61A4;
-  --color-blue-19: #002542;
-  --color-blue-20: #80A1BC;
-  --color-blue-21: #24A3D4;
-  --color-blue-22: #02A7EA;
-  --color-blue-23: #B1CDE3;
-  --color-blue-24: #002542;
-  --color-grey: #BCC8D2;
+  --color-blue-19: #80A1BC;
+  --color-blue-20: #24A3D4;
+  --color-blue-21: #02A7EA;
+  --color-blue-22: #B1CDE3;
+  --color-grey-1: #BCC8D2;
   --color-grey-2: #DADADA;
   --color-grey-3: #D9D9D9;
   --color-grey-4: #838383;
-  --color-red: #DE2525;
-  --color-red-opac20: rgba(222, 37, 37, .2);
+  --color-red-1: #DE2525;
+  --color-red-1-opac20: rgba(222, 37, 37, .2);
   --color-red-2: #DE351E;
   --color-green-1: #255116;
   --color-green-1-opac50: rgba(37, 81, 22, .5);
@@ -67,10 +66,9 @@
   --color-green-7-opac08: rgba(227, 243, 133, 0.08);
   --color-green-8: #99b901;
   --color-green-8-opac20: rgba(153, 185, 1, .2);
-  --color-green-9: #99B901;
-  --color-green-10: #67817D;
-  --color-green-10-opac50: rgba(103, 129, 125, .5);
-  --color-green-11: #09A936;
+  --color-green-9: #67817D;
+  --color-green-9-opac50: rgba(103, 129, 125, .5);
+  --color-green-10: #09A936;
   
   --color-gradient-blue: linear-gradient(90deg, #035B9E 0%, #003E6F 100%);
   
@@ -86,25 +84,25 @@
   --border-circle: 1px solid var(--color-blue-1-opac40);
   --border-circle-hover: 1px solid var(--color-blue-1);
   //header
-  --color-header-lang: var(--color-grey);
+  --color-header-lang: var(--color-grey-1);
   --color-header-lang-hover: var(--color-white);
   --color-header-links: var(--color-white);
-  --color-header-links-hover: var(--color-grey);
+  --color-header-links-hover: var(--color-grey-1);
   --color-header-sub-links: var(--color-blue-3);
   --color-header-borders: var(--color-blue-3-opac50);
   --color-header-search-input-border: var(--color-blue-3);
   --background-header-search: var(--color-gradient-blue);
   //footer
-  --color-footer: var(--color-grey);
+  --color-footer: var(--color-grey-1);
   --color-footer-border: var(--color-blue-3);
   //dviga
-  --color-dviga: var(--color-grey);
+  --color-dviga: var(--color-grey-1);
   --color-dviga-hover: var(--color-white);
   //page
   --color-page: var(--color-white);
   --background-page: var(--color-gradient-blue);
   //social
-  --color-social: var(--color-grey);
+  --color-social: var(--color-grey-1);
   --color-social-hover: var(--color-white);
   //button - primary
   --background-button-primary: var(--color-blue-1);
@@ -128,7 +126,7 @@
   --background-data-label: var(--color-blue-1);
   --border-data-label: 1px solid var(--color-blue-1-opac20);
   //link
-  --color-link: var(--color-grey);
+  --color-link: var(--color-grey-1);
   --color-link-hover: var(--color-white);
   //file-block
   --color-file-block-size: var(--color-blue-8);
@@ -159,7 +157,7 @@
   //circle
   --color-circle: var(--color-blue-10);
   //header
-  --color-header-lang: var(--color-blue-23);
+  --color-header-lang: var(--color-blue-22);
   --color-header-lang-hover: var(--color-blue-1);
   --color-header-links: var(--color-blue-10);
   --color-header-links-hover: var(--color-blue-1);
@@ -180,7 +178,7 @@
   --color-social: var(--color-blue-10);
   --color-social-hover: var(--color-blue-1);
   //button - primary
-  --border-button-primary: 1px solid var(--color-blue-21);
+  --border-button-primary: 1px solid var(--color-blue-20);
   --color-button-primary-hover: var(--color-blue-10);
   --background-button-primary-hover: var(--color-white);
   //button - secondary
@@ -188,7 +186,7 @@
   --color-button-secondary-hover: var(--color-blue-10);
   //button - third
   --color-button-third: var(--color-blue-10);
-  --border-button-third: 1px solid #24A3D4;
+  --border-button-third: 1px solid var(--color-blue-20);
   //data-label
   --color-data-label: var(--color-blue-10);
   --background-data-label: var(--color-blue-11);
@@ -201,7 +199,7 @@
   --color-file-block: var(--color-blue-10);
   //fields
   --color-field: var(--color-blue-6);
-  --color-field-placeholder: var(--color-blue-23);
+  --color-field-placeholder: var(--color-blue-22);
 }
 
 .root-green {
@@ -215,7 +213,7 @@
   --color-dviga: var(--color-green-2);
   --color-dviga-hover: var(--color-green-4);
   //header
-  --color-header-lang: var(--color-green-10);
+  --color-header-lang: var(--color-green-9);
   --color-header-lang-hover: var(--color-green-6);
   --color-header-links: var(--color-green-2);
   --color-header-links-hover: var(--color-green-4);
@@ -239,7 +237,7 @@
   --border-circle: 1px solid var(--color-green-3);
   --border-circle-hover: 1px solid var(--color-green-3);
   //button - primary
-  --border-button-primary: 1px solid var(--color-blue-21);
+  --border-button-primary: 1px solid var(--color-blue-20);
   --color-button-primary-hover: var(--color-blue-10);
   --background-button-primary-hover: var(--color-white);
   //button - secondary
@@ -258,8 +256,8 @@
   --color-file-block-hover: var(--color-green-1);
   --background-file-block: var(--color-green-8);
   //data-label
-  --background-data-label: var(--color-green-9);
-  --border-data-label: var(--color-green-9);
+  --background-data-label: var(--color-green-8);
+  --border-data-label: var(--color-green-8);
   //news-card
   --color-news-card: var(--color-green-1);
   --color-news-card-hover: var(--color-green-1);
@@ -268,5 +266,5 @@
   --border-news-card-hover: var(--color-green-5);
   //fields
   --color-field: var(--color-green-2);
-  --color-field-placeholder: var(--color-green-10-opac50);
+  --color-field-placeholder: var(--color-green-9-opac50);
 }

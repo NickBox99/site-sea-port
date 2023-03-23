@@ -18,7 +18,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 19.6px;
-    color: var(--color-grey);
+    color: var(--color-grey-1);
     user-select: none;
     
     &:before {
@@ -76,8 +76,8 @@
   
   &.error .checkbox{
     &__text:before {
-      background-color: var(--color-red-opac20);
-      border-color: var(--color-red);
+      background-color: var(--color-red-1-opac20);
+      border-color: var(--color-red-1);
     }
   }
 }
