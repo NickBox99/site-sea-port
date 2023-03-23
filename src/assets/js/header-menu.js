@@ -3,6 +3,7 @@
     headerSearch = document.querySelector('.header-search'),
     headerLang = document.querySelector('.header-lang__wrapper'),
     header = document.querySelector('.header'),
+    linkWrapper = document.querySelector('.header-menu__link-wrapper'),
     html = document.documentElement,
     menu = new Popup('.header-menu'),
     scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -15,7 +16,7 @@ window.toggleVisibleMenu = function () {
     header.classList.toggle('fixed');
 
     isVisibleHeaderMenu = !isVisibleHeaderMenu;
-    html.style.paddingRight = isVisibleHeaderMenu? `${scrollbarWidth}px` : '';
+    html.style.paddingRight = isVisibleHeaderMenu ? `${scrollbarWidth}px` : '';
 }
 
 window.toggleVisibleSearch = function () {
@@ -29,14 +30,14 @@ window.toggleVisibleLang = function () {
 }
 
 window.dropdownMenuToggle = function () {
-    document.querySelector('.header-menu__link-wrapper').classList.toggle('show')
+    linkWrapper.classList.toggle('show');
 }
 
-document.body.addEventListener('click', ({ target }) => {
+document.body.addEventListener('click', ({target}) => {
     if (headerLang.classList.contains('show') && !target.closest('.header-lang')) {
         headerLang.classList.remove('show');
     }
-    
+
     if (headerSearch.classList.contains('show') && !target.closest('.header-search-btn') && !target.closest('.header-search')) {
         headerSearch.classList.remove('show');
     }
