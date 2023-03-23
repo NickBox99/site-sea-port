@@ -11,6 +11,7 @@ import './dates'
 import './imask'
 import './map'
 import './table'
+import './odometer'
 import './main'
 
 window.config = {
