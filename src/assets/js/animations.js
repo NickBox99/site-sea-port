@@ -35,7 +35,7 @@ const animateTextOnScroll = (el) => {
     }
 };
 
-document.querySelector('.animate-text-on-scroll').forEach(animateTextOnScroll);
+document.querySelectorAll('.animate-text-on-scroll').forEach(animateTextOnScroll);
 
 window.mapAnimate = (mapId, pathMaskColor = '#025493') => {
     const map = document.getElementById(mapId);
