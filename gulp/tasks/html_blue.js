@@ -22,7 +22,8 @@ export const html_blue = () => {
           'src/pages/career.html',
           'src/pages/about.html',
           'src/pages/search.html',
-          'src/pages/dangerous-goods.html'
+          'src/pages/dangerous-goods.html',
+          'src/pages/test.html'
       ])
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
