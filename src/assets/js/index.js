@@ -20,3 +20,14 @@ window.config = {
 }
 
 window.match = null;
+
+$('[data-zoom-image-wrapper]').magnificPopup({
+    delegate: 'img',
+    gallery: {
+        enabled: true,
+        preload: [0,2],
+        navigateByImgClick: true,
+        tCounter: ''
+    },
+    type: 'image'
+});
