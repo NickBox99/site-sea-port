@@ -27,7 +27,7 @@ window.initInlineTabs = (selector) => {
 
 document.addEventListener('DOMContentLoaded', function () {
     let isVertical = window.innerWidth <= 470;
-
+    
     document.querySelectorAll('.tabs').forEach((tabContainer) => {
         const tabItems = [...tabContainer.querySelectorAll('.tab')];
         const floatr = tabContainer.querySelector('.tabs__floatr');
