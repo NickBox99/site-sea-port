@@ -618,6 +618,12 @@
       }
     }
   }
+  
+  @media screen and (max-width: 1279px) {
+    &__default-swiper {
+      width: 100%;
+    }
+  }
 
   @media screen and (max-width: 1080px) {
     &__heading {
