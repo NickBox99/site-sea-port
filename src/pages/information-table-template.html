@@ -267,7 +267,7 @@
                 },
                 
                 on: {
-                    activeIndexChange: ({ activeIndex }) => swiperHeaderCountCurrent.innerText = numConvert(activeIndex + 1)
+                    activeIndexChange: ({ realIndex }) => swiperHeaderCountCurrent.innerText = numConvert(realIndex + 1)
                 }
             });
         });
