@@ -316,6 +316,10 @@
       transform: translateX(-50%);
       width: 100vw;
     }
+    
+    &-top {
+      margin-bottom: 17px;
+    }
   }
   
   @media screen and (max-width: 1024px) {
