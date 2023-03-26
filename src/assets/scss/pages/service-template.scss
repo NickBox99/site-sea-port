@@ -308,6 +308,8 @@
   }
   
   @media screen and (max-width: 1225px) {
+    padding: 78px 0;
+    
     &__preview, &:before {
       left: 50%;
       transform: translateX(-50%);
