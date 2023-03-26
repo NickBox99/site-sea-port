@@ -73,6 +73,12 @@
     }
   }
 
+  @media screen and (max-width: 1279px) {
+    &__swiper-cards {
+      width: 100%;
+    }
+  }
+
   @media screen and (max-width: 1120px) {
     &__offer-list {
       grid-column-gap: unset;
