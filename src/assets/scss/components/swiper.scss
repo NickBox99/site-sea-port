@@ -200,7 +200,7 @@
     font-size: 20px;
     letter-spacing: -0.02em;
     cursor: pointer;
-    transition: var(--transition-default);
+    transition: .2s opacity;
     
     &.active, &:hover {
       opacity: .5;
