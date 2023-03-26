@@ -1,199 +1,204 @@
 ﻿<div class="container-trains">
-  <h1 class="title">Контейнерные поезда</h1>
+    <h1 class="title">Контейнерные поезда</h1>
 
-  <div class="tabs">
-    <div data-tabs-open="map" class="tab active">Направления</div>
-    <div data-tabs-open="info" class="tab">График</div>
-    <div data-tabs-open="paperwork" class="tab">Оформление</div>
-    <div class="tabs__floatr"></div>
-  </div>
-
-  <div class="route-map route-map_secondary container-trains__route-map" data-tabs="map">
-    <div class="route-map__map">
-      @@include('../components/svg/map-container-trains.html')
+    <div class="tabs">
+        <div data-tabs-open="map" class="tab active">Направления</div>
+        <div data-tabs-open="info" class="tab">График</div>
+        <div data-tabs-open="paperwork" class="tab">Оформление</div>
+        <div class="tabs__floatr"></div>
     </div>
 
-    <div class="route-map__list">
-      <div class="route-map__route active" data-route-id="1">Владивосток – Москва</div>
-      <div class="route-map__route" data-route-id="2">Владивосток – Санкт-Петербург (финляндский)</div>
-      <div class="route-map__route" data-route-id="3">Владивосток – Новосибирск</div>
-      <div class="route-map__route" data-route-id="4">Владивосток – Екатеринбург</div>
-      <div class="route-map__route" data-route-id="5">Владивосток – Красноярск</div>
-      <div class="route-map__route" data-route-id="6">Владивосток – Ростов-на-Дону</div>
-      <div class="route-map__route" data-route-id="7">Владивосток – Минск</div>
-      <div class="route-map__route" data-route-id="8">Владивосток – Узбекистан</div>
-      <div class="route-map__route" data-route-id="9">Владивосток – Самара</div>
-      <div class="route-map__route" data-route-id="10">Владивосток – Казахстан</div>
-      <div class="route-map__route" data-route-id="11">Владивосток – Казань</div>
-    </div>
-  </div>
-
-  <div data-tabs="info" style="display:none;">
-    <div class="container-trains__swiper swiper-line">
-      <div class="swiper-line__btn swiper-line__btn_prev">@@include('../components/svg/daw.html')</div>
-      <div class="swiper swiper-line__swiper container-trains-swiper">
-        <div class="swiper-wrapper" id="city-tabs">
-          <div class="swiper-slide swiper-line__item active" data-tabs-open="city-1">Москва</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-2">Санкт-Петербург</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-3">Новосибирск</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-4">Воронеж</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-5">Красноярск</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-6">Самара</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-7">Ташкент</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-8">Минск</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-9">Казань</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-10">Иркутск</div>
-          <div class="swiper-slide swiper-line__item" data-tabs-open="city-11">Екатеринбург</div>
+    <div class="route-map route-map_secondary container-trains__route-map" data-tabs="map">
+        <div class="route-map__map">
+            @@include('../components/svg/map-container-trains.html')
         </div>
-      </div>
-      <div class="swiper-line__btn swiper-line__btn_next">@@include('../components/svg/daw.html')</div>
+
+        <div class="route-map__list">
+            <div class="route-map__route active" data-route-id="1">Владивосток – Москва</div>
+            <div class="route-map__route" data-route-id="2">Владивосток – Санкт-Петербург (финляндский)</div>
+            <div class="route-map__route" data-route-id="3">Владивосток – Новосибирск</div>
+            <div class="route-map__route" data-route-id="4">Владивосток – Екатеринбург</div>
+            <div class="route-map__route" data-route-id="5">Владивосток – Красноярск</div>
+            <div class="route-map__route" data-route-id="6">Владивосток – Ростов-на-Дону</div>
+            <div class="route-map__route" data-route-id="7">Владивосток – Минск</div>
+            <div class="route-map__route" data-route-id="8">Владивосток – Узбекистан</div>
+            <div class="route-map__route" data-route-id="9">Владивосток – Самара</div>
+            <div class="route-map__route" data-route-id="10">Владивосток – Казахстан</div>
+            <div class="route-map__route" data-route-id="11">Владивосток – Казань</div>
+        </div>
     </div>
 
-    <div data-tabs="city-1">
-      <div class="container-trains__cruise">
-        <div>
-          <div class="subtitle container-trains__subtitle">Откуда</div>
-          <div class="container-trains__path">Владивосток (Россия)</div>
+    <div data-tabs="info" style="display:none;">
+        <div class="container-trains__swiper swiper-line">
+            <div class="swiper-line__btn swiper-line__btn_prev">@@include('../components/svg/daw.html')</div>
+            <div class="swiper swiper-line__swiper container-trains-swiper">
+                <div class="swiper-wrapper" id="city-tabs">
+                    <div class="swiper-slide swiper-line__item active" data-tabs-open="city-1">Москва</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-2">Санкт-Петербург</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-3">Новосибирск</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-4">Воронеж</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-5">Красноярск</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-6">Самара</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-7">Ташкент</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-8">Минск</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-9">Казань</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-10">Иркутск</div>
+                    <div class="swiper-slide swiper-line__item" data-tabs-open="city-11">Екатеринбург</div>
+                </div>
+            </div>
+            <div class="swiper-line__btn swiper-line__btn_next">@@include('../components/svg/daw.html')</div>
         </div>
 
-        <div class="container-trains__path container-trains__dash">—</div>
+        <div data-tabs="city-1">
+            <div class="container-trains__cruise">
+                <div>
+                    <div class="subtitle container-trains__subtitle">Откуда</div>
+                    <div class="container-trains__path">Владивосток (Россия)</div>
+                </div>
 
-        <div>
-          <div class="subtitle container-trains__subtitle">Куда</div>
-          <div class="container-trains__path">Москва (Россия)</div>
+                <div class="container-trains__path container-trains__dash">—</div>
+
+                <div>
+                    <div class="subtitle container-trains__subtitle">Куда</div>
+                    <div class="container-trains__path">Москва (Россия)</div>
+                </div>
+            </div>
+
+            <div class="container-trains__ports">
+                <div class="container-trains__port active" data-tabs-open="city-1-1">Ховрино (FMSKh)</div>
+                <div class="container-trains__port" data-tabs-open="city-1-2">Белый раст (FMSB)</div>
+                <div class="container-trains__port" data-tabs-open="city-1-3">Селятино (FMSS)</div>
+                <div class="container-trains__port" data-tabs-open="city-1-4">Силикатная (FMS)</div>
+            </div>
+
+            <table data-tabs="city-1-1">
+                <tr>
+                    <th>№ поезда</th>
+                    <th>Дата отправления</th>
+                    <th>Дата прибытия</th>
+                    <th>Дней в пути</th>
+                </tr>
+
+                <tr>
+                    <td>104Ут</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td>106</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>7</td>
+                </tr>
+
+                <tr>
+                    <td>108Гр</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>6</td>
+                </tr>
+
+                <tr>
+                    <td>377</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>9</td>
+                </tr>
+
+                <tr>
+                    <td>764</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>12.11.22 (сб)</td>
+                    <td>3</td>
+                </tr>
+            </table>
         </div>
-      </div>
-
-      <div class="container-trains__ports">
-        <div class="container-trains__port active" data-tabs-open="city-1-1">Ховрино (FMSKh)</div>
-        <div class="container-trains__port" data-tabs-open="city-1-2">Белый раст (FMSB)</div>
-        <div class="container-trains__port" data-tabs-open="city-1-3">Селятино (FMSS)</div>
-        <div class="container-trains__port" data-tabs-open="city-1-4">Силикатная (FMS)</div>
-      </div>
-
-      <table data-tabs="city-1-1">
-        <tr>
-          <th>№ поезда</th>
-          <th>Дата отправления</th>
-          <th>Дата прибытия</th>
-          <th>Дней в пути</th>
-        </tr>
-
-        <tr>
-          <td>104Ут</td>
-          <td>12.11.22 (сб)</td>
-          <td>12.11.22 (сб)</td>
-          <td>4</td>
-        </tr>
-
-        <tr>
-          <td>106</td>
-          <td>12.11.22 (сб)</td>
-          <td>12.11.22 (сб)</td>
-          <td>7</td>
-        </tr>
-
-        <tr>
-          <td>108Гр</td>
-          <td>12.11.22 (сб)</td>
-          <td>12.11.22 (сб)</td>
-          <td>6</td>
-        </tr>
-
-        <tr>
-          <td>377</td>
-          <td>12.11.22 (сб)</td>
-          <td>12.11.22 (сб)</td>
-          <td>9</td>
-        </tr>
-
-        <tr>
-          <td>764</td>
-          <td>12.11.22 (сб)</td>
-          <td>12.11.22 (сб)</td>
-          <td>3</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <div data-tabs="paperwork" style="display: none" class="container-trains-paperwork">
-    <h3 class="container-trains-paperwork__title">Как оформить контейнер на поезд</h3>
-
-    <div class="container-trains-paperwork__card">
-      <h4 class="container-trains-paperwork__subtitle">Силами отдела экспедирования ПАО “ВМТП”:</h4>
-      <div class="container-trains-paperwork__wrapper">
-        <div class="container-trains-paperwork__item">
-          <img src="/img/circle-points.svg" class="container-trains-paperwork__icon" alt="" width="60px" height="60px">
-          <h4 class="container-trains-paperwork__description">Выбрать
-            направление
-          </h4>
-        </div>
-        <div class="container-trains-paperwork__item">
-          <img src="/img/circle-calendar.svg" class="container-trains-paperwork__icon" alt="" width="60px"
-            height="60px">
-          <h4 class="container-trains-paperwork__description">Ознакомиться
-            с графиком
-          </h4>
-        </div>
-        <div class="container-trains-paperwork__item">
-          <img src="/img/circle-mail.svg" class="container-trains-paperwork__icon" alt="" width="60px" height="60px">
-          <h4 class="container-trains-paperwork__description">Написать запрос на адрес log@fesco.com</h4>
-        </div>
-      </div>
     </div>
 
-    <div class="container-trains-paperwork__card">
-      <h4 class="container-trains-paperwork__subtitle">Самостоятельно через личный кабинет ФИТ:</h4>
-      <div class="container-trains-paperwork__wrapper">
-        <div class="container-trains-paperwork__item">
-          <img src="/img/circle-points.svg" class="container-trains-paperwork__icon" alt="" width="60px" height="60px">
-          <h4 class="container-trains-paperwork__description">Выбрать
-            направление
-          </h4>
+    <div data-tabs="paperwork" style="display: none" class="container-trains-paperwork">
+        <h3 class="container-trains-paperwork__title">Как оформить контейнер на поезд</h3>
+
+        <div class="container-trains-paperwork__card">
+            <h4 class="container-trains-paperwork__subtitle">Силами отдела экспедирования ПАО “ВМТП”:</h4>
+            <div class="container-trains-paperwork__wrapper">
+                <div class="container-trains-paperwork__item">
+                    <img src="/img/circle-points.svg" class="container-trains-paperwork__icon" alt="" width="60px"
+                         height="60px">
+                    <h4 class="container-trains-paperwork__description">Выбрать
+                        направление
+                    </h4>
+                </div>
+                <div class="container-trains-paperwork__item">
+                    <img src="/img/circle-calendar.svg" class="container-trains-paperwork__icon" alt="" width="60px"
+                         height="60px">
+                    <h4 class="container-trains-paperwork__description">Ознакомиться
+                        с графиком
+                    </h4>
+                </div>
+                <div class="container-trains-paperwork__item">
+                    <img src="/img/circle-mail.svg" class="container-trains-paperwork__icon" alt="" width="60px"
+                         height="60px">
+                    <h4 class="container-trains-paperwork__description">Написать запрос на адрес log@fesco.com</h4>
+                </div>
+            </div>
         </div>
-        <div class="container-trains-paperwork__item">
-          <img src="/img/circle-calendar.svg" class="container-trains-paperwork__icon" alt="" width="60px"
-            height="60px">
-          <h4 class="container-trains-paperwork__description">Ознакомиться
-            с графиком
-          </h4>
+
+        <div class="container-trains-paperwork__card">
+            <h4 class="container-trains-paperwork__subtitle">Самостоятельно через личный кабинет ФИТ:</h4>
+            <div class="container-trains-paperwork__wrapper">
+                <div class="container-trains-paperwork__item">
+                    <img src="/img/circle-points.svg" class="container-trains-paperwork__icon" alt="" width="60px"
+                         height="60px">
+                    <h4 class="container-trains-paperwork__description">Выбрать
+                        направление
+                    </h4>
+                </div>
+                <div class="container-trains-paperwork__item">
+                    <img src="/img/circle-calendar.svg" class="container-trains-paperwork__icon" alt="" width="60px"
+                         height="60px">
+                    <h4 class="container-trains-paperwork__description">Ознакомиться
+                        с графиком
+                    </h4>
+                </div>
+                <div class="container-trains-paperwork__item">
+                    <img src="/img/circle-phone.svg" class="container-trains-paperwork__icon" alt="" width="60px"
+                         height="60px">
+                    <h4 class="container-trains-paperwork__description">Зайти в личный кабинет <a
+                            href="#">my.fesco.com</a></h4>
+                </div>
+            </div>
         </div>
-        <div class="container-trains-paperwork__item">
-          <img src="/img/circle-phone.svg" class="container-trains-paperwork__icon" alt="" width="60px" height="60px">
-          <h4 class="container-trains-paperwork__description">Зайти в личный кабинет <a href="#">my.fesco.com</a></h4>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 
 <script defer>
-  document.addEventListener("DOMContentLoaded", () => {
-    initMapAnimate('map-container-trains', '#1A61A2');
-    initMapAnimateButtons('#map-container-trains', '.route-map__list');
+    document.addEventListener("DOMContentLoaded", () => {
+        initMapAnimate('map-container-trains', '#1A61A2');
+        initMapAnimateButtons('#map-container-trains', '.route-map__list');
 
-    initInlineTabs(document.querySelector('#city-tabs'));
-    
-    document.querySelectorAll('.container-trains__ports').forEach(el => initInlineTabs(el));
-    
-    function initSwiperCity() {
-      setTimeout(() => {
-        fixLoopSwiper();
-        new Swiper(".container-trains-swiper", {
-          spaceBetween: 30,
-          slidesPerView: "auto",
-          loop: true,
-          navigation: {
-            nextEl: ".swiper-line__btn_next",
-            prevEl: ".swiper-line__btn_prev",
-          },
-        });
-      })
+        initInlineTabs(document.querySelector('#city-tabs'));
 
-      this.removeEventListener('click', initSwiperCity);
-    }
+        document.querySelectorAll('.container-trains__ports').forEach(el => initInlineTabs(el));
 
-    document.querySelector('[data-tabs-open="info"]').addEventListener('click', initSwiperCity);
-  })
+        function initSwiperCity() {
+            setTimeout(() => {
+                fixLoopSwiper();
+                new Swiper(".container-trains-swiper", {
+                    spaceBetween: 30,
+                    slidesPerView: "auto",
+                    loop: true,
+                    navigation: {
+                        nextEl: ".swiper-line__btn_next",
+                        prevEl: ".swiper-line__btn_prev",
+                    },
+                });
+            })
+
+            this.removeEventListener('click', initSwiperCity);
+        }
+
+        document.querySelector('[data-tabs-open="info"]').addEventListener('click', initSwiperCity);
+    })
 </script>
