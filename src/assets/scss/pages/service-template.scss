@@ -255,7 +255,7 @@
     top: -64px;
     left: -70px;
     width: 1525px;
-    height: 650px;
+    height: calc(100% + 128px);
   }
 
   &:before {
