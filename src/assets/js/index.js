@@ -13,6 +13,7 @@ import './map'
 import './touch-scroll'
 import './table'
 import './odometer'
+import './swiper'
 import './main'
 
 window.config = {
