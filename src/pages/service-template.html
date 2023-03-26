@@ -2169,7 +2169,26 @@
 
         initSwiper('service-template-routes-map__swiper', { grabCursor: true }, true);
 
-        initSwiper('service-template-file-slider__swiper');
+        initSwiper('service-template-file-slider__swiper', {
+            slidesPerView: 1,
+            breakpoints: {
+                1420: {
+                    slidesPerView: 'auto'
+                },
+                1226: {
+                    slidesPerView: 3
+                },
+                1100: {
+                    slidesPerView: 'auto'
+                },
+                881: {
+                    slidesPerView: 3
+                },
+                575: {
+                    slidesPerView: 2
+                }
+            }
+        });
         
         initSwiper('service-template-info-slider__swiper');
        
