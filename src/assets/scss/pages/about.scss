@@ -1307,11 +1307,6 @@
 .about-history-text {
   overflow: hidden;
 
-  // .about-history-text__wrapper
-  &__wrapper {
-  }
-
-  // .about-history-text__slide
   &__slide {
     @media screen and (max-width: 1024px) {
       max-width: 100%;
