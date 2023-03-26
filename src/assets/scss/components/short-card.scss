@@ -1,0 +1,47 @@
+﻿.short-card {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--color-blue-4);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: var(--transition-default);
+
+  &:not(&:hover) {
+    background-image: unset !important;
+  }
+
+  &:hover {
+    .port-services-cards__title {
+      color: var(--color-blue-1);
+    }
+
+    border-color: var(--color-blue-5);
+  }
+
+  &__icon {
+    margin-right: 30px;
+  }
+
+  &__title {
+    margin: 0;
+    max-width: 150px;
+    word-break: unset;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 20px;
+
+    &__title {
+      font-size: 18px;
+      line-height: 21.6px;
+    }
+
+    &__icon {
+      margin-right: 20px;
+    }
+  }
+}
