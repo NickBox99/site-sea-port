@@ -185,14 +185,15 @@
         function initSwiperCity() {
             setTimeout(() => {
                 fixLoopSwiper();
+                
                 new Swiper(".container-trains-swiper", {
                     spaceBetween: 30,
                     slidesPerView: "auto",
                     loop: true,
                     navigation: {
                         nextEl: ".swiper-line__btn_next",
-                        prevEl: ".swiper-line__btn_prev",
-                    },
+                        prevEl: ".swiper-line__btn_prev"
+                    }
                 });
             })
 
