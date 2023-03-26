@@ -18,6 +18,7 @@
   &__content {
     flex-grow: 1;
     max-width: 991px;
+    width: 1px;
   }
   
   h2 {
@@ -75,14 +76,18 @@
     }
   }
 
+  .paperwork {
+    display: none;
+  }
+  
   @media screen and (max-width: 1427px) {
-    .swiper, .paperwork {
+    .paperwork {
       width: calc(100vw - 441px);
     }
   }
 
   @media screen and (max-width: 1400px) {
-    .swiper, .paperwork {
+    .paperwork {
       width: calc(100vw - 410px);
     }
   }
@@ -98,7 +103,7 @@
       width: 100%;
     }
 
-    .swiper, .paperwork {
+    .paperwork {
       width: 100%;
     }
     
@@ -621,6 +626,12 @@
     height: 21px;
   }
 
+  @media screen and (max-width: 1440px) {
+    &__swiper {
+      width: 100%;
+    }
+  }
+
   @media screen and (max-width: 770px) {
     &__card {
       padding-top: 28px;
@@ -684,7 +695,6 @@
 }
 
 .service-template-description-slider {
-  
   &__card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -750,6 +760,12 @@
         backdrop-filter: blur(15px);
         border-radius: 100px;
       }
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    &__swiper {
+      width: 100%;
     }
   }
   
@@ -818,6 +834,12 @@
     &__card {
       padding: 20px;
       gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
+    &__swiper {
+      width: 100%;
     }
   }
 }
