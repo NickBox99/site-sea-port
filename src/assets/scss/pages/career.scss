@@ -64,8 +64,13 @@
     margin-bottom: 40px;
   }
   
-  &__swiper-cards {
-    margin-bottom: 90px;
+  &__swiper-card {
+    max-width: unset;
+    width: 380px;
+    
+    &s {
+      margin-bottom: 90px;
+    }
   }
 
   @media screen and (max-width: 1120px) {
