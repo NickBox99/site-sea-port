@@ -2167,7 +2167,67 @@
             })
         }
 
-        initSwiper('service-template-routes-map__swiper', { grabCursor: true }, true);
+        function shouldBeEnabled(carousel) {
+            const tt = carousel.querySelectorAll('.swiper-slide');
+            window.tt = tt;
+            const slidesCount = tt.length;
+            let settings;
+            const wrapperWidth = 991;
+            const slidesWidth = [...tt]
+                .map((el) => {
+                    console.log(el)
+                    return el.offsetWidth;
+                })
+                .reduce((total, width) => total + width);
+            if (slidesWidth < wrapperWidth) {
+                settings = {
+                    loop: false,
+                    slidesPerView: slidesCount,
+                    enabled: false,
+                };
+                return settings;
+            }
+            return null;
+        }
+        
+        function getLoopSwiperSettings() {
+            return {
+                loop: true,
+                on: {
+                    beforeInit: function(swiper){
+                        const { wrapperEl, slidesEl } = swiper;
+                        window.ww = swiper;
+                        const wrapperElWidth = wrapperEl.offsetWidth;
+                        console.log(wrapperElWidth)
+                        
+                        const testr = slidesEl.scrollWidth;
+                        console.log(testr)
+                        
+                        // if(swiper.$el[0].querySelectorAll('.swiper-slide').length == 0) return;
+                        //
+                        // let getTotalWidth = function(swiper){
+                        //     let width = 0;
+                        //     swiper.$el[0].querySelectorAll('.swiper-slide').forEach(function(element){
+                        //         width += element.offsetWidth;
+                        //     });
+                        //     return width;
+                        // }
+                        //
+                        // while(getTotalWidth(swiper) < window.innerWidth){
+                        //     swiper.$el[0].querySelectorAll('.swiper-slide').forEach(function(element){
+                        //         let clone = element.cloneNode(true);
+                        //         swiper.$el[0].querySelectorAll('.swiper-wrapper')[0].appendChild(clone);
+                        //     });
+                        // }
+                    }
+                }
+            }
+        }
+
+        initSwiper('service-template-routes-map__swiper', { 
+            // grabCursor: true,
+            ...getLoopSwiperSettings()
+        }, true);
 
         initSwiper('service-template-file-slider__swiper', {
             slidesPerView: 1,
