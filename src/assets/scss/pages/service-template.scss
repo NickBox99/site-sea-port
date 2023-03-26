@@ -1344,9 +1344,7 @@
 }
 
 .service-template-routes-map {
-  // .service-template-routes-map__swiper-line
-  &__swiper-line {}
-  // .service-template-routes-map__swiper
+  
   &__swiper {
     @media screen and (min-width: 1226px) {
       width: calc(100vw - 530px) !important;
