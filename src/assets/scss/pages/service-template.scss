@@ -40,8 +40,7 @@
 
   .swiper {
     margin: 0;
-    max-width: 991px;
-    overflow: unset;
+    user-select: none;
     
     &-header {
       margin-bottom: 40px;
