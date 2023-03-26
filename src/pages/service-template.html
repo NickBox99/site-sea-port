@@ -2,14 +2,14 @@
     <div class="service-template__sidebar-wrapper">
         <div class="service-template-sidebar service-template__sidebar" data-margin-top="25" data-sticky-for="1225">
             <div class="service-template-sidebar__content">
-                <h3 class="service-template-sidebar__title">Заголовок</h3>
+                <a data-section="section-1"><h3 class="service-template-sidebar__title">Заголовок</h3></a>
 
                 <div class="service-template-sidebar__links">
-                    <div class="service-template-sidebar__link link active">Заголовок</div>
-                    <div class="service-template-sidebar__link link">Заголовок</div>
-                    <div class="service-template-sidebar__link link">Заголовок</div>
-                    <div class="service-template-sidebar__link link">Заголовок</div>
-                    <div class="service-template-sidebar__link link">Заголовок</div>
+                    <a data-section="section-2" class="service-template-sidebar__link link">Заголовок</a>
+                    <a data-section="section-3" class="service-template-sidebar__link link">Заголовок</a>
+                    <a data-section="section-4" class="service-template-sidebar__link link">Заголовок</a>
+                    <a data-section="section-5" class="service-template-sidebar__link link">Заголовок</a>
+                    <a data-section="section-6" class="service-template-sidebar__link link">Заголовок</a>
                 </div>
             </div>
 
@@ -17,8 +17,7 @@
         </div>
     </div>
     <div class="service-template__content">
-
-        <div class="service-template-header">
+        <div class="service-template-header" data-section="section-1">
             <img class="service-template-header__preview" src="/img/temp/service-template-bg.jpg" alt="">
             <div class="breadcrumbs">
                 <a href="#" class="breadcrumbs__item service-template-header__breadcrumb">Пункт 1</a> /
@@ -63,7 +62,7 @@
         </div>
 
         <div class="service-template-cards service-template__block">
-            <h2>Заголовок (H2)</h2>
+            <h2 data-section="section-2">Заголовок (H2)</h2>
             <p>Сомнение, конечно, поразительно. Заблуждение принимает во внимание даосизм. Реальность ментально выводит
                 структурализм. Аподейктика, по определению, преобразует интеллигибельный смысл жизни, хотя в официозе
                 принято
@@ -108,7 +107,7 @@
         </div>
 
         <div class="service-template__block">
-            <h2>Заголовок (H2)</h2>
+            <h2 data-section="section-3">Заголовок (H2)</h2>
             <p>Сомнение, конечно, поразительно. Заблуждение принимает во внимание даосизм. Реальность ментально выводит
                 структурализм. Аподейктика, по определению, преобразует интеллигибельный смысл жизни, хотя в официозе
                 принято
@@ -172,7 +171,7 @@
         </div>
 
         <div class="service-template__block service-template-preview-info">
-            <h2>Заголовок (H2)</h2>
+            <h2 data-section="section-4">Заголовок (H2)</h2>
             <p>Реальная власть естественно рефлектирует гений. Диалектика, следовательно, естественно представляет собой
                 знак.
                 Гипотеза, следовательно, естественно раскладывает на элементы смысл жизни, не учитывая мнения
@@ -195,13 +194,37 @@
         </div>
 
         <div class="service-template__block service-template-path-map">
-            <h2>Заголовок (Н2)</h2>
+            <h2 data-section="section-5">Заголовок (Н2)</h2>
             <p>
                 Сомнение, конечно, поразительно. Заблуждение принимает во внимание даосизм. Реальность ментально выводит
                 структурализм. Аподейктика, по определению, преобразует интеллигибельный смысл жизни, хотя в официозе
                 принято
                 обратное.
             </p>
+
+            <div class="swiper-line service-template-route-list">
+                <div class="swiper-line__btn swiper-line__btn_prev">
+                    @@include('../components/svg/daw.html')
+                </div>
+                <div class="swiper swiper-line__swiper service-template-route-list__swiper">
+                    <div class="swiper-wrapper" id="swiper-labels232">
+                        <div class="swiper-slide swiper-line__item active" data-route-id="1">Владивосток – Москва</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="2">Владивосток – Санкт-Петербург (финляндский)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="3">Владивосток – Новосибирск</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="4">FВладивосток – Екатеринбург</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="5">Владивосток – Красноярск</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="6">Владивосток – Ростов-на-Дону</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="7">Владивосток – Минск</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="8">Владивосток – Узбекистан</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="9">Владивосток – Самара</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="10">Владивосток – Казахстан</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="11">Владивосток – Казань</div>
+                    </div>
+                </div>
+                <div class="swiper-line__btn swiper-line__btn_next">
+                    @@include('../components/svg/daw.html')
+                </div>
+            </div>
 
             <div class="service-template-path-map__wrapper route-map">
                 <div class="service-template-path-map__map route-map__map">
@@ -227,7 +250,7 @@
         </div>
 
         <div class="service-template__block service-template-routes-map">
-            <h2>Заголовок (Н2)</h2>
+            <h2 data-section="section-6">Заголовок (Н2)</h2>
             <p>
                 Сомнение, конечно, поразительно. Заблуждение принимает во внимание даосизм. Реальность ментально выводит
                 структурализм. Аподейктика, по определению, преобразует интеллигибельный смысл жизни, хотя в официозе
@@ -241,17 +264,17 @@
                 </div>
                 <div class="service-template-routes-map__swiper swiper swiper-line__swiper">
                     <div class="swiper-wrapper" id="swiper-labels">
-                        <div class="swiper-slide swiper-line__item active" data-tabs-open="label-1" data-route-id="1">GFL</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-2" data-route-id="2">SINOKOR</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-3" data-route-id="3">FESCO РО-РО</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-4" data-route-id="4">SINOKOR</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-5" data-route-id="5">FESCO РО-РО</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-6" data-route-id="6">SINOKOR</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-7" data-route-id="7">FESCOРО-РО</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-8" data-route-id="8">SINOKOR</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-81" data-route-id="9">SINOKOR</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-812" data-route-id="10">SINOKOR</div>
-                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-8142" data-route-id="11">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item active" data-tabs-open="label-1">GFL</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-2">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-3">FESCO РО-РО</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-4">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-5">FESCO РО-РО</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-6">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-7">FESCOРО-РО</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-8">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-81">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-812">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item" data-tabs-open="label-8142">SINOKOR</div>
                     </div>
                 </div>
                 <div class="swiper-line__btn swiper-line__btn_next">
@@ -273,6 +296,37 @@
                 <div>
                     <div class="subtitle">Email</div>
                     <div class="service-template-label__contact">mail@mail.com</div>
+                </div>
+            </div>
+
+            <div class="swiper-line service-template-route-list">
+                <div class="swiper-line__btn swiper-line__btn_prev">
+                    @@include('../components/svg/daw.html')
+                </div>
+                <div class="swiper swiper-line__swiper service-template-route-list__swiper">
+                    <div class="swiper-wrapper" id="swiper-labels22">
+                        <div class="swiper-slide swiper-line__item active" data-route-id="1">FESCO – KurilyLine (FKL)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="2">FESCO – Arctic Line (FAL)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="3">FESCO – China Express (FCXP-1)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="4">FESCO – China Express (FCXP-2)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="5">FESCO – Korea Express (FKXP-1)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="6">FESCO – Korsakov Direct Line (FKDL)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="7">FESCO – Anadyr Direct Line (FADL)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="8">FESCO – Magadan Line (FML)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="9">FESCO – Petropavlovsk-KamchatskiyLine (FPKL)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="10">FESCO – Vietnam Direct Line (FVDL)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="11">HEUNG – A LINE</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="12">Japan Trans – Siberian Line (JTSL)</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="13">Reel Shipping</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="14">SINOKOR</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="15">SITC</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="16">ZhongguShipping Group</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="17">FESCOРО-РО</div>
+                        <div class="swiper-slide swiper-line__item" data-route-id="18">GFL</div>
+                    </div>
+                </div>
+                <div class="swiper-line__btn swiper-line__btn_next">
+                    @@include('../components/svg/daw.html')
                 </div>
             </div>
 
@@ -2116,6 +2170,7 @@
 
         initMapAnimate('map-container-trains', '#1A61A2');
         initMapAnimateButtons('#map-container-trains', '.service-template-path-map__navigation');
+        initMapAnimateButtons('#map-fleet-processing', '#swiper-labels22');
         
         initMapAnimate('map-fleet-processing');
         initMapAnimateButtons('#map-fleet-processing', '.service-template-routes-map__list');
@@ -2173,6 +2228,8 @@
         });
         
         initSwiper('service-template-info-slider__swiper');
+        
+        initSwiper('service-template-route-list__swiper', {}, true);
        
         initSwiper('service-template-description-slider__swiper');
 
