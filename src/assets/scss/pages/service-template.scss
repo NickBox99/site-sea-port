@@ -696,6 +696,30 @@
   }
 }
 
+@media screen and (max-width: 1015px) {
+  .route-map__list {
+    display: none;
+  }
+}
+
+.service-template-route-list {
+  display: none;
+  margin-bottom: 30px;
+  
+  .swiper-line__item {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 1015px) {
+    display: flex;
+  }
+  
+  @media screen and (max-width: 470px) {
+    margin-bottom: 15px;
+  }
+}
+
 .service-template-description-slider {
   &__card {
     display: grid;
