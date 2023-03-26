@@ -96,6 +96,11 @@
       opacity: 0;
     }
   }
+  
+  &__default-card {
+    max-width: unset;
+    width: 380px;
+  }
 
   &-map {
     position: relative;
