@@ -14,4 +14,5 @@
     })
 }
 
+window.addEventListener('resize', fixLoopSwiper);
 fixLoopSwiper();
