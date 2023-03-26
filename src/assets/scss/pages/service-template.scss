@@ -570,7 +570,8 @@
 .service-template-info-slider {
   &__card {
     padding: 30px;
-    max-width: unset;
+    width: 100%;
+    max-width: 991px;
     background: var(--color-blue-4);
     border-radius: 8px;
   }
