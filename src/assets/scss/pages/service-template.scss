@@ -773,7 +773,7 @@
     }
   }
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1420px) and (min-width: 1226px), (max-width: 1100px) {
     &__swiper {
       width: 100%;
     }
