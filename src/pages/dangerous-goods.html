@@ -423,11 +423,10 @@
 
         const row = document.createElement('tr');
         
-        row.innerHTML = `
-            <td data-idx></td>
-            <td>${ooh}</td>
-            <td>${selects['permission-form_group'].getItem(group).text}</td>
-            <td class="dangerous-goods__cross-wrapper"><div class="dangerous-goods__cross">@@include('../components/svg/cross.html')</div></td>`;
+        row.innerHTML = permissionsCardTemplate
+            .replace('{{ ooh }}', ooh)
+            .replace('{{ group }}', selects['permission-form_group'].getItem(group).text)
+            .replace('{{ select-id }}', `permission-card-select-${Date.now()}`);
         
         tablePermissionsHtml.append(row);
 
