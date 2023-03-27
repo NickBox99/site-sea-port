@@ -34,6 +34,10 @@
     .swiper-slide {
       user-select: none;
     }
+    
+    p + p {
+      margin-top: 20px;
+    }
   }
 
   &__date {
