@@ -5,8 +5,7 @@ import htmlMin from 'gulp-htmlmin'
 
 export const html_blue_wrapper = () => {
   return app.gulp.src([
-      'src/pages/edo.html',
-          'src/pages/service-template.html'
+        'src/pages/service-template.html'
       ])
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
