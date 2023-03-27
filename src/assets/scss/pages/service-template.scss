@@ -122,6 +122,8 @@
         z-index: 5;
         background: linear-gradient(90deg, #035B9E 0%, #003E6F 100%);
         box-shadow: 0 10px 45px rgba(0, 37, 66, .2);
+        opacity: 1;
+        transition: var(--transition-default);
         
         &:not(.show) {
           display: none;
