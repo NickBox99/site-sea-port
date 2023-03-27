@@ -439,6 +439,26 @@
         event.preventDefault();
 
         const permission = formValidate(form, {
+            surname: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            name: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            patronymic: {
+                type: 'input',
+                validate: 'abs|required'
+            },
+            phone: {
+                type: 'input',
+                validate: 'length:18'
+            },
+            email: {
+                type: 'input',
+                validate: 'email'
+            },
             ooh: {
                 type: 'input',
                 validate: 'required'
