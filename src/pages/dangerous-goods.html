@@ -491,7 +491,21 @@
         permissions.length = 0;
         permissions.push(...tablePermissions);
         
-        if (tablePermissions.length) {
+        let isValid = true;
+        $('[name ^= "permission-card-select-"]').each((_, el) => {
+            if (el) {
+                const name = el.getAttribute('name');
+                const isNotValid = selects[name].value === permissionsCardDefaultValue;
+                
+                el.parentNode.style.color = isNotValid? '#DE2525' : '';
+                
+                if (isNotValid) {
+                    isValid = false;
+                }
+            }
+        })
+        
+        if (tablePermissions.length && isValid) {
             permissionsHtml.innerHTML = permissionsHtml.style.display = '';
 
             tablePermissions.forEach(({}) => {
