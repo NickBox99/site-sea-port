@@ -1,4 +1,10 @@
-﻿import './file'
+﻿document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('.animation-lazy')?.classList.remove('animation-lazy');
+    })
+})
+
+import './file'
 import './validator'
 import './animations'
 import './accordion'
