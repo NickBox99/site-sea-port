@@ -487,6 +487,7 @@
     });
     
     function requestPermission() {
+        const permissionsCardDefaultValue = document.querySelector('.permission-card-default-value')?.getAttribute('data-value');
         permissions.length = 0;
         permissions.push(...tablePermissions);
         
