@@ -11,9 +11,9 @@
     will-change: transform;
   }
 
-  &__title,
+  &__title .animate-text-vertical__wrapper,
   &-port {
-    animation-delay: 0.3s;
+    animation-delay: .3s;
   }
 
   &__title,
