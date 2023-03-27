@@ -3,6 +3,11 @@
 @import "./root";
 @import "./ui";
 
+.animation-lazy * {
+  animation: unset !important;
+  opacity: 0;
+}
+
 * {
   &, &:after, &:before {
     box-sizing: border-box;
