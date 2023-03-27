@@ -508,11 +508,10 @@
         if (tablePermissions.length && isValid) {
             permissionsHtml.innerHTML = permissionsHtml.style.display = '';
 
-            tablePermissions.forEach(({}) => {
+            tablePermissions.forEach(() => {
                 const newPermission = document.createElement('div');
                 newPermission.innerHTML = permissionsTemplate;
                 newPermission.classList.add('dangerous-goods-permission');
-                
                 
                 permissionsHtml.append(newPermission);
             });
