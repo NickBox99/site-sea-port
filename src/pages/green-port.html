@@ -460,15 +460,6 @@
 
     const firstSpeedometer = new Speedometer('speedometer-1');
     const secondSpeedometer = new Speedometer('speedometer-2');
-
-    new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-            firstSpeedometer.toEnd();
-            secondSpeedometer.toEnd();
-        }
-    }, {
-        threshold: 1
-    }).observe(document.querySelector('.green-port__speedometers'));
     
     document.addEventListener("DOMContentLoaded", () => {
         new Swiper(".green-port-gallery__swiper", {
