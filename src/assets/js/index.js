@@ -4,6 +4,7 @@
     })
 })
 
+import './scroll-nodes'
 import './file'
 import './validator'
 import './animations'
