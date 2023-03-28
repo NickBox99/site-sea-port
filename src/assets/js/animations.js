@@ -15,24 +15,4 @@
     `;
 });
 
-const animateTextOnScroll = (el) => {
-    const observerCallback = ([{ isIntersecting }]) => {
-        if (isIntersecting) {
-            el.classList.remove('animate-text-on-scroll');
-            observer.unobserve(el.nextElementSibling);
-        }
-    };
-
-    const observer = new IntersectionObserver(observerCallback, {
-        threshold: 0.5,
-        rootMargin: '0px'
-    });
-
-    const nextEl = el.nextElementSibling;
-
-    if (nextEl) {
-        observer.observe(nextEl);
-    }
-};
-
-document.querySelectorAll('.animate-text-on-scroll').forEach(animateTextOnScroll);
+scrollNodes.addNodes('.animate-text-on-scroll', (el) => el.classList.remove('animate-text-on-scroll'));
