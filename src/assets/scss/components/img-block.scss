@@ -111,6 +111,8 @@
 }
 
 .animate-show-left {
+  opacity: 0;
+  width: 0;
   animation: animate-show-left 1.2s linear forwards;
 }
 
