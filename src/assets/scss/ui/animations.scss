@@ -94,7 +94,7 @@
 }
 
 .animate-text-on-scroll {
-  .animate-text-vertical__wrapper {
-    animation: none;
+  &, .animate-text-vertical__wrapper {
+    animation: none !important;
   }
 }
