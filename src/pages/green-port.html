@@ -462,6 +462,11 @@
     const secondSpeedometer = new Speedometer('speedometer-2');
     
     document.addEventListener("DOMContentLoaded", () => {
+        window.scrollNodes.addNodes('.green-port__speedometers', () => {
+            firstSpeedometer.toEnd();
+            secondSpeedometer.toEnd();
+        })
+        
         new Swiper(".green-port-gallery__swiper", {
             navigation: {
                 nextEl: ".green-port-gallery-btn.next",
