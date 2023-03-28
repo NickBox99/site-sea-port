@@ -2,8 +2,6 @@ class ScrollNodes {
     static nodes = [];
 
     static addNodes(selector, callback) {
-
-        console.log(document.querySelectorAll(selector))
         document.querySelectorAll(selector).forEach(el => {
             const { top } = el.getBoundingClientRect();
 
@@ -12,29 +10,33 @@ class ScrollNodes {
                 top: top - 20 - window.innerHeight / 2
             })
         });
+
+        this.checkVisibleNodes.apply(this);
     }
 
     static init() {
-        window.addEventListener('scroll', () => {
-            {
-                if (!this.nodes.length) {
-                    return;
-                }
+        window.addEventListener('scroll', this.checkVisibleNodes.bind(this));
+    }
+    
+    static checkVisibleNodes() {
+        console.log(this);
+        
+        if (!this.nodes.length) {
+            return;
+        }
 
-                const newNodes = [];
+        const newNodes = [];
 
-                this.nodes.forEach((el) => {
-                    if (el.top < window.scrollY) {
-                        el.callback();
-                    }
-                    else {
-                        newNodes.push(el);
-                    }
-                });
-
-                this.nodes = newNodes;
+        this.nodes.forEach((el) => {
+            if (el.top < window.scrollY) {
+                el.callback();
+            }
+            else {
+                newNodes.push(el);
             }
         });
+
+        this.nodes = newNodes;
     }
 }
 

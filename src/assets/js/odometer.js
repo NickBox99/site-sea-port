@@ -4,13 +4,20 @@
         format: '( ddd)',
         theme: 'default',
     }
-
-    document.querySelectorAll('[data-odometer-value]').forEach(el => {
+    
+    function showOdometer(el) {
+        const newValue = el.innerText;
+        el.innerText = Array(newValue.length).fill('0').join('');
+        
         const odometer = new Odometer({
             ...options,
             el
         });
 
-        odometer.update(+el.getAttribute('data-odometer-value'));
-    })
+        el.removeAttribute('data-odometer');
+        odometer.update(+newValue);
+    }
+    
+    document.querySelectorAll('[data-odometer]:not([data-odometer-on-scroll])').forEach(showOdometer);
+    window.scrollNodes.addNodes('[data-odometer][data-odometer-on-scroll]', showOdometer);
 })
