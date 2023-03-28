@@ -848,16 +848,7 @@
             },
             x: '-50%',
         });
-
-        const secondImage = document.querySelector('.containers-image');
-        if (secondImage) {
-            new IntersectionObserver(([entry]) => {
-                if (entry.isIntersecting) {
-                    secondImage.classList.add('animate-show-left');
-                }
-            }).observe(secondImage);
-        }
-
+        
         new Swiper(".about-supervisor__swiper", {
             loop: true,
 
