@@ -54,7 +54,6 @@
   "dependencies": {
     "aos": "^2.3.4",
     "dotenv": "^16.0.3",
-    "gulp-wrap": "^0.15.0",
-    "swiper": "^8.4.5"
+    "gulp-wrap": "^0.15.0"
   }
 }
