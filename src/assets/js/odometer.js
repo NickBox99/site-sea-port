@@ -1,6 +1,7 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
     const options = {
         value: 0,
+        duration: 3000,
         format: '( ddd)',
         theme: 'default',
     }
