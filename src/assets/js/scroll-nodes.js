@@ -7,7 +7,7 @@ class ScrollNodes {
 
             this.nodes.push({
                 callback: () => callback(el),
-                top: top - 20 - window.innerHeight / 2
+                top: top - 50 - window.innerHeight / 2
             })
         });
 
