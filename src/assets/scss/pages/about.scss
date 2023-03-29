@@ -518,14 +518,18 @@
         //width: max-content;
         //max-width: max-content;
         transition: var(--transition-default);
-        width: 75px;
+        width: 125px;
+        
+        &:first-child {
+          margin-right: 0 !important;
+        }
 
         &.active {
           font-weight: 700;
           font-size: 50px;
           line-height: 60px;
+          width: 204px;
           opacity: 1;
-          width: 125px;
         }
       }
 
@@ -535,6 +539,7 @@
       }
 
       &__swiper {
+        transform: translateX(-20px);
         overflow: hidden;
       }
 
@@ -1385,7 +1390,7 @@
     height: 30px;
     width: 2px;
     background: #497ea4;
-    transition: all 2s ease-in-out;
+    
     &::before {
       content: "";
       position: absolute;
