@@ -1011,11 +1011,7 @@
                 }
             },
             on: {
-                progress: (_, progress) => {
-                    console.log(progress)
-
-                    linesSwiper.setProgress(progress);
-                }
+                progress: (_, progress) => linesSwiper.setProgress(progress)
             }
         });
 
