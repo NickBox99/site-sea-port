@@ -169,6 +169,10 @@
   overflow: hidden;
 }
 
+.swiper-creative .swiper-slide {
+  pointer-events: none;
+}
+
 .swiper-line {
   display: flex;
   gap: 30px;
