@@ -967,9 +967,9 @@
         const yearsSwiper = new Swiper(".about-history-years__swiper", {
             loop: true,
             centeredSlides: true,
-            grabCursor: true,
             allowTouchMove: true,
             slideActiveClass: 'active',
+            
             navigation: {
                 nextEl: ".about-history-years__btn.next",
                 prevEl: ".about-history-years__btn.prev",
@@ -977,23 +977,19 @@
             breakpoints: {
                 0: {
                     initialSlide: 0,
-                    spaceBetween: 20,
-                    slidesPerView: 'auto'
+                    spaceBetween: 20
                 },
                 571: {
                     initialSlide: 1,
-                    spaceBetween: 20,
-                    slidesPerView: 3
+                    spaceBetween: 20
                 },
                 895: {
                     initialSlide: 3,
-                    spaceBetween: 20,
-                    slidesPerView: 5
+                    spaceBetween: 20
                 },
-                1125: {
+                1125: {slidesPerView: 'auto',
                     initialSlide: 3,
-                    spaceBetween: 20,
-                    slidesPerView: 7
+                    spaceBetween: 20
                 },
             },
         });
