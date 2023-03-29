@@ -916,11 +916,9 @@
         const historyImageSwiper = new Swiper(".about-history-image", {
             loop: true,
             slideActiveClass: 'active',
-            grabCursor: false,
             centeredSlides: true,
             speed: 2000,
             effect: "creative",
-            allowTouchMove: false,
             initialSlide: 3,
             creativeEffect: {
                 prev: {
@@ -964,41 +962,10 @@
             }
         })
 
-        const yearsSwiper = new Swiper(".about-history-years__swiper", {
-            loop: true,
-            centeredSlides: true,
-            allowTouchMove: true,
-            slideActiveClass: 'active',
-            
-            navigation: {
-                nextEl: ".about-history-years__btn.next",
-                prevEl: ".about-history-years__btn.prev",
-            },
-            breakpoints: {
-                0: {
-                    initialSlide: 0,
-                    spaceBetween: 20
-                },
-                571: {
-                    initialSlide: 1,
-                    spaceBetween: 20
-                },
-                895: {
-                    initialSlide: 3,
-                    spaceBetween: 20
-                },
-                1125: {slidesPerView: 'auto',
-                    initialSlide: 3,
-                    spaceBetween: 20
-                },
-            },
-        });
-
         const linesSwiper = new Swiper('.about-history-lines', {
             slideActiveClass: 'active',
             allowTouchMove: false,
             loop: true,
-            speed: 2000,
             slidesPerView: 'auto',
             spaceBetween: 20,
             centeredSlides: true,
@@ -1018,13 +985,47 @@
             },
         })
 
+        const yearsSwiper = new Swiper(".about-history-years__swiper", {
+            loop: true,
+            centeredSlides: true,
+            allowTouchMove: true,
+            slideActiveClass: 'active',
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".about-history-years__btn.next",
+                prevEl: ".about-history-years__btn.prev",
+            },
+            breakpoints: {
+                0: {
+                    initialSlide: 0
+                },
+                571: {
+                    initialSlide: 1
+                },
+                895: {
+                    initialSlide: 3
+                },
+                1125: {
+                    initialSlide: 3
+                }
+            },
+            on: {
+                progress: (_, progress) => {
+                    console.log(progress)
+
+                    linesSwiper.setProgress(progress);
+                }
+            }
+        });
+
         function synchronizeSwiper(swiperFirst, swiperSecond) {
             swiperFirst.on('slideChange', ({activeIndex}) => swiperSecond.slideTo(activeIndex));
         }
 
         synchronizeSwiper(yearsSwiper, historyImageSwiper);
         synchronizeSwiper(yearsSwiper, yearSwiper);
-        synchronizeSwiper(yearsSwiper, textContentSwiper);
+        synchronizeSwiper(yearsSwiper, historyImageSwiper);
         synchronizeSwiper(yearsSwiper, linesSwiper);
 
         new Swiper(".about-companies", {
