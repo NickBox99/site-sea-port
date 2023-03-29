@@ -912,14 +912,23 @@
                 }
             }
         });
+        
+        const defaultOptions = {
+            navigation: {
+                nextEl: ".about-history-years__btn.next",
+                prevEl: ".about-history-years__btn.prev",
+            },
+            loop: true,
+            centeredSlides: true,
+            speed: 1000,
+            initialSlide: 3,
+        }
 
         const historyImageSwiper = new Swiper(".about-history-image", {
-            loop: true,
+            ...defaultOptions,
             slideActiveClass: 'active',
-            centeredSlides: true,
-            speed: 2000,
+            allowTouchMove: false,
             effect: "creative",
-            initialSlide: 3,
             creativeEffect: {
                 prev: {
                     translate: [0, 0, -1],
@@ -930,28 +939,26 @@
             },
         });
 
+        
+        // window.historyImageSwiper = historyImageSwiper;
         const yearSwiper = new Swiper('.about-history-year', {
-            loop: true,
+            ...defaultOptions,
             slideActiveClass: 'active',
             allowTouchMove: false,
-            initialSlide: 3,
             effect: 'fade',
             fadeEffect: {
                 crossFade: false,
-            },
-            speed: 2000,
+            }
         })
 
         const textContentSwiper = new Swiper('.about-history-text', {
-            loop: true,
+            ...defaultOptions,
             slideActiveClass: 'active',
             allowTouchMove: false,
-            initialSlide: 3,
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
             },
-            speed: 2000,
             breakpoints: {
                 320: {
                     autoHeight: true,
@@ -963,13 +970,12 @@
         })
 
         const linesSwiper = new Swiper('.about-history-lines', {
+            ...defaultOptions,
+            navigation: {},
             slideActiveClass: 'active',
             allowTouchMove: false,
-            loop: true,
             slidesPerView: 'auto',
             spaceBetween: 20,
-            centeredSlides: true,
-            initialSlide: 3,
             breakpoints: {
                 0: {
                     initialSlide: 0,
@@ -986,16 +992,10 @@
         })
 
         const yearsSwiper = new Swiper(".about-history-years__swiper", {
-            loop: true,
-            centeredSlides: true,
-            allowTouchMove: true,
+            ...defaultOptions,
             slideActiveClass: 'active',
             slidesPerView: 'auto',
             spaceBetween: 20,
-            navigation: {
-                nextEl: ".about-history-years__btn.next",
-                prevEl: ".about-history-years__btn.prev",
-            },
             breakpoints: {
                 0: {
                     initialSlide: 0
@@ -1011,19 +1011,31 @@
                 }
             },
             on: {
-                progress: (_, progress) => linesSwiper.setProgress(progress)
+                slideChangeTransitionEnd(sw) {
+                    console.log(sw)
+                }
             }
+            
+            // on: {
+            //     touchMove: ({progress}) => linesSwiper.setProgress(progress),
+            //     touchEnd: ({progress}) => linesSwiper.setProgress(progress),
+            // }
         });
+
+        yearsSwiper.controller.control = linesSwiper;
+        
+        window.historyImageSwiper = historyImageSwiper;
 
         function synchronizeSwiper(swiperFirst, swiperSecond) {
             swiperFirst.on('slideChange', ({activeIndex}) => swiperSecond.slideTo(activeIndex));
         }
-
+        
         synchronizeSwiper(yearsSwiper, historyImageSwiper);
-        synchronizeSwiper(yearsSwiper, yearSwiper);
-        synchronizeSwiper(yearsSwiper, historyImageSwiper);
-        synchronizeSwiper(yearsSwiper, linesSwiper);
-
+        // synchronizeSwiper(yearsSwiper, yearSwiper);
+        // synchronizeSwiper(yearsSwiper, textContentSwiper);
+        // synchronizeSwiper(yearsSwiper, historyImageSwiper);
+        // synchronizeSwiper(yearsSwiper, linesSwiper);
+        
         new Swiper(".about-companies", {
             loop: true,
 
