@@ -19,8 +19,6 @@ class ScrollNodes {
     }
     
     static checkVisibleNodes() {
-        console.log(this);
-        
         if (!this.nodes.length) {
             return;
         }
