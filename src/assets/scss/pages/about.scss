@@ -515,13 +515,17 @@
         font-size: 30px;
         line-height: 36px;
         text-align: center;
+        //width: max-content;
+        //max-width: max-content;
         transition: var(--transition-default);
+        width: 75px;
 
         &.active {
           font-weight: 700;
           font-size: 50px;
           line-height: 60px;
           opacity: 1;
+          width: 125px;
         }
       }
 
@@ -546,8 +550,7 @@
           right: 0;
         }
       }
-
-      // .about-history-years__pagination
+      
       &__pagination {
         bottom: -10px !important;
         .swiper-pagination-bullet {
@@ -559,6 +562,7 @@
           background: #f2efe8;
           opacity: 0.3;
           transition: all 2s ease-in-out;
+          
           &::before {
             position: absolute;
             content: "";
@@ -942,10 +946,6 @@
       font-size: 58px;
     }
 
-    &__map-bg {
-      //right: -456.41px; // !fix
-    }
-
     &-map {
       &__title {
         margin-bottom: 0;
@@ -1208,7 +1208,7 @@
     &__map-bg {
       top: 240.83px;
       width: 1495.39px;
-      transform: translateX(-1085px); // !fix
+      transform: translateX(-1085px);
     }
 
     &-partners {
