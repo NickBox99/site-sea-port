@@ -29,7 +29,16 @@
             
             <div class="filters-subtitle">Грузы в контейнере</div>
             <div class="filters-row">
-                <input data-mask="0000000" name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН" role="presentation" autocomplete="off">
+                <div class="dangerous-goods-ooh">
+                    <input data-mask="0000000" name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН" role="presentation" autocomplete="off">
+                    <div class="select select_string dangerous-goods-ooh__select" data-select-disable-close>
+                        <input name="ooh" type="hidden" class="select__input">
+                        <div class="select__wrapper dangerous-goods-ooh__items">
+                            <div class="select__item btn btn_secondary" data-value="">Выберите группу упаковки</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="select select_secondary">
                     <div class="select__value"></div>
                     <input name="group" type="hidden" class="select__input">
