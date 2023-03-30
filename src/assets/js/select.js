@@ -9,6 +9,8 @@ class Select {
         this.select = element;
         this.valueWrapper = this.select.querySelector('.select__value');
 
+        element.setAttribute('data-select-name', this.name);
+
         const items = [...this.select.querySelectorAll('.select__item')];
         this.items = items.map(el => ({value: el.getAttribute('data-value'), text: el.textContent, el}));
 
