@@ -5,8 +5,6 @@ class Select {
         this.select = element;
         this.input = element.querySelector('.select__input');
         this.name = this.input.getAttribute('name');
-        element.setAttribute('data-select-name', this.name);
-        this.select = element;
         this.valueWrapper = this.select.querySelector('.select__value');
 
         element.setAttribute('data-select-name', this.name);
