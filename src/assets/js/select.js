@@ -53,7 +53,10 @@ class Select {
         const item = this.items.find(item => item.value === value);
 
         if (item) {
-            this.valueWrapper.textContent = item.text;
+            if (this.valueWrapper) {
+                this.valueWrapper.textContent = item.text;
+            }
+            
             this.value = this.input.value = item.value;
             this.items.forEach(({el}) => el.classList.remove('active'));
             item.el.classList.add('active');
