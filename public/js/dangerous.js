@@ -1,4 +1,11 @@
-{
+window['dangerousGoodsGroups'] = {
+    "default": "Выберите группу упаковки",
+    "1": "I - вещества с высокой степенью опасности",
+    "2": "II — просто опасный груз",
+    "3": "III — незначительно опасный груз."
+} 
+
+window['dangerousGoods'] = {
   "1001": {
     "unCode": "1001",
     "shippingName": "АЦЕТИЛЕН РАСТВОРЕННЫЙ ACETYLENE, DISSOLVED",
