@@ -17,11 +17,13 @@ class Select {
     }
 
     initEvents() {
-        document.body.addEventListener('click', ({target}) => {
-            if (!target.closest(`[data-select-name="${this.name}"]`)) {
-                this.hide();
-            }
-        });
+        if (!this.select.hasAttribute('data-select-disable-close')) {
+            document.body.addEventListener('click', ({target}) => {
+                if (!target.closest(`[data-select-name="${this.name}"]`)) {
+                    this.hide();
+                }
+            });
+        }
 
         this.select.addEventListener('click', ({target}) => {
             if (target.closest('.select__wrapper')) {
