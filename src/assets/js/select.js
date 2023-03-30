@@ -95,17 +95,22 @@ class Select {
         this.items = items;
 
         this.wrapper.innerHTML = '';
-        items.forEach((item) => {
-            const { text, value } = item;
-             
-            const newItem = document.createElement('div');
-            newItem.classList.add('select__item','btn', 'btn_secondary');
-            newItem.innerHTML = text;
-            newItem.setAttribute('data-value', value);
+        
+        if (items.length) {
+            items.forEach((item) => {
+                const { text, value } = item;
 
-            item['el'] = newItem;
-            this.wrapper.append(newItem);
-        });
+                const newItem = document.createElement('div');
+                newItem.classList.add('select__item','btn', 'btn_secondary');
+                newItem.innerHTML = text;
+                newItem.setAttribute('data-value', value);
+
+                item['el'] = newItem;
+                this.wrapper.append(newItem);
+            });
+
+            this.set(items[0].value);
+        }
     }
 
     setEnabled(isEnable) {

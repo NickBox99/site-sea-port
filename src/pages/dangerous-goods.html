@@ -2,7 +2,7 @@
     <div class="dangerous-goods__breadcrumbs breadcrumbs">
         <a href="#" class="dangerous-goods__breadcrumb breadcrumbs__item">Пункт 1</a> /
         <a href="#" class="dangerous-goods__breadcrumb breadcrumbs__item">Пункт 2</a> /
-        <span class="dangerous-goods__breadcrumb  breadcrumbs__item_current">Пункт 3</span>
+        <span class="dangerous-goods__breadcrumb breadcrumbs__item breadcrumbs__item_current"> Пункт 3</span>
     </div>
     
     <h1 class="title dangerous-goods__title">Перевалка опасных грузов</h1>
@@ -30,7 +30,7 @@
             <div class="filters-subtitle">Грузы в контейнере</div>
             <div class="filters-row">
                 <div class="dangerous-goods-ooh">
-                    <input data-mask="0000000" name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН" role="presentation" autocomplete="off">
+                    <input data-mask="number" name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН" role="presentation" autocomplete="off">
                     <div class="select select_string dangerous-goods-ooh__select" data-select-disable-close>
                         <input name="ooh" type="hidden" class="select__input">
                         <div class="select__wrapper dangerous-goods-ooh__items">
@@ -389,11 +389,19 @@
         const oohInput = document.querySelector('[name="ooh"]');
         const oohSelectWrapper = document.querySelector('.dangerous-goods-ooh__items');
         const oohSelect = selects['permission-form_ooh'];
+        const groupSelect = selects['permission-form_group'];
+        let dirtyGroupSelect = false;
 
         oohInput.addEventListener('keyup', function () {
             const value = this.value;
             oohSelectWrapper.innerHTML = '';
             oohSelect.hide();
+            
+            if (dirtyGroupSelect) {
+                dirtyGroupSelect = false;
+                groupSelect.setEnabled(false);
+                groupSelect.updateItems([{ value: '', text: dangerousGoodsGroups['default'] } ]);
+            }
             
             if (value.length >= 3) {
                 const newSelectItems = dangerousGoodsKeys
@@ -406,14 +414,58 @@
                 }
             }
         });
-
-        const groupSelect = selects['permission-form_group'];
+        
+        groupSelect.setEnabled(false);
         oohSelect.input.addEventListener('change', function () {
             const packingGroup = dangerousGoods[this.value].packingGroup;
+            
             oohInput.value = this.value;
-            groupSelect.updateItems([{ value: '', text: dangerousGoodsGroups['default'] }, ...packingGroup.map(value => ({ value, text: dangerousGoodsGroups[value] }))])
-            groupSelect.setEnabled(packingGroup.length > 1);
-        })
+            groupSelect.updateItems([{ value: '', text: dangerousGoodsGroups['default'] }, ...packingGroup.map(value => ({ value, text: dangerousGoodsGroups[value] }))]);
+            groupSelect.setEnabled(packingGroup.length);
+            dirtyGroupSelect = true;
+        });
+
+
+        const form = document.querySelector('#permission-form');
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            const permission = formValidate(form, {
+                surname: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                name: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                patronymic: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                phone: {
+                    type: 'input',
+                    validate: 'length:18'
+                },
+                email: {
+                    type: 'input',
+                    validate: 'email'
+                },
+                ooh: {
+                    type: 'input',
+                    validate: 'required'
+                },
+                group: {
+                    type: 'select',
+                    validate: 'required'
+                }
+            }, false);
+
+            console.log(permission)
+            // if (permission) {
+            //     addTablePermission(permission);
+            // }
+        });
     })
     
     
@@ -424,7 +476,7 @@
     
     
     
-    // const form = document.querySelector('#permission-form');
+    // 
     // const tableWrapper = document.querySelector('.dangerous-goods__table');
     // const tablePermissionsHtml = document.querySelector('#table-permission-body');
     // const permissionsHtml = document.querySelector('.dangerous-goods__permissions');
@@ -483,44 +535,7 @@
     //     updatePosPermissionCardSelect();
     // }
     //
-    // form.addEventListener('submit', event => {
-    //     event.preventDefault();
-    //
-    //     const permission = formValidate(form, {
-    //         surname: {
-    //             type: 'input',
-    //             validate: 'abs|required'
-    //         },
-    //         name: {
-    //             type: 'input',
-    //             validate: 'abs|required'
-    //         },
-    //         patronymic: {
-    //             type: 'input',
-    //             validate: 'abs|required'
-    //         },
-    //         phone: {
-    //             type: 'input',
-    //             validate: 'length:18'
-    //         },
-    //         email: {
-    //             type: 'input',
-    //             validate: 'email'
-    //         },
-    //         ooh: {
-    //             type: 'input',
-    //             validate: 'required'
-    //         },
-    //         group: {
-    //             type: 'select',
-    //             validate: 'required'
-    //         }
-    //     }, false);
-    //
-    //     if (permission) {
-    //         addTablePermission(permission);
-    //     }
-    // });
+    
     //
     // tablePermissionsHtml.addEventListener('click', ({ target }) => {
     //     const row = target.closest('.dangerous-goods__cross-wrapper');

@@ -10,6 +10,7 @@
   border: 1px solid var(--color-blue-7);
   border-radius: 45px;
   cursor: pointer;
+  user-select: none;
 
   &__value, &__item {
     font-size: 16px;
