@@ -36,6 +36,7 @@ class Select {
 
                 if (item) {
                     this.set(item.getAttribute('data-value'));
+                    this.input.dispatchEvent(new Event('change'));
                     this.hide();
                 }
             } else {
