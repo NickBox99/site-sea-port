@@ -59,7 +59,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                         return false;
                     }
                 }
-            });
+            }) || typeof option.validate === 'function' && option.validate(value));
 
             const value = getValueFunc();
 
