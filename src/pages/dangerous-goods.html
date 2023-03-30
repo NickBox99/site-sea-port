@@ -466,7 +466,7 @@
                 },
                 group: {
                     type: 'select',
-                    validate: 'required'
+                    validate: value => groupSelect.isEnable && !value
                 }
             }, false);
 
