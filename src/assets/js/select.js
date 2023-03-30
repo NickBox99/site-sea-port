@@ -109,7 +109,7 @@ class Select {
                 this.wrapper.append(newItem);
             });
 
-            this.set(items[0].value);
+            this.clear();
         }
     }
 
