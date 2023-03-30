@@ -55,6 +55,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                         return num.length && +num !== value.length;
                     }
                     default: {
+                        
                         return false;
                     }
                 }
