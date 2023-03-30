@@ -2,6 +2,7 @@ class Select {
     isEnable = true;
     
     constructor(element) {
+        this.select = element;
         this.input = element.querySelector('.select__input');
         this.name = this.input.getAttribute('name');
         element.setAttribute('data-select-name', this.name);
