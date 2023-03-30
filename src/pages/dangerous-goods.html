@@ -459,7 +459,10 @@
                 },
                 ooh: {
                     type: 'input',
-                    validate: 'required'
+                    validate: () => {
+                        console.log(!oohSelect.value);
+                        return !oohSelect.value
+                    }
                 },
                 group: {
                     type: 'select',
