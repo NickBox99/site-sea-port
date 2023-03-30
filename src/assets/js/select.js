@@ -1,4 +1,6 @@
 class Select {
+    isEnable = true;
+    
     constructor(element) {
         this.input = element.querySelector('.select__input');
         this.name = this.input.getAttribute('name');
