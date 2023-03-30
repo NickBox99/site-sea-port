@@ -422,7 +422,8 @@
         
         groupSelect.setEnabled(false);
         oohSelect.input.addEventListener('change', function () {
-            const packingGroup = dangerousGoods[this.value].packingGroup;
+            dangerousGoodsSelected = dangerousGoods[this.value];
+            const packingGroup = dangerousGoodsSelected.packingGroup || [];
             
             oohInput.value = this.value;
             groupSelect.updateItems([{ value: '', text: dangerousGoodsGroups['default'] }, ...packingGroup.map(value => ({ value, text: dangerousGoodsGroups[value] }))]);
