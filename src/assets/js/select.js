@@ -90,6 +90,27 @@ class Select {
     getItem(val) {
         return this.items.find(el => el.value === String(val));
     }
+    
+    updateItems(items) {
+        this.items = items;
+
+        this.wrapper.innerHTML = '';
+        items.forEach((item) => {
+            const { text, value } = item;
+             
+            const newItem = document.createElement('div');
+            newItem.classList.add('select__item','btn', 'btn_secondary');
+            newItem.innerHTML = text;
+            newItem.setAttribute('data-value', value);
+
+            item['el'] = newItem;
+            this.wrapper.append(newItem);
+        });
+    }
+
+    setEnabled(isEnable) {
+        this.isEnable = isEnable;
+    }
 }
 
 window.selects = [];
