@@ -27,6 +27,10 @@ class Select {
         }
 
         this.select.addEventListener('click', ({target}) => {
+            if (!this.isEnable) {
+                return;
+            }
+            
             if (target.closest('.select__wrapper')) {
                 const item = target.closest('.select__item');
 
