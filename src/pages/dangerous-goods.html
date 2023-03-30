@@ -418,38 +418,154 @@
     
     
     
-    function requestPermission() {
-        const permissionsCardDefaultValue = document.querySelector('.permission-card-default-value')?.getAttribute('data-value');
-        permissions.length = 0;
-        permissions.push(...tablePermissions);
-        
-        let isValid = true;
-        $('[name ^= "permission-card-select-"]').each((_, el) => {
-            if (el) {
-                const name = el.getAttribute('name');
-                const isNotValid = selects[name].value === permissionsCardDefaultValue;
-                
-                el.parentNode.style.color = isNotValid? '#DE2525' : '';
-                
-                if (isNotValid) {
-                    isValid = false;
-                }
-            }
-        })
-        
-        if (tablePermissions.length && isValid) {
-            permissionsHtml.innerHTML = permissionsHtml.style.display = '';
-
-            tablePermissions.forEach(() => {
-                const newPermission = document.createElement('div');
-                newPermission.innerHTML = permissionsTemplate;
-                newPermission.classList.add('dangerous-goods-permission');
-                
-                permissionsHtml.append(newPermission);
-            });
-        }
-        else {
-            permissionsHtml.style.display = 'none';
-        }
-    }
+    
+    
+    
+    
+    
+    
+    // const form = document.querySelector('#permission-form');
+    // const tableWrapper = document.querySelector('.dangerous-goods__table');
+    // const tablePermissionsHtml = document.querySelector('#table-permission-body');
+    // const permissionsHtml = document.querySelector('.dangerous-goods__permissions');
+    // const permissionsTemplate = document.querySelector('#permission-template').innerHTML;
+    // const permissionsCardTemplate = document.querySelector('#permission-card-template').innerHTML;
+    // const tablePermissions = [];
+    // const permissions = [];
+    //
+    // function initTablePermissions() {
+    //     const idxCells = [...tablePermissionsHtml.querySelectorAll('[data-idx]')];
+    //    
+    //     if (!idxCells.length) {
+    //         tableWrapper.style.display = 'none';
+    //     }
+    //     else {
+    //         idxCells.forEach((cell, idx) => cell.innerHTML = idx + 1);
+    //        
+    //         tableWrapper.style.display = '';
+    //     }
+    // }
+    //
+    // function updatePosPermissionCardSelect() {
+    //     $('[data-permission-card-select]').each((_, el) => {
+    //         const target = $(el);
+    //         const { top, left } = target.offset();
+    //         const wrapper = target.find('.select__wrapper');
+    //
+    //         wrapper.css({
+    //             position: 'fixed',
+    //             top: `${top - $(window).scrollTop() + 30}px`,
+    //             left: `${left - 1}px`
+    //         })
+    //     });
+    // }
+    //
+    // document.querySelector('.table-wrapper')?.addEventListener('scroll', updatePosPermissionCardSelect);
+    // window.addEventListener('scroll', updatePosPermissionCardSelect);
+    // window.addEventListener('resize', updatePosPermissionCardSelect);
+    //
+    // function addTablePermission(permission) {
+    //     tablePermissions.push(permission);
+    //    
+    //     const { ooh, group } = permission;
+    //
+    //     const row = document.createElement('tr');
+    //    
+    //     row.innerHTML = permissionsCardTemplate
+    //         .replace('{{ ooh }}', ooh)
+    //         .replace('{{ group }}', selects['permission-form_group'].getItem(group).text)
+    //         .replace('{{ select-id }}', `permission-card-select-${Date.now()}`);
+    //    
+    //     tablePermissionsHtml.append(row);
+    //
+    //     initSelects(row);
+    //     initTablePermissions();
+    //     updatePosPermissionCardSelect();
+    // }
+    //
+    // form.addEventListener('submit', event => {
+    //     event.preventDefault();
+    //
+    //     const permission = formValidate(form, {
+    //         surname: {
+    //             type: 'input',
+    //             validate: 'abs|required'
+    //         },
+    //         name: {
+    //             type: 'input',
+    //             validate: 'abs|required'
+    //         },
+    //         patronymic: {
+    //             type: 'input',
+    //             validate: 'abs|required'
+    //         },
+    //         phone: {
+    //             type: 'input',
+    //             validate: 'length:18'
+    //         },
+    //         email: {
+    //             type: 'input',
+    //             validate: 'email'
+    //         },
+    //         ooh: {
+    //             type: 'input',
+    //             validate: 'required'
+    //         },
+    //         group: {
+    //             type: 'select',
+    //             validate: 'required'
+    //         }
+    //     }, false);
+    //
+    //     if (permission) {
+    //         addTablePermission(permission);
+    //     }
+    // });
+    //
+    // tablePermissionsHtml.addEventListener('click', ({ target }) => {
+    //     const row = target.closest('.dangerous-goods__cross-wrapper');
+    //    
+    //     if (row) {
+    //         const parent = row.parentNode;
+    //         parent.remove();
+    //         tablePermissions.splice(+parent.querySelector('[data-idx]').innerHTML - 1, 1);
+    //        
+    //         initTablePermissions();
+    //     }
+    // });
+    //
+    // function requestPermission() {
+    //     const permissionsCardDefaultValue = document.querySelector('.permission-card-default-value')?.getAttribute('data-value');
+    //     permissions.length = 0;
+    //     permissions.push(...tablePermissions);
+    //    
+    //     let isValid = true;
+    //     $('[name ^= "permission-card-select-"]').each((_, el) => {
+    //         if (el) {
+    //             const name = el.getAttribute('name');
+    //             const isNotValid = selects[name].value === permissionsCardDefaultValue;
+    //            
+    //             el.parentNode.style.color = isNotValid? '#DE2525' : '';
+    //            
+    //             if (isNotValid) {
+    //                 isValid = false;
+    //             }
+    //         }
+    //     })
+    //    
+    //     if (tablePermissions.length && isValid) {
+    //         permissionsHtml.innerHTML = permissionsHtml.style.display = '';
+    //
+    //         tablePermissions.forEach(() => {
+    //             const newPermission = document.createElement('div');
+    //             newPermission.innerHTML = permissionsTemplate;
+    //             newPermission.classList.add('dangerous-goods-permission');
+    //            
+    //             permissionsHtml.append(newPermission);
+    //         });
+    //     }
+    //     else {
+    //         permissionsHtml.style.display = 'none';
+    //     }
+    // }
 </script>
