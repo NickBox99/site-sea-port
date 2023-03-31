@@ -2,7 +2,9 @@
 
 window.initMasks = (target) => {
     target.querySelectorAll('[data-mask]').forEach(element => {
-        if (!masks.find(mask => mask === element)) {
+        const name = element.getAttribute('name') || '';
+        
+        if (!masks.find(mask => mask.name === name)) {
             const mask = element.getAttribute('data-mask');
             
             IMask(element, {
