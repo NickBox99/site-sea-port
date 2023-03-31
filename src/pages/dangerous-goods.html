@@ -462,6 +462,7 @@
         let isEnableShowErrors = true;
         form.addEventListener('submit', event => {
             event.preventDefault();
+            isEnableShowErrors = true;
 
             const permission = formValidate(form, {
                 surname: {
