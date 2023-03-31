@@ -439,21 +439,28 @@
             dirtyGroupSelect = true;
         });
 
-        // function addTablePermission(permission) {
-        //     // tablePermissions.push(permission);
-        //
-        //     const { ooh, group } = permission;
-        //
-        //     const row = document.createElement('tr');
-        //
-        //     row.innerHTML = permissionsCardTemplate
-        //         .replace('{{ ooh }}', ooh)
-        //         .replace('{{ group }}', selects['permission-form_group'].getItem(group).text)
-        //         .replace('{{ select-id }}', `permission-card-select-${Date.now()}`);
-        //
-        //     tablePermissionsHtml.append(row);
-        //
-        //     initSelects(row);
+        function renderTablePermission() {
+            let result = '';
+
+            tablePermissions.sort((a, b) => +a.permission.ooh - +b.permission.ooh);
+            
+            tablePermissions.forEach(({ permission }) => {
+                const { ooh, group } = permission;
+                const row = document.createElement('tr');
+
+                row.innerHTML = permissionsCardTemplate
+                    .replace('{{ ooh }}', ooh)
+                    .replace('{{ group }}', group? dangerousGoodsGroups[group] : window['dangerousGoodsGroupsNotSelected'])
+                    .replace('{{ select-id }}', `permission-card-select-${Date.now()}`);
+
+                result += row.outerHTML;
+            })
+
+            tablePermissionsHtml.innerHTML = result;
+            
+            initSelects(tableWrapper);
+            tableWrapper.style.display = '';
+            
         //     // initTablePermissions();
         //     // updatePosPermissionCardSelect();
         // }
