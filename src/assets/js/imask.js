@@ -11,7 +11,10 @@ window.initMasks = (target) => {
                 mask: mask === 'number'? Number : mask
             });
 
-            masks.push(element);
+            masks.push({
+                name,
+                iMask
+            });
         }
     });
 }
