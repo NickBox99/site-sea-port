@@ -458,7 +458,8 @@
                         .replace('{{ select-items }}', items.map(({ dangerousSubstanceId, dangerousSubstanceName }) => `<div class="select__item btn btn_secondary" data-value="${dangerousSubstanceId}">${dangerousSubstanceName}</div>`).join('')) 
                     : ''
 
-                row.innerHTML = permissionsCardTemplate
+                row.innerHTML = permissionsRowTemplate
+                    .replace('{{ pos }}', `${idx + 1}`)
                     .replace('{{ ooh }}', ooh)
                     .replace('{{ group }}', group? dangerousGoodsGroups[group] : window['dangerousGoodsGroupsNotSelected'])
                     .replace('{{ select-id }}', `permission-card-select-${Date.now()}`);
