@@ -510,6 +510,24 @@
                 // addTablePermission(permission)
             }
         });
+
+        function updatePosPermissionCardSelect() {
+            $('[data-permission-card-select]').each((_, el) => {
+                const target = $(el);
+                const { top, left } = target.offset();
+                const wrapper = target.find('.select__wrapper');
+
+                wrapper.css({
+                    position: 'fixed',
+                    top: `${top - $(window).scrollTop() + 30}px`,
+                    left: `${left - 1}px`
+                })
+            });
+        }
+
+        document.querySelector('.table-wrapper')?.addEventListener('scroll', updatePosPermissionCardSelect);
+        window.addEventListener('scroll', updatePosPermissionCardSelect);
+        window.addEventListener('resize', updatePosPermissionCardSelect);
     })
     
     
