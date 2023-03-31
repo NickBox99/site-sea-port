@@ -487,10 +487,8 @@
                 },
                 ooh: {
                     type: 'input',
-                    validate: () => {
-                        console.log(!oohSelect.value);
-                        return !oohSelect.value
-                    }
+                    events: ['changeOohSelect'],
+                    validate: () => !oohSelect.value && isEnableShowErrors
                 },
                 group: {
                     type: 'select',
