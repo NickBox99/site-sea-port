@@ -70,7 +70,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                 if (!htmlElement.hasAttribute('is-dirty')) {
                     htmlElement.setAttribute('is-dirty', '');
 
-                    events.forEach(ev =>
+                    (option.events ?? events).forEach(ev =>
                         htmlElement.addEventListener(ev, () => {
                             checkValid(getValueFunc()) ? htmlElement.classList.add('error') : htmlElement.classList.remove('error');
                         })
