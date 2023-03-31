@@ -7,7 +7,7 @@ window.initMasks = (target) => {
         if (!masks.find(mask => mask.name === name)) {
             const mask = element.getAttribute('data-mask');
             
-            IMask(element, {
+            const iMask = IMask(element, {
                 mask: mask === 'number'? Number : mask
             });
 
