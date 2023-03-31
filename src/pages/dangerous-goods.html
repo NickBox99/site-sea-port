@@ -447,7 +447,7 @@
         function renderTablePermission() {
             let result = '';
 
-            tablePermissions.sort((a, b) => +a.permission.ooh - +b.permission.ooh);
+            const hasOneElement = tablePermissions.length === 1;
             
             tablePermissions.forEach(({ permission }) => {
                 const { ooh, group } = permission;
