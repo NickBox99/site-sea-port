@@ -365,18 +365,7 @@
     <td>{{ ooh }}</td>
     <td>{{ group }}</td>
     <td>
-        <div class="select select_string" data-permission-card-select>
-            <div class="select__value">Выберите название опасного вещества*</div>
-            <input name="{{ select-id }}" type="hidden" class="select__input">
-            <div class="select__wrapper">
-                <div class="select__item btn btn_secondary permission-card-default-value" data-value="0">Выберите название опасного вещества*</div>
-                <div class="select__item btn btn_secondary" data-value="1">Дате публикации</div>
-                <div class="select__item btn btn_secondary" data-value="2">Дате окончания приема предложений</div>
-                <div class="select__item btn btn_secondary" data-value="3">По убыванию НМЦ</div>
-                <div class="select__item btn btn_secondary" data-value="4">По возрастанию НМЦ</div>
-            </div>
-            <div class="select__daw">@@include('../components/svg/daw.html')</div>
-        </div>
+        {{ select }}
     </td>
     <td class="dangerous-goods__cross-wrapper"><div class="dangerous-goods__cross">@@include('../components/svg/cross.html')</div></td>
 </script>
