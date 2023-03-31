@@ -392,7 +392,11 @@
         const oohSelect = selects['permission-form_ooh'];
         const groupSelect = selects['permission-form_group'];
         const dangerousGoodsOption = { value: '', text: dangerousGoodsGroups['default'] };
-        // const tablePermissionsHtml = document.querySelector('#table-permission-body');
+        const tablePermissionsHtml = document.querySelector('#table-permission-body');
+        const tableWrapper = document.querySelector('.dangerous-goods__table');
+        const permissionsRowTemplate = document.querySelector('#permission-row-template').innerHTML;
+        const permissionsSelectTemplate = document.querySelector('#permission-row-select-template').innerHTML;
+        const tablePermissions = [];
         let dirtyGroupSelect = false, dangerousGoodsSelected;
         
         function clearGroupSelect () {
