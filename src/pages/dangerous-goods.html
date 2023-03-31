@@ -449,7 +449,7 @@
 
             const hasOneElement = tablePermissions.length === 1;
             
-            tablePermissions.forEach(({ permission }) => {
+            tablePermissions.forEach(({ permission, dangerousGoodsSelected: { checkByName, items } }, idx) => {
                 const { ooh, group } = permission;
                 const row = document.createElement('tr');
 
