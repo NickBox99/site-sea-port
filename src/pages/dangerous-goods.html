@@ -501,8 +501,13 @@
             // }
             
             if (permission) {
-                // clearGroupSelect();
-                // oohInput.value = '';
+                clearGroupSelect();
+                oohInput.value = '';
+                oohSelect.value = '';
+                masks[1].iMask.updateValue();
+                isEnableShowErrors = false;
+                console.log(permission)
+                // addTablePermission(permission)
             }
         });
     })
