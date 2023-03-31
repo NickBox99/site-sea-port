@@ -390,6 +390,8 @@
         const oohSelectWrapper = document.querySelector('.dangerous-goods-ooh__items');
         const oohSelect = selects['permission-form_ooh'];
         const groupSelect = selects['permission-form_group'];
+        const dangerousGoodsOption = { value: '', text: dangerousGoodsGroups['default'] };
+        // const tablePermissionsHtml = document.querySelector('#table-permission-body');
         let dirtyGroupSelect = false, dangerousGoodsSelected;
         
         function clearGroupSelect () {
