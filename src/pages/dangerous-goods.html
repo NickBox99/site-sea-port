@@ -397,7 +397,11 @@
         function clearGroupSelect () {
             dirtyGroupSelect = false;
             groupSelect.setEnabled(false);
-            groupSelect.updateItems([{ value: '', text: dangerousGoodsGroups['default'] } ]);
+            groupSelect.updateItems([dangerousGoodsOption]);
+        }
+        
+        function pushChangeOohSelect() {
+            oohInput.dispatchEvent(new CustomEvent('changeOohSelect'));
         }
 
         oohInput.addEventListener('keyup', function () {
