@@ -452,6 +452,11 @@
             tablePermissions.forEach(({ permission, dangerousGoodsSelected: { checkByName, items } }, idx) => {
                 const { ooh, group } = permission;
                 const row = document.createElement('tr');
+                const selectHtml = (items.length && (!hasOneElement || checkByName)) ? 
+                    permissionsSelectTemplate
+                        .replace('{{ select-id }}', `permission-card-select-${idx}`)
+                        .replace('{{ select-items }}', items.map(({ dangerousSubstanceId, dangerousSubstanceName }) => `<div class="select__item btn btn_secondary" data-value="${dangerousSubstanceId}">${dangerousSubstanceName}</div>`).join('')) 
+                    : ''
 
                 row.innerHTML = permissionsCardTemplate
                     .replace('{{ ooh }}', ooh)
