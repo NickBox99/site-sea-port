@@ -439,6 +439,24 @@
             dirtyGroupSelect = true;
         });
 
+        // function addTablePermission(permission) {
+        //     // tablePermissions.push(permission);
+        //
+        //     const { ooh, group } = permission;
+        //
+        //     const row = document.createElement('tr');
+        //
+        //     row.innerHTML = permissionsCardTemplate
+        //         .replace('{{ ooh }}', ooh)
+        //         .replace('{{ group }}', selects['permission-form_group'].getItem(group).text)
+        //         .replace('{{ select-id }}', `permission-card-select-${Date.now()}`);
+        //
+        //     tablePermissionsHtml.append(row);
+        //
+        //     initSelects(row);
+        //     // initTablePermissions();
+        //     // updatePosPermissionCardSelect();
+        // }
 
         const form = document.querySelector('#permission-form');
         form.addEventListener('submit', event => {
