@@ -3,7 +3,9 @@ window['dangerousGoodsGroups'] = {
     "1": "I - вещества с высокой степенью опасности",
     "2": "II — просто опасный груз",
     "3": "III — незначительно опасный груз."
-} 
+}
+
+window['dangerousGoodsGroupsNotSelected'] = "Не выбрана";
 
 window['dangerousGoods'] = {
   "1001": {
