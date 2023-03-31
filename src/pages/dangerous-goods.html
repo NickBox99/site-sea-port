@@ -537,9 +537,21 @@
             });
         }
 
-        document.querySelector('.table-wrapper')?.addEventListener('scroll', updatePosPermissionCardSelect);
-        window.addEventListener('scroll', updatePosPermissionCardSelect);
-        window.addEventListener('resize', updatePosPermissionCardSelect);
+        document.querySelector('.table-wrapper')?.addEventListener('scroll', updatePosPermissionSelect);
+        window.addEventListener('scroll', updatePosPermissionSelect);
+        window.addEventListener('resize', updatePosPermissionSelect);
+
+        tablePermissionsHtml.addEventListener('click', ({ target }) => {
+            const row = target.closest('.dangerous-goods__cross-wrapper');
+
+            if (row) {
+                const parent = row.parentNode;
+                parent.remove();
+                // tablePermissions.splice(+parent.querySelector('[data-idx]').innerHTML - 1, 1);
+
+                // initTablePermissions();
+            }
+        });
     })
     
     
