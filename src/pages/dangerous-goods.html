@@ -462,7 +462,7 @@
                     .replace('{{ pos }}', `${idx + 1}`)
                     .replace('{{ ooh }}', ooh)
                     .replace('{{ group }}', group? dangerousGoodsGroups[group] : window['dangerousGoodsGroupsNotSelected'])
-                    .replace('{{ select-id }}', `permission-card-select-${Date.now()}`);
+                    .replace('{{ select }}', selectHtml);
 
                 result += row.outerHTML;
             })
