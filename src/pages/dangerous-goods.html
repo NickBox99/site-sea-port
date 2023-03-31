@@ -433,7 +433,7 @@
             const packingGroup = dangerousGoodsSelected.packingGroup || [];
             
             oohInput.value = this.value;
-            groupSelect.updateItems([{ value: '', text: dangerousGoodsGroups['default'] }, ...packingGroup.map(value => ({ value, text: dangerousGoodsGroups[value] }))]);
+            groupSelect.updateItems([dangerousGoodsOption, ...packingGroup.map(value => ({ value, text: dangerousGoodsGroups[value] }))]);
             groupSelect.setEnabled(packingGroup.length);
             pushChangeOohSelect();
             dirtyGroupSelect = true;
