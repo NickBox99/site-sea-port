@@ -340,28 +340,7 @@
           display: flex;
           flex-direction: column;
           row-gap: 18px;
-          &.show {
-            display: flex;
-
-            & + .header-menu__dropdown-button {
-              transform: rotate(180deg);
-            }
-          }
         }
-      }
-    }
-
-    &__dropdown-button {
-      position: absolute;
-      top: 4px;
-      right: 5px;
-      padding: 5px;
-      width: 19px;
-      align-items: center;
-      display: none;
-
-      @media screen and (max-width: 590px) {
-        display: flex;
       }
     }
     
