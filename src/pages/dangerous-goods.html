@@ -369,6 +369,17 @@
                 const selectEl = row.querySelector('.select');
                 if (selectEl) {
                     const select = new Select(selectEl);
+                    
+                    const checkSelect = () => {
+                        if (select.value === '') {
+                            select.select.classList.add('error');
+                        }
+                        else {
+                            select.select.classList.remove('error');
+                        }
+                    }
+
+                    checkSelect();
 
                     select.select.addEventListener('change', function () {
                         permission.dangerousSubstanceId = select.value;
