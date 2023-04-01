@@ -339,7 +339,11 @@
             
             tablePermissions.forEach(({ permission, dangerousGoodsSelected: { checkByName, items } }, idx) => {
                 const { code, packingGroup } = permission;
-                permission.dangerousSubstanceId = "";
+                const isNeedSelect = items.length && (!hasOneElement || checkByName);
+                
+                if (!isNeedSelect || !('dangerousSubstanceId' in permission)) {
+                    permission.dangerousSubstanceId = "";
+                }
                 
                 const row = document.createElement('tr');
                 const selectHtml = (items.length && (!hasOneElement || checkByName)) ? 
