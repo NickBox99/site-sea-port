@@ -1,6 +1,22 @@
 ﻿.container-trains {
   // .container-trains__route-map
-  &__route-map { }
+  &__route-map { 
+    .route-map__map {
+      @media (max-width: 1015.98px) {
+        margin: 0;
+        width: 100vw;
+      }
+    }
+    svg {
+      @media (max-width: 1024.98px) {
+        min-width: 1095px;
+      }
+      @media (max-width: 630.98px) {
+        min-width: 629px;
+        margin-left: -30px;
+      }
+    }
+  }
   // .container-trains__swiper
   &__swiper {
     margin: 101px 0 50px;

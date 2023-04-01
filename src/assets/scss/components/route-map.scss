@@ -27,46 +27,83 @@
       gap: 10px;
     }
   }
+
+  &_primary {
+    .route-map__map {
+      margin-left: 0 !important;
+      margin-right: 75px;
+      width: 605px;
+      height: 660px;
+      @media (max-width: 1015.98px) {
+        width: 100%;
+        margin-right: 0;
+      }
+      @media (max-width: 630.98px) {
+        margin: 0 -20px !important;
+        height: 510px;
+      }
+      @media (max-width: 425.98px) {
+        height: 410px;
+      }
+      @media (max-width: 355.98px) {
+        width: 100vw;
+      }
+
+      svg {
+        position: absolute;
+        right: 0;
+        height: 625px;
+        width: 1030px;
+        @media (max-width: 630.98px) {
+          width: 800px;
+          height: 430px;
+        }
+        @media (max-width: 425.98px) {
+          width: 610px;
+          height: 400px;
+        }
+      }
+    }
+
+    .route-map__list {}
+
+    .route-map__route {}
+  }
   
   &_secondary {
-    @media screen and (max-width: 1250px) {
-      position: relative;
-      flex-direction: column-reverse;
-    }
-
     .route-map__map {
-      margin-right: 64px;
-      margin-left: -388px;
-      @media screen and (max-width: 1399px) {
-        margin-left: -322px;
-      }
-      @media screen and (max-width: 1250px) {
+      margin-right: 30px;
+      margin-left: -25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      zoom: 1;
+      @media (max-width: 1015.98px) {
         margin-right: 0;
-        margin-left: -170px;
+        margin-left: 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
-      @media screen and (max-width: 1024px) {
-        margin-left: -180px;
-        margin-right: -60px;
+      @media (max-width: 590.98px) {
+        width: 1095px;
       }
-      @media screen and (max-width: 768px) {
-        margin-left: -310px;
+      @media (max-width: 590.98px) {
+        margin-left: -15px;
       }
-      @media screen and (max-width: 375px) {
-        margin-left: -360px;
+  
+      svg {
+        width: 660px;
+        height: 412px;
+        @media (max-width: 1015.98px) {
+          width: 100vw;
+          height: auto;
+        }
       }
     }
 
-    .route-map__list {
-      @media screen and (max-width: 1250px) {
-        display: grid;
-        grid-template-columns: repeat(2, max-content);
-        grid-column-gap: 131px;
-        margin: 0 0 40px;
-      }
-      @media screen and (max-width: 870px) {
-        grid-template-columns: 1fr 333px;
-        gap: unset;
-      }
+    .route-map__list { 
+
     }
 
     .route-map__route {
@@ -99,16 +136,8 @@
     @media screen and (max-width: 1090px) {
       margin-left: -538px;
     }
-    
-    @media screen and (max-width: 600px) {
-      zoom: 0.8;
-    }
-    
-    @media screen and (max-width: 490px) {
-      zoom: 0.6;
-    }
   }
- 
+
   &__list {
     margin-top: 61px;
     
@@ -123,7 +152,7 @@
       grid-template-columns: 1fr !important;
     }
   }
- 
+
   &__route {
     display: flex;
     font-weight: 400;
