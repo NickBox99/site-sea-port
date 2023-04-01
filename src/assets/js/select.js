@@ -127,7 +127,6 @@ window.initSelects = (target) => {
             const formId = el.closest('form')?.getAttribute('id');
             const name = el.querySelector('.select__input').getAttribute('name');
 
-
             const key = formId ? `${formId}_${name}` : name;
 
             if (!window.selects[key]) {
