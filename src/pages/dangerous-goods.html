@@ -16,39 +16,38 @@
     
     <div data-tabs="import-permit">
         <h2 class="dangerous-goods__caption">Разрешение на завоз опасного груза</h2>
-
-        <form id="permission-form">
-            <div class="filters-subtitle">Контактные данные</div>
-            <div class="filters-row">
-                <input name="surname" class="input input_secondary" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
-                <input name="name" class="input input_secondary" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                <input name="patronymic" class="input input_secondary" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
-                <input name="email" class="input input_secondary" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-            </div>
-            
-            <div class="filters-subtitle">Грузы в контейнере</div>
-            <div class="filters-row">
-                <div class="dangerous-goods-ooh">
-                    <input data-mask="number" name="ooh" type="text" class="input input_secondary" placeholder="Ввести номер ООН" role="presentation" autocomplete="off">
-                    <div class="select select_string dangerous-goods-ooh__select" data-select-disable-close>
-                        <input name="ooh" type="hidden" class="select__input">
-                        <div class="select__wrapper dangerous-goods-ooh__items">
-                            <div class="select__item btn btn_secondary" data-value="">Выберите группу упаковки</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="select select_secondary">
-                    <div class="select__value"></div>
-                    <input name="group" type="hidden" class="select__input">
-                    <div class="select__wrapper">
+      
+        <div class="filters-subtitle">Контактные данные</div>
+        <form id="dangerous_goods" class="filters-row">
+            <input type="hidden" name="form_id" value="dangerous_goods">
+            <input name="surname" class="input input_secondary" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
+            <input name="name" class="input input_secondary" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+            <input name="patronymic" class="input input_secondary" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+            <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
+            <input name="email" class="input input_secondary" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+        </form>
+        
+        <div class="filters-subtitle">Грузы в контейнере</div>
+        <form id="permission-form" class="filters-row">
+            <div class="dangerous-goods-ooh">
+                <input data-mask="number" name="code" type="text" class="input input_secondary" placeholder="Ввести номер ООН" role="presentation" autocomplete="off">
+                <div class="select select_string dangerous-goods-ooh__select" data-select-disable-close>
+                    <input name="code" type="hidden" class="select__input">
+                    <div class="select__wrapper dangerous-goods-ooh__items">
                         <div class="select__item btn btn_secondary" data-value="">Выберите группу упаковки</div>
                     </div>
-                    <div class="select__daw">@@include('../components/svg/daw.html')</div>
                 </div>
-                <button class="btn btn_primary btn_w-100 btn_large" type="submit">Добавить</button>
             </div>
+            
+            <div class="select select_secondary">
+                <div class="select__value"></div>
+                <input name="packingGroup" type="hidden" class="select__input">
+                <div class="select__wrapper">
+                    <div class="select__item btn btn_secondary" data-value="">Выберите группу упаковки</div>
+                </div>
+                <div class="select__daw">@@include('../components/svg/daw.html')</div>
+            </div>
+            <button class="btn btn_primary btn_w-100 btn_large" type="submit">Добавить</button>
         </form>
         
         <div class="dangerous-goods__table" style="display: none">
