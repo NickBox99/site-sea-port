@@ -24,7 +24,11 @@
   }
   
   &__breadcrumb {
-    color: var(--color-blue-19);
+    cursor: pointer;
+    
+    &:not(.active) {
+      color: var(--color-blue-19);
+    }
     
     &s {
       font-size: 18px;
