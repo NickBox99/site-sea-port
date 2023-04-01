@@ -336,7 +336,9 @@
             const hasOneElement = tablePermissions.length === 1;
             
             tablePermissions.forEach(({ permission, dangerousGoodsSelected: { checkByName, items } }, idx) => {
-                const { ooh, group } = permission;
+                const { code, packingGroup } = permission;
+                permission.dangerousSubstanceId = "";
+                
                 const row = document.createElement('tr');
                 const selectHtml = (items.length && (!hasOneElement || checkByName)) ? 
                     permissionsSelectTemplate
