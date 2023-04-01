@@ -775,6 +775,8 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+        initInlineTabs(document.querySelector('.educational-center__breadcrumbs'));
+        
         const applicationSentPopup = new Popup('#request-speeches-sent');
 
         document.querySelectorAll('.vacancies-form').forEach(form => {
