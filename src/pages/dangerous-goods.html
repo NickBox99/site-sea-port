@@ -451,15 +451,18 @@
                 }
             }, true);
 
-            if (row) {
-                const parent = row.parentNode;
-                parent.remove();
-                // tablePermissions.splice(+parent.querySelector('[data-idx]').innerHTML - 1, 1);
-
-                // initTablePermissions();
-            }
-        });
-    })
+            permissionsHtml.style.display = 'none';
+            fetch(`${window.config.host}/ajax/dangerous_goods.php`, {
+                method: 'POST',
+                body: JSON.stringify({ ...result, unCodes: tablePermissions.map(el => el.permission)})
+            })
+                .then(response => response.json())
+                .then((result) => {
+                    if (result.items && result.items.length) {
+                        renderPermissions(result.items);
+                    }
+                });
+            })
 
     
     
