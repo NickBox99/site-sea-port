@@ -367,8 +367,8 @@
                         const placemarkTemplate=ymaps.templateLayoutFactory.createClass(${'`'}${"<div id='placemark-${idx}-start' class='green-port-map__wrapper'></div>"}${'`'});
                         const placemark=new ymaps.Placemark(coords.point,{},{iconLayout:placemarkTemplate,iconShape:{type:'Rectangle',coordinates:[[0,0],[44,44]]}});
                         map.geoObjects.add(placemark);
-                        const cardTemplate=ymaps.templateLayoutFactory.createClass(${'`'}${"<div id='placemark-${idx}-end' class='green-port-map__card hide'><img src='{{ properties.photoSrc }}' alt='' class='green-port-map__img'/>{{ properties.text }}</div>"}${'`'});
-                        const card=new ymaps.Placemark(coords.card,{photoSrc,text},{iconLayout:cardTemplate});
+                        const cardTemplate=ymaps.templateLayoutFactory.createClass(${'`'}${"<div id='placemark-${idx}-end' class='green-port-map__card hide'><button class='btn circle green-port-map__close'><svg viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='10' y='8.75' width='1.76777' height='12.3744' transform='rotate(135 10 8.75)' fill='currentColor'/><rect x='1.25' y='10' width='1.76777' height='12.3744' transform='rotate(-135 1.25 10)' fill='currentColor'/></svg></button><img src='{{ properties.photoSrc }}' alt='' class='green-port-map__img'/>{{ properties.text }}</div>"}${'`'});
+                        const card=new ymaps.Placemark(coords.card,{photoSrc,text},{iconLayout:cardTemplate,iconShape:{type:'Rectangle',coordinates:[[300,0],[350,45]]}});
                         map.geoObjects.add(card);
                         let htmlPlacemark=null; const getPlacemark=()=>{if(!htmlPlacemark){htmlPlacemark=placemark.getOverlaySync().getLayoutSync().getElement().children[0];placemarks.push(htmlPlacemark)} return htmlPlacemark};
                         let htmlCard=null;const getCard=()=>{if(!htmlCard){htmlCard=card.getOverlaySync().getLayoutSync().getElement().children[0];cards.push(htmlCard)} return htmlCard};
