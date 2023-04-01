@@ -118,6 +118,8 @@ class Select {
     }
 }
 
+window.Select = Select;
+
 window.selects = [];
 
 window.initSelects = (target) => {
