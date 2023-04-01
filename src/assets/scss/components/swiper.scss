@@ -180,7 +180,7 @@
 
   &__btn {
     display: flex;
-    max-width: 16px;
+    flex: 0 0 16px;
     cursor: pointer;
 
     &_prev {
