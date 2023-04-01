@@ -350,6 +350,24 @@
     left: 50%;
     transform: translateX(-50%);
     
+    &__close {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      padding: 9px;
+      width: 30px;
+      height: 30px;
+      color: #022D26;
+      background: rgba(227, 243, 133, 0.08);
+      border: 1px solid #3E986D;
+      
+      
+      &.hover {
+        color: #fff;
+        background: #3E986D;
+      }
+    }
+    
     &, &__map {
       height: 738px;
       width: 1920px;
