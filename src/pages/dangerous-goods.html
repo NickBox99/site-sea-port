@@ -255,7 +255,7 @@
 <script id="permission-row-select-template" type="text/template">
     <div class="select select_string error" data-permission-card-select>
         <div class="select__value">Выберите название опасного вещества*</div>
-        <input name="{{ select-id }}" type="hidden" class="select__input">
+        <input name="{{ select-id }}" type="hidden" class="select__input" value="{{ select-value }}">
         <div class="select__wrapper">
             <div class="select__item btn btn_secondary permission-card-default-value" data-value="0">Выберите название опасного вещества*</div>
             {{ select-items }}
