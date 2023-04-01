@@ -29,10 +29,6 @@ window.toggleVisibleLang = function () {
     headerLang.classList.add('animate');
 }
 
-window.dropdownMenuToggle = function () {
-    linkWrapper.classList.toggle('show');
-}
-
 document.body.addEventListener('click', ({target}) => {
     if (headerLang.classList.contains('show') && !target.closest('.header-lang')) {
         headerLang.classList.remove('show');
