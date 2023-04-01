@@ -348,8 +348,8 @@
 
                 row.innerHTML = permissionsRowTemplate
                     .replace('{{ pos }}', `${idx + 1}`)
-                    .replace('{{ ooh }}', ooh)
-                    .replace('{{ group }}', group? dangerousGoodsGroups[group] : window['dangerousGoodsGroupsNotSelected'])
+                    .replace('{{ code }}', code)
+                    .replace('{{ packingGroup }}', packingGroup? dangerousGoodsGroups[packingGroup] : window['dangerousGoodsGroupsNotSelected'])
                     .replace('{{ select }}', selectHtml);
 
                 result += row.outerHTML;
