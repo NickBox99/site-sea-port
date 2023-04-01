@@ -21,6 +21,14 @@
     &-btn {
       margin: 10px 0 0 auto;
     }
+    
+    .select__wrapper {
+      width: 345px;
+      
+      @media screen and (max-width: 640px) {
+        width: 305px;
+      }
+    }
   }
   
   &__permissions {
