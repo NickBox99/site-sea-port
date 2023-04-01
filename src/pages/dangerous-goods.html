@@ -334,6 +334,11 @@
             permissionsHtml.style.display = 'none';
             tablePermissionsHtml.innerHTML = '';
             tableSelects = [];
+            
+            if (!tablePermissions.length) {
+                tableWrapper.style.display = 'none';
+                return;
+            }
 
             const hasOneElement = tablePermissions.length === 1;
             
