@@ -384,6 +384,8 @@
                     select.select.addEventListener('change', function () {
                         permission.dangerousSubstanceId = select.value;
                         
+                        checkSelect();
+                        permissionsHtml.style.display = 'none';
                         updatePosPermissionSelect();
                     })
                 }
