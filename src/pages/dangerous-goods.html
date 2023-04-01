@@ -346,7 +346,7 @@
                 }
                 
                 const row = document.createElement('tr');
-                const selectHtml = (items.length && (!hasOneElement || checkByName)) ? 
+                const selectHtml = isNeedSelect ? 
                     permissionsSelectTemplate
                         .replace('{{ select-id }}', `permission-card-select-${idx}`)
                         .replace('{{ select-items }}', items.map(({ dangerousSubstanceId, dangerousSubstanceName }) => `<div class="select__item btn btn_secondary" data-value="${dangerousSubstanceId}">${dangerousSubstanceName}</div>`).join('')) 
