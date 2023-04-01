@@ -4,6 +4,7 @@
     if (!map) return;
 
     const routes = map.querySelectorAll('.svg-animate__path');
+    const wrapper = map.parentNode.parentNode;
 
     routes.forEach((path) => {
         const pathMask = path.cloneNode();
@@ -19,12 +20,15 @@
         pathMask.setAttribute('class', 'svg-animate__mask');
         map.insertBefore(pathMask, path.nextSibling);
     })
-
-    svgPanZoom(`#${mapId}`, {
-        zoomEnabled: true,
+    
+    const panZoom = svgPanZoom(`#${mapId}`, {
+        zoomEnabled: false,
         fit: true,
         center: true
     })
+
+    wrapper.querySelector('.route-map__zoom_in')?.addEventListener('click', () => panZoom.zoomIn());
+    wrapper.querySelector('.route-map__zoom_out')?.addEventListener('click', () => panZoom.zoomOut());
 }
 
 window.initMapAnimateButtons = (mapSelector, wrapperButtonsSelector) => {

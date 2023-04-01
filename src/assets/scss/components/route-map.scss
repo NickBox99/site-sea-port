@@ -1,10 +1,33 @@
 ﻿.route-map {
+  position: relative;
   display: flex;
+  
   @media screen and (max-width: 1015px) {
-    position: relative;
     flex-direction: column-reverse;
   }
-  // .route-map_secondary
+  
+  &__zoom {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    
+    &_out:after {
+      content: '-';
+      height: 24px;
+    }
+    
+    &_in:after {
+      content: '+';
+    }
+    
+    &s {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      gap: 10px;
+    }
+  }
+  
   &_secondary {
     @media screen and (max-width: 1250px) {
       position: relative;
@@ -61,45 +84,46 @@
       }
     }
   }
-  // .route-map__map
+  
   &__map {
     position: relative;
     margin-right: 64px;
     margin-left: -490px;
     color: var(--color-blue-18);
     overflow: hidden;
+    
     @media screen and (max-width: 1170px) {
       margin-right: auto;
     }
+    
     @media screen and (max-width: 1090px) {
       margin-left: -538px;
     }
+    
     @media screen and (max-width: 600px) {
       zoom: 0.8;
     }
+    
     @media screen and (max-width: 490px) {
       zoom: 0.6;
     }
-
-    svg {
-      // width: 1195px;
-      // height: 683px;
-    }
   }
-  // .route-map__list
+ 
   &__list {
     margin-top: 61px;
+    
     @media screen and (max-width: 1015px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 30px;
       margin: 0 0 40px;
     }
+    
     @media screen and (max-width: 600px) {
       grid-template-columns: 1fr !important;
     }
   }
-  // .route-map__route
+ 
   &__route {
     display: flex;
     font-weight: 400;
@@ -109,6 +133,7 @@
     letter-spacing: -0.04em;
     white-space: nowrap;
     cursor: pointer;
+    
     @media screen and (max-width: 1015px) {
       align-items: unset;
       justify-content: unset;
@@ -120,6 +145,7 @@
 
     &:not(:last-child) {
       margin-bottom: 16px;
+      
       @media screen and (max-width: 1015px) {
         margin-bottom: 11px;
       }
@@ -130,7 +156,7 @@
       color: var(--color-white);
     }
   }
-  // .route-map__path
+  
   &__path {
     position: absolute;
 
@@ -141,7 +167,7 @@
 }
 
 .svg-animate {
-  // .svg-animate__city
+
   &__city {
     opacity: 0;
     transition: opacity 600ms ease-in-out;
@@ -150,7 +176,7 @@
       opacity: 1;
     }
   }
-  // .svg-animate__path
+
   &__path {
     stroke: #87a4bc;
     opacity: 0;
@@ -161,7 +187,7 @@
       animation: animate-line-path 2s ease-in-out forwards;
     }
   }
-  // .svg-animate__mask
+ 
   &__mask {
     opacity: 0;
     transition: opacity 200ms ease-in-out;
