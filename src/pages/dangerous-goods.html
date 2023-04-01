@@ -330,7 +330,8 @@
         });
 
         function renderTablePermission() {
-            let result = '';
+            permissionsHtml.style.display = 'none';
+            tablePermissionsHtml.innerHTML = '';
 
             const hasOneElement = tablePermissions.length === 1;
             
