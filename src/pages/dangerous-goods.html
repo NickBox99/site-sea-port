@@ -352,12 +352,31 @@
                     .replace('{{ packingGroup }}', packingGroup? dangerousGoodsGroups[packingGroup] : window['dangerousGoodsGroupsNotSelected'])
                     .replace('{{ select }}', selectHtml);
 
-                result += row.outerHTML;
-            })
+                tablePermissionsHtml.append(row);
+                
+                row.querySelector('.dangerous-goods__cross-wrapper').addEventListener('click', () => {
+                    tablePermissions.splice(idx, 1);
+                    renderTablePermission();
+                })
+                
+                const selectEl = row.querySelector('.select');
+                if (selectEl) {
+                    const select = new Select(selectEl);
 
-            tablePermissionsHtml.innerHTML = result;
+                    select.select.addEventListener('change', function () {
+                        permission.dangerousSubstanceId = select.value;
+                        if (select.value === '0') {
+                            this.classList.add('error');
+                        }
+                        else {
+                            this.classList.remove('error');
+                        }
+                        
+                        updatePosPermissionSelect();
+                    })
+                }
+            })
             
-            initSelects(tableWrapper);
             tableWrapper.style.display = '';
             
             updatePosPermissionSelect();
