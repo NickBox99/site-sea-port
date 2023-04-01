@@ -426,9 +426,30 @@
         document.querySelector('.table-wrapper')?.addEventListener('scroll', updatePosPermissionSelect);
         window.addEventListener('scroll', updatePosPermissionSelect);
         window.addEventListener('resize', updatePosPermissionSelect);
-
-        tablePermissionsHtml.addEventListener('click', ({ target }) => {
-            const row = target.closest('.dangerous-goods__cross-wrapper');
+        
+        document.querySelector('#request-permission').addEventListener('click', () => {
+            const result = formValidate(dangerousGoodsForm, {
+                surname: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                name: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                patronymic: {
+                    type: 'input',
+                    validate: 'abs|required'
+                },
+                phone: {
+                    type: 'input',
+                    validate: 'length:18'
+                },
+                email: {
+                    type: 'input',
+                    validate: 'email'
+                }
+            }, true);
 
             if (row) {
                 const parent = row.parentNode;
