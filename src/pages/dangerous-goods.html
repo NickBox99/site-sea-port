@@ -383,12 +383,6 @@
 
                     select.select.addEventListener('change', function () {
                         permission.dangerousSubstanceId = select.value;
-                        if (select.value === '0') {
-                            this.classList.add('error');
-                        }
-                        else {
-                            this.classList.remove('error');
-                        }
                         
                         updatePosPermissionSelect();
                     })
