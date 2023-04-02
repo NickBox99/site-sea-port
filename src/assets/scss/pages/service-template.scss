@@ -76,11 +76,7 @@
       }
     }
   }
-
-  .paperwork {
-    display: none;
-  }
-
+  
   @media screen and (max-width: 1427px) {
     .paperwork {
       width: calc(100vw - 441px);
