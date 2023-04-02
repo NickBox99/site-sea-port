@@ -1008,39 +1008,51 @@
                 },
             }
         });
-
-        let saveClientX = 0;
-
-        function initHistoryMouseEvent(wrapper) {
-            wrapper.on('mousedown', ({ clientX }) => {
-                saveClientX = clientX;
-            });
-            
-            
-            
-
-            wrapper.on('mouseup', ({ clientX }) => {
-                if (saveClientX > clientX) {
-                    historyImageSwiper.slideNext();
-                    yearsSwiper.slideNext();
-                    yearSwiper.slideNext();
-                    textContentSwiper.slideNext();
-                    linesSwiper.slideNext();
-                }
-                else if(saveClientX < clientX) {
-                    historyImageSwiper.slidePrev();
-                    yearsSwiper.slidePrev();
-                    yearSwiper.slidePrev();
-                    textContentSwiper.slidePrev();
-                    linesSwiper.slidePrev();
-                }
-            });
-            
-            
-            
+        
+        function moveHistorySlider(to) {
+            if (to === 'left') {
+                historyImageSwiper.slidePrev();
+                yearsSwiper.slidePrev();
+                yearSwiper.slidePrev();
+                textContentSwiper.slidePrev();
+                linesSwiper.slidePrev();
+            }
+            else if (to === 'right') {
+                historyImageSwiper.slideNext();
+                yearsSwiper.slideNext();
+                yearSwiper.slideNext();
+                textContentSwiper.slideNext();
+                linesSwiper.slideNext();
+            }
         }
 
-        initHistoryMouseEvent($(historyWrapper));
-        initHistoryMouseEvent($(historyYears));
+        function swipedetect(el){
+            const  wrapper = el;
+            let swipedir, startX, startTime, saveClientX = 0;
+
+            wrapper.addEventListener('touchstart', function(e){
+                const { pageX } = e.changedTouches[0];
+                swipedir = 'none';
+                startX = pageX;
+                startTime = new Date().getTime();
+            }, false)
+
+            wrapper.addEventListener('touchend', function(e){
+                const { pageX } = e.changedTouches[0];
+                const distX = pageX - startX;
+                const elapsedTime = new Date().getTime() - startTime;
+                if (elapsedTime <= 350 && Math.abs(distX) >= 100) {
+                    swipedir = (distX < 0)? 'right' : 'left';
+                }
+
+                moveHistorySlider(swipedir);
+            }, false);
+
+            wrapper.addEventListener('mousedown', ({ clientX }) => saveClientX = clientX);
+            wrapper.addEventListener('mouseup', ({ clientX }) =>  moveHistorySlider(saveClientX > clientX? 'right': saveClientX < clientX? 'left' : 'none'));
+        }
+
+        swipedetect(historyWrapper);
+        swipedetect(historyYears);
     })
 </script>
