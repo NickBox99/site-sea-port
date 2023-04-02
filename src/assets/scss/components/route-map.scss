@@ -120,6 +120,20 @@
         }
       }
     }
+
+    .svg-animate {
+      &__city {
+        &.active {
+          opacity: 1;
+        }
+      }
+    
+      &__path {
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
   }
   
   &__map {
