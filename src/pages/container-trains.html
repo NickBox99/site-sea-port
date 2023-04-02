@@ -203,6 +203,16 @@
 
 <script defer>
     document.addEventListener("DOMContentLoaded", () => {
+        new Swiper("#swiper-routes", {
+            spaceBetween: 30,
+            slidesPerView: "auto",
+            loop: true,
+            navigation: {
+                nextEl: "#swiper-routes .swiper-line__btn_next",
+                prevEl: "#swiper-routes .swiper-line__btn_prev"
+            }
+        });
+        
         initMapAnimate('map-container-trains', '#1A61A2');
         initMapAnimateButtons('#map-container-trains', '.route-map__list');
 
