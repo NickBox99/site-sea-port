@@ -1,4 +1,4 @@
-﻿window.initMapAnimate = (mapId, pathMaskColor = '#025493') => {
+﻿window.initMapAnimate = (mapId, pathMaskColor = '#025493', isCreateMask = true) => {
     const map = document.getElementById(mapId);
 
     if (!map) return;
@@ -10,15 +10,17 @@
         const pathMask = path.cloneNode();
         const pathLength = path.getTotalLength();
 
-        path.style.cssText = `
-          stroke-dasharray: ${pathLength};
-          stroke-dashoffset: ${pathLength};
-        `;
+        if (isCreateMask) {
+          path.style.cssText = `
+            stroke-dasharray: ${pathLength};
+            stroke-dashoffset: ${pathLength};
+          `;
+        }
 
         pathMask.style.cssText = `stroke: ${pathMaskColor};`;
 
         pathMask.setAttribute('class', 'svg-animate__mask');
-        map.insertBefore(pathMask, path.nextSibling);
+        isCreateMask && map.insertBefore(pathMask, path.nextSibling);
     })
     
     const panZoom = svgPanZoom(`#${mapId}`, {

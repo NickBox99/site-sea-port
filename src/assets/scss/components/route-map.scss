@@ -129,6 +129,8 @@
       }
     
       &__path {
+        stroke: unset;
+
         &.active {
           opacity: 1;
         }
