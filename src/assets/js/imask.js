@@ -8,7 +8,7 @@ window.initMasks = (target) => {
             const mask = element.getAttribute('data-mask');
             
             const iMask = IMask(element, {
-                mask: mask === 'number'? Number : mask
+                mask: mask === 'number'? /\d+/ : mask
             });
 
             masks.push({
