@@ -916,7 +916,6 @@
             centeredSlides: true,
             speed: defaultSpeedSlide,
             allowTouchMove: false,
-            initialSlide: 3,
             navigation: {
                 nextEl: ".about-history-years__btn.next",
                 prevEl: ".about-history-years__btn.prev"
@@ -970,45 +969,26 @@
             navigation: {},
             slideActiveClass: 'active',
             slidesPerView: 'auto',
-            spaceBetween: 20,
-            breakpoints: {
-                0: {
-                    initialSlide: 0,
-                },
-                571: {
-                    initialSlide: 1,
-                    spaceBetween: 20,
-                },
-                895: {
-                    initialSlide: 3,
-                    spaceBetween: 20,
-                }
-            },
+            spaceBetween: 20
         })
 
         const yearsSwiper = new Swiper(".about-history-years__swiper", {
             ...defaultOptions,
             slideActiveClass: 'active',
-            slidesPerView: 'auto',
             spaceBetween: 20,
             breakpoints: {
                 0: {
-                    initialSlide: 0
+                    slidesPerView: 3
                 },
-                571: {
-                    initialSlide: 1
+                930: {
+                    slidesPerView: 5
                 },
-                895: {
-                    initialSlide: 3
-                },
-                1125: {
-                    initialSlide: 3
+                1150: {
+                    slidesPerView: 7 
                 }
             }
         });
 
-        yearsSwiper.controller.control = linesSwiper;
-        
         new Swiper(".about-companies", {
             loop: true,
 
@@ -1030,29 +1010,37 @@
         });
 
         let saveClientX = 0;
-        
+
         function initHistoryMouseEvent(wrapper) {
-            wrapper.addEventListener('mousedown', ({ clientX }) => {
+            wrapper.on('mousedown', ({ clientX }) => {
                 saveClientX = clientX;
             });
+            
+            
+            
 
-            wrapper.addEventListener('mouseup', ({ clientX }) => {
+            wrapper.on('mouseup', ({ clientX }) => {
                 if (saveClientX > clientX) {
                     historyImageSwiper.slideNext();
                     yearsSwiper.slideNext();
                     yearSwiper.slideNext();
                     textContentSwiper.slideNext();
+                    linesSwiper.slideNext();
                 }
                 else if(saveClientX < clientX) {
                     historyImageSwiper.slidePrev();
                     yearsSwiper.slidePrev();
                     yearSwiper.slidePrev();
                     textContentSwiper.slidePrev();
+                    linesSwiper.slidePrev();
                 }
             });
+            
+            
+            
         }
 
-        initHistoryMouseEvent(historyWrapper);
-        initHistoryMouseEvent(historyYears);
+        initHistoryMouseEvent($(historyWrapper));
+        initHistoryMouseEvent($(historyYears));
     })
 </script>
