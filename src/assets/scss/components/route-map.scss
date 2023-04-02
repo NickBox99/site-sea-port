@@ -231,3 +231,27 @@
     stroke-dashoffset: 0;
   }
 }
+
+.swiper-route-list {
+  display: none;
+  margin-bottom: 30px;
+
+  .swiper-line__item {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1015px) {
+    display: flex;
+  }
+
+  @media screen and (max-width: 470px) {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 1015px) {
+  .route-map__list {
+    display: none;
+  }
+}
