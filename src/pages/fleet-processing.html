@@ -660,6 +660,16 @@
 <script>
   function mapInit() {
     setTimeout(() => {
+      new Swiper("#swiper-routes", {
+        spaceBetween: 30,
+        slidesPerView: "auto",
+        loop: true,
+        navigation: {
+          nextEl: "#swiper-routes .swiper-line__btn_next",
+          prevEl: "#swiper-routes .swiper-line__btn_prev"
+        }
+      });
+      
       initMapAnimate('map-fleet-processing');
       initMapAnimateButtons('#map-fleet-processing', '.route-map__list');
     })
