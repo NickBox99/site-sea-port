@@ -29,15 +29,6 @@
     background: var(--color-blue-4);
   }
 
-  //&_third {
-  //  color: var(--color-blue-4);
-  //  background: var(--color-white) !important;
-  //
-  //  &::placeholder {
-  //    color: var(--color-blue-4-opac50);
-  //  }
-  //}
-
   &.error {
     background: var(--color-red-1-opac20);
     border: 1px solid var(--color-red-1);
