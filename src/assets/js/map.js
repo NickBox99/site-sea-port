@@ -21,14 +21,14 @@
         map.insertBefore(pathMask, path.nextSibling);
     })
     
-    // const panZoom = svgPanZoom(`#${mapId}`, {
-    //     zoomEnabled: false,
-    //     fit: true,
-    //     center: true
-    // })
-    //
-    // wrapper.querySelector('.route-map__zoom_in')?.addEventListener('click', () => panZoom.zoomIn());
-    // wrapper.querySelector('.route-map__zoom_out')?.addEventListener('click', () => panZoom.zoomOut());
+    const panZoom = svgPanZoom(`#${mapId}`, {
+        zoomEnabled: false,
+        fit: true,
+        center: true
+    })
+
+    wrapper.querySelector('.route-map__zoom_in')?.addEventListener('click', () => panZoom.zoomIn());
+    wrapper.querySelector('.route-map__zoom_out')?.addEventListener('click', () => panZoom.zoomOut());
 }
 
 window.initMapAnimateButtons = (mapSelector, wrapperButtonsSelector) => {
