@@ -759,6 +759,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         const map = document.querySelector('.about__map-bg');
         const historyWrapper = document.querySelector('.about-history-wrapper');
+        const historyYears = document.querySelector('.about-history-years');
         
         gsap.to(map, {
             scrollTrigger: {
@@ -909,12 +910,17 @@
             }
         });
         
-        const speed = 1000;
+        const defaultSpeedSlide = 400;
         const defaultOptions = {
             loop: true,
             centeredSlides: true,
-            speed,
+            speed: defaultSpeedSlide,
+            allowTouchMove: false,
             initialSlide: 3,
+            navigation: {
+                nextEl: ".about-history-years__btn.next",
+                prevEl: ".about-history-years__btn.prev"
+            }
         }
 
         const historyImageSwiper = new Swiper(".about-history-image", {
@@ -930,15 +936,12 @@
                 next: {
                     translate: ['100%', 0, 0],
                 },
-            },
-            // slideActiveClass: 'active',
-            // parallax: true,
+            }
         });
         
         const yearSwiper = new Swiper('.about-history-year', {
             ...defaultOptions,
             slideActiveClass: 'active',
-            allowTouchMove: false,
             effect: 'fade',
             fadeEffect: {
                 crossFade: false,
@@ -948,7 +951,6 @@
         const textContentSwiper = new Swiper('.about-history-text', {
             ...defaultOptions,
             slideActiveClass: 'active',
-            allowTouchMove: false,
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
@@ -967,7 +969,6 @@
             ...defaultOptions,
             navigation: {},
             slideActiveClass: 'active',
-            allowTouchMove: false,
             slidesPerView: 'auto',
             spaceBetween: 20,
             breakpoints: {
@@ -1003,27 +1004,6 @@
                 1125: {
                     initialSlide: 3
                 }
-            },
-
-            navigation: {
-                nextEl: ".about-history-years__btn.next",
-                prevEl: ".about-history-years__btn.prev",
-            },
-            
-            on: {
-                slideChange(swiper) {
-                    const { activeIndex, slides } = swiper;
-                    const newIndex = +slides[activeIndex].getAttribute('data-swiper-index');
-
-                    setTimeout(() => {
-                        historyImageSwiper.slideToLoop(newIndex, speed);
-                        textContentSwiper.slideToLoop(newIndex, speed);
-                        yearSwiper.slideToLoop(newIndex, speed);
-
-                        historyImageSwiper.slidePrev(0);
-                        historyImageSwiper.slideNext(0);
-                    })
-                }
             }
         });
 
@@ -1049,18 +1029,30 @@
             }
         });
 
-        let saveClientX = 0; 
-        historyWrapper.addEventListener('mousedown', ({ clientX }) => {
-            saveClientX = clientX;
-        })
+        let saveClientX = 0;
+        
+        function initHistoryMouseEvent(wrapper) {
+            wrapper.addEventListener('mousedown', ({ clientX }) => {
+                saveClientX = clientX;
+            });
 
-        historyWrapper.addEventListener('mouseup', ({ clientX }) => {
-            if (saveClientX > clientX) {
-                yearsSwiper.slideNext();
-            }
-            else if(saveClientX < clientX) {
-                yearsSwiper.slidePrev();
-            }
-        })
+            wrapper.addEventListener('mouseup', ({ clientX }) => {
+                if (saveClientX > clientX) {
+                    historyImageSwiper.slideNext();
+                    yearsSwiper.slideNext();
+                    yearSwiper.slideNext();
+                    textContentSwiper.slideNext();
+                }
+                else if(saveClientX < clientX) {
+                    historyImageSwiper.slidePrev();
+                    yearsSwiper.slidePrev();
+                    yearSwiper.slidePrev();
+                    textContentSwiper.slidePrev();
+                }
+            });
+        }
+
+        initHistoryMouseEvent(historyWrapper);
+        initHistoryMouseEvent(historyYears);
     })
 </script>
