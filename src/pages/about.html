@@ -758,6 +758,8 @@
 <script defer>
     document.addEventListener("DOMContentLoaded", () => {
         const map = document.querySelector('.about__map-bg');
+        const historyWrapper = document.querySelector('.about-history-wrapper');
+        
         gsap.to(map, {
             scrollTrigger: {
                 trigger: map,
@@ -1009,54 +1011,23 @@
             },
             
             on: {
-                slideChange(swiper, event) {
-                    // console.log(swiper)
-                    // console.log(event)
-                    
-                    const { activeIndex, slides, swipeDirection, previousIndex } = swiper;
-                    console.log(swipeDirection)
+                slideChange(swiper) {
+                    const { activeIndex, slides } = swiper;
                     const newIndex = +slides[activeIndex].getAttribute('data-swiper-index');
-                    const prevIndex = +slides[previousIndex].getAttribute('data-swiper-index');
 
+                    setTimeout(() => {
+                        historyImageSwiper.slideToLoop(newIndex, speed);
+                        textContentSwiper.slideToLoop(newIndex, speed);
+                        yearSwiper.slideToLoop(newIndex, speed);
 
-                    console.log(swiper)
-                    
-                    if (swipeDirection) {
-                        const first = $(`.about-history-image__slide[data-swiper-index="${newIndex}"]`);
-                        const second = $(`.about-history-image__slide[data-swiper-index="${prevIndex}"]`);
-
-                        if (swipeDirection === 'prev') {
-                            //first.after(second);
-                            
-                            historyImageSwiper.prependSlide(first[0].outerHTML);
-                        }
-                        else {
-                           // first.before(second);
-                        }
-
-                    }
-
-
-                    historyImageSwiper.slideToLoop(newIndex, speed);
-                    textContentSwiper.slideToLoop(newIndex, speed);
-                    yearSwiper.slideToLoop(newIndex, speed);
+                        historyImageSwiper.slidePrev(0);
+                        historyImageSwiper.slideNext(0);
+                    })
                 }
             }
         });
 
         yearsSwiper.controller.control = linesSwiper;
-
-      window.historyImageSwiper = historyImageSwiper;
-        // function synchronizeSwiper(swiperFirst, swiperSecond) {
-        //     swiperFirst.on('slideChange', (swiper) => {
-        //         console.log(swiper);
-        //         swiperSecond.slideTo(1)
-        //     });
-        // }
-        
-        // synchronizeSwiper(yearsSwiper, yearSwiper);
-        // synchronizeSwiper(yearsSwiper, textContentSwiper);
-        // synchronizeSwiper(yearsSwiper, historyImageSwiper);
         
         new Swiper(".about-companies", {
             loop: true,
@@ -1077,5 +1048,19 @@
                 },
             }
         });
+
+        let saveClientX = 0; 
+        historyWrapper.addEventListener('mousedown', ({ clientX }) => {
+            saveClientX = clientX;
+        })
+
+        historyWrapper.addEventListener('mouseup', ({ clientX }) => {
+            if (saveClientX > clientX) {
+                yearsSwiper.slideNext();
+            }
+            else if(saveClientX < clientX) {
+                yearsSwiper.slidePrev();
+            }
+        })
     })
 </script>
