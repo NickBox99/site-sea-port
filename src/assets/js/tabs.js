@@ -19,7 +19,6 @@ window.setVisibleTab = (selector, tab) => {
         setVisibleTabContent(activeTap[0], 'none');
     }
 
-    tab.classList.add('active');
     setVisibleTabContent(tab, '');
 }
 
