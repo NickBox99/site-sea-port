@@ -9,8 +9,19 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  transition: var(--transition-default);
 
+  &:hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-opac50);
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+  
   &:not(&:hover) {
     background-image: unset !important;
   }
