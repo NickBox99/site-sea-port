@@ -4,7 +4,8 @@ class Select {
     constructor(element) {
         this.select = element;
         this.input = element.querySelector('.select__input');
-        this.wrapper = element.querySelector('.select__wrapper');
+        const wrapper = element.querySelector('.select__items');
+        this.wrapper = wrapper ?? element.querySelector('.select__wrapper');
         this.name = this.input.getAttribute('name');
         this.valueWrapper = this.select.querySelector('.select__value');
 
