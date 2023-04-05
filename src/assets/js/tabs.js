@@ -1,6 +1,15 @@
 function setVisibleTabContent(tab, display) {
     document.querySelectorAll(`[data-tabs="${tab.dataset.tabsOpen}"]`)
         .forEach((node) => (node.style.display = display));
+    
+    const tabs = document.querySelectorAll(`[data-tabs-open="${tab.dataset.tabsOpen}"]`);
+    
+    if (display) {
+        tabs.forEach(tab => tab.classList.remove('active'));
+    }
+    else {
+        tabs.forEach(tab => tab.classList.add('active'));
+    }
 }
 
 window.setVisibleTab = (selector, tab) => {
