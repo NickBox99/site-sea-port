@@ -151,6 +151,12 @@
       flex-wrap: wrap;
     }
   }
+  
+  @media screen and (max-width: 470px) {
+    img {
+      height: 181px;
+    }
+  }
 
   @media screen and (max-width: 320px) {
     &__date {
