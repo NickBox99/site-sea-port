@@ -1,7 +1,12 @@
 ﻿window.fixLoopSwiper = function () {
     document.querySelectorAll('.swiper-wrapper').forEach(wrapper => {
-        const { offsetWidth, scrollWidth, children } = wrapper;
-        const needWidth = offsetWidth * 2.1;
+        if (wrapper.hasAttribute('data-disable-fix-loop') || !wrapper.offsetWidth) {
+            return;
+        }
+
+        const { offsetWidth } = wrapper.closest('.container') || wrapper.closest('.wrapper');
+        const { scrollWidth, children } = wrapper;
+        const needWidth = offsetWidth * 2;
 
         let slidersWidth = scrollWidth;
         while (slidersWidth < needWidth) {
