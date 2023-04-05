@@ -503,7 +503,10 @@
             permissions.forEach(permission => {
                 const newPermission = document.createElement('div');
                 let result = permissionsTemplate;
-                replacePermissionKeys.forEach(key => result = result.replace(`{{ ${key} }}`, permission[key]));
+                replacePermissionKeys.forEach(key => {
+                    const value = permission[key];
+                    result = result.replace(`{{ ${key} }}`, value).replace(`{{ ${key}-class }}`, value ? '' : 'd-none');
+                });
                 
                 const { color, text, additional_text, disableCard } = permission.status;
                 let footer = `<div class="dangerous-goods-permission__status" style="color: ${color}">${text}</div>`;
