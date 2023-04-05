@@ -485,7 +485,7 @@
                 
                 fetch(`${window.config.host}/ajax/dangerous_goods.php`, {
                     method: 'POST',
-                    body: JSON.stringify({ ...result, unCodes: tablePermissions.map(el => el.permission)})
+                    body: result
                 })
                     .then(response => response.json())
                     .then((result) => {
