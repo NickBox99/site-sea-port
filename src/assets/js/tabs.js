@@ -13,7 +13,7 @@ function setVisibleTabContent(tab, display) {
 }
 
 window.setVisibleTab = (selector, tab) => {
-    const activeTap = selector.querySelector('.active');
+    const activeTap = selector.querySelectorAll('.active');
 
     if (activeTap) {
         activeTap.classList.remove('active');
