@@ -261,8 +261,10 @@
         <div class="select__value">Выберите название опасного вещества*</div>
         <input name="{{ select-id }}" type="hidden" class="select__input" value="{{ select-value }}">
         <div class="select__wrapper">
-            <div class="select__item btn btn_secondary permission-card-default-value" data-value="">Выберите название опасного вещества*</div>
-            {{ select-items }}
+            <div class="select__items">
+                <div class="select__item btn btn_secondary permission-card-default-value" data-value="">Выберите название опасного вещества*</div>
+                {{ select-items }}
+            </div>
         </div>
         <div class="select__daw">@@include('../components/svg/daw.html')</div>
     </div>
