@@ -15,9 +15,8 @@ function setVisibleTabContent(tab, display) {
 window.setVisibleTab = (selector, tab) => {
     const activeTap = selector.querySelectorAll('.active');
 
-    if (activeTap) {
-        activeTap.classList.remove('active');
-        setVisibleTabContent(activeTap, 'none');
+    if (activeTap.length) {
+        setVisibleTabContent(activeTap[0], 'none');
     }
 
     tab.classList.add('active');
