@@ -481,6 +481,8 @@
             permissionsHtml.style.display = 'none';
             
             if (result && !tableSelects.find(select => select.value === '')) {
+                result.append('unCodes', JSON.stringify(tablePermissions.map(el => el.permission)));
+                
                 fetch(`${window.config.host}/ajax/dangerous_goods.php`, {
                     method: 'POST',
                     body: JSON.stringify({ ...result, unCodes: tablePermissions.map(el => el.permission)})
