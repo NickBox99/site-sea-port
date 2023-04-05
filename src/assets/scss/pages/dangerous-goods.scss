@@ -18,6 +18,12 @@
   &__table {
     margin-top: 50px;
     
+    th, td {
+      &:nth-child(4) {
+        max-width: 277px;
+      }
+    }
+    
     &-btn {
       margin: 10px 0 0 auto;
     }
