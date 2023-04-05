@@ -121,8 +121,14 @@
   }
 
   @media screen and (max-width: 640px) {
-    &__content ul {
-      margin-top: 13px;
+    &__content {
+      ul {
+        margin-top: 13px;
+      }
+      
+      img {
+        height: 387px;
+      }
     }
   }
 
