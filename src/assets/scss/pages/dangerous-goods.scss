@@ -6,8 +6,9 @@
   }
   
   &__cross {
-    width: 11px;
+    display: flex;
     margin-left: auto;
+    width: 11px;
     
     &-wrapper {
       width: 0;
