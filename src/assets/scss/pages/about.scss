@@ -292,7 +292,10 @@
     }
 
     &__role {
-      margin-top: auto;
+      position: absolute;
+      top: calc(100% - 74px);
+      left: 50%;
+      transform: translateX(-50%);
       padding-top: 28px;
       font-size: 18px;
       color: var(--color-blue-3);
