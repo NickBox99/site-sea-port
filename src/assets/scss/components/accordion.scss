@@ -54,6 +54,10 @@
     color: var(--color-blue-4);
     line-height: 35.2px;
     user-select: none;
+    
+    + .accordion-vacancy__value {
+      margin-top: 5px;
+    }
   }
   
   &__btn {
