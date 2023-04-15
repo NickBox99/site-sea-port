@@ -128,6 +128,12 @@
     }
   }
 
+  @media screen and (max-width: 900px) {
+    &-card__img {
+      height: 345px;
+    }
+  }
+
   @media screen and (max-width: 640px) {
     &-card {
       &__content {
