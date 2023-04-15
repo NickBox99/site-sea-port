@@ -40,6 +40,10 @@ document.body.addEventListener('click', ({target}) => {
         headerLang.classList.remove('show');
     }
 
+    if (headerProfile.classList.contains('show') && !target.closest('.header-profile')) {
+        headerProfile.classList.remove('show');
+    }
+    
     if (headerSearch.classList.contains('show') && !target.closest('.header-search-btn') && !target.closest('.header-search')) {
         headerSearch.classList.remove('show');
     }
