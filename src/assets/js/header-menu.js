@@ -30,6 +30,11 @@ window.toggleVisibleLang = function () {
     headerLang.classList.add('animate');
 }
 
+window.toggleVisibleProfile = function () {
+    headerProfile.classList.toggle('show');
+    headerProfile.classList.add('animate');
+}
+
 document.body.addEventListener('click', ({target}) => {
     if (headerLang.classList.contains('show') && !target.closest('.header-lang')) {
         headerLang.classList.remove('show');
