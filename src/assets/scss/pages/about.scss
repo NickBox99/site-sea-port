@@ -963,8 +963,12 @@
     }
 
     &-supervisor {
-      &__title {
-        margin-bottom: 14px;
+      &__content {
+        padding-bottom: 14px;
+      }
+      
+      &__role {
+        width: calc(100% - 40px);
       }
     }
 
