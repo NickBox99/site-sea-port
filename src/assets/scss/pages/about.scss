@@ -284,12 +284,11 @@
   }
 
   &-supervisor {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
-    &__title {
-      margin-bottom: 28px;
+    position: relative;
+    padding-bottom: 74px;
+    
+    &__img {
+      object-position: top;
     }
 
     &__role {
