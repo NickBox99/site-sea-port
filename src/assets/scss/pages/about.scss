@@ -297,6 +297,7 @@
       left: 50%;
       transform: translateX(-50%);
       padding-top: 28px;
+      width: calc(100% - 60px);
       font-size: 18px;
       color: var(--color-blue-3);
       line-height: 1;
