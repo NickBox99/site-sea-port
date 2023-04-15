@@ -23,12 +23,20 @@
         <div class="header-dropdown header-profile">
             <button onclick="toggleVisibleProfile()" class="btn header-dropdown__btn header__icon-btn">@@include('../components/svg/profile.html')</button>
 
-        <div class="header-lang">
-            <button onclick="toggleVisibleLang()" class="btn header-lang__btn header__icon-btn">En</button>
+            <div id="header-profile-wrapper" class="header-dropdown__wrapper header-dropdown__wrapper_top-middle">
+                <a href="#" class="header-dropdown__link animate-text-top">ИСТУ</a>
+                <a href="#" class="header-dropdown__link header-dropdown__link_animate animate-text-top">1С (Порт)</a>
+                <a href="#" class="header-dropdown__link header-dropdown__link_animate animate-text-top">1С (Автовизиты)</a>
+                <a href="#" class="header-dropdown__link header-dropdown__link_animate animate-text-top">Порт в кармане</a>
+            </div>
+        </div>
+
+        <div class="header-dropdown header-lang">
+            <button onclick="toggleVisibleLang()" class="btn header-dropdown__btn header__icon-btn">En</button>
             
-            <div class="header-lang__wrapper">
-                <a href="#" class="header-lang__link animate-text-top">Ru</a>
-                <a href="#" class="header-lang__link header-lang__link_cn animate-text-top">Cn</a>
+            <div id="header-lang-wrapper" class="header-dropdown__wrapper">
+                <a href="#" class="header-dropdown__link animate-text-top">Ru</a>
+                <a href="#" class="header-dropdown__link header-dropdown__link_animate animate-text-top">Cn</a>
             </div>
         </div>
     </div>
