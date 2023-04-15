@@ -303,6 +303,10 @@
       line-height: 1;
       border-top: 1px solid var(--color-blue-3);
     }
+    
+    &__content {
+      padding-bottom: 23px;
+    }
   }
 
   &__about-supervisor {
