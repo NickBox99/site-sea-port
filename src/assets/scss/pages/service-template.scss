@@ -241,7 +241,13 @@
 
 .service-template-header {
   position: relative;
-  margin-bottom: 171px;
+  margin: -115px 0 112px;
+  padding-top: 64px;
+  height: 650px;
+  
+  &-top {
+    margin-bottom: 145px;
+  }
 
   &:before,
   &__preview {
