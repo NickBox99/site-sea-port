@@ -8,6 +8,10 @@
     overflow: hidden;
   }
   
+  &__footer {
+    align-items: center;
+  }
+  
   @media screen and (max-width: 1024px) {
     &__title {
       margin-bottom: 20px;
