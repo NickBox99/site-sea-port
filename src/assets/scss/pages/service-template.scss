@@ -318,7 +318,9 @@
   }
 
   @media screen and (max-width: 1225px) {
-    padding: 78px 0;
+    margin-top: unset;
+    padding: 75px 0;
+    height: auto;
 
     &__preview,
     &:before {
