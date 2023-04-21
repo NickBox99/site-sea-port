@@ -500,9 +500,9 @@
     object-fit: cover;
   }
 
-  @media screen and (max-width: 1225px) {
-    &__preview {
-      max-width: 614px;
+  @media screen and (max-width: 1024px) {
+    &__content {
+      width: 296px;
     }
   }
 
