@@ -159,6 +159,10 @@
       flex-direction: column;
       align-items: unset;
       gap: 40px;
+
+      &__title {
+        margin-bottom: 0 !important;
+      }
     }
   }
   
