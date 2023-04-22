@@ -33,7 +33,7 @@
     wrapper.querySelector('.route-map__zoom_out')?.addEventListener('click', () => panZoom.zoomOut());
 }
 
-window.initMapAnimateButtons = (mapSelector, wrapperButtonsSelector) => {
+window.initMapAnimateButtons = (mapSelector, wrapperSelectors) => {
     const map = document.querySelector(mapSelector);
     const wrapperButtons = document.querySelector(wrapperButtonsSelector);
     
