@@ -254,7 +254,7 @@
             el.classList.add(swiperClass);
             swiperHeaderButtons.forEach(el => el.classList.add(swiperClass));
 
-            swiperHeaderCount.innerHTML = `<div class="swiper-header__count"><span class="swiper-header__current">01</span>/${numConvert(el.querySelectorAll('.swiper-slide').length)}</div>`;
+            swiperHeaderCount.innerHTML = `<span class="swiper-header__current">01</span>/${numConvert(el.querySelectorAll('.swiper-slide').length)}`;
             const swiperHeaderCountCurrent = swiperHeaderCount.querySelector('.swiper-header__current');
             
             new Swiper(`.swiper.${swiperClass}`, {
