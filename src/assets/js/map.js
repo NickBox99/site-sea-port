@@ -54,13 +54,15 @@ window.initMapAnimateButtons = (mapSelector, wrapperSelectors) => {
         if (!routeId) {
             return;
         }
-        
-        const setActiveRoute = (wrapper, targets) => {
-            wrapper.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
-            targets.forEach(el => el.classList.add('active'));
-        }
 
-        setActiveRoute(wrapperButtons, [target]);
-        setActiveRoute(map, map.querySelectorAll(`[data-id="${routeId}"]`));
-    })
+        containers.forEach(wrapper => wrapper.querySelectorAll('.active').forEach(el => el.classList.remove('active')));
+        
+        [
+            ...map.querySelectorAll(`[data-id="${routeId}"]`), 
+            ...wrapperButtons.reduce((arr, wrapper) => arr.concat(...wrapper.querySelectorAll(`[data-route-id="${routeId}"]`)), [])
+        ].forEach(el => {
+            console.log(el);
+            el.classList.add('active');
+        });
+    }))
 }
