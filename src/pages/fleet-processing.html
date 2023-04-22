@@ -671,8 +671,7 @@
       });
       
       initMapAnimate('map-fleet-processing');
-      initMapAnimateButtons('#map-fleet-processing', '.route-map__list');
-      initMapAnimateButtons('#map-fleet-processing', '#swiper-routes .swiper-wrapper');
+      initMapAnimateButtons('#map-fleet-processing', ['.route-map__list', '#swiper-routes .swiper-wrapper']);
     })
 
     this.removeEventListener('click', mapInit);
