@@ -35,7 +35,6 @@
 
 window.initMapAnimateButtons = (mapSelector, wrapperSelectors) => {
     const map = document.querySelector(mapSelector);
-    const wrapperButtons = document.querySelector(wrapperButtonsSelector);
     
     if (!map) {
         return;
