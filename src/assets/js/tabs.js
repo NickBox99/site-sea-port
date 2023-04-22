@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         tabContainer.addEventListener('click', ({target}) => {
-            if (!target.classList.contains('active') && target.classList.contains('tab')) {
+            if (target.classList.contains('tab')) {
                 setVisibleTab(tabContainer, target);
                 setPositionFloatr();
             }
