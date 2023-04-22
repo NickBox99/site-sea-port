@@ -161,6 +161,12 @@
       margin-bottom: 20px;
     }
   }
+
+  @media screen and (max-width: 400px) {
+    .swiper-header {
+      gap: 20px;
+    }
+  }
 }
 
 .service-template-sidebar {
