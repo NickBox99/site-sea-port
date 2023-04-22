@@ -725,6 +725,11 @@
     background: var(--color-blue-4);
     border-radius: 8px;
   }
+  
+  &__size {
+    padding-top: 6px;
+    white-space: nowrap;
+  }
 
   &__img {
     height: 308px;
