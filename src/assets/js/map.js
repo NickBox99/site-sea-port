@@ -39,8 +39,16 @@ window.initMapAnimateButtons = (mapSelector, wrapperSelectors) => {
     if (!map) {
         return;
     }
+
+    const wrapperButtons = wrapperSelectors.map(selector => document.querySelector(selector)).map(el => el);
+
+    if (!wrapperButtons.length) {
+        return;
+    }
     
-    wrapperButtons.addEventListener('click', ({ target }) => {
+    const containers = [map, ...wrapperButtons];
+
+    wrapperButtons.forEach(wrapper => wrapper.addEventListener('click', ({ target }) => {
         const routeId = target.getAttribute('data-route-id');
         
         if (!routeId || target.classList.contains('active')) {
