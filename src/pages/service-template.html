@@ -2229,8 +2229,7 @@
         initInlineTabs(document.querySelector('.service-template-routes-map__list'));
 
         initMapAnimate('map-container-trains', '', false);
-        initMapAnimateButtons('#map-container-trains', '.service-template-path-map__navigation');
-        initMapAnimateButtons('#map-container-trains', '#swiper-routes-1');
+        initMapAnimateButtons('#map-container-trains', ['.service-template-path-map__navigation', '#swiper-routes-1']);
         
         initMapAnimate('map-fleet-processing');
         initMapAnimateButtons('#map-fleet-processing', '.service-template-routes-map__list');
