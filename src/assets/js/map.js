@@ -50,8 +50,8 @@ window.initMapAnimateButtons = (mapSelector, wrapperSelectors) => {
 
     wrapperButtons.forEach(wrapper => wrapper.addEventListener('click', ({ target }) => {
         const routeId = target.getAttribute('data-route-id');
-        
-        if (!routeId || target.classList.contains('active')) {
+
+        if (!routeId) {
             return;
         }
         
