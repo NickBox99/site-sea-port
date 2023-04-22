@@ -2232,8 +2232,9 @@
         initMapAnimateButtons('#map-container-trains', ['.service-template-path-map__navigation', '#swiper-routes-1']);
         
         initMapAnimate('map-fleet-processing');
-        initMapAnimateButtons('#map-fleet-processing', '.service-template-routes-map__list');
-        initMapAnimateButtons('#map-fleet-processing', '#swiper-routes-3');
+        initMapAnimateButtons('#map-fleet-processing', ['.service-template-routes-map__list', '#swiper-routes-2', '#swiper-routes-3'])
+        
+        
 
         const initSwiper = (selectorClass, options = {}, isSwiperLine = false) => {
             const sliders = document.querySelectorAll(`.${selectorClass}`);
