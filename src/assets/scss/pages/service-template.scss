@@ -209,6 +209,7 @@
     &__link {
       font-size: 16px;
       line-height: 19.2px;
+      white-space: nowrap;
 
       &:not(:last-child) {
         margin: 0 15px 0 0;
