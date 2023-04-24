@@ -268,9 +268,9 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-  }
-  
-  &__items {
-    width: 435px !important;
+
+    &, &-wrapper {
+      width: 100% !important;
+    }
   }
 }
