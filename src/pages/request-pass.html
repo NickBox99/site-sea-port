@@ -720,6 +720,10 @@
                     car_color: {
                         type: 'input',
                         validate: 'required'
+                    },
+                    car_cop: {
+                        type: 'file',
+                        validate: 'required'
                     }
                 };
             const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass, passesValidatorOptions, false));
