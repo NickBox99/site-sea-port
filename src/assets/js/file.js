@@ -23,7 +23,7 @@ function initInputFile() {
         el.classList.add('initialized');
 
         el.addEventListener('change', function () {
-            if (this.files.length) {
+            if (this.files.length && this.files[0].size <= 5242880) {
                 fileName.innerText = this.files[0].name;
                 cross.classList.remove('hide');
             }
