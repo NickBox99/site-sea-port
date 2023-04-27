@@ -473,6 +473,7 @@
         form.innerHTML = document.querySelector(`#${templateId}`).innerHTML;
         const formId = `pass-${uniqueId++}`;
         form.setAttribute('id', formId);
+        form.setAttribute('data-group-id', groupId);
 
         if (btn) {
             const pass = getPassBlock(btn);
