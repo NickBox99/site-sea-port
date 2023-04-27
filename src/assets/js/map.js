@@ -60,9 +60,6 @@ window.initMapAnimateButtons = (mapSelector, wrapperSelectors) => {
         [
             ...map.querySelectorAll(`[data-id="${routeId}"]`), 
             ...wrapperButtons.reduce((arr, wrapper) => arr.concat(...wrapper.querySelectorAll(`[data-route-id="${routeId}"]`)), [])
-        ].forEach(el => {
-            console.log(el);
-            el.classList.add('active');
-        });
+        ].forEach(el => el.classList.add('active'));
     }))
 }
