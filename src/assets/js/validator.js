@@ -27,7 +27,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
         const option = options[key];
         const validateSettings = option.validate;
 
-        function checkDefaultField(getValueFunc, htmlElement, events) {
+        function checkDefaultField(getValueFunc, htmlElement, events, classTarget) {
             const checkValid = (value) => option.validate && (option.validate.split && option.validate.split('|').find((type) => {
 
                 const isIncludes = (condition) => !type.indexOf(condition) ? type : condition;
