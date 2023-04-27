@@ -15,21 +15,23 @@
     }
 }
 
-document.querySelectorAll('input[type="file"]').forEach(el => {
-    const fileName = el.nextElementSibling;
-    const cross = fileName.nextElementSibling;
-    const defaultText = fileName.innerText;
-    
-    el.addEventListener('change', function () {
-        if (this.files.length) {
-            fileName.innerText = this.files[0].name;
-            cross.classList.remove('hide');
-        }
-        else {
-            fileName.innerText = defaultText;
-            cross.classList.add('hide');
-        }
-    });
+function initInputFile() {
+    document.querySelectorAll('input[type="file"]:not(.initialized)').forEach(el => {
+        const fileName = el.nextElementSibling;
+        const cross = fileName.nextElementSibling;
+        const defaultText = fileName.innerText;
+        el.classList.add('initialized');
+
+        el.addEventListener('change', function () {
+            if (this.files.length) {
+                fileName.innerText = this.files[0].name;
+                cross.classList.remove('hide');
+            }
+            else {
+                fileName.innerText = defaultText;
+                cross.classList.add('hide');
+            }
+        });
 
     cross.addEventListener('click', (event) => {
         event.preventDefault();
