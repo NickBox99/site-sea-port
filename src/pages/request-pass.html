@@ -568,8 +568,8 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        addPass('application-passes', applicationPasses);
-        addPass('application-auto-passes', applicationAutoPasses);
+        synchronizationForms(applicationPass, applicationAutoPass);
+        addPass(false);
         
         const applicationSentPopup = new Popup('#request-speeches-sent');
         const questionInfo = new Popup('#question-info');
