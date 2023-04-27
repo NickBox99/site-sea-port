@@ -349,6 +349,22 @@
         <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
     </div>
 
+    <div class="request-pass-block__question-title">
+        <div class="filters-subtitle request-pass-block__question-name">Приложить фото паспорта</div>
+        <div class="question-icon request-pass-block__question">@@include('../components/svg/question.html')</div>
+    </div>
+
+    <div class="filters-row request-pass-block__filters-row">
+        <div class="input-group">
+            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+            <label class="input input_file input-file">
+                <input class="input-file__input" type="file" name="document"/>
+                <span class="input-file__name">Прикрепить файл</span>
+                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+            </label>
+        </div>
+    </div>
+    
     <div class="filters-subtitle">Контактные данные</div>
     <div class="filters-row request-pass-block__filters-row">
         <input name="contact_registration_address" class="input filters-col-3" placeholder="Адрес регистрации*" type="text" role="presentation" autocomplete="off">
