@@ -23,9 +23,10 @@
   }
   
   &__zone {
+    padding-left: 29px;
     
-    &:not(:last-child) {
-      padding-left: 29px;
+    &:nth-child(3) {
+      padding-left: 0;
     }
     
     &s {
