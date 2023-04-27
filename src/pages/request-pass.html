@@ -399,6 +399,22 @@
         <input name="car_color" class="input" placeholder="Цвет*" type="text" role="presentation" autocomplete="off">
     </div>
 
+    <div class="request-pass-block__question-title">
+        <div class="filters-subtitle request-pass-block__question-name">Приложить СОР ТС</div>
+        <div class="question-icon request-pass-block__question">@@include('../components/svg/question.html')</div>
+    </div>
+
+    <div class="filters-row request-pass-block__filters-row">
+        <div class="input-group">
+            <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+            <label class="input input_file input-file">
+                <input class="input-file__input" type="file" name="document"/>
+                <span class="input-file__name">Прикрепить файл</span>
+                <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+            </label>
+        </div>
+    </div>
+
     <div class="request-pass-block__footer">
         <button class="btn btn_primary request-pass-block__btn" onclick="addPass('application-auto-passes', applicationAutoPasses, this)" type="button">Добавить пропуск</button>
         <button class="btn btn_third request-pass-block__btn request-pass-block__btn_remove" style="display: none;" onclick="removePass.call(this)" type="button">Удалить пропуск</button>
