@@ -129,6 +129,7 @@ window.initSelects = (target) => {
             const name = el.querySelector('.select__input').getAttribute('name');
 
             const key = formId ? `${formId}_${name}` : name;
+            el.setAttribute('data-select-key', key);
 
             if (!window.selects[key]) {
                 window.selects[key] = new Select(el);
