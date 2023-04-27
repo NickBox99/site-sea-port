@@ -60,7 +60,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                     }
                 }
             }) || typeof option.validate === 'function' && option.validate(value));
-
+            const target = classTarget || htmlElement;
             const value = getValueFunc();
 
             if (checkValid(value)) {
