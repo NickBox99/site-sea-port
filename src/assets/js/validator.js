@@ -72,7 +72,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
 
                     (option.events ?? events).forEach(ev =>
                         htmlElement.addEventListener(ev, () => {
-                            checkValid(getValueFunc()) ? htmlElement.classList.add('error') : htmlElement.classList.remove('error');
+                            checkValid(getValueFunc()) ? target.classList.add('error') : target.classList.remove('error');
                         })
                     );
                 }
