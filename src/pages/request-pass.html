@@ -450,7 +450,7 @@
     const applicationPasses = document.querySelector('.passes[data-tabs="application-pass"]');
     const applicationAutoPass = document.querySelector('#applicationAutoPass');
     const applicationAutoPasses = document.querySelector('.passes[data-tabs="application-auto-pass"]');
-    let uniqueId = 0;
+    let uniqueId = 0, uniqueIdGroup = 0;
     
     function getPassBlock(el) {
         return el.closest('.request-pass-block');
