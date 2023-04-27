@@ -64,7 +64,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
             const value = getValueFunc();
 
             if (checkValid(value)) {
-                htmlElement.classList.add('error');
+                target.classList.add('error');
                 isValid = false;
 
                 if (!htmlElement.hasAttribute('is-dirty')) {
