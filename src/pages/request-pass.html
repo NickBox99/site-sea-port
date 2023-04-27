@@ -55,7 +55,24 @@
             <input name="company_phone_head" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
             <input name="company_inn" data-mask="000000000000" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
-
+        
+        <div class="filters-row">
+            <div>
+                <div class="request-pass__treaty">
+                    <div class="filters-subtitle request-pass__visit-title">Приложить фото первой и последней страницы договора, если пропуск требуется для выполнения подрядных работ</div>
+                    <div class="question-icon request-pass__treaty-icon">@@include('../components/svg/question.html')</div>
+                </div>
+                <div class="input-group">
+                    <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                    <label class="input input_secondary input_file input-file">
+                        <input class="input-file__input" type="file" name="document"/>
+                        <span class="input-file__name">Прикрепить файл</span>
+                        <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
         <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
         <div class="filters-row request-pass__visit">
             <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст" role="presentation" autocomplete="off"></textarea>
