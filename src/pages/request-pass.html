@@ -497,7 +497,76 @@
         document.querySelectorAll(`[data-group-id="${pass.getAttribute('data-group-id')}"]`).forEach(el => el.remove());
         initRemoveButtons(parent);
     }
-    
+
+    let isFileChanged = false;
+    function synchronizationForms(firstForm, secondForm) {
+        function initChangedFormValue(firstForm, secondForm) {
+            firstForm.querySelectorAll('input').forEach(input => input.addEventListener('change', ({ target }) => {
+                const name = target.getAttribute('name');
+                const newValue = target.value;
+                const inputs = secondForm.querySelectorAll(`[name="${name}"]`);
+                const classList = target.classList;
+
+                if (target.hasAttribute('data-mask')) {
+                    inputs.forEach(el => {
+                        const name = el.getAttribute('data-mask-key');
+                        const mask = masks.find(mask => mask.name === name)?.iMask;
+
+                        if (mask) {
+                            mask.typedValue = newValue;
+                        }
+                    });
+                }
+                else if (classList.contains('input-file__input')) {
+                    const files = target.files;
+
+                    if (!isFileChanged) {
+                        isFileChanged = true;
+                        inputs.forEach(el => {
+                            el.files = files;
+                            el.dispatchEvent(new Event("change"));
+                        });
+                    }
+                    else {
+                        isFileChanged = false;
+                    }
+                }
+                else if (classList.contains('checkbox__input')) {
+                    const checked = target.checked;
+                    inputs.forEach(el => el.checked = checked);
+                }
+                else if(classList.contains('datetime')) {
+                    const value = dates[target.getAttribute('data-dates-key')]?.selectedDates;
+                    inputs.forEach(el => {
+                        const name = el.getAttribute('data-dates-key');
+                        dates[name].setDate(value);
+                    });
+                }
+                else if(classList.contains('select__input')) {
+                    const value = selects[target.parentNode.getAttribute('data-select-key')]?.value;
+                    
+                    inputs.forEach(el => {
+                        const name = el.parentNode.getAttribute('data-select-key');
+                        window.tess = selects[name];
+                        selects[name]?.set(value);
+                    });
+                }
+                else {
+                    inputs.forEach(el => el.value = newValue);
+                }
+            }));
+            
+            firstForm.querySelectorAll('.textarea').forEach(input => input.addEventListener('change', ({ target }) => {
+                const name = target.getAttribute('name');
+                const newValue = target.value;
+                secondForm.querySelectorAll(`[name="${name}"]`).forEach(el => el.value = newValue);
+            }));
+        }
+
+        initChangedFormValue(firstForm, secondForm);
+        initChangedFormValue(secondForm, firstForm);
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         addPass('application-passes', applicationPasses);
         addPass('application-auto-passes', applicationAutoPasses);
