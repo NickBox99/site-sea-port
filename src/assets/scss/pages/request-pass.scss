@@ -282,7 +282,7 @@
     }
     
     &__zone {
-      &, &:not(:last-child) {
+      &, &:nth-child(3) {
         padding-left: 20px;
       }
       
