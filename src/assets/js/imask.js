@@ -16,7 +16,7 @@ window.initMasks = (target) => {
             });
 
             masks.push({
-                name,
+                name: key,
                 iMask
             });
         }
