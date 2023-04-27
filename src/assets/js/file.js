@@ -33,8 +33,12 @@ function initInputFile() {
             }
         });
 
-    cross.addEventListener('click', (event) => {
-        event.preventDefault();
-        clearInputFile(el);
-    })
-});
+        cross.addEventListener('click', (event) => {
+            event.preventDefault();
+            clearInputFile(el);
+        })
+    });
+}
+
+initInputFile();
+window.initInputFile = initInputFile;
