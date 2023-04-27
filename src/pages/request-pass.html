@@ -462,7 +462,12 @@
         [...children].forEach(el => el.querySelector('.request-pass-block__btn_remove').style.display = display);
     }
     
-    function addPass(templateId, wrapper, btn) {
+    function addPass() {
+        uniqueIdGroup++;
+        synchronizationForms(renderPass('application-auto-passes', applicationAutoPasses, uniqueIdGroup), renderPass('application-passes', applicationPasses, uniqueIdGroup));
+    }
+    
+    function renderPass(templateId, wrapper, groupId) {
         const form = document.createElement('form');
         form.classList.add('request-pass-block');
         form.innerHTML = document.querySelector(`#${templateId}`).innerHTML;
