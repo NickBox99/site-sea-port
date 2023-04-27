@@ -493,8 +493,8 @@
         if(parent.children.length < 2) {
             return;
         }
-        
-        pass.remove();
+
+        document.querySelectorAll(`[data-group-id="${pass.getAttribute('data-group-id')}"]`).forEach(el => el.remove());
         initRemoveButtons(parent);
     }
     
