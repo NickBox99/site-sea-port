@@ -48,6 +48,8 @@ window.initDates = (target) => {
         if (el.hasAttribute('data-flatpickr-today')) {
             flatpickrOptions['minDate'] = "today";
         }
+        
+        el.setAttribute('data-dates-key', key);
     
         window.dates[key] = flatpickr(el, flatpickrOptions);
     });
