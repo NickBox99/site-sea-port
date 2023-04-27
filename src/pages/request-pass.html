@@ -475,14 +475,8 @@
         form.setAttribute('id', formId);
         form.setAttribute('data-group-id', groupId);
 
-        if (btn) {
-            const pass = getPassBlock(btn);
-            wrapper.insertBefore(form, pass.nextSibling);
-
-            initRemoveButtons(wrapper);
-        } else {
-            wrapper.append(form);
-        }
+        wrapper.append(form);
+        initRemoveButtons(wrapper);
 
         initSelects(form);
         initDates(form);
