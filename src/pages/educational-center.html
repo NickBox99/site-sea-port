@@ -779,55 +779,54 @@
         
         const applicationSentPopup = new Popup('#request-speeches-sent');
 
+        const validateOptions = initValidateOptions({
+            surname: {
+                type: 'input',
+                validate: 'abs'
+            },
+            name: {
+                type: 'input',
+                validate: 'abs'
+            },
+            patronymic: {
+                type: 'input',
+                validate: 'abs'
+            },
+            date_of_birth: {
+                type: 'date'
+            },
+            place_of_birth: {
+                type: 'input'
+            },
+            citizenship: {
+                type: 'input'
+            },
+            email: {
+                type: 'input',
+                validate: 'email'
+            },
+            phone: {
+                type: 'input',
+                validate: 'length:18'
+            },
+            file: {
+                type: 'file'
+            },
+            isAgreeProcessing: {
+                type: 'checkbox'
+            },
+            isAgreeRules: {
+                type: 'checkbox'
+            }
+        });
+
+        console.log(validateOptions);
+        
         document.querySelectorAll('.vacancies-form').forEach(form => {
             form.addEventListener('submit', (event) => {
                 event.preventDefault();
 
-                const body = formValidate(form, {
-                    surname: {
-                        type: 'input',
-                        validate: 'required|abs'
-                    },
-                    name: {
-                        type: 'input',
-                        validate: 'required|abs'
-                    },
-                    patronymic: {
-                        type: 'input',
-                        validate: 'required|abs'
-                    },
-                    date_of_birth: {
-                        type: 'date',
-                        validate: 'required'
-                    },
-                    place_of_birth: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    citizenship: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    email: {
-                        type: 'input',
-                        validate: 'email'
-                    },
-                    phone: {
-                        type: 'input',
-                        validate: 'length:18'
-                    },
-                    file: {
-                        type: 'file'
-                    },
-                    isAgreeProcessing: {
-                        type: 'checkbox',
-                        validate: 'required'
-                    },
-                    isAgreeRules: {
-                        type: 'checkbox',
-                        validate: 'required'
-                    }
-                });
+                const body = formValidate(form, validateOptions);
 
                 if (body) {
                     fetch(`${window.config.host}/ajax/form.php`, {
