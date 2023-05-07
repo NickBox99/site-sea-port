@@ -153,8 +153,8 @@
         <input type="hidden" name="form_id" value="applicationAutoPass">
         <div class="filters-subtitle">Компания</div>
         <div class="filters-row request-pass__company">
-            <input name="company_name" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
-            <input name="company_fio_head" class="input input_secondary" placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_name" data-validate="required" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
+            <input name="company_fio_head" data-validate="required" class="input input_secondary" placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
             <input name="company_phone_head" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
             <input name="company_inn" data-mask="000000000000" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
