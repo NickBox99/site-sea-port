@@ -189,3 +189,22 @@ window.clearForm = function (form) {
 
     form.querySelectorAll('input[type="file"]').forEach(el => clearInputFile(el));
 }
+
+window.initValidateOptions = function (options) {
+    const newOptions = { ...options };
+
+    Object.keys(options).forEach(key => {
+        const validate = document.querySelector(`[name="${key}"]`)?.getAttribute('data-validate');
+
+        if (validate) {
+            const oldValidate = options[key].validate;
+            const newValidate = `${oldValidate? `${oldValidate}|`: ''}${validate}`;
+
+            if (newValidate) {
+                newOptions[key].validate = newValidate;
+            }
+        }
+    });
+
+    return newOptions;
+}
