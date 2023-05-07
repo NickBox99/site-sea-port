@@ -187,7 +187,17 @@ window.clearForm = function (form) {
         }
     });
 
-    form.querySelectorAll('input[type="file"]').forEach(el => clearInputFile(el));
+    form.querySelectorAll('input[type="file"]').forEach(el => {
+        const wrapper = el.closest('.input-group');
+        const files = wrapper.parentNode.children;
+        
+        if (files.length > 1) {
+            wrapper.remove();
+        }
+        else {
+            clearInputFile(el);
+        }
+    });
 }
 
 window.initValidateOptions = function (options) {
