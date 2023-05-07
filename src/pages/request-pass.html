@@ -538,20 +538,6 @@
                         }
                     });
                 }
-                else if (classList.contains('input-file__input')) {
-                    const files = target.files;
-
-                    if (!isFileChanged) {
-                        isFileChanged = true;
-                        inputs.forEach(el => {
-                            el.files = files;
-                            el.dispatchEvent(new Event("change"));
-                        });
-                    }
-                    else {
-                        isFileChanged = false;
-                    }
-                }
                 else if (classList.contains('checkbox__input')) {
                     const checked = target.checked;
                     inputs.forEach(el => el.checked = checked);
