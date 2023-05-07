@@ -34,6 +34,10 @@ window.formValidate = function (form, options, isReturnFormData = true) {
 
                 switch (type) {
                     case 'required': {
+                        if (option.mode === 'array') {
+                            return !value.length;
+                        }
+                        
                         return !value;
                     }
                     case 'abs': {
