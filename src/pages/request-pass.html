@@ -159,20 +159,23 @@
             <input name="company_inn" data-mask="000000000000" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
 
-        <div class="filters-row">
-            <div>
+        <div>
+            <div class="filters-row">
                 <div class="request-pass__treaty">
-                    <div class="filters-subtitle request-pass__visit-title">Приложить фото первой и последней страницы договора, если пропуск требуется для выполнения подрядных работ</div>
+                    <div class="filters-subtitle">Приложить фото первой и последней страницы договора, если пропуск требуется для выполнения подрядных работ</div>
                     <div class="question-icon request-pass__treaty-icon">@@include('../components/svg/question.html')</div>
                 </div>
-                <div class="input-group">
-                    <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
-                    <label class="input input_secondary input_file input-file">
-                        <input class="input-file__input" type="file" name="treaty" accept="image/jpeg,image/png,application/pdf"/>
-                        <span class="input-file__name">Прикрепить файл</span>
-                        <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
-                    </label>
-                </div>
+            </div>
+        </div>
+
+        <div class="filters-row" data-filters-group="treaty">
+            <div class="input-group">
+                <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
+                <label class="input input_secondary input_file input-file">
+                    <input class="input-file__input" type="file" data-max-count="30" name="treaty" accept="image/jpeg,image/png,application/pdf"/>
+                    <span class="input-file__name">Прикрепить файл</span>
+                    <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
+                </label>
             </div>
         </div>
         
