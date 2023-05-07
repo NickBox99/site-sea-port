@@ -454,29 +454,33 @@
         window.addEventListener('scroll', updatePosPermissionSelect);
         window.addEventListener('resize', updatePosPermissionSelect);
         
+        const dangerousGoodsOptions = initValidateOptions({
+            surname: {
+                type: 'input',
+                validate: 'abs'
+            },
+            name: {
+                type: 'input',
+                validate: 'abs'
+            },
+            patronymic: {
+                type: 'input',
+                validate: 'abs'
+            },
+            phone: {
+                type: 'input',
+                validate: 'length:18'
+            },
+            email: {
+                type: 'input',
+                validate: 'email'
+            }
+        })
+
+        console.log(dangerousGoodsOptions);
+        
         document.querySelector('#request-permission').addEventListener('click', () => {
-            const result = formValidate(dangerousGoodsForm, {
-                surname: {
-                    type: 'input',
-                    validate: 'abs|required'
-                },
-                name: {
-                    type: 'input',
-                    validate: 'abs|required'
-                },
-                patronymic: {
-                    type: 'input',
-                    validate: 'abs|required'
-                },
-                phone: {
-                    type: 'input',
-                    validate: 'length:18'
-                },
-                email: {
-                    type: 'input',
-                    validate: 'email'
-                }
-            });
+            const result = formValidate(dangerousGoodsForm, dangerousGoodsOptions);
 
             permissionsHtml.style.display = 'none';
             
