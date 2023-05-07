@@ -30,6 +30,10 @@ function initInputFile() {
                 const isNew = input.innerText === defaultText;
                 input.innerText = this.files[0].name;
                 cross.classList.remove('hide');
+
+                if (onSetFile && isNew) {
+                    onSetFile();
+                }
             }
             else {
                 fileName.innerText = defaultText;
