@@ -558,7 +558,7 @@
                         selects[name]?.set(value);
                     });
                 }
-                else {
+                else if(!classList.contains('input-file__input')) {
                     inputs.forEach(el => el.value = newValue);
                 }
             }));
