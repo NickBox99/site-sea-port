@@ -1,5 +1,5 @@
 ﻿window.clearInputFile = function (file) {
-    if(file.value){
+    if(file.value) {
         try{
             file.value = '';
         }catch(err){ }
