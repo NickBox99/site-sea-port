@@ -44,7 +44,41 @@ function initInputFile() {
         cross.addEventListener('click', (event) => {
             event.preventDefault();
             clearInputFile(el);
+
+            if (onRemoveFile) {
+                setTimeout(() => {
+                    onRemoveFile(el);
+                })
+            }
         })
+    }
+
+    document.querySelectorAll('input[type="file"]:not(.initialized)').forEach(el => {
+        const inputGroup = el.closest('.input-group');
+        const savedElement = inputGroup.cloneNode(true);
+        const wrapper = inputGroup.parentNode;
+
+        const dataMaxCount = el.getAttribute('data-max-count');
+        const maxCount = dataMaxCount? +dataMaxCount : 1;
+        let nowCount = wrapper.children.length;
+
+        const onRemoveFile = (el) => {
+            if(nowCount > 1) {
+                nowCount--;
+                el.closest('.input-group')?.remove();
+            }
+        }
+        
+        const onSetFile = () => {
+            if (nowCount < maxCount) {
+                nowCount++;
+                const newInput = savedElement.cloneNode(true);
+                wrapper.append(newInput);
+                init(newInput.querySelector('input[type="file"]'), onSetFile, onRemoveFile);
+            }
+        };
+        
+        init(el, onSetFile, onRemoveFile);
     });
 }
 
