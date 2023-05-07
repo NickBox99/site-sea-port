@@ -125,9 +125,16 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                 break;
             }
             case 'file': {
-                const el = findFieldForm(key);
-
-                checkDefaultField(() => el.files[0], el, ['change'], el.parentNode);
+                if (option.mode === 'array') {
+                    const files = [...form.querySelectorAll(`[name="${key}"]`)];
+                    const firstElement = files[0];
+                    checkDefaultField(() => files.map(el => el.files[0]).filter(el => el), firstElement, ['change'], firstElement.parentNode);
+                }
+                else {
+                    const el = findFieldForm(key);
+                    checkDefaultField(() => el.files[0], el, ['change'], el.parentNode);
+                }
+                
                 break;
             }
         }
