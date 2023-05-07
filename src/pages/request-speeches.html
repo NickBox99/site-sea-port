@@ -110,69 +110,63 @@
         const applicationSentPopup = new Popup('#request-speeches-sent');
         const form = document.querySelector('#applicationForInspection');
         
+        const validateOptions = initValidateOptions({
+            container_number_ktk: {
+                type: 'input'
+            },
+            container_comment: {
+                type: 'input'
+            },
+            container_date_ktk: {
+                type: 'date'
+            },
+            container_type_of_packaging: {
+                type: 'select'
+            },
+            container_type_of_inspection: {
+                type: 'select'
+            },
+            member_surname: {
+                type: 'input',
+                validate: 'abs'
+            },
+            member_name: {
+                type: 'input',
+                validate: 'abs'
+            },
+            member_patronymic: {
+                type: 'input',
+                validate: 'abs'
+            },
+            contact_phone: {
+                type: 'input',
+                validate: 'length:18'
+            },
+            contact_email: {
+                type: 'input',
+                validate: 'email'
+            },
+            contact_proxy_number: {
+                type: 'input'
+            },
+            contact_proxy_date: {
+                type: 'date'
+            },
+            document: {
+                type: 'file'
+            },
+            isAgreeProcessing: {
+                type: 'checkbox'
+            },
+            isAgreeRules: {
+                type: 'checkbox'
+            }
+        });
+        
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             
-            const formData = formValidate(form, {
-                container_number_ktk: {
-                    type: 'input',
-                    validate: 'required'
-                },
-                container_comment: {
-                    type: 'input'
-                },
-                container_date_ktk: {
-                    type: 'date',
-                    validate: 'required'
-                },
-                container_type_of_packaging: {
-                    type: 'select',
-                    validate: 'required'
-                },
-                container_type_of_inspection: {
-                    type: 'select',
-                    validate: 'required'
-                },
-                member_surname: {
-                    type: 'input',
-                    validate: 'abs|required'
-                },
-                member_name: {
-                    type: 'input',
-                    validate: 'abs|required'
-                },
-                member_patronymic: {
-                    type: 'input',
-                    validate: 'abs|required'
-                },
-                contact_phone: {
-                    type: 'input',
-                    validate: 'length:18'
-                },
-                contact_email: {
-                    type: 'input',
-                    validate: 'email'
-                },
-                contact_proxy_number: {
-                    type: 'input',
-                    validate: 'required'
-                },
-                contact_proxy_date: {
-                    type: 'date',
-                    validate: 'required'
-                },
-                document: {
-                    type: 'file'
-                },
-                isAgreeProcessing: {
-                    type: 'checkbox',
-                    validate: 'required'
-                },
-                isAgreeRules: {
-                    type: 'checkbox',
-                    validate: 'required'
-                }
-            });
+            const formData = formValidate(form, validateOptions);
             
             if (formData) {
                 fetch(`${window.config.host}/ajax/form.php`, {
