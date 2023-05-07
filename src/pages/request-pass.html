@@ -377,10 +377,10 @@
 
     <div class="filters-subtitle">Личные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="personal_surname" class="input" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_name" class="input" placeholder="Имя*" type="text"  role="presentation" autocomplete="off">
-        <input name="personal_patronymic" class="input" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_birthday" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
+        <input name="personal_surname" data-validate="required" class="input" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_name" data-validate="required" class="input" placeholder="Имя*" type="text"  role="presentation" autocomplete="off">
+        <input name="personal_patronymic" data-validate="required" class="input" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_birthday" data-validate="required" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
 
         <input name="personal_birth_place" class="input" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
         <input name="personal_position" class="input" placeholder=" Должность получателя*" type="text" role="presentation" autocomplete="off">
