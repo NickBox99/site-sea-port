@@ -252,14 +252,16 @@
     
     document.addEventListener("DOMContentLoaded", function() {
         const purchasesSearch = document.querySelector('#purchases-search');
+        const validateOptions = initValidateOptions({
+            search: {
+                type: 'input'
+            }
+        });
+
         purchasesSearch.addEventListener('submit', (event) => {
             event.preventDefault();
             
-            const result = formValidate(purchasesSearch, {
-                search: {
-                    type: 'input'
-                }
-            }, false);
+            const result = formValidate(purchasesSearch, validateOptions, false);
 
             console.log(result);
         });
