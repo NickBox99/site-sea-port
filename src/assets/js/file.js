@@ -27,7 +27,8 @@ function initInputFile() {
 
         el.addEventListener('change', function () {
             if (this.files.length && this.files[0].size <= 5242880) {
-                fileName.innerText = this.files[0].name;
+                const isNew = input.innerText === defaultText;
+                input.innerText = this.files[0].name;
                 cross.classList.remove('hide');
             }
             else {
