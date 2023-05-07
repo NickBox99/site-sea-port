@@ -36,7 +36,7 @@ function initInputFile() {
                 }
             }
             else {
-                fileName.innerText = defaultText;
+                input.innerText = defaultText;
                 cross.classList.add('hide');
             }
         });
