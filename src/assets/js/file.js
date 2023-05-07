@@ -18,10 +18,11 @@
 }
 
 function initInputFile() {
-    document.querySelectorAll('input[type="file"]:not(.initialized)').forEach(el => {
-        const fileName = el.nextElementSibling;
-        const cross = fileName.nextElementSibling;
-        const defaultText = fileName.innerText;
+    function init(el, onSetFile, onRemoveFile) {
+        const input = el.nextElementSibling;
+        const cross = input.nextElementSibling;
+        const defaultText = input.innerText;
+
         el.classList.add('initialized');
 
         el.addEventListener('change', function () {
