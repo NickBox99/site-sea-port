@@ -571,8 +571,133 @@
         synchronizationForms(applicationPass, applicationAutoPass);
         addPass(false);
         
+        const checkBoxOptions = initValidateOptions({
+            isAgreeProcessing: {
+                type: 'checkbox'
+            },
+            isAgreeRules: {
+                type: 'checkbox'
+            }
+        });
+        const defaultMainOptions = initValidateOptions({
+            company_name: {
+                type: 'input'
+            },
+            company_fio_head: {
+                type: 'input',
+                validate: 'abs'
+            },
+            company_phone_head: {
+                type: 'input',
+                validate: 'length:18'
+            },
+            company_inn: {
+                type: 'input',
+                validate: 'min-length:10|max-length:12'
+            },
+            visit_purpose: {
+                type: 'input'
+            },
+            pass_zone_2: {
+                type: 'checkbox'
+            },
+            pass_dates: {
+                type: 'date'
+            },
+            treaty: {
+                type: 'file',
+                mode: 'array'
+            },
+            pass_order: {
+                type: 'select'
+            }
+        });
+        const defaultMainCarOptions = initValidateOptions({
+            pass_zone_3: {
+                type: 'checkbox'
+            }
+        });
+        const defaultPassOptions = initValidateOptions({
+            personal_surname: {
+                type: 'input',
+                validate: 'abs'
+            },
+            personal_name: {
+                type: 'input',
+                validate: 'abs'
+            },
+            personal_patronymic: {
+                type: 'input',
+                validate: 'abs'
+            },
+            personal_birthday: {
+                type: 'date'
+            },
+            personal_birth_place: {
+                type: 'input'
+            },
+            personal_position: {
+                type: 'input',
+                validate: 'abs'
+            },
+            passport_series: {
+                type: 'input',
+                validate: 'length:4'
+            },
+            passport_number: {
+                type: 'input',
+                validate: 'length:6'
+            },
+            passport_date: {
+                type: 'date'
+            },
+            passport_place: {
+                type: 'input'
+            },
+            passport_photo: {
+                type: 'file',
+                mode: 'array'
+            },
+            contact_email: {
+                type: 'input',
+                validate: 'email'
+            },
+            contact_phone: {
+                type: 'input',
+                validate: 'length:18'
+            },
+            contact_registration_address: {
+                type: 'input'
+            },
+            contact_factual_address: {
+                type: 'input'
+            }
+        });
+        const defaultCarPassOptions = initValidateOptions({
+            car_type: {
+                type: 'select'
+            },
+            car_brand: {
+                type: 'input'
+            },
+            car_model: {
+                type: 'input'
+            },
+            car_number: {
+                type: 'input'
+            },
+            car_color: {
+                type: 'input'
+            },
+            car_cop: {
+                type: 'file',
+                mode: 'array'
+            }
+        });
+
         const applicationSentPopup = new Popup('#request-speeches-sent');
         const questionInfo = new Popup('#question-info');
+        const duplicateRequest = new Popup('#duplicate-request');
         
         const signatureForm = document.querySelector('#signature-form');
         signatureForm.addEventListener('submit', (event) => {
@@ -580,151 +705,19 @@
             
             const isApplicationPass = !applicationPass.style.display;
             
-            const isValidSignatureForm = Boolean(formValidate(signatureForm, {
-                isAgreeProcessing: {
-                    type: 'checkbox',
-                    validate: 'required'
-                },
-                isAgreeRules: {
-                    type: 'checkbox',
-                    validate: 'required'
-                }
-            }));
+            const isValidSignatureForm = Boolean(formValidate(signatureForm, checkBoxOptions));
             
-            const defaultMainOptions = {
-                company_name: {
-                    type: 'input',
-                    validate: 'required'
-                },
-                company_fio_head: {
-                    type: 'input',
-                    validate: 'abs|required'
-                },
-                company_phone_head: {
-                    type: 'input',
-                    validate: 'length:18'
-                },
-                company_inn: {
-                    type: 'input',
-                    validate: 'min-length:10|max-length:12'
-                },
-                visit_purpose: {
-                    type: 'input'
-                },
-                pass_zone_2: {
-                    type: 'checkbox'
-                },
-                pass_dates: {
-                    type: 'date',
-                    validate: 'required'
-                },
-                treaty: {
-                    type: 'file',
-                    validate: 'required'
-                },
-                pass_order: {
-                    type: 'select',
-                    validate: 'required'
-                }
-            }
             const mainForm = isApplicationPass ? 
                 formValidate(applicationPass, {
                     ...defaultMainOptions,
-                    pass_zone_3: {
-                        type: 'checkbox'
-                    }
+                    ...defaultMainCarOptions
                 }) :
                 formValidate(applicationAutoPass, defaultMainOptions);
             
-            const defaultPassOptions = {
-                personal_surname: {
-                    type: 'input',
-                    validate: 'required|abs'
-                },
-                personal_name: {
-                    type: 'input',
-                    validate: 'required|abs'
-                },
-                personal_patronymic: {
-                    type: 'input',
-                    validate: 'required|abs'
-                },
-                personal_birthday: {
-                    type: 'date',
-                    validate: 'required'
-                },
-                personal_birth_place: {
-                    type: 'input',
-                    validate: 'required'
-                },
-                personal_position: {
-                    type: 'input',
-                    validate: 'required|abs'
-                },
-                passport_series: {
-                    type: 'input',
-                    validate: 'length:4'
-                },
-                passport_number: {
-                    type: 'input',
-                    validate: 'length:6'
-                },
-                passport_date: {
-                    type: 'date',
-                    validate: 'required'
-                },
-                passport_place: {
-                    type: 'input',
-                    validate: 'required'
-                },
-                passport_photo: {
-                    type: 'file',
-                    validate: 'required'
-                },
-                contact_email: {
-                    type: 'input',
-                    validate: 'email'
-                },
-                contact_phone: {
-                    type: 'input',
-                    validate: 'length:18'
-                },
-                contact_registration_address: {
-                    type: 'input',
-                    validate: 'required'
-                },
-                contact_factual_address: {
-                    type: 'input',
-                    validate: 'required'
-                }
-            }
             const passesValidatorOptions = isApplicationPass ? defaultPassOptions : 
                 { 
                     ...defaultPassOptions,
-                    car_type: {
-                        type: 'select',
-                        validate: 'required'
-                    },
-                    car_brand: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    car_model: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    car_number: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    car_color: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    car_cop: {
-                        type: 'file',
-                        validate: 'required'
-                    }
+                    ...defaultCarPassOptions
                 };
             const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass, passesValidatorOptions, false));
 
