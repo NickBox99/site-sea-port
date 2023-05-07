@@ -153,6 +153,7 @@
   }
 
   &__list {
+    position: relative;
     margin-top: 61px;
     
     @media screen and (max-width: 1015px) {
