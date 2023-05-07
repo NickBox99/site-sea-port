@@ -1,4 +1,16 @@
 ﻿.fleet-processing {
+  
+  .route-map__map {
+    overflow: unset;
+
+    @media screen and (min-width: 1015.99px) {
+      svg {
+        height: 683px;
+        width: 1095px;
+      }
+    }
+  }
+  
   &__title {
     @media screen and (max-width: 1024px) {
       margin-top: -20px;
