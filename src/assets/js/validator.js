@@ -170,7 +170,7 @@ window.clearForm = function (form) {
     });
 
     form.querySelectorAll('.select').forEach(el => {
-        const select = selects[`${formId}_${el.getAttribute('name')}`];
+        const select = selects[el.getAttribute('data-select-key')];
 
         if (select) {
             select.clear();
