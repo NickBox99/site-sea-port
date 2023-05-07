@@ -40,8 +40,8 @@ function initInputFile() {
                 cross.classList.add('hide');
             }
         });
-
-        cross.addEventListener('click', (event) => {
+        
+        cross.addEventListener('click', event => {
             event.preventDefault();
             clearInputFile(el);
 
