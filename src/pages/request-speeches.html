@@ -59,8 +59,8 @@
         <div class="filters-row">
             <input name="contact_phone" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
             <input name="contact_email" class="input input_secondary" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
-            <input name="contact_proxy_number" class="input input_secondary" placeholder="№ доверенности*" type="text">
-            <input name="contact_proxy_date" class="datetime input input_secondary" placeholder=" Дата выдачи*" data-placeholder-focus>
+            <input name="contact_proxy_number" data-validate="required" class="input input_secondary" placeholder="№ доверенности*" type="text">
+            <input name="contact_proxy_date" data-validate="required" class="datetime input input_secondary" placeholder=" Дата выдачи*" data-placeholder-focus>
         </div>
 
         <div class="filters-row request-speeches__footer">
