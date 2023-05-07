@@ -20,9 +20,9 @@
         <div class="filters-subtitle">Контактные данные</div>
         <form id="dangerous_goods" class="filters-row">
             <input type="hidden" name="form_id" value="dangerous_goods">
-            <input name="surname" class="input input_secondary" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
-            <input name="name" class="input input_secondary" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-            <input name="patronymic" class="input input_secondary" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+            <input name="surname" data-validate="required" class="input input_secondary" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
+            <input name="name" data-validate="required" class="input input_secondary" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+            <input name="patronymic" data-validate="required" class="input input_secondary" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
             <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
             <input name="email" class="input input_secondary" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
         </form>
