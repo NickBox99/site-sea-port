@@ -494,12 +494,12 @@
 
                         <form id="vacancies-form-4" class="vacancies-form filters-row accordion-vacancy__filters-row">
                             <input type="hidden" name="form_id" value="vacancies">
-                            <input name="surname" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
-                            <input name="name" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
-                            <input name="patronymic" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-                            <input name="date_of_birth" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
-                            <input name="place_of_birth" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-                            <input name="citizenship" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
+                            <input name="surname" data-validate="required" class="input input_third" placeholder="Фамилия*" type="text"  role="presentation" autocomplete="off">
+                            <input name="name" data-validate="required" class="input input_third" placeholder="Имя*" type="text" role="presentation" autocomplete="off">
+                            <input name="patronymic" data-validate="required" class="input input_third" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
+                            <input name="date_of_birth" data-validate="required" class="datetime input input_third" placeholder=" Дата рождения*" data-placeholder-focus>
+                            <input name="place_of_birth" data-validate="required" class="input input_third" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
+                            <input name="citizenship" data-validate="required" class="input input_third" placeholder="Гражданство" type="text" role="presentation" autocomplete="off">
                             <input name="email" class="input input_third" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
                             <input name="phone" data-mask="+{7} (000) 000-00-00" class="input input_third" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
 
