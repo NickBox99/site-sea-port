@@ -2,9 +2,11 @@
     if(file.value) {
         try{
             file.value = '';
-        }catch(err){ }
-        if(file.value){
-            var form = document.createElement('form'),
+        }
+        catch(err){ }
+        
+        if (file.value) {
+            const form = document.createElement('form'),
                 parentNode = file.parentNode, ref = f.nextSibling;
             form.appendChild(file);
             form.reset();
