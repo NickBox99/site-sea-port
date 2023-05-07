@@ -338,8 +338,8 @@
     <div class="filters-row request-pass-block__filters-row">
         <input name="passport_series" data-mask="0000" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
         <input name="passport_number" data-mask="000000" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
-        <input name="passport_date" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
-        <input name="passport_place" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_date" data-validate="required" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
+        <input name="passport_place" data-validate="required" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="request-pass-block__question-title">
