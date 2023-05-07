@@ -181,6 +181,16 @@
   }
 
   @media screen and (max-width: 730px) {
+    &__treaty {
+      display: flex;
+      gap: 12px;
+      
+      &-icon {
+        position: unset;
+        flex-shrink: 0;
+      }
+    }
+    
     &-block {
 
       .filters {
