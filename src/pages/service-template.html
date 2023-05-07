@@ -2302,44 +2302,41 @@
         if (templateForm && document.querySelector('#request-sent')) {
 
             const applicationSentPopup = new Popup('#request-sent');
+            
+            const validateOptions = initValidateOptions({
+                service: {
+                    type: 'select'
+                },
+                name: {
+                    type: 'input',
+                    validate: 'abs'
+                },
+                company_name: {
+                    type: 'input'
+                },
+                email: {
+                    type: 'input',
+                    validate: 'email'
+                },
+                phone: {
+                    type: 'input',
+                    validate: 'length:18'
+                },
+                message: {
+                    type: 'input'
+                },
+                isAgreeProcessing: {
+                    type: 'checkbox'
+                },
+                isAgreeRules: {
+                    type: 'checkbox'
+                }
+            });
 
             templateForm.addEventListener('submit', (event) => {
                 event.preventDefault();
 
-                const formData = formValidate(templateForm, {
-                    service: {
-                        type: 'select',
-                        validate: 'required'
-                    },
-                    name: {
-                        type: 'input',
-                        validate: 'abs|required'
-                    },
-                    company_name: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    email: {
-                        type: 'input',
-                        validate: 'email'
-                    },
-                    phone: {
-                        type: 'input',
-                        validate: 'length:18'
-                    },
-                    message: {
-                        type: 'input',
-                        validate: 'required'
-                    },
-                    isAgreeProcessing: {
-                        type: 'checkbox',
-                        validate: 'required'
-                    },
-                    isAgreeRules: {
-                        type: 'checkbox',
-                        validate: 'required'
-                    }
-                });
+                const formData = formValidate(templateForm, validateOptions);
 
                 if (formData) {
                     fetch(`${window.config.host}/ajax/form.php`, {
