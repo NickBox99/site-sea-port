@@ -1,6 +1,21 @@
 ﻿.container-trains {
-  &__route-map { 
+  &__route-map {
     .route-map__map {
+      @media (min-width: 1015.99px) {
+        overflow: unset;
+        margin-left: 140px !important;
+        margin-right: 75px;
+        width: 605px;
+        height: 660px;
+
+        svg {
+          position: absolute;
+          right: 0;
+          height: 683px;
+          width: 1095px;
+        }
+      }
+      
       @media (max-width: 1015.98px) {
         margin: 0;
         width: 100vw;
