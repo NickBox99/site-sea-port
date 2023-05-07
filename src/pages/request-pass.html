@@ -568,6 +568,36 @@
                 const newValue = target.value;
                 secondForm.querySelectorAll(`[name="${name}"]`).forEach(el => el.value = newValue);
             }));
+            
+            function setHtml(target) {
+                const wrapper = target.closest('.filters-row');
+                const filtersGroup = wrapper.getAttribute('data-filters-group');
+
+                if (!filtersGroup) {
+                    return;
+                }
+                
+                setTimeout(() => {
+                    const secondWrapper = secondForm.querySelector(`[data-filters-group="${filtersGroup}"]`);
+                    secondWrapper.innerHTML = wrapper.innerHTML.replaceAll('initialized', '');
+                    
+                    const firstInputs = wrapper.querySelectorAll('input');
+                    const secondInputs = secondWrapper.querySelectorAll('input');
+                    secondInputs.forEach((el, idx) => el.files = firstInputs[idx].files);
+                    
+                    initInputFile();
+                })
+            }
+            
+            firstForm.addEventListener('change', ({ target }) => {
+                setHtml(target);
+            });
+
+            firstForm.addEventListener('click', ({ target }) => {
+                if (target.closest('.input-file__cross')) {
+                    setHtml(target);
+                }
+            })
         }
 
         initChangedFormValue(firstForm, secondForm);
