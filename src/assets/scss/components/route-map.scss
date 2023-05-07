@@ -2,6 +2,12 @@
   position: relative;
   display: flex;
   
+  &_overflow-visible {
+    svg, .route-map__map {
+      overflow: unset !important;
+    }
+  }
+  
   @media screen and (max-width: 1015px) {
     flex-direction: column-reverse;
   }
