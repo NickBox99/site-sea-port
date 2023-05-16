@@ -79,7 +79,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                         })
                     );
                 }
-            } else {
+            } else if (value) {
                 formData[key] = value;
             }
         }
