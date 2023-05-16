@@ -783,6 +783,7 @@
                         isDisableDateCopy = true;
                         clearForm(isApplicationPass ? applicationPass : applicationAutoPass);
                         [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].forEach(pass => clearForm(pass));
+                        isDisableDateCopy = false;
                     }
                     else if (status === 403) {
                         duplicateRequest.show();
