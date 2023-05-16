@@ -523,6 +523,9 @@
     function synchronizationForms(firstForm, secondForm) {
         function initChangedFormValue(firstForm, secondForm) {
             firstForm.querySelectorAll('input').forEach(input => input.addEventListener('change', ({ target }) => {
+                if (isDisableDateCopy) {
+                    return;
+                }
                 const name = target.getAttribute('name');
                 const newValue = target.value;
                 const inputs = secondForm.querySelectorAll(`[name="${name}"]`);
