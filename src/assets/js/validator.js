@@ -41,7 +41,7 @@ window.formValidate = function (form, options, isReturnFormData = true) {
                         return !value;
                     }
                     case 'abs': {
-                        return !/^([a-zA-ZА-яЕЁ ]+)$/gi.test(value);
+                        return value && !/^([a-zA-ZА-яЕЁ ]+)$/gi.test(value);
                     }
                     case 'email': {
                         return !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value);
