@@ -777,6 +777,7 @@
                 }).then(({ status }) => {
                     if (status === 200) {
                         applicationSentPopup.show();
+                        isDisableDateCopy = true;
                         clearForm(isApplicationPass ? applicationPass : applicationAutoPass);
                         [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].forEach(pass => clearForm(pass));
                     }
