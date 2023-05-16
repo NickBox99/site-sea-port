@@ -12,6 +12,8 @@ window.initDates = (target) => {
         
         const hasPlaceholderFocus = el.hasAttribute('data-placeholder-focus');
         const hasFlatpickrMultiple = el.hasAttribute('data-flatpickr-multiple');
+        const flatpickrMinDate = el.getAttribute('data-flatpickr-minDate');
+        const flatpickrMaxDate = el.getAttribute('data-flatpickr-maxDate');
         
         const mask = hasFlatpickrMultiple? null : IMask(el, {
             mask: Date,
