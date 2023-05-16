@@ -759,6 +759,16 @@
             const passes = [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].map(pass => formValidate(pass, passesValidatorOptions, false));
 
             if (isValidSignatureForm && mainForm && !passes.filter(pass => !pass).length) {
+                const arrayKeys = ['car_cop', 'passport_photo'];
+
+                passes.forEach((pass, idx) => {
+                    arrayKeys.forEach(key => {
+                        if (key in pass) {
+                            pass[key].forEach(val => mainForm.append(`${key}[${idx}][]`, val));
+                            delete pass[key];
+                        }
+                    });
+                })
                 mainForm.append('passes_json', JSON.stringify(passes));
 
                 fetch(`${window.config.host}/ajax/form.php`, {
