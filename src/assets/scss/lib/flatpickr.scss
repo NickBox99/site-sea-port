@@ -35,9 +35,9 @@
 }
 
 .flatpickr-current-month input.cur-year, .flatpickr-current-month span.cur-month {
-  font-weight: 400;
-  font-size: 16px;
-  color: var(--color-white);
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  color: var(--color-white) !important;
 }
 
 .flatpickr-months {
