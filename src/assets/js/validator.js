@@ -143,7 +143,18 @@ window.formValidate = function (form, options, isReturnFormData = true) {
     if (isValid) {
         if (isReturnFormData) {
             const newFormData = new FormData();
-            Object.keys(formData).forEach(key => newFormData.append(key, formData[key]));
+            Object.keys(formData).forEach(key => {
+                const value = formData[key];
+                
+                if (Array.isArray(value)) {
+                    value.forEach(val => {
+                        newFormData.append(`${key}[]`, val);
+                    })
+                }
+                else {
+                    newFormData.append(key, value);
+                }
+            });
 
             return newFormData;
         }
