@@ -519,7 +519,7 @@
         initRemoveButtons(parent);
     }
 
-    let isFileChanged = false;
+    let isDisableDateCopy = false;
     function synchronizationForms(firstForm, secondForm) {
         function initChangedFormValue(firstForm, secondForm) {
             firstForm.querySelectorAll('input').forEach(input => input.addEventListener('change', ({ target }) => {
