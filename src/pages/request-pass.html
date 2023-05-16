@@ -767,10 +767,8 @@
                 }).then(({ status }) => {
                     if (status === 200) {
                         applicationSentPopup.show();
-                        clearForm(signatureForm);
-                        clearForm(applicationAutoPass);
-                        clearForm(applicationPass);
-                        [...applicationPasses.children, ...applicationAutoPasses.children].forEach(pass => clearForm(pass));
+                        clearForm(isApplicationPass ? applicationPass : applicationAutoPass);
+                        [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].forEach(pass => clearForm(pass));
                     }
                     else if (status === 403) {
                         duplicateRequest.show();
