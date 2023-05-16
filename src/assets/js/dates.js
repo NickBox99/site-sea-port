@@ -47,8 +47,12 @@ window.initDates = (target) => {
             delete flatpickrOptions['onChange'];
         }
         
-        if (el.hasAttribute('data-flatpickr-today')) {
-            flatpickrOptions['minDate'] = "today";
+        if (flatpickrMinDate) {
+            flatpickrOptions['minDate'] = flatpickrMinDate;
+        }
+        
+        if (flatpickrMaxDate) {
+            flatpickrOptions['maxDate'] = flatpickrMaxDate;
         }
         
         el.setAttribute('data-dates-key', key);
