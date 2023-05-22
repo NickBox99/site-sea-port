@@ -319,7 +319,8 @@
         const permissionsTemplate = document.querySelector('#permission-card-template').innerHTML;
         const tablePermissions = [];
         let dirtyGroupSelect = false, dangerousGoodsSelected;
-        const warningPopup = new Popup('#warning-popup');
+        const warningPopupFirst = new Popup('#warning-popup-first');
+        const warningPopupSecond = new Popup('#warning-popup-second');
         
         function clearGroupSelect () {
             dirtyGroupSelect = false;
