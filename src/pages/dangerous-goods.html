@@ -527,6 +527,8 @@
             
             if (result && !tableSelects.find(select => select.value === '')) {
                 result.append('unCodes', JSON.stringify(tablePermissions.map(el => el.permission)));
+
+                loader.show();
                 
                 fetch(`${window.config.host}/ajax/dangerous_goods.php`, {
                     method: 'POST',
