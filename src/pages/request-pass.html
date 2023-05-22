@@ -773,6 +773,8 @@
                     });
                 })
                 mainForm.append('passes_json', JSON.stringify(passes));
+                
+                loader.show();
 
                 fetch(`${window.config.host}/ajax/form.php`, {
                     method: 'POST',
