@@ -2339,6 +2339,8 @@
                 const formData = formValidate(templateForm, validateOptions);
 
                 if (formData) {
+                    loader.show();
+                    
                     fetch(`${window.config.host}/ajax/form.php`, {
                         method: 'POST',
                         body: formData
