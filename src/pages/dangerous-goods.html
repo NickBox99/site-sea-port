@@ -459,6 +459,17 @@
             }, false);
 
             if (permission) {
+                if (tablePermissions.find(per => !per.dangerousGoodsSelected.items)) {
+                    warningPopupSecond.show();
+                    return;
+                }
+                
+                const hasItems = !!dangerousGoodsSelected.items;
+                if (tablePermissions.find(per => !!per.dangerousGoodsSelected.items !== hasItems)) {
+                    warningPopupFirst.show();
+                    return;
+                }
+                
                 clearGroupSelect();
                 oohInput.value = oohSelect.value = '';
                 masks[1].iMask.updateValue();
