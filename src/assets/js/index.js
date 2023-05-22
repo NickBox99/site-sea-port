@@ -21,6 +21,7 @@ import './touch-scroll'
 import './table'
 import './odometer'
 import './swiper'
+import './loader'
 import './main'
 
 window.config = {
