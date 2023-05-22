@@ -827,6 +827,8 @@
                 const body = formValidate(form, validateOptions);
 
                 if (body) {
+                    loader.show();
+                    
                     fetch(`${window.config.host}/ajax/form.php`, {
                         method: 'POST',
                         body
