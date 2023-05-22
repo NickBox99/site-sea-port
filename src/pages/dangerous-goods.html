@@ -382,7 +382,7 @@
             
             tablePermissions.forEach(({ permission, dangerousGoodsSelected: { checkByName, items } }, idx) => {
                 const { code, packingGroup } = permission;
-                const isNeedSelect = items.length && (!hasOneElement || checkByName);
+                const isNeedSelect = items?.length && (!hasOneElement || checkByName);
                 
                 if (!isNeedSelect || !('dangerousSubstanceId' in permission)) {
                     permission.dangerousSubstanceId = "";
