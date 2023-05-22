@@ -272,6 +272,21 @@
 
 <script data-skip-moving src="/js/dangerous.js" type="text/javascript"></script>
 
+<div id="warning-popup" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__header">
+            <div class="popup__title">Предупреждение</div>
+            <div class="popup__cross" data-popup-close>@@include('../components/svg/cross.html')</div>
+        </div>
+
+        <div class="popup__content">
+            грузы без классификационных кодов запрещено использовать в одной заявке с другими кодами ООН.
+        </div>
+
+        <button class="popup__btn btn btn_primary root-white" data-popup-close>Вернуться на сайт</button>
+    </div>
+</div>
+
 <script defer>
     document.addEventListener('DOMContentLoaded', function() {
         const dangerousGoodsKeys = Object.keys(dangerousGoods);
