@@ -27,7 +27,12 @@
         zoomEnabled: false,
         fit: true,
         center: true
-    })
+    });
+    
+    if (!wrapper.hasAttribute('data-route-map-default-zoom-disable') && window.innerWidth >= 1024) {
+        panZoom.zoomIn();
+        panZoom.zoomIn();
+    }
 
     wrapper.querySelector('.route-map__zoom_in')?.addEventListener('click', () => panZoom.zoomIn());
     wrapper.querySelector('.route-map__zoom_out')?.addEventListener('click', () => panZoom.zoomOut());
