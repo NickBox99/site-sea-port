@@ -26,9 +26,10 @@ function initInputFile() {
         el.classList.add('initialized');
 
         el.addEventListener('change', function () {
-            if (this.files.length && this.files[0].size <= 5242880) {
+            const firstFile = this.files[0];
+            if (firstFile && firstFile.size <= 5242880 && "image/jpeg,image/png,application/pdf".includes(firstFile.type)) {
                 const isNew = input.innerText === defaultText;
-                input.innerText = this.files[0].name;
+                input.innerText = firstFile.name;
                 cross.classList.remove('hide');
 
                 if (onSetFile && isNew) {
