@@ -1,6 +1,6 @@
 ﻿<div class="request-pass">
     <div class="subtitle subtitle_margin-middle">ЗАЯВКА НА ПРОПУСК</div>
-    <h1  class="request-pass__title">
+    <h1 class="request-pass__title">
         <span data-tabs="application-pass">Заявка на получение разового пешеходного пропуска</span>
         <span data-tabs="application-auto-pass" style="display: none;">Заявка на получение разового автомобильного пропуска</span>
     </h1>
@@ -10,15 +10,15 @@
         <div data-tabs-open="application-auto-pass" class="tab">Автомобильный пропуск</div>
         <div class="tabs__floatr"></div>
     </div>
-    
+
     <div class="request-pass__documents request-pass-documents">
-        
+
         <a href="#" class="file-block" target="_blank">
             <div class="file-block__file">
                 @@include('../components/svg/file.html')
                 <div class="file-block__type">xlsx</div>
             </div>
-            
+
             <div class="file-block__content">
                 <div class="file-block__title">Порядок оформления заявок</div>
 
@@ -50,35 +50,44 @@
         <input type="hidden" name="form_id" value="applicationPass">
         <div class="filters-subtitle">Компания</div>
         <div class="filters-row request-pass__company">
-            <input name="company_name" data-validate="required" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
-            <input name="company_fio_head" data-validate="required" class="input input_secondary" placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
-            <input name="company_phone_head" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
-            <input name="company_inn" data-mask="000000000000" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
+            <input name="company_name" data-validate="required" class="input input_secondary"
+                   placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
+            <input name="company_fio_head" data-validate="required" class="input input_secondary"
+                   placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_phone_head" data-mask="+{7} (000) 000-00-00" class="input input_secondary"
+                   placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_inn" data-mask="000000000000" class="input input_secondary"
+                   placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
 
         <div>
             <div class="filters-row">
                 <div class="request-pass__treaty">
-                    <div class="filters-subtitle">Приложить фото первой и последней страницы договора, если пропуск требуется для выполнения подрядных работ</div>
-                    <div class="question-icon request-pass__treaty-icon">@@include('../components/svg/question.html')</div>
+                    <div class="filters-subtitle">Приложить фото первой и последней страницы договора, если пропуск
+                        требуется для выполнения подрядных работ
+                    </div>
+                    <div class="question-icon request-pass__treaty-icon">@@include('../components/svg/question.html')
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="filters-row" data-filters-group="treaty">
             <div class="input-group">
                 <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
                 <label class="input input_secondary input_file input-file">
-                    <input class="input-file__input" type="file" data-max-count="30" name="treaty" accept="image/jpeg,image/png,application/pdf"/>
+                    <input class="input-file__input" type="file" data-max-count="30" name="treaty"
+                           accept="image/jpeg,image/png,application/pdf"/>
                     <span class="input-file__name">Прикрепить файл</span>
                     <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
                 </label>
             </div>
         </div>
-        
+
         <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
         <div class="filters-row request-pass__visit">
-            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст" role="presentation" autocomplete="off"></textarea>
+            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3"
+                      placeholder="Текст" role="presentation" autocomplete="off"></textarea>
         </div>
 
         <div class="filters-subtitle request-pass__zones-title">Параметры пропуска</div>
@@ -89,7 +98,7 @@
             </label>
 
             <label class="checkbox checkbox_secondary request-pass__zone">
-                <input name="pass_zone_2"  class="checkbox__input" type="checkbox">
+                <input name="pass_zone_2" class="checkbox__input" type="checkbox">
                 <span class="checkbox__text">Зона 2 (причалы) </span>
             </label>
 
@@ -100,19 +109,24 @@
         </div>
 
         <div class="filters-row request-pass__zones-fields">
-            <input name="pass_dates" data-validate="required" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-minDate="today" data-flatpickr-maxDate="25.05.2023">
+            <input name="pass_dates" data-validate="required" class="datetime input input_secondary"
+                   placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-minDate="today"
+                   data-flatpickr-maxDate="25.05.2023">
             <div class="select select_secondary">
                 <div class="select__value"></div>
                 <input name="pass_order" data-validate="required" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__items">
-                        <div class="select__item btn btn_secondary active" data-value="">Пункт распоряжения правительства*</div>
+                        <div class="select__item btn btn_secondary active" data-value="">Пункт распоряжения
+                            правительства*
+                        </div>
                         <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
                         <div class="select__item btn btn_secondary" data-value="2">ООО НАУТИЛУС</div>
                         <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
                         <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
                         <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
-                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания
+                        </div>
                         <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
                         <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
                         <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -120,7 +134,8 @@
                         <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
                         <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
                         <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
-                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания
+                        </div>
                         <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
                         <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
                         <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
@@ -128,7 +143,8 @@
                         <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
                         <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
                         <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
-                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания
+                        </div>
                         <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
                         <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
                     </div>
@@ -138,7 +154,8 @@
 
             <a href="#" class="file-block request-pass__pos">
                 <div class="file-block__content">
-                    <div class="file-block__title">Распоряжение Правительства РФ от 24 июня 2008 г. N 907-р (выписка)</div>
+                    <div class="file-block__title">Распоряжение Правительства РФ от 24 июня 2008 г. N 907-р (выписка)
+                    </div>
 
                     <div class="file-block__size">
                         36,12 kB
@@ -153,17 +170,24 @@
         <input type="hidden" name="form_id" value="applicationAutoPass">
         <div class="filters-subtitle">Компания</div>
         <div class="filters-row request-pass__company">
-            <input name="company_name" data-validate="required" class="input input_secondary" placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
-            <input name="company_fio_head" data-validate="required" class="input input_secondary" placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
-            <input name="company_phone_head" data-mask="+{7} (000) 000-00-00" class="input input_secondary" placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
-            <input name="company_inn" data-mask="000000000000" class="input input_secondary" placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
+            <input name="company_name" data-validate="required" class="input input_secondary"
+                   placeholder="Полное наименование юр. лица*" type="text" role="presentation" autocomplete="off">
+            <input name="company_fio_head" data-validate="required" class="input input_secondary"
+                   placeholder="ФИО Руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_phone_head" data-mask="+{7} (000) 000-00-00" class="input input_secondary"
+                   placeholder="Телефон руководителя*" type="text" role="presentation" autocomplete="off">
+            <input name="company_inn" data-mask="000000000000" class="input input_secondary"
+                   placeholder="ИНН (000000000000)*" type="text" role="presentation" autocomplete="off">
         </div>
 
         <div>
             <div class="filters-row">
                 <div class="request-pass__treaty">
-                    <div class="filters-subtitle">Приложить фото первой и последней страницы договора, если пропуск требуется для выполнения подрядных работ</div>
-                    <div class="question-icon request-pass__treaty-icon">@@include('../components/svg/question.html')</div>
+                    <div class="filters-subtitle">Приложить фото первой и последней страницы договора, если пропуск
+                        требуется для выполнения подрядных работ
+                    </div>
+                    <div class="question-icon request-pass__treaty-icon">@@include('../components/svg/question.html')
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,16 +196,18 @@
             <div class="input-group">
                 <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
                 <label class="input input_secondary input_file input-file">
-                    <input class="input-file__input" type="file" data-max-count="30" name="treaty" accept="image/jpeg,image/png,application/pdf"/>
+                    <input class="input-file__input" type="file" data-max-count="30" name="treaty"
+                           accept="image/jpeg,image/png,application/pdf"/>
                     <span class="input-file__name">Прикрепить файл</span>
                     <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
                 </label>
             </div>
         </div>
-        
+
         <div class="filters-subtitle request-pass__visit-title">Цель посещения</div>
         <div class="filters-row request-pass__visit">
-            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3" placeholder="Текст" role="presentation" autocomplete="off"></textarea>
+            <textarea name="visit_purpose" class="textarea textarea_secondary request-pass__purpose filters-col-3"
+                      placeholder="Текст" role="presentation" autocomplete="off"></textarea>
         </div>
 
         <div class="filters-subtitle request-pass__zones-title">Параметры пропуска</div>
@@ -192,25 +218,30 @@
             </label>
 
             <label class="checkbox checkbox_secondary request-pass__zone">
-                <input name="pass_zone_2"  class="checkbox__input" type="checkbox">
+                <input name="pass_zone_2" class="checkbox__input" type="checkbox">
                 <span class="checkbox__text">Зона 2 (причалы) </span>
             </label>
         </div>
 
         <div class="filters-row request-pass__zones-fields">
-            <input name="pass_dates" data-validate="required" class="datetime input input_secondary" placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-minDate="today" data-flatpickr-maxDate="25.05.2023">
+            <input name="pass_dates" data-validate="required" class="datetime input input_secondary"
+                   placeholder=" Даты допуска*" data-flatpickr-multiple data-flatpickr-minDate="today"
+                   data-flatpickr-maxDate="25.05.2023">
             <div class="select select_secondary">
                 <div class="select__value"></div>
                 <input name="pass_order" data-validate="required" type="hidden" class="select__input">
                 <div class="select__wrapper">
                     <div class="select__items">
-                        <div class="select__item btn btn_secondary active" data-value="">Пункт распоряжения правительства*</div>
+                        <div class="select__item btn btn_secondary active" data-value="">Пункт распоряжения
+                            правительства*
+                        </div>
                         <div class="select__item btn btn_secondary" data-value="1">ООО "Глобал Си Групп"</div>
                         <div class="select__item btn btn_secondary" data-value="2">ООО НАУТИЛУС</div>
                         <div class="select__item btn btn_secondary" data-value="3">ООО " Тураш"</div>
                         <div class="select__item btn btn_secondary" data-value="4">Fueltec Energy Oil and Gas</div>
                         <div class="select__item btn btn_secondary" data-value="5">ООО "РУССШИП"</div>
-                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания</div>
+                        <div class="select__item btn btn_secondary" data-value="6">Русская Рыбопромышленная компания
+                        </div>
                         <div class="select__item btn btn_secondary" data-value="7">ООО ИГМАР</div>
                         <div class="select__item btn btn_secondary" data-value="8">ООО МКА "Морской Менеджер"</div>
                     </div>
@@ -220,7 +251,8 @@
 
             <a href="#" class="file-block request-pass__pos">
                 <div class="file-block__content">
-                    <div class="file-block__title">Распоряжение Правительства РФ от 24 июня 2008 г. N 907-р (выписка)</div>
+                    <div class="file-block__title">Распоряжение Правительства РФ от 24 июня 2008 г. N 907-р (выписка)
+                    </div>
 
                     <div class="file-block__size">
                         36,12 kB
@@ -234,14 +266,14 @@
     <div data-tabs="application-pass" class="passes request-pass__passes"></div>
 
     <div data-tabs="application-auto-pass" class="passes request-pass__passes" style="display: none;"></div>
-    
+
     <div class="request-pass-signature">
         <h3 class="request-pass-signature__title">Электронно-цифровая подпись</h3>
-        
+
         <form id="signature-form">
             <div class="request-pass-signature__description">
-                Если ФИО в электронной подписи не совпадает с ФИО руководителя 
-                предприятия, необходимо предоставить доверенность на право подписи от 
+                Если ФИО в электронной подписи не совпадает с ФИО руководителя
+                предприятия, необходимо предоставить доверенность на право подписи от
                 имени руководителя предприятия <a href="#" target="_blank">(скачать образец)</a>
                 <br>
                 <br>
@@ -273,7 +305,25 @@
         </div>
 
         <div class="popup__content">
-            Если у Вас нет постоянного автомобильного пропуска, для нахождения на территории порта Вам необходимо отправить заявку на предоставление РАЗОВОГО
+            Если у Вас нет постоянного автомобильного пропуска, для нахождения на территории порта Вам необходимо
+            отправить заявку на предоставление РАЗОВОГО
+            <a href="javascript:void(0)" class="popup__link button_open_auto_pass" data-popup-close>автомобильного&nbsp;пропуска</a>
+        </div>
+
+        <button class="popup__btn btn btn_primary root-white">Вернуться на сайт</button>
+    </div>
+</div>
+
+<div id="request-auto-sent" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__header">
+            <div class="popup__title">Ваша заявка отправлена</div>
+            <div class="popup__cross" data-popup-close>@@include('../components/svg/cross.html')</div>
+        </div>
+
+        <div class="popup__content">
+            Если у Вас нет постоянного автомобильного пропуска, для нахождения на территории порта Вам необходимо
+            отправить заявку на предоставление РАЗОВОГО
             <a href="#" class="popup__link" target="_blank">автомобильного&nbsp;пропуска</a>
         </div>
 
@@ -289,7 +339,8 @@
         </div>
 
         <div class="popup__content">
-            Cогласно п. 34 приказа Министерства транспорта РФ от 31 марта 2022 года N 107 для получения попуска вам необходимо приложить к заявке
+            Cогласно п. 34 приказа Министерства транспорта РФ от 31 марта 2022 года N 107 для получения попуска вам
+            необходимо приложить к заявке
             <br>
             <br>
             1. Фото паспорта для физического лица
@@ -325,50 +376,68 @@
 
     <div class="filters-subtitle">Личные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="personal_surname" data-validate="required" class="input" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_name" data-validate="required" class="input" placeholder="Имя*" type="text"  role="presentation" autocomplete="off">
-        <input name="personal_patronymic" data-validate="required" class="input" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_birthday" data-validate="required" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
+        <input name="personal_surname" data-validate="required" class="input" placeholder="Фамилия*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="personal_name" data-validate="required" class="input" placeholder="Имя*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="personal_patronymic" data-validate="required" class="input" placeholder="Отчество*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="personal_birthday" data-validate="required" class="datetime input" placeholder=" Дата рождения*"
+               data-placeholder-focus>
 
-        <input name="personal_birth_place" data-validate="required" class="input" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_position" data-validate="required" class="input" placeholder=" Должность получателя*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_birth_place" data-validate="required" class="input" placeholder="Место рождения*"
+               type="text" role="presentation" autocomplete="off">
+        <input name="personal_position" data-validate="required" class="input" placeholder=" Должность получателя*"
+               type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="passport_series" data-mask="0000" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
-        <input name="passport_number" data-mask="000000" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
-        <input name="passport_date" data-validate="required" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
-        <input name="passport_place" data-validate="required" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_series" data-mask="0000" class="input" placeholder="Номер*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="passport_number" data-mask="000000" class="input" placeholder="Серия*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="passport_date" data-validate="required" class="datetime input" placeholder=" Дата выдачи*"
+               data-placeholder-focus>
+        <input name="passport_place" data-validate="required" class="input filters-col-3" placeholder="Кем выдан*"
+               type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="request-pass-block__question-title">
         <div class="filters-subtitle request-pass-block__question-name">Приложить фото паспорта</div>
         <div class="question-icon request-pass-block__question">@@include('../components/svg/question.html')</div>
     </div>
-    
+
     <div class="filters-row request-pass-block__filters-row" data-filters-group="passport_photo">
         <div class="input-group">
             <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
             <label class="input input_file input-file">
-                <input class="input-file__input" data-validate="required" data-max-count="5" type="file" name="passport_photo" accept="image/jpeg,image/png,application/pdf"/>
+                <input class="input-file__input" data-validate="required" data-max-count="5" type="file"
+                       name="passport_photo" accept="image/jpeg,image/png,application/pdf"/>
                 <span class="input-file__name">Прикрепить файл</span>
                 <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
             </label>
         </div>
     </div>
-    
+
     <div class="filters-subtitle">Контактные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="contact_registration_address" data-validate="required" class="input filters-col-3" placeholder="Адрес регистрации*" type="text" role="presentation" autocomplete="off">
-        <input name="contact_factual_address" data-validate="required" class="input filters-col-3" placeholder="Фактический адрес*" type="text" role="presentation" autocomplete="off">
-        <input name="contact_phone" data-mask="+{7} (000) 000-00-00" class="input" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
-        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_registration_address" data-validate="required" class="input filters-col-3"
+               placeholder="Адрес регистрации*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_factual_address" data-validate="required" class="input filters-col-3"
+               placeholder="Фактический адрес*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_phone" data-mask="+{7} (000) 000-00-00" class="input" placeholder="Контактный телефон*"
+               type="text" role="presentation" autocomplete="off">
+        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text" role="presentation"
+               autocomplete="off">
     </div>
 
     <div class="request-pass-block__footer">
-        <button class="btn btn_primary request-pass-block__btn" onclick="addPass()" type="button">Добавить пропуск</button>
-        <button class="btn btn_third request-pass-block__btn request-pass-block__btn_remove" style="display: none;" onclick="removePass.call(this)" type="button">Удалить пропуск</button>
+        <button class="btn btn_primary request-pass-block__btn" onclick="addPass()" type="button">Добавить пропуск
+        </button>
+        <button class="btn btn_third request-pass-block__btn request-pass-block__btn_remove" style="display: none;"
+                onclick="removePass.call(this)" type="button">Удалить пропуск
+        </button>
     </div>
 </script>
 
@@ -377,21 +446,31 @@
 
     <div class="filters-subtitle">Личные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="personal_surname" data-validate="required" class="input" placeholder="Фамилия*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_name" data-validate="required" class="input" placeholder="Имя*" type="text"  role="presentation" autocomplete="off">
-        <input name="personal_patronymic" data-validate="required" class="input" placeholder="Отчество*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_birthday" data-validate="required" class="datetime input" placeholder=" Дата рождения*" data-placeholder-focus>
+        <input name="personal_surname" data-validate="required" class="input" placeholder="Фамилия*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="personal_name" data-validate="required" class="input" placeholder="Имя*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="personal_patronymic" data-validate="required" class="input" placeholder="Отчество*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="personal_birthday" data-validate="required" class="datetime input" placeholder=" Дата рождения*"
+               data-placeholder-focus>
 
-        <input name="personal_birth_place" data-validate="required" class="input" placeholder="Место рождения*" type="text" role="presentation" autocomplete="off">
-        <input name="personal_position" data-validate="required" class="input" placeholder=" Должность получателя*" type="text" role="presentation" autocomplete="off">
+        <input name="personal_birth_place" data-validate="required" class="input" placeholder="Место рождения*"
+               type="text" role="presentation" autocomplete="off">
+        <input name="personal_position" data-validate="required" class="input" placeholder=" Должность получателя*"
+               type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Паспортные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="passport_series" data-mask="0000" class="input" placeholder="Номер*" type="text" role="presentation" autocomplete="off">
-        <input name="passport_number" data-mask="000000" class="input" placeholder="Серия*" type="text" role="presentation" autocomplete="off">
-        <input name="passport_date" data-validate="required" class="datetime input" placeholder=" Дата выдачи*" data-placeholder-focus>
-        <input name="passport_place" data-validate="required" class="input filters-col-3" placeholder="Кем выдан*" type="text" role="presentation" autocomplete="off">
+        <input name="passport_series" data-mask="0000" class="input" placeholder="Номер*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="passport_number" data-mask="000000" class="input" placeholder="Серия*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="passport_date" data-validate="required" class="datetime input" placeholder=" Дата выдачи*"
+               data-placeholder-focus>
+        <input name="passport_place" data-validate="required" class="input filters-col-3" placeholder="Кем выдан*"
+               type="text" role="presentation" autocomplete="off">
     </div>
 
     <div class="request-pass-block__question-title">
@@ -403,19 +482,24 @@
         <div class="input-group">
             <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
             <label class="input input_file input-file">
-                <input class="input-file__input" data-validate="required" type="file" data-max-count="5" name="passport_photo" accept="image/jpeg,image/png,application/pdf"/>
+                <input class="input-file__input" data-validate="required" type="file" data-max-count="5"
+                       name="passport_photo" accept="image/jpeg,image/png,application/pdf"/>
                 <span class="input-file__name">Прикрепить файл</span>
                 <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
             </label>
         </div>
     </div>
-    
+
     <div class="filters-subtitle">Контактные данные</div>
     <div class="filters-row request-pass-block__filters-row">
-        <input name="contact_registration_address" data-validate="required" class="input filters-col-3" placeholder="Адрес регистрации*" type="text" role="presentation" autocomplete="off">
-        <input name="contact_factual_address" data-validate="required" class="input filters-col-3" placeholder="Фактический адрес*" type="text" role="presentation" autocomplete="off">
-        <input name="contact_phone" data-mask="+{7} (000) 000-00-00" class="input" placeholder="Контактный телефон*" type="text" role="presentation" autocomplete="off">
-        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_registration_address" data-validate="required" class="input filters-col-3"
+               placeholder="Адрес регистрации*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_factual_address" data-validate="required" class="input filters-col-3"
+               placeholder="Фактический адрес*" type="text" role="presentation" autocomplete="off">
+        <input name="contact_phone" data-mask="+{7} (000) 000-00-00" class="input" placeholder="Контактный телефон*"
+               type="text" role="presentation" autocomplete="off">
+        <input name="contact_email" class="input" placeholder="Электронная почта*" type="text" role="presentation"
+               autocomplete="off">
     </div>
 
     <div class="filters-subtitle">Данные автомобиля</div>
@@ -438,10 +522,14 @@
             </div>
             <div class="select__daw">@@include('../components/svg/daw.html')</div>
         </div>
-        <input name="car_brand" data-validate="required" class="input" placeholder="Марка*" type="text" role="presentation" autocomplete="off">
-        <input name="car_model" data-validate="required" class="input" placeholder="Модель*" type="text" role="presentation" autocomplete="off">
-        <input name="car_number" data-validate="required" class="input" placeholder="Гос. номер*" type="text" role="presentation" autocomplete="off">
-        <input name="car_color" data-validate="required" class="input" placeholder="Цвет*" type="text" role="presentation" autocomplete="off">
+        <input name="car_brand" data-validate="required" class="input" placeholder="Марка*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="car_model" data-validate="required" class="input" placeholder="Модель*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="car_number" data-validate="required" class="input" placeholder="Гос. номер*" type="text"
+               role="presentation" autocomplete="off">
+        <input name="car_color" data-validate="required" class="input" placeholder="Цвет*" type="text"
+               role="presentation" autocomplete="off">
     </div>
 
     <div class="request-pass-block__question-title">
@@ -453,7 +541,8 @@
         <div class="input-group">
             <div class="input-group-icon input-group-icon_clip">@@include('../components/svg/clip.html')</div>
             <label class="input input_file input-file">
-                <input class="input-file__input" data-validate="required" type="file" data-max-count="5" name="car_cop" accept="image/jpeg,image/png,application/pdf"/>
+                <input class="input-file__input" data-validate="required" type="file" data-max-count="5" name="car_cop"
+                       accept="image/jpeg,image/png,application/pdf"/>
                 <span class="input-file__name">Прикрепить файл</span>
                 <span class="input-file__cross hide">@@include('../components/svg/cross.html')</span>
             </label>
@@ -461,33 +550,44 @@
     </div>
 
     <div class="request-pass-block__footer">
-        <button class="btn btn_primary request-pass-block__btn" onclick="addPass()" type="button">Добавить пропуск</button>
-        <button class="btn btn_third request-pass-block__btn request-pass-block__btn_remove" style="display: none;" onclick="removePass.call(this)" type="button">Удалить пропуск</button>
+        <button class="btn btn_primary request-pass-block__btn" onclick="addPass()" type="button">Добавить пропуск
+        </button>
+        <button class="btn btn_third request-pass-block__btn request-pass-block__btn_remove" style="display: none;"
+                onclick="removePass.call(this)" type="button">Удалить пропуск
+        </button>
     </div>
 </script>
-
 <script>
     const applicationPass = document.querySelector('#applicationPass');
     const applicationPasses = document.querySelector('.passes[data-tabs="application-pass"]');
     const applicationAutoPass = document.querySelector('#applicationAutoPass');
     const applicationAutoPasses = document.querySelector('.passes[data-tabs="application-auto-pass"]');
+    const buttonOpenAutoPass = document.querySelector('.button_open_auto_pass')
+
     let uniqueId = 0, uniqueIdGroup = 0;
-    
+
     function getPassBlock(el) {
         return el.closest('.request-pass-block');
     }
-    
+
     function initRemoveButtons(wrapper) {
         const children = wrapper.children;
-        const display = children.length > 1? 'block' : 'none';
+        const display = children.length > 1 ? 'block' : 'none';
         [...children].forEach(el => el.querySelector('.request-pass-block__btn_remove').style.display = display);
     }
-    
+
     function addPass() {
         uniqueIdGroup++;
         synchronizationForms(renderPass('application-auto-passes', applicationAutoPasses, uniqueIdGroup), renderPass('application-passes', applicationPasses, uniqueIdGroup));
     }
-    
+
+    function openTabAutoAfterSend() {
+        buttonOpenAutoPass.addEventListener('click', function() {
+            document.querySelector('[data-tabs-open="application-auto-pass"]').click();
+            scroll(0,0)
+        });
+    }
+
     function renderPass(templateId, wrapper, groupId) {
         const form = document.createElement('form');
         form.classList.add('request-pass-block');
@@ -503,15 +603,15 @@
         initDates(form);
         initMasks(form);
         initInputFile();
-        
+
         return form;
     }
-    
+
     function removePass() {
         const pass = getPassBlock(this);
         const parent = pass.parentNode;
-        
-        if(parent.children.length < 2) {
+
+        if (parent.children.length < 2) {
             return;
         }
 
@@ -520,9 +620,10 @@
     }
 
     let isDisableDateCopy = false;
+
     function synchronizationForms(firstForm, secondForm) {
         function initChangedFormValue(firstForm, secondForm) {
-            firstForm.querySelectorAll('input').forEach(input => input.addEventListener('change', ({ target }) => {
+            firstForm.querySelectorAll('input').forEach(input => input.addEventListener('change', ({target}) => {
                 if (isDisableDateCopy) {
                     return;
                 }
@@ -540,38 +641,34 @@
                             mask.typedValue = newValue;
                         }
                     });
-                }
-                else if (classList.contains('checkbox__input')) {
+                } else if (classList.contains('checkbox__input')) {
                     const checked = target.checked;
                     inputs.forEach(el => el.checked = checked);
-                }
-                else if(classList.contains('datetime')) {
+                } else if (classList.contains('datetime')) {
                     const value = dates[target.getAttribute('data-dates-key')]?.selectedDates;
                     inputs.forEach(el => {
                         const name = el.getAttribute('data-dates-key');
                         dates[name].setDate(value);
                     });
-                }
-                else if(classList.contains('select__input')) {
+                } else if (classList.contains('select__input')) {
                     const value = selects[target.parentNode.getAttribute('data-select-key')]?.value;
-                    
+
                     inputs.forEach(el => {
                         const name = el.parentNode.getAttribute('data-select-key');
                         window.tess = selects[name];
                         selects[name]?.set(value);
                     });
-                }
-                else if(!classList.contains('input-file__input')) {
+                } else if (!classList.contains('input-file__input')) {
                     inputs.forEach(el => el.value = newValue);
                 }
             }));
-            
-            firstForm.querySelectorAll('.textarea').forEach(input => input.addEventListener('change', ({ target }) => {
+
+            firstForm.querySelectorAll('.textarea').forEach(input => input.addEventListener('change', ({target}) => {
                 const name = target.getAttribute('name');
                 const newValue = target.value;
                 secondForm.querySelectorAll(`[name="${name}"]`).forEach(el => el.value = newValue);
             }));
-            
+
             function setHtml(target) {
                 const wrapper = target.closest('.filters-row');
                 const filtersGroup = wrapper.getAttribute('data-filters-group');
@@ -579,24 +676,24 @@
                 if (!filtersGroup) {
                     return;
                 }
-                
+
                 setTimeout(() => {
                     const secondWrapper = secondForm.querySelector(`[data-filters-group="${filtersGroup}"]`);
                     secondWrapper.innerHTML = wrapper.innerHTML.replaceAll('initialized', '');
-                    
+
                     const firstInputs = wrapper.querySelectorAll('input');
                     const secondInputs = secondWrapper.querySelectorAll('input');
                     secondInputs.forEach((el, idx) => el.files = firstInputs[idx].files);
-                    
+
                     initInputFile();
                 })
             }
-            
-            firstForm.addEventListener('change', ({ target }) => {
+
+            firstForm.addEventListener('change', ({target}) => {
                 setHtml(target);
             });
 
-            firstForm.addEventListener('click', ({ target }) => {
+            firstForm.addEventListener('click', ({target}) => {
                 if (target.closest('.input-file__cross')) {
                     setHtml(target);
                 }
@@ -610,7 +707,8 @@
     document.addEventListener("DOMContentLoaded", () => {
         synchronizationForms(applicationPass, applicationAutoPass);
         addPass(false);
-        
+        openTabAutoAfterSend()
+
         const checkBoxOptions = initValidateOptions({
             isAgreeProcessing: {
                 type: 'checkbox'
@@ -736,26 +834,27 @@
         });
 
         const applicationSentPopup = new Popup('#request-speeches-sent');
+        const autoApplicationSentPopup = new Popup('#request-auto-sent')
         const questionInfo = new Popup('#question-info');
         const duplicateRequest = new Popup('#duplicate-request');
-        
+
         const signatureForm = document.querySelector('#signature-form');
         signatureForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            
+
             const isApplicationPass = !applicationPass.style.display;
-            
+
             const isValidSignatureForm = Boolean(formValidate(signatureForm, checkBoxOptions));
-            
-            const mainForm = isApplicationPass ? 
+
+            const mainForm = isApplicationPass ?
                 formValidate(applicationPass, {
                     ...defaultMainOptions,
                     ...defaultMainCarOptions
                 }) :
                 formValidate(applicationAutoPass, defaultMainOptions);
-            
-            const passesValidatorOptions = isApplicationPass ? defaultPassOptions : 
-                { 
+
+            const passesValidatorOptions = isApplicationPass ? defaultPassOptions :
+                {
                     ...defaultPassOptions,
                     ...defaultCarPassOptions
                 };
@@ -779,22 +878,34 @@
                 fetch(`${window.config.host}/ajax/form.php`, {
                     method: 'POST',
                     body: mainForm
-                }).then(({ status }) => {
+                }).then(({status}) => {
                     if (status === 200) {
-                        applicationSentPopup.show();
+                        if (isApplicationPass) {
+                            applicationSentPopup.show();
+                        } else {
+                            autoApplicationSentPopup.show()
+                        }
+
                         isDisableDateCopy = true;
                         clearForm(isApplicationPass ? applicationPass : applicationAutoPass);
                         [...(isApplicationPass ? applicationPasses : applicationAutoPasses).children].forEach(pass => clearForm(pass));
                         isDisableDateCopy = false;
-                    }
-                    else if (status === 403) {
+                    } else if (status === 403) {
                         duplicateRequest.show();
                     }
                     loader.hide();
                 });
+            } else {
+                showNotification({
+                    title: window.errorMessage.title,
+                    message: window.errorMessage.message,
+                    titleColor: '#002542',
+                    messageColor: '#002542',
+                    backgroundColor: '#fff',
+                });
             }
         });
-        
+
         document.querySelectorAll('.question-icon').forEach(el => el.addEventListener('click', questionInfo.show.bind(questionInfo)));
     });
 </script>

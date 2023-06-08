@@ -23,6 +23,7 @@ import './odometer'
 import './swiper'
 import './loader'
 import './main'
+import './notification'
 
 window.config = {
     host: process.env.HOST

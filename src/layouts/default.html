@@ -14,7 +14,15 @@
     <link href="/css/flatpickr.css" rel="stylesheet">
     <link href="/css/magnific-popup.css" rel="stylesheet">
     <link href="/css/swiper-bundle.css" rel="stylesheet">
+    <link href="/css/iziToast.css" rel="stylesheet">
     <link href="/css/main.min.css" rel="stylesheet">
+
+    <script>
+        window['errorMessage'] = {
+            title: 'Ошибка валидации',
+            message: 'Проверьте заполнение всех обязательных полей'
+        }
+    </script>
 </head>
 <body class="animation-lazy">
     @@include('../components/header.html', {
@@ -43,6 +51,7 @@
     <script src="/js/touch-scroll.js"></script>
     <script src="/js/odometer.js"></script>
     <script src="/js/mapsvg.js"></script>
+    <script src="/js/iziToast.js"></script>
     <script src="/js/main.min.js"></script>
 </body>
 </html>

@@ -180,6 +180,14 @@
                     }
                     loader.hide();
                 });
+            } else  {
+                showNotification({
+                    title: window.errorMessage.title,
+                    message: window.errorMessage.message,
+                    titleColor: '#002542',
+                    messageColor: '#002542',
+                    backgroundColor: '#fff',
+                });
             }
         });
     });
