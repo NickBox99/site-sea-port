@@ -29,7 +29,7 @@
         center: true
     });
     
-    if (!wrapper.hasAttribute('data-route-map-default-zoom-disable') && window.innerWidth >= 1024) {
+    if (window.innerWidth >= 1024) {
         panZoom.zoomIn();
         panZoom.zoomIn();
     }
