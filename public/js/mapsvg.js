@@ -7273,26 +7273,8 @@ function plans() {
       responsive: true,
       loadingText: 'Загрузка',
     })
-  } else if (bheight < 900 && bwidth > 1200) {
-    $map.mapSvg({
-      width: 100,
-      height: 100,
-      viewBox: [0, 0, 612, 312],
-      cursor: 'pointer',
-      zoom: {
-        on: true,
-        limit: [0, 1.6],
-        delta: 2,
-        buttons: { on: true, location: 'right' },
-        mousewheel: true,
-      },
-      scroll: { on: true, limit: true, background: false, spacebar: false },
-      source: image2,
-      title: 'Plan2',
-      responsive: true,
-      loadingText: 'Загрузка',
-    })
-  } else {
+  } 
+  else {
     $map.mapSvg({
       width: 100,
       height: 100,
