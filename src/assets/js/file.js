@@ -62,24 +62,29 @@ function initInputFile() {
         const dataMaxCount = el.getAttribute('data-max-count');
         const maxCount = dataMaxCount? +dataMaxCount : 1;
         let nowCount = wrapper.children.length;
+        
+        if (maxCount !== 1) {
+            const onRemoveFile = (el) => {
+                if(nowCount > 1) {
+                    nowCount--;
+                    el.closest('.input-group')?.remove();
+                }
+            }
 
-        const onRemoveFile = (el) => {
-            if(nowCount > 1) {
-                nowCount--;
-                el.closest('.input-group')?.remove();
-            }
+            const onSetFile = () => {
+                if (nowCount < maxCount) {
+                    nowCount++;
+                    const newInput = savedElement.cloneNode(true);
+                    wrapper.append(newInput);
+                    init(newInput.querySelector('input[type="file"]'), onSetFile, onRemoveFile);
+                }
+            };
+
+            init(el, onSetFile, onRemoveFile);
         }
-        
-        const onSetFile = () => {
-            if (nowCount < maxCount) {
-                nowCount++;
-                const newInput = savedElement.cloneNode(true);
-                wrapper.append(newInput);
-                init(newInput.querySelector('input[type="file"]'), onSetFile, onRemoveFile);
-            }
-        };
-        
-        init(el, onSetFile, onRemoveFile);
+        else {
+            init(el);
+        }
     });
 }
 
